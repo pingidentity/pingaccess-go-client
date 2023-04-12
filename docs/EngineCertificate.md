@@ -18,15 +18,15 @@ Name | Type | Description | Notes
 **Md5sum** | **string** | The MD5 checksum of the engine certificate. The value will be set to \&quot;\&quot; when in FIPS mode. | 
 **Sha256sum** | **string** | The SHA256 checksum of the engine certificate. | 
 **SubjectAlternativeNames** | Pointer to [**[]GeneralName**](GeneralName.md) | A collection of subject alternative names for the engine certificate. | [optional] 
+**TrustedCertificate** | **bool** | A flag indicating whether the engine certificate is a trusted certificate. | 
 **KeyPair** | **bool** | A flag indicating whether the engine certificate is a key pair. | 
 **ChainCertificate** | **bool** | A flag indicating whether the engine certificate is a chain certificate. | 
-**TrustedCertificate** | **bool** | A flag indicating whether the engine certificate is a trusted certificate. | 
 
 ## Methods
 
 ### NewEngineCertificate
 
-`func NewEngineCertificate(serialNumber string, alias string, subjectDn string, issuerDn string, signatureAlgorithm string, status CertStatus, sha1sum string, md5sum string, sha256sum string, keyPair bool, chainCertificate bool, trustedCertificate bool, ) *EngineCertificate`
+`func NewEngineCertificate(serialNumber string, alias string, subjectDn string, issuerDn string, signatureAlgorithm string, status CertStatus, sha1sum string, md5sum string, sha256sum string, trustedCertificate bool, keyPair bool, chainCertificate bool, ) *EngineCertificate`
 
 NewEngineCertificate instantiates a new EngineCertificate object
 This constructor will assign default values to properties that have it defined,
@@ -346,6 +346,26 @@ SetSubjectAlternativeNames sets SubjectAlternativeNames field to given value.
 
 HasSubjectAlternativeNames returns a boolean if a field has been set.
 
+### GetTrustedCertificate
+
+`func (o *EngineCertificate) GetTrustedCertificate() bool`
+
+GetTrustedCertificate returns the TrustedCertificate field if non-nil, zero value otherwise.
+
+### GetTrustedCertificateOk
+
+`func (o *EngineCertificate) GetTrustedCertificateOk() (*bool, bool)`
+
+GetTrustedCertificateOk returns a tuple with the TrustedCertificate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustedCertificate
+
+`func (o *EngineCertificate) SetTrustedCertificate(v bool)`
+
+SetTrustedCertificate sets TrustedCertificate field to given value.
+
+
 ### GetKeyPair
 
 `func (o *EngineCertificate) GetKeyPair() bool`
@@ -384,26 +404,6 @@ and a boolean to check if the value has been set.
 `func (o *EngineCertificate) SetChainCertificate(v bool)`
 
 SetChainCertificate sets ChainCertificate field to given value.
-
-
-### GetTrustedCertificate
-
-`func (o *EngineCertificate) GetTrustedCertificate() bool`
-
-GetTrustedCertificate returns the TrustedCertificate field if non-nil, zero value otherwise.
-
-### GetTrustedCertificateOk
-
-`func (o *EngineCertificate) GetTrustedCertificateOk() (*bool, bool)`
-
-GetTrustedCertificateOk returns a tuple with the TrustedCertificate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTrustedCertificate
-
-`func (o *EngineCertificate) SetTrustedCertificate(v bool)`
-
-SetTrustedCertificate sets TrustedCertificate field to given value.
 
 
 

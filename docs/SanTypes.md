@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | [**[]SanType**](SanType.md) |  | 
+**Items** | [**[]SanType**](SanType.md) | The actual list of available general names. | 
 
 ## Methods
 

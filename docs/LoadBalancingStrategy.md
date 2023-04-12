@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** | (sortable) The class name of the load balancing strategy. | 
 **Id** | Pointer to **int32** | When creating a new LoadBalancingStrategy, this is the ID for the LoadBalancingStrategy. If not specified, an ID will be automatically assigned. When updating an existing LoadBalancingStrategy, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the load balancing strategy. | 
-**Configuration** | Pointer to **string** | The load balancing strategy&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The load balancing strategy&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *LoadBalancingStrategy) GetConfiguration() string`
+`func (o *LoadBalancingStrategy) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *LoadBalancingStrategy) GetConfigurationOk() (*string, bool)`
+`func (o *LoadBalancingStrategy) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *LoadBalancingStrategy) SetConfiguration(v string)`
+`func (o *LoadBalancingStrategy) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

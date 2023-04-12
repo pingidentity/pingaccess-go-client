@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Tier** | **string** | The tier value from the license file. | 
 **MaxApplications** | **int64** | The maximum number of applications from the license file. | 
 **Product** | **string** | The Ping Identity product value from the license file. | 
 **Version** | **string** | The Ping Identity product version from the license file. | 
 **Organization** | **string** | The organization value from the license file. | 
-**Tier** | **string** | The tier value from the license file. | 
 **EnforcementType** | **int32** | The enforcement type value from the license file. | 
 **ExpirationDate** | **string** | The expiration date value from the license file. | 
 **IssueDate** | **string** | The issue date value from the license file. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewLicense
 
-`func NewLicense(maxApplications int64, product string, version string, organization string, tier string, enforcementType int32, expirationDate string, issueDate string, name string, id int32, ) *License`
+`func NewLicense(tier string, maxApplications int64, product string, version string, organization string, enforcementType int32, expirationDate string, issueDate string, name string, id int32, ) *License`
 
 NewLicense instantiates a new License object
 This constructor will assign default values to properties that have it defined,
@@ -33,6 +33,26 @@ will change when the set of required properties is changed
 NewLicenseWithDefaults instantiates a new License object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetTier
+
+`func (o *License) GetTier() string`
+
+GetTier returns the Tier field if non-nil, zero value otherwise.
+
+### GetTierOk
+
+`func (o *License) GetTierOk() (*string, bool)`
+
+GetTierOk returns a tuple with the Tier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTier
+
+`func (o *License) SetTier(v string)`
+
+SetTier sets Tier field to given value.
+
 
 ### GetMaxApplications
 
@@ -112,26 +132,6 @@ and a boolean to check if the value has been set.
 `func (o *License) SetOrganization(v string)`
 
 SetOrganization sets Organization field to given value.
-
-
-### GetTier
-
-`func (o *License) GetTier() string`
-
-GetTier returns the Tier field if non-nil, zero value otherwise.
-
-### GetTierOk
-
-`func (o *License) GetTierOk() (*string, bool)`
-
-GetTierOk returns a tuple with the Tier field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTier
-
-`func (o *License) SetTier(v string)`
-
-SetTier sets Tier field to given value.
 
 
 ### GetEnforcementType

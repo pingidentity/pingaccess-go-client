@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
+**FileData** | **string** | The CSR response data. | 
 **ChainCertificates** | **[]string** | A list of base64-encoded certificates to add to the key pair certificate chain. | 
 **TrustedCertGroupId** | **int32** | The ID of the trusted certificate group associated with the CSR response. | 
-**FileData** | **string** | The CSR response data. | 
 
 ## Methods
 
 ### NewCSRResponseImportDoc
 
-`func NewCSRResponseImportDoc(hsmProviderId int32, chainCertificates []string, trustedCertGroupId int32, fileData string, ) *CSRResponseImportDoc`
+`func NewCSRResponseImportDoc(hsmProviderId int32, fileData string, chainCertificates []string, trustedCertGroupId int32, ) *CSRResponseImportDoc`
 
 NewCSRResponseImportDoc instantiates a new CSRResponseImportDoc object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,26 @@ and a boolean to check if the value has been set.
 `func (o *CSRResponseImportDoc) SetHsmProviderId(v int32)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
+
+
+### GetFileData
+
+`func (o *CSRResponseImportDoc) GetFileData() string`
+
+GetFileData returns the FileData field if non-nil, zero value otherwise.
+
+### GetFileDataOk
+
+`func (o *CSRResponseImportDoc) GetFileDataOk() (*string, bool)`
+
+GetFileDataOk returns a tuple with the FileData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileData
+
+`func (o *CSRResponseImportDoc) SetFileData(v string)`
+
+SetFileData sets FileData field to given value.
 
 
 ### GetChainCertificates
@@ -86,26 +106,6 @@ and a boolean to check if the value has been set.
 `func (o *CSRResponseImportDoc) SetTrustedCertGroupId(v int32)`
 
 SetTrustedCertGroupId sets TrustedCertGroupId field to given value.
-
-
-### GetFileData
-
-`func (o *CSRResponseImportDoc) GetFileData() string`
-
-GetFileData returns the FileData field if non-nil, zero value otherwise.
-
-### GetFileDataOk
-
-`func (o *CSRResponseImportDoc) GetFileDataOk() (*string, bool)`
-
-GetFileDataOk returns a tuple with the FileData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFileData
-
-`func (o *CSRResponseImportDoc) SetFileData(v string)`
-
-SetFileData sets FileData field to given value.
 
 
 

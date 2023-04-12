@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | [**[]ReplicaAdmin**](ReplicaAdmin.md) |  | 
+**Items** | [**[]ReplicaAdmin**](ReplicaAdmin.md) | An array of replica admin values. | 
 
 ## Methods
 

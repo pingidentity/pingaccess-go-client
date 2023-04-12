@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** | (sortable) The site authenticator&#39;s class name. | 
 **Id** | Pointer to **int32** | When creating a new SiteAuthenticator, this is the ID for the SiteAuthenticator. If not specified, an ID will be automatically assigned. When updating an existing SiteAuthenticator, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The site authenticator&#39;s name. | 
-**Configuration** | Pointer to **string** | The site authenticator&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The site authenticator&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *SiteAuthenticator) GetConfiguration() string`
+`func (o *SiteAuthenticator) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *SiteAuthenticator) GetConfigurationOk() (*string, bool)`
+`func (o *SiteAuthenticator) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *SiteAuthenticator) SetConfiguration(v string)`
+`func (o *SiteAuthenticator) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

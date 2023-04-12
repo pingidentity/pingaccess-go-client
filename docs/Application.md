@@ -29,10 +29,12 @@ Name | Type | Description | Notes
 **AgentId** | **int32** | The ID of the agent associated with the application or zero if none. | 
 **SidebandClientId** | **string** | The ID of the sideband client associated with the application or null if none. | 
 **VirtualHostIds** | **[]int32** | An array of virtual host IDs associated with the application. | 
-**IdentityMappingIds** | Pointer to **map[string]int32** | A map of Identity Mappings associated with the application. The key is &#39;Web&#39; or &#39;API&#39; and the value is an Identity Mapping ID. | [optional] 
+**IdentityMappingIds** | Pointer to **map[string]int32** | A map of Identity Mappings associated with the application. The key is &#39;Web&#39; or &#39;API&#39; and the value is an Identity Mapping ID.  Key type: String Value type: Integer | [optional] 
 **AccessValidatorId** | Pointer to **int32** | The ID of the access token validator for local token validation, 1 if the application is protected remotely by an Authorization Server, or zero if unprotected. Only applies to applications of type API. | [optional] 
-**Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the application.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems. | [optional] 
+**Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the application.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems.  Key type: String Value type: PolicyItem[] | [optional] 
 **AuthenticationChallengePolicyId** | **string** | The UUID of the authentication challenge policy associated with the application. | 
+**RiskPolicyId** | Pointer to **int32** | The ID of the risk policy to use by default for this application. | [optional] 
+**DeployReservedResources** | Pointer to **bool** | When true, PingAccess will deploy an  instance of the reserved PA resources and runtime API endpoints using this application context root plus the  reserved application context root as the base path. Default value: false. | [optional] 
 
 ## Methods
 
@@ -732,6 +734,56 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationChallengePolicyId sets AuthenticationChallengePolicyId field to given value.
 
+
+### GetRiskPolicyId
+
+`func (o *Application) GetRiskPolicyId() int32`
+
+GetRiskPolicyId returns the RiskPolicyId field if non-nil, zero value otherwise.
+
+### GetRiskPolicyIdOk
+
+`func (o *Application) GetRiskPolicyIdOk() (*int32, bool)`
+
+GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRiskPolicyId
+
+`func (o *Application) SetRiskPolicyId(v int32)`
+
+SetRiskPolicyId sets RiskPolicyId field to given value.
+
+### HasRiskPolicyId
+
+`func (o *Application) HasRiskPolicyId() bool`
+
+HasRiskPolicyId returns a boolean if a field has been set.
+
+### GetDeployReservedResources
+
+`func (o *Application) GetDeployReservedResources() bool`
+
+GetDeployReservedResources returns the DeployReservedResources field if non-nil, zero value otherwise.
+
+### GetDeployReservedResourcesOk
+
+`func (o *Application) GetDeployReservedResourcesOk() (*bool, bool)`
+
+GetDeployReservedResourcesOk returns a tuple with the DeployReservedResources field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeployReservedResources
+
+`func (o *Application) SetDeployReservedResources(v bool)`
+
+SetDeployReservedResources sets DeployReservedResources field to given value.
+
+### HasDeployReservedResources
+
+`func (o *Application) HasDeployReservedResources() bool`
+
+HasDeployReservedResources returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

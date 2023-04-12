@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
-**Password** | [**HiddenField**](HiddenField.md) |  | 
 **Alias** | **string** | A unique alias name to identify the key pair. Special characters and spaces are allowed. | 
-**ChainCertificates** | **[]string** | An array of chain certificates. | 
+**HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
 **FileData** | **string** | Base-64 encoded PKCS12 or PEM file data. In BCFIPS mode, only PEM with PBES2 and AES or Triple DES encryption is accepted and 128-bit salt is required. | 
+**Password** | [**HiddenField**](HiddenField.md) |  | 
+**ChainCertificates** | **[]string** | An array of chain certificates. | 
 
 ## Methods
 
 ### NewPKCS12FileImportDoc
 
-`func NewPKCS12FileImportDoc(hsmProviderId int32, password HiddenField, alias string, chainCertificates []string, fileData string, ) *PKCS12FileImportDoc`
+`func NewPKCS12FileImportDoc(alias string, hsmProviderId int32, fileData string, password HiddenField, chainCertificates []string, ) *PKCS12FileImportDoc`
 
 NewPKCS12FileImportDoc instantiates a new PKCS12FileImportDoc object
 This constructor will assign default values to properties that have it defined,
@@ -28,6 +28,26 @@ will change when the set of required properties is changed
 NewPKCS12FileImportDocWithDefaults instantiates a new PKCS12FileImportDoc object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAlias
+
+`func (o *PKCS12FileImportDoc) GetAlias() string`
+
+GetAlias returns the Alias field if non-nil, zero value otherwise.
+
+### GetAliasOk
+
+`func (o *PKCS12FileImportDoc) GetAliasOk() (*string, bool)`
+
+GetAliasOk returns a tuple with the Alias field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlias
+
+`func (o *PKCS12FileImportDoc) SetAlias(v string)`
+
+SetAlias sets Alias field to given value.
+
 
 ### GetHsmProviderId
 
@@ -47,6 +67,26 @@ and a boolean to check if the value has been set.
 `func (o *PKCS12FileImportDoc) SetHsmProviderId(v int32)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
+
+
+### GetFileData
+
+`func (o *PKCS12FileImportDoc) GetFileData() string`
+
+GetFileData returns the FileData field if non-nil, zero value otherwise.
+
+### GetFileDataOk
+
+`func (o *PKCS12FileImportDoc) GetFileDataOk() (*string, bool)`
+
+GetFileDataOk returns a tuple with the FileData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileData
+
+`func (o *PKCS12FileImportDoc) SetFileData(v string)`
+
+SetFileData sets FileData field to given value.
 
 
 ### GetPassword
@@ -69,26 +109,6 @@ and a boolean to check if the value has been set.
 SetPassword sets Password field to given value.
 
 
-### GetAlias
-
-`func (o *PKCS12FileImportDoc) GetAlias() string`
-
-GetAlias returns the Alias field if non-nil, zero value otherwise.
-
-### GetAliasOk
-
-`func (o *PKCS12FileImportDoc) GetAliasOk() (*string, bool)`
-
-GetAliasOk returns a tuple with the Alias field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAlias
-
-`func (o *PKCS12FileImportDoc) SetAlias(v string)`
-
-SetAlias sets Alias field to given value.
-
-
 ### GetChainCertificates
 
 `func (o *PKCS12FileImportDoc) GetChainCertificates() []string`
@@ -107,26 +127,6 @@ and a boolean to check if the value has been set.
 `func (o *PKCS12FileImportDoc) SetChainCertificates(v []string)`
 
 SetChainCertificates sets ChainCertificates field to given value.
-
-
-### GetFileData
-
-`func (o *PKCS12FileImportDoc) GetFileData() string`
-
-GetFileData returns the FileData field if non-nil, zero value otherwise.
-
-### GetFileDataOk
-
-`func (o *PKCS12FileImportDoc) GetFileDataOk() (*string, bool)`
-
-GetFileDataOk returns a tuple with the FileData field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFileData
-
-`func (o *PKCS12FileImportDoc) SetFileData(v string)`
-
-SetFileData sets FileData field to given value.
 
 
 

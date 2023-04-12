@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | [**[]Algorithm**](Algorithm.md) |  | 
+**Items** | [**[]Algorithm**](Algorithm.md) | The actual list of valid web session encryption algorithms. | 
 
 ## Methods
 

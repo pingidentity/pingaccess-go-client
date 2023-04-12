@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | The response generator&#39;s class name. | 
-**Configuration** | Pointer to **string** | The response generator&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The response generator&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetConfiguration
 
-`func (o *ResponseGenerator) GetConfiguration() string`
+`func (o *ResponseGenerator) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *ResponseGenerator) GetConfigurationOk() (*string, bool)`
+`func (o *ResponseGenerator) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *ResponseGenerator) SetConfiguration(v string)`
+`func (o *ResponseGenerator) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

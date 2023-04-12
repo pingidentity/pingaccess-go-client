@@ -14,11 +14,11 @@ Name | Type | Description | Notes
 **AvailabilityProfileId** | Pointer to **int32** | The ID of the availability profile to use for the PingFederate runtime. When set to 0, an availability profile defined by the pa.default.availability.ondemand properties in run.properties will be used for back end communication to PingFederate. | [optional] 
 **LoadBalancingStrategyId** | Pointer to **int32** | The ID of the load balancing strategy to use for requests to the PingFederate targets. | [optional] 
 **TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to PingFederate. | [optional] 
+**Host** | **string** | The host name or IP address for PingFederate Runtime. This field is ignored and can be an empty string when the PingFederate application is configured. | 
+**Port** | **int32** | The port number for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | 
 **Secure** | Pointer to **bool** | Enable if PingFederate is expecting HTTPS connections. This field is ignored when the PingFederate application is configured. In this case, use backChannelSecure instead. | [optional] 
 **BasePath** | Pointer to **string** | The base path, if needed, for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
-**Host** | **string** | The host name or IP address for PingFederate Runtime. This field is ignored and can be an empty string when the PingFederate application is configured. | 
-**Port** | **int32** | The port number for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | 
 **AuditLevel** | Pointer to **string** | [&#39;ON&#39; or &#39;OFF&#39;]: Enable to record requests to PingFederate to the audit store. | [optional] 
 
 ## Methods
@@ -290,6 +290,46 @@ SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value
 
 HasTrustedCertificateGroupId returns a boolean if a field has been set.
 
+### GetHost
+
+`func (o *PingFederateRuntime) GetHost() string`
+
+GetHost returns the Host field if non-nil, zero value otherwise.
+
+### GetHostOk
+
+`func (o *PingFederateRuntime) GetHostOk() (*string, bool)`
+
+GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHost
+
+`func (o *PingFederateRuntime) SetHost(v string)`
+
+SetHost sets Host field to given value.
+
+
+### GetPort
+
+`func (o *PingFederateRuntime) GetPort() int32`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *PingFederateRuntime) GetPortOk() (*int32, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *PingFederateRuntime) SetPort(v int32)`
+
+SetPort sets Port field to given value.
+
+
 ### GetSecure
 
 `func (o *PingFederateRuntime) GetSecure() bool`
@@ -364,46 +404,6 @@ SetUseProxy sets UseProxy field to given value.
 `func (o *PingFederateRuntime) HasUseProxy() bool`
 
 HasUseProxy returns a boolean if a field has been set.
-
-### GetHost
-
-`func (o *PingFederateRuntime) GetHost() string`
-
-GetHost returns the Host field if non-nil, zero value otherwise.
-
-### GetHostOk
-
-`func (o *PingFederateRuntime) GetHostOk() (*string, bool)`
-
-GetHostOk returns a tuple with the Host field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHost
-
-`func (o *PingFederateRuntime) SetHost(v string)`
-
-SetHost sets Host field to given value.
-
-
-### GetPort
-
-`func (o *PingFederateRuntime) GetPort() int32`
-
-GetPort returns the Port field if non-nil, zero value otherwise.
-
-### GetPortOk
-
-`func (o *PingFederateRuntime) GetPortOk() (*int32, bool)`
-
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPort
-
-`func (o *PingFederateRuntime) SetPort(v int32)`
-
-SetPort sets Port field to given value.
-
 
 ### GetAuditLevel
 

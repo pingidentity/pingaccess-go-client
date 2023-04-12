@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Version** | **string** |  | 
+**Version** | **string** | The version of PingAccess. | 
 
 ## Methods
 

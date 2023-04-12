@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CrlChecking** | Pointer to **bool** |  | [optional] 
-**Ocsp** | Pointer to **bool** |  | [optional] 
-**DenyRevocationStatusUnknown** | Pointer to **bool** |  | [optional] 
-**SupportDisorderedChain** | Pointer to **bool** |  | [optional] 
-**SkipTrustAnchors** | Pointer to **bool** |  | [optional] 
+**CrlChecking** | Pointer to **bool** | This field is true if CRL client certificate revocation checking is enabled. | [optional] 
+**Ocsp** | Pointer to **bool** | This field is true if OCSP client certificate revocation checking is enabled. | [optional] 
+**DenyRevocationStatusUnknown** | Pointer to **bool** | This field is true if client certificates should be denied when the revocation status cannot be determined. | [optional] 
+**SupportDisorderedChain** | Pointer to **bool** | When set to true, PA can validate client certificate chains that are not in the standard order of leaf -&gt; intermediate(s) -&gt; root. When false, validation may fail on client certificate chains that are not in the standard order. | [optional] 
+**SkipTrustAnchors** | Pointer to **bool** | When set to true, PA will skip validation of any certificates configured in the trusted certificate group as well as their subsequent chain of issuers when trusted certificates are found in the client certificate chain. | [optional] 
 
 ## Methods
 

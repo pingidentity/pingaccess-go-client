@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** | (sortable) The class name of the availability profile. | 
 **Id** | Pointer to **int32** | When creating a new AvailabilityProfile, this is the ID for the AvailabilityProfile. If not specified, an ID will be automatically assigned. When updating an existing AvailabilityProfile, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the availability profile. | 
-**Configuration** | Pointer to **string** | The availability profile&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The availability profile&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *AvailabilityProfile) GetConfiguration() string`
+`func (o *AvailabilityProfile) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *AvailabilityProfile) GetConfigurationOk() (*string, bool)`
+`func (o *AvailabilityProfile) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *AvailabilityProfile) SetConfiguration(v string)`
+`func (o *AvailabilityProfile) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

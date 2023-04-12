@@ -31,7 +31,8 @@ Name | Type | Description | Notes
 **UserinfoSigningAlgValuesSupported** | Pointer to **[]string** | JSON array containing a list of the JWS signing algorithms supported by the userInfo endpoint to encode the claims in a JWT. | [optional] 
 **RequestObjectSigningAlgValuesSupported** | Pointer to **[]string** | JSON array containing a list of the JWS signing algorithms supported by the OpenID Connect provider for request objects. | [optional] 
 **BackchannelAuthenticationEndpoint** | Pointer to **string** | the endpoint used to initiate an out-of-band authentication. | [optional] 
-**MtlsEndpointAliases** | Pointer to **map[string]string** | a map of alternative authorization server endpoints. The key is an authorization server endpoint, and the value is a preferred URL for the endpoint. | [optional] 
+**MtlsEndpointAliases** | Pointer to **map[string]string** | a map of alternative authorization server endpoints. The key is an authorization server endpoint, and the value is a preferred URL for the endpoint.  Key type: String Value type: String | [optional] 
+**PushedAuthorizationRequestEndpoint** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -751,6 +752,31 @@ SetMtlsEndpointAliases sets MtlsEndpointAliases field to given value.
 `func (o *OIDCProviderMetadata) HasMtlsEndpointAliases() bool`
 
 HasMtlsEndpointAliases returns a boolean if a field has been set.
+
+### GetPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderMetadata) GetPushedAuthorizationRequestEndpoint() string`
+
+GetPushedAuthorizationRequestEndpoint returns the PushedAuthorizationRequestEndpoint field if non-nil, zero value otherwise.
+
+### GetPushedAuthorizationRequestEndpointOk
+
+`func (o *OIDCProviderMetadata) GetPushedAuthorizationRequestEndpointOk() (*string, bool)`
+
+GetPushedAuthorizationRequestEndpointOk returns a tuple with the PushedAuthorizationRequestEndpoint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderMetadata) SetPushedAuthorizationRequestEndpoint(v string)`
+
+SetPushedAuthorizationRequestEndpoint sets PushedAuthorizationRequestEndpoint field to given value.
+
+### HasPushedAuthorizationRequestEndpoint
+
+`func (o *OIDCProviderMetadata) HasPushedAuthorizationRequestEndpoint() bool`
+
+HasPushedAuthorizationRequestEndpoint returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

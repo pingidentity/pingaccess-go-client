@@ -6,25 +6,29 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** | When creating a new WebSession, this is the ID for the WebSession. If not specified, an ID will be automatically assigned. When updating an existing WebSession, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the web session. | 
-**SessionTimeoutInMinutes** | Pointer to **int32** | (sortable) The length of time you want the PA Token to remain active. Once the PA Token expires, an authenticated user must re-authenticate. | [optional] 
-**RefreshUserInfoClaimsInterval** | Pointer to **int32** | (sortable) Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
 **RequestPreservationType** | Pointer to [**RequestPreservationType**](RequestPreservationType.md) |  | [optional] 
-**SendRequestedUrlToProvider** | Pointer to **bool** | (sortable) Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
+**EnablePushAuthorization** | Pointer to **bool** | Enabling will allow PA to push the payload of an OAuth 2.0 authorization request to the authorization server via a direct request and provide it with a request URI that is used as reference to the data in a subsequent call to the authorization endpoint. | [optional] 
+**SessionTimeoutInMinutes** | Pointer to **int32** | (sortable) The length of time you want the PA Token to remain active. Once the PA Token expires, an authenticated user must re-authenticate. | [optional] 
 **ValidateSessionIsAlive** | Pointer to **bool** | (sortable) Specify if PingAccess should validate sessions with the configured PingFederate instance during request processing. | [optional] 
-**Audience** | **string** | (sortable) Enter a unique identifier between 1 and 32 characters that defines who the PA Token is applicable to. | 
-**SameSite** | Pointer to [**SameSiteType**](SameSiteType.md) |  | [optional] 
-**SecureCookie** | Pointer to **bool** | (sortable) Specify whether the PingAccess Cookie must be sent using only HTTPS connections. | [optional] 
-**HttpOnlyCookie** | Pointer to **bool** | (sortable) Enable the HttpOnly flag on cookies that contain the PA Token. | [optional] 
-**ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
-**OidcLoginType** | Pointer to [**OidcLoginType**](OidcLoginType.md) |  | [optional] 
-**PkceChallengeType** | Pointer to [**PkceChallengeType**](PkceChallengeType.md) |  | [optional] 
-**WebStorageType** | Pointer to [**WebStorageType**](WebStorageType.md) |  | [optional] 
+**SendRequestedUrlToProvider** | Pointer to **bool** | (sortable) Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
+**RefreshUserInfoClaimsInterval** | Pointer to **int32** | (sortable) Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
+**ProvideAuthenticationFeedback** | Pointer to **bool** | (sortable) Specify if PingAccess should provide feedback to the authentication authority. For example, tell the authority that the user is being redirected because their session expired. | [optional] 
 **CacheUserAttributes** | Pointer to **bool** | (sortable) Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie. | [optional] 
 **EnableRefreshUser** | Pointer to **bool** | (sortable) Specify if you want to have PingAccess periodically refresh user data from PingFederate for use in policy decisions. | [optional] 
 **RequestProfile** | Pointer to **bool** | Specifies whether the default scopes (&#39;profile&#39;, &#39;email&#39;, &#39;address&#39;, and &#39;phone&#39;) should be specified in the access request. (DEPRECATED - to be removed in a future release; please use &#39;scopes&#39; instead) | [optional] 
-**Scopes** | Pointer to **[]string** | The list of scopes to be specified in the access request. If not specified, the default scopes (&#39;profile&#39;, &#39;email&#39;, &#39;address&#39;, and &#39;phone&#39;) will be used. The openid scope is implied and does not need to be specified in this list. | [optional] 
+**PromptParameter** | Pointer to **[]string** | Enter zero or more case sensitive string values. The values can be used by the Client to make sure that the End-User is still present for the current session or to bring attention to the request. | [optional] 
+**SecureCookie** | Pointer to **bool** | (sortable) Specify whether the PingAccess Cookie must be sent using only HTTPS connections. | [optional] 
+**HttpOnlyCookie** | Pointer to **bool** | (sortable) Enable the HttpOnly flag on cookies that contain the PA Token. | [optional] 
 **IdleTimeoutInMinutes** | Pointer to **int32** | (sortable) The length of time you want the PingAccess Token to remain active when no activity is detected. | [optional] 
+**Audience** | **string** | (sortable) Enter a unique identifier between 1 and 32 characters that defines who the PA Token is applicable to. | 
 **CookieType** | Pointer to [**WebSessionCookieType**](WebSessionCookieType.md) |  | [optional] 
+**SameSite** | Pointer to [**SameSiteType**](SameSiteType.md) |  | [optional] 
+**Scopes** | Pointer to **[]string** | The list of scopes to be specified in the access request. If not specified, the default scopes (&#39;profile&#39;, &#39;email&#39;, &#39;address&#39;, and &#39;phone&#39;) will be used. The openid scope is implied and does not need to be specified in this list. | [optional] 
+**OidcLoginType** | Pointer to [**OidcLoginType**](OidcLoginType.md) |  | [optional] 
+**WebStorageType** | Pointer to [**WebStorageType**](WebStorageType.md) |  | [optional] 
+**PkceChallengeType** | Pointer to [**PkceChallengeType**](PkceChallengeType.md) |  | [optional] 
+**TimeoutGroovyScript** | Pointer to **string** | An optional Groovy script used to calculate override values for sessionTimeoutInMinutes and idleTimeoutInMinutes based on user attributes during token issuance. The script outputs a SessionTimeoutContext with an idle and session timeout. Values of 0 for this context will result in the existing values on the web session configuration being used, and negative values are not valid and will cause errors. | [optional] 
+**ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
 **CookieDomain** | Pointer to **string** | (sortable) The domain where the cookie is stored--for example, corp.yourcompany.com. | [optional] 
 **FailOnUnsupportedPreservationContentType** | **bool** | (sortable) Specify if PingAccess should produce a 415 HTTP response when it receives an unauthenticated POST request with a content type unsupported by request preservation. The only content type supported by request preservation is application/x-www-form-urlencoded. When disabled, PingAccess will challenge an unauthenticated POST request using an unsupported content type with the same challenge response sent to an unauthenticated GET request. The default is false. | 
 **PfsessionStateCacheInSeconds** | Pointer to **int32** | (sortable) Specify the number of seconds to cache PingFederate Session State information. | [optional] 
@@ -93,56 +97,6 @@ and a boolean to check if the value has been set.
 SetName sets Name field to given value.
 
 
-### GetSessionTimeoutInMinutes
-
-`func (o *WebSession) GetSessionTimeoutInMinutes() int32`
-
-GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field if non-nil, zero value otherwise.
-
-### GetSessionTimeoutInMinutesOk
-
-`func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int32, bool)`
-
-GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSessionTimeoutInMinutes
-
-`func (o *WebSession) SetSessionTimeoutInMinutes(v int32)`
-
-SetSessionTimeoutInMinutes sets SessionTimeoutInMinutes field to given value.
-
-### HasSessionTimeoutInMinutes
-
-`func (o *WebSession) HasSessionTimeoutInMinutes() bool`
-
-HasSessionTimeoutInMinutes returns a boolean if a field has been set.
-
-### GetRefreshUserInfoClaimsInterval
-
-`func (o *WebSession) GetRefreshUserInfoClaimsInterval() int32`
-
-GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
-
-### GetRefreshUserInfoClaimsIntervalOk
-
-`func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
-
-GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRefreshUserInfoClaimsInterval
-
-`func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int32)`
-
-SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
-
-### HasRefreshUserInfoClaimsInterval
-
-`func (o *WebSession) HasRefreshUserInfoClaimsInterval() bool`
-
-HasRefreshUserInfoClaimsInterval returns a boolean if a field has been set.
-
 ### GetRequestPreservationType
 
 `func (o *WebSession) GetRequestPreservationType() RequestPreservationType`
@@ -168,30 +122,55 @@ SetRequestPreservationType sets RequestPreservationType field to given value.
 
 HasRequestPreservationType returns a boolean if a field has been set.
 
-### GetSendRequestedUrlToProvider
+### GetEnablePushAuthorization
 
-`func (o *WebSession) GetSendRequestedUrlToProvider() bool`
+`func (o *WebSession) GetEnablePushAuthorization() bool`
 
-GetSendRequestedUrlToProvider returns the SendRequestedUrlToProvider field if non-nil, zero value otherwise.
+GetEnablePushAuthorization returns the EnablePushAuthorization field if non-nil, zero value otherwise.
 
-### GetSendRequestedUrlToProviderOk
+### GetEnablePushAuthorizationOk
 
-`func (o *WebSession) GetSendRequestedUrlToProviderOk() (*bool, bool)`
+`func (o *WebSession) GetEnablePushAuthorizationOk() (*bool, bool)`
 
-GetSendRequestedUrlToProviderOk returns a tuple with the SendRequestedUrlToProvider field if it's non-nil, zero value otherwise
+GetEnablePushAuthorizationOk returns a tuple with the EnablePushAuthorization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSendRequestedUrlToProvider
+### SetEnablePushAuthorization
 
-`func (o *WebSession) SetSendRequestedUrlToProvider(v bool)`
+`func (o *WebSession) SetEnablePushAuthorization(v bool)`
 
-SetSendRequestedUrlToProvider sets SendRequestedUrlToProvider field to given value.
+SetEnablePushAuthorization sets EnablePushAuthorization field to given value.
 
-### HasSendRequestedUrlToProvider
+### HasEnablePushAuthorization
 
-`func (o *WebSession) HasSendRequestedUrlToProvider() bool`
+`func (o *WebSession) HasEnablePushAuthorization() bool`
 
-HasSendRequestedUrlToProvider returns a boolean if a field has been set.
+HasEnablePushAuthorization returns a boolean if a field has been set.
+
+### GetSessionTimeoutInMinutes
+
+`func (o *WebSession) GetSessionTimeoutInMinutes() int32`
+
+GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field if non-nil, zero value otherwise.
+
+### GetSessionTimeoutInMinutesOk
+
+`func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int32, bool)`
+
+GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionTimeoutInMinutes
+
+`func (o *WebSession) SetSessionTimeoutInMinutes(v int32)`
+
+SetSessionTimeoutInMinutes sets SessionTimeoutInMinutes field to given value.
+
+### HasSessionTimeoutInMinutes
+
+`func (o *WebSession) HasSessionTimeoutInMinutes() bool`
+
+HasSessionTimeoutInMinutes returns a boolean if a field has been set.
 
 ### GetValidateSessionIsAlive
 
@@ -218,195 +197,80 @@ SetValidateSessionIsAlive sets ValidateSessionIsAlive field to given value.
 
 HasValidateSessionIsAlive returns a boolean if a field has been set.
 
-### GetAudience
+### GetSendRequestedUrlToProvider
 
-`func (o *WebSession) GetAudience() string`
+`func (o *WebSession) GetSendRequestedUrlToProvider() bool`
 
-GetAudience returns the Audience field if non-nil, zero value otherwise.
+GetSendRequestedUrlToProvider returns the SendRequestedUrlToProvider field if non-nil, zero value otherwise.
 
-### GetAudienceOk
+### GetSendRequestedUrlToProviderOk
 
-`func (o *WebSession) GetAudienceOk() (*string, bool)`
+`func (o *WebSession) GetSendRequestedUrlToProviderOk() (*bool, bool)`
 
-GetAudienceOk returns a tuple with the Audience field if it's non-nil, zero value otherwise
+GetSendRequestedUrlToProviderOk returns a tuple with the SendRequestedUrlToProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAudience
+### SetSendRequestedUrlToProvider
 
-`func (o *WebSession) SetAudience(v string)`
+`func (o *WebSession) SetSendRequestedUrlToProvider(v bool)`
 
-SetAudience sets Audience field to given value.
+SetSendRequestedUrlToProvider sets SendRequestedUrlToProvider field to given value.
 
+### HasSendRequestedUrlToProvider
 
-### GetSameSite
+`func (o *WebSession) HasSendRequestedUrlToProvider() bool`
 
-`func (o *WebSession) GetSameSite() SameSiteType`
+HasSendRequestedUrlToProvider returns a boolean if a field has been set.
 
-GetSameSite returns the SameSite field if non-nil, zero value otherwise.
+### GetRefreshUserInfoClaimsInterval
 
-### GetSameSiteOk
+`func (o *WebSession) GetRefreshUserInfoClaimsInterval() int32`
 
-`func (o *WebSession) GetSameSiteOk() (*SameSiteType, bool)`
+GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
 
-GetSameSiteOk returns a tuple with the SameSite field if it's non-nil, zero value otherwise
+### GetRefreshUserInfoClaimsIntervalOk
+
+`func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
+
+GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSameSite
+### SetRefreshUserInfoClaimsInterval
 
-`func (o *WebSession) SetSameSite(v SameSiteType)`
+`func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int32)`
 
-SetSameSite sets SameSite field to given value.
+SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
 
-### HasSameSite
+### HasRefreshUserInfoClaimsInterval
 
-`func (o *WebSession) HasSameSite() bool`
+`func (o *WebSession) HasRefreshUserInfoClaimsInterval() bool`
 
-HasSameSite returns a boolean if a field has been set.
+HasRefreshUserInfoClaimsInterval returns a boolean if a field has been set.
 
-### GetSecureCookie
+### GetProvideAuthenticationFeedback
 
-`func (o *WebSession) GetSecureCookie() bool`
+`func (o *WebSession) GetProvideAuthenticationFeedback() bool`
 
-GetSecureCookie returns the SecureCookie field if non-nil, zero value otherwise.
+GetProvideAuthenticationFeedback returns the ProvideAuthenticationFeedback field if non-nil, zero value otherwise.
 
-### GetSecureCookieOk
+### GetProvideAuthenticationFeedbackOk
 
-`func (o *WebSession) GetSecureCookieOk() (*bool, bool)`
+`func (o *WebSession) GetProvideAuthenticationFeedbackOk() (*bool, bool)`
 
-GetSecureCookieOk returns a tuple with the SecureCookie field if it's non-nil, zero value otherwise
+GetProvideAuthenticationFeedbackOk returns a tuple with the ProvideAuthenticationFeedback field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSecureCookie
+### SetProvideAuthenticationFeedback
 
-`func (o *WebSession) SetSecureCookie(v bool)`
+`func (o *WebSession) SetProvideAuthenticationFeedback(v bool)`
 
-SetSecureCookie sets SecureCookie field to given value.
+SetProvideAuthenticationFeedback sets ProvideAuthenticationFeedback field to given value.
 
-### HasSecureCookie
+### HasProvideAuthenticationFeedback
 
-`func (o *WebSession) HasSecureCookie() bool`
+`func (o *WebSession) HasProvideAuthenticationFeedback() bool`
 
-HasSecureCookie returns a boolean if a field has been set.
-
-### GetHttpOnlyCookie
-
-`func (o *WebSession) GetHttpOnlyCookie() bool`
-
-GetHttpOnlyCookie returns the HttpOnlyCookie field if non-nil, zero value otherwise.
-
-### GetHttpOnlyCookieOk
-
-`func (o *WebSession) GetHttpOnlyCookieOk() (*bool, bool)`
-
-GetHttpOnlyCookieOk returns a tuple with the HttpOnlyCookie field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHttpOnlyCookie
-
-`func (o *WebSession) SetHttpOnlyCookie(v bool)`
-
-SetHttpOnlyCookie sets HttpOnlyCookie field to given value.
-
-### HasHttpOnlyCookie
-
-`func (o *WebSession) HasHttpOnlyCookie() bool`
-
-HasHttpOnlyCookie returns a boolean if a field has been set.
-
-### GetClientCredentials
-
-`func (o *WebSession) GetClientCredentials() OAuthClientCredentials`
-
-GetClientCredentials returns the ClientCredentials field if non-nil, zero value otherwise.
-
-### GetClientCredentialsOk
-
-`func (o *WebSession) GetClientCredentialsOk() (*OAuthClientCredentials, bool)`
-
-GetClientCredentialsOk returns a tuple with the ClientCredentials field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientCredentials
-
-`func (o *WebSession) SetClientCredentials(v OAuthClientCredentials)`
-
-SetClientCredentials sets ClientCredentials field to given value.
-
-
-### GetOidcLoginType
-
-`func (o *WebSession) GetOidcLoginType() OidcLoginType`
-
-GetOidcLoginType returns the OidcLoginType field if non-nil, zero value otherwise.
-
-### GetOidcLoginTypeOk
-
-`func (o *WebSession) GetOidcLoginTypeOk() (*OidcLoginType, bool)`
-
-GetOidcLoginTypeOk returns a tuple with the OidcLoginType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOidcLoginType
-
-`func (o *WebSession) SetOidcLoginType(v OidcLoginType)`
-
-SetOidcLoginType sets OidcLoginType field to given value.
-
-### HasOidcLoginType
-
-`func (o *WebSession) HasOidcLoginType() bool`
-
-HasOidcLoginType returns a boolean if a field has been set.
-
-### GetPkceChallengeType
-
-`func (o *WebSession) GetPkceChallengeType() PkceChallengeType`
-
-GetPkceChallengeType returns the PkceChallengeType field if non-nil, zero value otherwise.
-
-### GetPkceChallengeTypeOk
-
-`func (o *WebSession) GetPkceChallengeTypeOk() (*PkceChallengeType, bool)`
-
-GetPkceChallengeTypeOk returns a tuple with the PkceChallengeType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPkceChallengeType
-
-`func (o *WebSession) SetPkceChallengeType(v PkceChallengeType)`
-
-SetPkceChallengeType sets PkceChallengeType field to given value.
-
-### HasPkceChallengeType
-
-`func (o *WebSession) HasPkceChallengeType() bool`
-
-HasPkceChallengeType returns a boolean if a field has been set.
-
-### GetWebStorageType
-
-`func (o *WebSession) GetWebStorageType() WebStorageType`
-
-GetWebStorageType returns the WebStorageType field if non-nil, zero value otherwise.
-
-### GetWebStorageTypeOk
-
-`func (o *WebSession) GetWebStorageTypeOk() (*WebStorageType, bool)`
-
-GetWebStorageTypeOk returns a tuple with the WebStorageType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWebStorageType
-
-`func (o *WebSession) SetWebStorageType(v WebStorageType)`
-
-SetWebStorageType sets WebStorageType field to given value.
-
-### HasWebStorageType
-
-`func (o *WebSession) HasWebStorageType() bool`
-
-HasWebStorageType returns a boolean if a field has been set.
+HasProvideAuthenticationFeedback returns a boolean if a field has been set.
 
 ### GetCacheUserAttributes
 
@@ -483,30 +347,80 @@ SetRequestProfile sets RequestProfile field to given value.
 
 HasRequestProfile returns a boolean if a field has been set.
 
-### GetScopes
+### GetPromptParameter
 
-`func (o *WebSession) GetScopes() []string`
+`func (o *WebSession) GetPromptParameter() []string`
 
-GetScopes returns the Scopes field if non-nil, zero value otherwise.
+GetPromptParameter returns the PromptParameter field if non-nil, zero value otherwise.
 
-### GetScopesOk
+### GetPromptParameterOk
 
-`func (o *WebSession) GetScopesOk() (*[]string, bool)`
+`func (o *WebSession) GetPromptParameterOk() (*[]string, bool)`
 
-GetScopesOk returns a tuple with the Scopes field if it's non-nil, zero value otherwise
+GetPromptParameterOk returns a tuple with the PromptParameter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetScopes
+### SetPromptParameter
 
-`func (o *WebSession) SetScopes(v []string)`
+`func (o *WebSession) SetPromptParameter(v []string)`
 
-SetScopes sets Scopes field to given value.
+SetPromptParameter sets PromptParameter field to given value.
 
-### HasScopes
+### HasPromptParameter
 
-`func (o *WebSession) HasScopes() bool`
+`func (o *WebSession) HasPromptParameter() bool`
 
-HasScopes returns a boolean if a field has been set.
+HasPromptParameter returns a boolean if a field has been set.
+
+### GetSecureCookie
+
+`func (o *WebSession) GetSecureCookie() bool`
+
+GetSecureCookie returns the SecureCookie field if non-nil, zero value otherwise.
+
+### GetSecureCookieOk
+
+`func (o *WebSession) GetSecureCookieOk() (*bool, bool)`
+
+GetSecureCookieOk returns a tuple with the SecureCookie field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecureCookie
+
+`func (o *WebSession) SetSecureCookie(v bool)`
+
+SetSecureCookie sets SecureCookie field to given value.
+
+### HasSecureCookie
+
+`func (o *WebSession) HasSecureCookie() bool`
+
+HasSecureCookie returns a boolean if a field has been set.
+
+### GetHttpOnlyCookie
+
+`func (o *WebSession) GetHttpOnlyCookie() bool`
+
+GetHttpOnlyCookie returns the HttpOnlyCookie field if non-nil, zero value otherwise.
+
+### GetHttpOnlyCookieOk
+
+`func (o *WebSession) GetHttpOnlyCookieOk() (*bool, bool)`
+
+GetHttpOnlyCookieOk returns a tuple with the HttpOnlyCookie field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHttpOnlyCookie
+
+`func (o *WebSession) SetHttpOnlyCookie(v bool)`
+
+SetHttpOnlyCookie sets HttpOnlyCookie field to given value.
+
+### HasHttpOnlyCookie
+
+`func (o *WebSession) HasHttpOnlyCookie() bool`
+
+HasHttpOnlyCookie returns a boolean if a field has been set.
 
 ### GetIdleTimeoutInMinutes
 
@@ -533,6 +447,26 @@ SetIdleTimeoutInMinutes sets IdleTimeoutInMinutes field to given value.
 
 HasIdleTimeoutInMinutes returns a boolean if a field has been set.
 
+### GetAudience
+
+`func (o *WebSession) GetAudience() string`
+
+GetAudience returns the Audience field if non-nil, zero value otherwise.
+
+### GetAudienceOk
+
+`func (o *WebSession) GetAudienceOk() (*string, bool)`
+
+GetAudienceOk returns a tuple with the Audience field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAudience
+
+`func (o *WebSession) SetAudience(v string)`
+
+SetAudience sets Audience field to given value.
+
+
 ### GetCookieType
 
 `func (o *WebSession) GetCookieType() WebSessionCookieType`
@@ -557,6 +491,176 @@ SetCookieType sets CookieType field to given value.
 `func (o *WebSession) HasCookieType() bool`
 
 HasCookieType returns a boolean if a field has been set.
+
+### GetSameSite
+
+`func (o *WebSession) GetSameSite() SameSiteType`
+
+GetSameSite returns the SameSite field if non-nil, zero value otherwise.
+
+### GetSameSiteOk
+
+`func (o *WebSession) GetSameSiteOk() (*SameSiteType, bool)`
+
+GetSameSiteOk returns a tuple with the SameSite field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSameSite
+
+`func (o *WebSession) SetSameSite(v SameSiteType)`
+
+SetSameSite sets SameSite field to given value.
+
+### HasSameSite
+
+`func (o *WebSession) HasSameSite() bool`
+
+HasSameSite returns a boolean if a field has been set.
+
+### GetScopes
+
+`func (o *WebSession) GetScopes() []string`
+
+GetScopes returns the Scopes field if non-nil, zero value otherwise.
+
+### GetScopesOk
+
+`func (o *WebSession) GetScopesOk() (*[]string, bool)`
+
+GetScopesOk returns a tuple with the Scopes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScopes
+
+`func (o *WebSession) SetScopes(v []string)`
+
+SetScopes sets Scopes field to given value.
+
+### HasScopes
+
+`func (o *WebSession) HasScopes() bool`
+
+HasScopes returns a boolean if a field has been set.
+
+### GetOidcLoginType
+
+`func (o *WebSession) GetOidcLoginType() OidcLoginType`
+
+GetOidcLoginType returns the OidcLoginType field if non-nil, zero value otherwise.
+
+### GetOidcLoginTypeOk
+
+`func (o *WebSession) GetOidcLoginTypeOk() (*OidcLoginType, bool)`
+
+GetOidcLoginTypeOk returns a tuple with the OidcLoginType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcLoginType
+
+`func (o *WebSession) SetOidcLoginType(v OidcLoginType)`
+
+SetOidcLoginType sets OidcLoginType field to given value.
+
+### HasOidcLoginType
+
+`func (o *WebSession) HasOidcLoginType() bool`
+
+HasOidcLoginType returns a boolean if a field has been set.
+
+### GetWebStorageType
+
+`func (o *WebSession) GetWebStorageType() WebStorageType`
+
+GetWebStorageType returns the WebStorageType field if non-nil, zero value otherwise.
+
+### GetWebStorageTypeOk
+
+`func (o *WebSession) GetWebStorageTypeOk() (*WebStorageType, bool)`
+
+GetWebStorageTypeOk returns a tuple with the WebStorageType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebStorageType
+
+`func (o *WebSession) SetWebStorageType(v WebStorageType)`
+
+SetWebStorageType sets WebStorageType field to given value.
+
+### HasWebStorageType
+
+`func (o *WebSession) HasWebStorageType() bool`
+
+HasWebStorageType returns a boolean if a field has been set.
+
+### GetPkceChallengeType
+
+`func (o *WebSession) GetPkceChallengeType() PkceChallengeType`
+
+GetPkceChallengeType returns the PkceChallengeType field if non-nil, zero value otherwise.
+
+### GetPkceChallengeTypeOk
+
+`func (o *WebSession) GetPkceChallengeTypeOk() (*PkceChallengeType, bool)`
+
+GetPkceChallengeTypeOk returns a tuple with the PkceChallengeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPkceChallengeType
+
+`func (o *WebSession) SetPkceChallengeType(v PkceChallengeType)`
+
+SetPkceChallengeType sets PkceChallengeType field to given value.
+
+### HasPkceChallengeType
+
+`func (o *WebSession) HasPkceChallengeType() bool`
+
+HasPkceChallengeType returns a boolean if a field has been set.
+
+### GetTimeoutGroovyScript
+
+`func (o *WebSession) GetTimeoutGroovyScript() string`
+
+GetTimeoutGroovyScript returns the TimeoutGroovyScript field if non-nil, zero value otherwise.
+
+### GetTimeoutGroovyScriptOk
+
+`func (o *WebSession) GetTimeoutGroovyScriptOk() (*string, bool)`
+
+GetTimeoutGroovyScriptOk returns a tuple with the TimeoutGroovyScript field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeoutGroovyScript
+
+`func (o *WebSession) SetTimeoutGroovyScript(v string)`
+
+SetTimeoutGroovyScript sets TimeoutGroovyScript field to given value.
+
+### HasTimeoutGroovyScript
+
+`func (o *WebSession) HasTimeoutGroovyScript() bool`
+
+HasTimeoutGroovyScript returns a boolean if a field has been set.
+
+### GetClientCredentials
+
+`func (o *WebSession) GetClientCredentials() OAuthClientCredentials`
+
+GetClientCredentials returns the ClientCredentials field if non-nil, zero value otherwise.
+
+### GetClientCredentialsOk
+
+`func (o *WebSession) GetClientCredentialsOk() (*OAuthClientCredentials, bool)`
+
+GetClientCredentialsOk returns a tuple with the ClientCredentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientCredentials
+
+`func (o *WebSession) SetClientCredentials(v OAuthClientCredentials)`
+
+SetClientCredentials sets ClientCredentials field to given value.
+
 
 ### GetCookieDomain
 

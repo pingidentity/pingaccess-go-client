@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Description** | **string** |  | 
+**Name** | **string** | The general name. This field is read-only. | 
+**Description** | **string** | A description of the available general name. This field is read-only. | 
 
 ## Methods
 

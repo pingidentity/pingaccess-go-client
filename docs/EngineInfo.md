@@ -4,16 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PollingDelay** | **int64** |  | 
-**LastUpdated** | **int64** |  | 
-**Description** | **string** |  | 
-**Name** | **string** |  | 
+**PollingDelay** | **int64** | The polling delay of the engine. | 
+**CreatedAt** | **int64** | The date the engine was created. | 
+**LastUpdated** | **int64** | The last updated date. | 
+**Description** | **string** | The description of the engine. | 
+**Name** | **string** | The name of the engine. | 
 
 ## Methods
 
 ### NewEngineInfo
 
-`func NewEngineInfo(pollingDelay int64, lastUpdated int64, description string, name string, ) *EngineInfo`
+`func NewEngineInfo(pollingDelay int64, createdAt int64, lastUpdated int64, description string, name string, ) *EngineInfo`
 
 NewEngineInfo instantiates a new EngineInfo object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +47,26 @@ and a boolean to check if the value has been set.
 `func (o *EngineInfo) SetPollingDelay(v int64)`
 
 SetPollingDelay sets PollingDelay field to given value.
+
+
+### GetCreatedAt
+
+`func (o *EngineInfo) GetCreatedAt() int64`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *EngineInfo) GetCreatedAtOk() (*int64, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *EngineInfo) SetCreatedAt(v int64)`
+
+SetCreatedAt sets CreatedAt field to given value.
 
 
 ### GetLastUpdated

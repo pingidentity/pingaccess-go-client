@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Flash** | **[]string** | The flash message displayed in the UI. | 
-**Form** | **map[string][]string** | The specific errors related to the current form. | 
+**Flash** | **[]string** | The flash message giving a general error message. | 
+**Form** | **map[string][]string** | The errors on specific configuration fields defined by the API request.  Key type: String Value type: String[] | 
 
 ## Methods
 

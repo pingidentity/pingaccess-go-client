@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **HostPort** | **string** | The primary host and port of the administrative console. | 
 **HttpProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
 **HttpsProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
+**StaleEngineTimeout** | Pointer to **int32** | The number of minutes since the last communication from an engine after which the engine will be deleted. Misconfiguration of this value when set less than Engine Polling Delay or a loss of connection in the admin node may result in errant engine deletions. | [optional] 
+**StaleEngineTimeoutEnabled** | Pointer to **bool** | Indicates whether the Stale Engine Timeout is enabled and automatic engine pruning will occur. | [optional] 
 
 ## Methods
 
@@ -96,6 +98,56 @@ SetHttpsProxyId sets HttpsProxyId field to given value.
 `func (o *AdminConfiguration) HasHttpsProxyId() bool`
 
 HasHttpsProxyId returns a boolean if a field has been set.
+
+### GetStaleEngineTimeout
+
+`func (o *AdminConfiguration) GetStaleEngineTimeout() int32`
+
+GetStaleEngineTimeout returns the StaleEngineTimeout field if non-nil, zero value otherwise.
+
+### GetStaleEngineTimeoutOk
+
+`func (o *AdminConfiguration) GetStaleEngineTimeoutOk() (*int32, bool)`
+
+GetStaleEngineTimeoutOk returns a tuple with the StaleEngineTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStaleEngineTimeout
+
+`func (o *AdminConfiguration) SetStaleEngineTimeout(v int32)`
+
+SetStaleEngineTimeout sets StaleEngineTimeout field to given value.
+
+### HasStaleEngineTimeout
+
+`func (o *AdminConfiguration) HasStaleEngineTimeout() bool`
+
+HasStaleEngineTimeout returns a boolean if a field has been set.
+
+### GetStaleEngineTimeoutEnabled
+
+`func (o *AdminConfiguration) GetStaleEngineTimeoutEnabled() bool`
+
+GetStaleEngineTimeoutEnabled returns the StaleEngineTimeoutEnabled field if non-nil, zero value otherwise.
+
+### GetStaleEngineTimeoutEnabledOk
+
+`func (o *AdminConfiguration) GetStaleEngineTimeoutEnabledOk() (*bool, bool)`
+
+GetStaleEngineTimeoutEnabledOk returns a tuple with the StaleEngineTimeoutEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStaleEngineTimeoutEnabled
+
+`func (o *AdminConfiguration) SetStaleEngineTimeoutEnabled(v bool)`
+
+SetStaleEngineTimeoutEnabled sets StaleEngineTimeoutEnabled field to given value.
+
+### HasStaleEngineTimeoutEnabled
+
+`func (o *AdminConfiguration) HasStaleEngineTimeoutEnabled() bool`
+
+HasStaleEngineTimeoutEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **UseTokenIntrospection** | Pointer to **bool** | Specify if token introspection is enabled. | [optional] 
 **AccessValidatorId** | **int32** | The Access Validator Id. This field is read-only. | 
 **Name** | Pointer to **string** | The unique Access Validator name. This field is read-only. | [optional] 
-**ClientId** | Pointer to **string** | The Client ID which PingAccess should use when requesting PingFederate to validate access tokens. The client must have Access Token Validation grant type allowed. (DEPRECATED - to be removed in a future release; please use &#39;clientCredentials&#39; instead) | [optional] 
 **ClientSecret** | Pointer to [**HiddenField**](HiddenField.md) |  | [optional] 
+**ClientId** | Pointer to **string** | The Client ID which PingAccess should use when requesting PingFederate to validate access tokens. The client must have Access Token Validation grant type allowed. (DEPRECATED - to be removed in a future release; please use &#39;clientCredentials&#39; instead) | [optional] 
 
 ## Methods
 
@@ -224,31 +224,6 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetClientId
-
-`func (o *PingFederateAccessToken) GetClientId() string`
-
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
-
-### GetClientIdOk
-
-`func (o *PingFederateAccessToken) GetClientIdOk() (*string, bool)`
-
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientId
-
-`func (o *PingFederateAccessToken) SetClientId(v string)`
-
-SetClientId sets ClientId field to given value.
-
-### HasClientId
-
-`func (o *PingFederateAccessToken) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
-
 ### GetClientSecret
 
 `func (o *PingFederateAccessToken) GetClientSecret() HiddenField`
@@ -273,6 +248,31 @@ SetClientSecret sets ClientSecret field to given value.
 `func (o *PingFederateAccessToken) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *PingFederateAccessToken) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *PingFederateAccessToken) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *PingFederateAccessToken) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *PingFederateAccessToken) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

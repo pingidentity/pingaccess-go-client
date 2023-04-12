@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EncryptedValue** | Pointer to **string** | The encrypted value of the field, as originally returned by the API. | [optional] 
-**Value** | Pointer to **string** | The value of the field. This field takes precedence over the encryptedValue field, if both are specified. | [optional] 
+**Value** | Pointer to **string** | The plaintext value | [optional] 
+**EncryptedValue** | Pointer to **string** | The ciphertext value | [optional] 
 
 ## Methods
 
@@ -25,31 +25,6 @@ will change when the set of required properties is changed
 NewHiddenFieldWithDefaults instantiates a new HiddenField object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetEncryptedValue
-
-`func (o *HiddenField) GetEncryptedValue() string`
-
-GetEncryptedValue returns the EncryptedValue field if non-nil, zero value otherwise.
-
-### GetEncryptedValueOk
-
-`func (o *HiddenField) GetEncryptedValueOk() (*string, bool)`
-
-GetEncryptedValueOk returns a tuple with the EncryptedValue field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEncryptedValue
-
-`func (o *HiddenField) SetEncryptedValue(v string)`
-
-SetEncryptedValue sets EncryptedValue field to given value.
-
-### HasEncryptedValue
-
-`func (o *HiddenField) HasEncryptedValue() bool`
-
-HasEncryptedValue returns a boolean if a field has been set.
 
 ### GetValue
 
@@ -75,6 +50,31 @@ SetValue sets Value field to given value.
 `func (o *HiddenField) HasValue() bool`
 
 HasValue returns a boolean if a field has been set.
+
+### GetEncryptedValue
+
+`func (o *HiddenField) GetEncryptedValue() string`
+
+GetEncryptedValue returns the EncryptedValue field if non-nil, zero value otherwise.
+
+### GetEncryptedValueOk
+
+`func (o *HiddenField) GetEncryptedValueOk() (*string, bool)`
+
+GetEncryptedValueOk returns a tuple with the EncryptedValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEncryptedValue
+
+`func (o *HiddenField) SetEncryptedValue(v string)`
+
+SetEncryptedValue sets EncryptedValue field to given value.
+
+### HasEncryptedValue
+
+`func (o *HiddenField) HasEncryptedValue() bool`
+
+HasEncryptedValue returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

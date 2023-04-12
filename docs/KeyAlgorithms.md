@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | [**[]KeyAlgorithm**](KeyAlgorithm.md) |  | 
+**Items** | [**[]KeyAlgorithm**](KeyAlgorithm.md) | The actual list of key algorithms. | 
 
 ## Methods
 

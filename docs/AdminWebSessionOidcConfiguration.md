@@ -4,15 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RefreshUserInfoClaimsInterval** | Pointer to **int32** | Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
-**SendRequestedUrlToProvider** | Pointer to **bool** | Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
+**EnablePushAuthorization** | Pointer to **bool** |  | [optional] 
 **ValidateSessionIsAlive** | Pointer to **bool** | Specify if PingAccess should validate sessions with the configured PingFederate instance during request processing. | [optional] 
-**ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
-**OidcLoginType** | Pointer to [**OidcLoginType**](OidcLoginType.md) |  | [optional] 
-**PkceChallengeType** | Pointer to [**PkceChallengeType**](PkceChallengeType.md) |  | [optional] 
+**SendRequestedUrlToProvider** | Pointer to **bool** | Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
+**RefreshUserInfoClaimsInterval** | Pointer to **int32** | Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
+**ProvideAuthenticationFeedback** | Pointer to **bool** |  | [optional] 
 **CacheUserAttributes** | Pointer to **bool** | Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie. | [optional] 
 **EnableRefreshUser** | Pointer to **bool** | Specify if you want to have PingAccess periodically refresh user data from PingFederate for use in policy decisions. | [optional] 
+**PromptParameter** | Pointer to **[]string** |  | [optional] 
 **Scopes** | Pointer to **[]string** | The list of scopes. The openid scope is implied and does not need to be specified in this list. | [optional] 
+**OidcLoginType** | Pointer to [**OidcLoginType**](OidcLoginType.md) |  | [optional] 
+**PkceChallengeType** | Pointer to [**PkceChallengeType**](PkceChallengeType.md) |  | [optional] 
+**ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
 **PfsessionStateCacheInSeconds** | Pointer to **int32** | Specify the number of seconds to cache PingFederate Session State information. | [optional] 
 
 ## Methods
@@ -34,55 +37,30 @@ NewAdminWebSessionOidcConfigurationWithDefaults instantiates a new AdminWebSessi
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetRefreshUserInfoClaimsInterval
+### GetEnablePushAuthorization
 
-`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int32`
+`func (o *AdminWebSessionOidcConfiguration) GetEnablePushAuthorization() bool`
 
-GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
+GetEnablePushAuthorization returns the EnablePushAuthorization field if non-nil, zero value otherwise.
 
-### GetRefreshUserInfoClaimsIntervalOk
+### GetEnablePushAuthorizationOk
 
-`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
+`func (o *AdminWebSessionOidcConfiguration) GetEnablePushAuthorizationOk() (*bool, bool)`
 
-GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
+GetEnablePushAuthorizationOk returns a tuple with the EnablePushAuthorization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRefreshUserInfoClaimsInterval
+### SetEnablePushAuthorization
 
-`func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int32)`
+`func (o *AdminWebSessionOidcConfiguration) SetEnablePushAuthorization(v bool)`
 
-SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
+SetEnablePushAuthorization sets EnablePushAuthorization field to given value.
 
-### HasRefreshUserInfoClaimsInterval
+### HasEnablePushAuthorization
 
-`func (o *AdminWebSessionOidcConfiguration) HasRefreshUserInfoClaimsInterval() bool`
+`func (o *AdminWebSessionOidcConfiguration) HasEnablePushAuthorization() bool`
 
-HasRefreshUserInfoClaimsInterval returns a boolean if a field has been set.
-
-### GetSendRequestedUrlToProvider
-
-`func (o *AdminWebSessionOidcConfiguration) GetSendRequestedUrlToProvider() bool`
-
-GetSendRequestedUrlToProvider returns the SendRequestedUrlToProvider field if non-nil, zero value otherwise.
-
-### GetSendRequestedUrlToProviderOk
-
-`func (o *AdminWebSessionOidcConfiguration) GetSendRequestedUrlToProviderOk() (*bool, bool)`
-
-GetSendRequestedUrlToProviderOk returns a tuple with the SendRequestedUrlToProvider field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSendRequestedUrlToProvider
-
-`func (o *AdminWebSessionOidcConfiguration) SetSendRequestedUrlToProvider(v bool)`
-
-SetSendRequestedUrlToProvider sets SendRequestedUrlToProvider field to given value.
-
-### HasSendRequestedUrlToProvider
-
-`func (o *AdminWebSessionOidcConfiguration) HasSendRequestedUrlToProvider() bool`
-
-HasSendRequestedUrlToProvider returns a boolean if a field has been set.
+HasEnablePushAuthorization returns a boolean if a field has been set.
 
 ### GetValidateSessionIsAlive
 
@@ -109,75 +87,80 @@ SetValidateSessionIsAlive sets ValidateSessionIsAlive field to given value.
 
 HasValidateSessionIsAlive returns a boolean if a field has been set.
 
-### GetClientCredentials
+### GetSendRequestedUrlToProvider
 
-`func (o *AdminWebSessionOidcConfiguration) GetClientCredentials() OAuthClientCredentials`
+`func (o *AdminWebSessionOidcConfiguration) GetSendRequestedUrlToProvider() bool`
 
-GetClientCredentials returns the ClientCredentials field if non-nil, zero value otherwise.
+GetSendRequestedUrlToProvider returns the SendRequestedUrlToProvider field if non-nil, zero value otherwise.
 
-### GetClientCredentialsOk
+### GetSendRequestedUrlToProviderOk
 
-`func (o *AdminWebSessionOidcConfiguration) GetClientCredentialsOk() (*OAuthClientCredentials, bool)`
+`func (o *AdminWebSessionOidcConfiguration) GetSendRequestedUrlToProviderOk() (*bool, bool)`
 
-GetClientCredentialsOk returns a tuple with the ClientCredentials field if it's non-nil, zero value otherwise
+GetSendRequestedUrlToProviderOk returns a tuple with the SendRequestedUrlToProvider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetClientCredentials
+### SetSendRequestedUrlToProvider
 
-`func (o *AdminWebSessionOidcConfiguration) SetClientCredentials(v OAuthClientCredentials)`
+`func (o *AdminWebSessionOidcConfiguration) SetSendRequestedUrlToProvider(v bool)`
 
-SetClientCredentials sets ClientCredentials field to given value.
+SetSendRequestedUrlToProvider sets SendRequestedUrlToProvider field to given value.
 
+### HasSendRequestedUrlToProvider
 
-### GetOidcLoginType
+`func (o *AdminWebSessionOidcConfiguration) HasSendRequestedUrlToProvider() bool`
 
-`func (o *AdminWebSessionOidcConfiguration) GetOidcLoginType() OidcLoginType`
+HasSendRequestedUrlToProvider returns a boolean if a field has been set.
 
-GetOidcLoginType returns the OidcLoginType field if non-nil, zero value otherwise.
+### GetRefreshUserInfoClaimsInterval
 
-### GetOidcLoginTypeOk
+`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int32`
 
-`func (o *AdminWebSessionOidcConfiguration) GetOidcLoginTypeOk() (*OidcLoginType, bool)`
+GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
 
-GetOidcLoginTypeOk returns a tuple with the OidcLoginType field if it's non-nil, zero value otherwise
+### GetRefreshUserInfoClaimsIntervalOk
+
+`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
+
+GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOidcLoginType
+### SetRefreshUserInfoClaimsInterval
 
-`func (o *AdminWebSessionOidcConfiguration) SetOidcLoginType(v OidcLoginType)`
+`func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int32)`
 
-SetOidcLoginType sets OidcLoginType field to given value.
+SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
 
-### HasOidcLoginType
+### HasRefreshUserInfoClaimsInterval
 
-`func (o *AdminWebSessionOidcConfiguration) HasOidcLoginType() bool`
+`func (o *AdminWebSessionOidcConfiguration) HasRefreshUserInfoClaimsInterval() bool`
 
-HasOidcLoginType returns a boolean if a field has been set.
+HasRefreshUserInfoClaimsInterval returns a boolean if a field has been set.
 
-### GetPkceChallengeType
+### GetProvideAuthenticationFeedback
 
-`func (o *AdminWebSessionOidcConfiguration) GetPkceChallengeType() PkceChallengeType`
+`func (o *AdminWebSessionOidcConfiguration) GetProvideAuthenticationFeedback() bool`
 
-GetPkceChallengeType returns the PkceChallengeType field if non-nil, zero value otherwise.
+GetProvideAuthenticationFeedback returns the ProvideAuthenticationFeedback field if non-nil, zero value otherwise.
 
-### GetPkceChallengeTypeOk
+### GetProvideAuthenticationFeedbackOk
 
-`func (o *AdminWebSessionOidcConfiguration) GetPkceChallengeTypeOk() (*PkceChallengeType, bool)`
+`func (o *AdminWebSessionOidcConfiguration) GetProvideAuthenticationFeedbackOk() (*bool, bool)`
 
-GetPkceChallengeTypeOk returns a tuple with the PkceChallengeType field if it's non-nil, zero value otherwise
+GetProvideAuthenticationFeedbackOk returns a tuple with the ProvideAuthenticationFeedback field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPkceChallengeType
+### SetProvideAuthenticationFeedback
 
-`func (o *AdminWebSessionOidcConfiguration) SetPkceChallengeType(v PkceChallengeType)`
+`func (o *AdminWebSessionOidcConfiguration) SetProvideAuthenticationFeedback(v bool)`
 
-SetPkceChallengeType sets PkceChallengeType field to given value.
+SetProvideAuthenticationFeedback sets ProvideAuthenticationFeedback field to given value.
 
-### HasPkceChallengeType
+### HasProvideAuthenticationFeedback
 
-`func (o *AdminWebSessionOidcConfiguration) HasPkceChallengeType() bool`
+`func (o *AdminWebSessionOidcConfiguration) HasProvideAuthenticationFeedback() bool`
 
-HasPkceChallengeType returns a boolean if a field has been set.
+HasProvideAuthenticationFeedback returns a boolean if a field has been set.
 
 ### GetCacheUserAttributes
 
@@ -229,6 +212,31 @@ SetEnableRefreshUser sets EnableRefreshUser field to given value.
 
 HasEnableRefreshUser returns a boolean if a field has been set.
 
+### GetPromptParameter
+
+`func (o *AdminWebSessionOidcConfiguration) GetPromptParameter() []string`
+
+GetPromptParameter returns the PromptParameter field if non-nil, zero value otherwise.
+
+### GetPromptParameterOk
+
+`func (o *AdminWebSessionOidcConfiguration) GetPromptParameterOk() (*[]string, bool)`
+
+GetPromptParameterOk returns a tuple with the PromptParameter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPromptParameter
+
+`func (o *AdminWebSessionOidcConfiguration) SetPromptParameter(v []string)`
+
+SetPromptParameter sets PromptParameter field to given value.
+
+### HasPromptParameter
+
+`func (o *AdminWebSessionOidcConfiguration) HasPromptParameter() bool`
+
+HasPromptParameter returns a boolean if a field has been set.
+
 ### GetScopes
 
 `func (o *AdminWebSessionOidcConfiguration) GetScopes() []string`
@@ -253,6 +261,76 @@ SetScopes sets Scopes field to given value.
 `func (o *AdminWebSessionOidcConfiguration) HasScopes() bool`
 
 HasScopes returns a boolean if a field has been set.
+
+### GetOidcLoginType
+
+`func (o *AdminWebSessionOidcConfiguration) GetOidcLoginType() OidcLoginType`
+
+GetOidcLoginType returns the OidcLoginType field if non-nil, zero value otherwise.
+
+### GetOidcLoginTypeOk
+
+`func (o *AdminWebSessionOidcConfiguration) GetOidcLoginTypeOk() (*OidcLoginType, bool)`
+
+GetOidcLoginTypeOk returns a tuple with the OidcLoginType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcLoginType
+
+`func (o *AdminWebSessionOidcConfiguration) SetOidcLoginType(v OidcLoginType)`
+
+SetOidcLoginType sets OidcLoginType field to given value.
+
+### HasOidcLoginType
+
+`func (o *AdminWebSessionOidcConfiguration) HasOidcLoginType() bool`
+
+HasOidcLoginType returns a boolean if a field has been set.
+
+### GetPkceChallengeType
+
+`func (o *AdminWebSessionOidcConfiguration) GetPkceChallengeType() PkceChallengeType`
+
+GetPkceChallengeType returns the PkceChallengeType field if non-nil, zero value otherwise.
+
+### GetPkceChallengeTypeOk
+
+`func (o *AdminWebSessionOidcConfiguration) GetPkceChallengeTypeOk() (*PkceChallengeType, bool)`
+
+GetPkceChallengeTypeOk returns a tuple with the PkceChallengeType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPkceChallengeType
+
+`func (o *AdminWebSessionOidcConfiguration) SetPkceChallengeType(v PkceChallengeType)`
+
+SetPkceChallengeType sets PkceChallengeType field to given value.
+
+### HasPkceChallengeType
+
+`func (o *AdminWebSessionOidcConfiguration) HasPkceChallengeType() bool`
+
+HasPkceChallengeType returns a boolean if a field has been set.
+
+### GetClientCredentials
+
+`func (o *AdminWebSessionOidcConfiguration) GetClientCredentials() OAuthClientCredentials`
+
+GetClientCredentials returns the ClientCredentials field if non-nil, zero value otherwise.
+
+### GetClientCredentialsOk
+
+`func (o *AdminWebSessionOidcConfiguration) GetClientCredentialsOk() (*OAuthClientCredentials, bool)`
+
+GetClientCredentialsOk returns a tuple with the ClientCredentials field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientCredentials
+
+`func (o *AdminWebSessionOidcConfiguration) SetClientCredentials(v OAuthClientCredentials)`
+
+SetClientCredentials sets ClientCredentials field to given value.
+
 
 ### GetPfsessionStateCacheInSeconds
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | The class name of the request matcher. | 
-**Configuration** | Pointer to **string** | The request matcher configuration. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The request matcher configuration. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetConfiguration
 
-`func (o *RequestMatcher) GetConfiguration() string`
+`func (o *RequestMatcher) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *RequestMatcher) GetConfigurationOk() (*string, bool)`
+`func (o *RequestMatcher) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *RequestMatcher) SetConfiguration(v string)`
+`func (o *RequestMatcher) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

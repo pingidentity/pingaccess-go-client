@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | The class name of the challenge response filter. | 
-**Configuration** | Pointer to **string** | The challenge response filter configuration. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The challenge response filter configuration. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetConfiguration
 
-`func (o *ChallengeResponseFilter) GetConfiguration() string`
+`func (o *ChallengeResponseFilter) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *ChallengeResponseFilter) GetConfigurationOk() (*string, bool)`
+`func (o *ChallengeResponseFilter) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *ChallengeResponseFilter) SetConfiguration(v string)`
+`func (o *ChallengeResponseFilter) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

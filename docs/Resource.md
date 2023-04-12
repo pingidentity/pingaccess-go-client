@@ -14,13 +14,14 @@ Name | Type | Description | Notes
 **Anonymous** | Pointer to **bool** | (sortable) True if the resource is anonymous. | [optional] 
 **Enabled** | Pointer to **bool** | (sortable) True if the resource is enabled. | [optional] 
 **Unprotected** | Pointer to **bool** | (sortable) True if the resource is unprotected. | [optional] 
-**Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the resource.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems. | [optional] 
+**Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the resource.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems.  Key type: String Value type: PolicyItem[] | [optional] 
 **DefaultAuthTypeOverride** | [**DefaultAuthType**](DefaultAuthType.md) |  | 
 **ApplicationId** | Pointer to **int32** | The id of the associated application. This field is read-only. | [optional] 
 **QueryParamConfig** | Pointer to [**QueryParamConfig**](QueryParamConfig.md) |  | [optional] 
 **ResourceType** | Pointer to [**ResourceType**](ResourceType.md) |  | [optional] 
 **ResourceTypeConfiguration** | Pointer to [**ResourceTypeConfiguration**](ResourceTypeConfiguration.md) |  | [optional] 
 **AuthenticationChallengePolicyId** | **string** | The UUID of the authentication challenge policy associated with the resource. This policy takes precedence over an application-level policy. | 
+**RiskPolicyId** | Pointer to **int32** | The ID of the risk policy to use for this resource. This risk policy takes precedence over an application-level risk policy. | [optional] 
 
 ## Methods
 
@@ -445,6 +446,31 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationChallengePolicyId sets AuthenticationChallengePolicyId field to given value.
 
+
+### GetRiskPolicyId
+
+`func (o *Resource) GetRiskPolicyId() int32`
+
+GetRiskPolicyId returns the RiskPolicyId field if non-nil, zero value otherwise.
+
+### GetRiskPolicyIdOk
+
+`func (o *Resource) GetRiskPolicyIdOk() (*int32, bool)`
+
+GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRiskPolicyId
+
+`func (o *Resource) SetRiskPolicyId(v int32)`
+
+SetRiskPolicyId sets RiskPolicyId field to given value.
+
+### HasRiskPolicyId
+
+`func (o *Resource) HasRiskPolicyId() bool`
+
+HasRiskPolicyId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new User, this is the ID for the User. If not specified, an ID will be automatically assigned. When updating an existing User, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int32** | The ID of the Administrative user. This value is read-only. | [optional] 
 **Username** | **string** | (sortable) The Administrative users&#39;s username. | 
 **Email** | Pointer to **string** | (sortable) The Administrative account&#39;s email. | [optional] 
 **SlaAccepted** | Pointer to **bool** | (sortable) The Administrative account&#39;s sla acceptance indicator. | [optional] 

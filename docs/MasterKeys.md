@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EncryptedValue** | Pointer to **string** | The encrypted master key. | [optional] 
+**EncryptedValue** | Pointer to **[]string** | The encrypted master key. | [optional] 
 **KeyId** | Pointer to **string** | The key identifier. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEncryptedValue
 
-`func (o *MasterKeys) GetEncryptedValue() string`
+`func (o *MasterKeys) GetEncryptedValue() []string`
 
 GetEncryptedValue returns the EncryptedValue field if non-nil, zero value otherwise.
 
 ### GetEncryptedValueOk
 
-`func (o *MasterKeys) GetEncryptedValueOk() (*string, bool)`
+`func (o *MasterKeys) GetEncryptedValueOk() (*[]string, bool)`
 
 GetEncryptedValueOk returns a tuple with the EncryptedValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptedValue
 
-`func (o *MasterKeys) SetEncryptedValue(v string)`
+`func (o *MasterKeys) SetEncryptedValue(v []string)`
 
 SetEncryptedValue sets EncryptedValue field to given value.
 

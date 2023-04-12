@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Items** | [**[]Item**](Item.md) |  | 
+**Items** | [**[]Item**](Item.md) | The actual list of valid web storage types. | 
 
 ## Methods
 

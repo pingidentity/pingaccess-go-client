@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Title** | **string** |  | 
-**Content** | **string** |  | 
-**Url** | **string** |  | 
+**Title** | **string** | The help title of the configuration field. | 
+**Content** | **string** | The help content of the configuration field. | 
+**Url** | **string** | The help URL for the configuration field. | 
 
 ## Methods
 

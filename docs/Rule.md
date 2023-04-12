@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** | When creating a new Rule, this is the ID for the Rule. If not specified, an ID will be automatically assigned. When updating an existing Rule, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The rule&#39;s name. | 
 **SupportedDestinations** | Pointer to **[]string** | The supported destinations for this rule. This field is read-only and meant to provide contextual metadata on where the rule can be applied. | [optional] 
-**Configuration** | Pointer to **string** | The rule&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The rule&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -121,20 +121,20 @@ HasSupportedDestinations returns a boolean if a field has been set.
 
 ### GetConfiguration
 
-`func (o *Rule) GetConfiguration() string`
+`func (o *Rule) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *Rule) GetConfigurationOk() (*string, bool)`
+`func (o *Rule) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *Rule) SetConfiguration(v string)`
+`func (o *Rule) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

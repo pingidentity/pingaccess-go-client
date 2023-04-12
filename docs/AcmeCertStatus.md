@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **State** | [**AcmeCertState**](AcmeCertState.md) |  | 
-**Problems** | Pointer to [**map[string]ProblemDocument**](ProblemDocument.md) | A map of problem documents for requested domains. The key is the domain and the value is a ProblemDocumentView. | [optional] 
+**Problems** | Pointer to [**map[string]ProblemDocument**](ProblemDocument.md) | A map of problem documents for requested domains. The key is the domain and the value is a ProblemDocumentView.  Key type: String Value type: ProblemDocument | [optional] 
 
 ## Methods
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Version** | Pointer to **string** | The version of PingAccess that was exported. | [optional] 
 **Data** | Pointer to **map[string]interface{}** |  | [optional] 
-**EncryptionKey** | Pointer to **map[string]interface{}** | A JSON Web Key (JWK), as defined by https://tools.ietf.org/html/rfc7517 | [optional] 
+**EncryptionKey** | Pointer to [**JsonWebKey**](JsonWebKey.md) |  | [optional] 
 **MasterKeys** | Pointer to [**MasterKeys**](MasterKeys.md) |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetEncryptionKey
 
-`func (o *ExportData) GetEncryptionKey() map[string]interface{}`
+`func (o *ExportData) GetEncryptionKey() JsonWebKey`
 
 GetEncryptionKey returns the EncryptionKey field if non-nil, zero value otherwise.
 
 ### GetEncryptionKeyOk
 
-`func (o *ExportData) GetEncryptionKeyOk() (*map[string]interface{}, bool)`
+`func (o *ExportData) GetEncryptionKeyOk() (*JsonWebKey, bool)`
 
 GetEncryptionKeyOk returns a tuple with the EncryptionKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptionKey
 
-`func (o *ExportData) SetEncryptionKey(v map[string]interface{})`
+`func (o *ExportData) SetEncryptionKey(v JsonWebKey)`
 
 SetEncryptionKey sets EncryptionKey field to given value.
 

@@ -351,7 +351,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -412,7 +412,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -488,7 +488,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -496,7 +496,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AccessTokenValidatorsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AccessTokenValidatorsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AccessTokenValidatorsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -556,7 +556,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -626,12 +626,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
     id := "id_example" // string | ID of Access Token Validator to update
-    accessTokenValidator := *openapiclient.NewAccessTokenValidator("ClassName_example", "Name_example") // AccessTokenValidator | Access Token Validator to update
+    accessTokenValidator := *openapiclient.NewAccessTokenValidator("ClassName_example", "Name_example", map[string]interface{}(123)) // AccessTokenValidator | Access Token Validator to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -698,11 +698,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
-    accessTokenValidator := *openapiclient.NewAccessTokenValidator("ClassName_example", "Name_example") // AccessTokenValidator | Access Token Validator to add
+    accessTokenValidator := *openapiclient.NewAccessTokenValidator("ClassName_example", "Name_example", map[string]interface{}(123)) // AccessTokenValidator | Access Token Validator to add
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -764,7 +764,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -840,7 +840,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -916,7 +916,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -999,7 +999,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1074,7 +1074,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1147,7 +1147,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1220,7 +1220,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1298,7 +1298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1370,7 +1370,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1440,7 +1440,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1510,7 +1510,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1571,7 +1571,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1637,7 +1637,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1713,7 +1713,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1779,14 +1779,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AdminConfigDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AdminConfigDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AdminConfigDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1838,7 +1838,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1899,7 +1899,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -1965,7 +1965,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2026,7 +2026,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2034,7 +2034,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AdminConfigReplicaAdminsIdConfigPost(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AdminConfigReplicaAdminsIdConfigPost(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AdminConfigReplicaAdminsIdConfigPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2094,7 +2094,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2102,7 +2102,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AdminConfigReplicaAdminsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AdminConfigReplicaAdminsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AdminConfigReplicaAdminsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2162,7 +2162,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2232,7 +2232,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2304,7 +2304,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2370,7 +2370,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2431,14 +2431,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AdminSessionInfoDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AdminSessionInfoDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AdminSessionInfoDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2490,7 +2490,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2551,7 +2551,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2560,7 +2560,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AgentsAgentIdConfigSharedSecretIdGet(context.Background(), agentId, sharedSecretId).Execute()
+    r, err := apiClient.DefaultApi.AgentsAgentIdConfigSharedSecretIdGet(context.Background(), agentId, sharedSecretId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AgentsAgentIdConfigSharedSecretIdGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2622,7 +2622,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2698,7 +2698,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2768,7 +2768,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2844,7 +2844,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2852,7 +2852,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AgentsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AgentsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AgentsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2912,7 +2912,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -2982,7 +2982,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3054,7 +3054,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3120,7 +3120,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3129,7 +3129,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ApplicationsApplicationIdResourcesResourceIdDelete(context.Background(), applicationId, resourceId).Execute()
+    r, err := apiClient.DefaultApi.ApplicationsApplicationIdResourcesResourceIdDelete(context.Background(), applicationId, resourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ApplicationsApplicationIdResourcesResourceIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3191,7 +3191,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3264,7 +3264,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3339,7 +3339,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3427,7 +3427,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3435,7 +3435,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ApplicationsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.ApplicationsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ApplicationsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3495,7 +3495,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3565,7 +3565,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3637,7 +3637,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3707,7 +3707,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3777,7 +3777,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3859,7 +3859,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3931,7 +3931,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -3997,14 +3997,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ApplicationsReservedDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.ApplicationsReservedDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ApplicationsReservedDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4056,7 +4056,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4117,7 +4117,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4183,7 +4183,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4263,7 +4263,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4324,7 +4324,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4385,7 +4385,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4455,14 +4455,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthBasicDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthBasicDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthBasicDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4514,7 +4514,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4575,7 +4575,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4641,14 +4641,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthOauthDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthOauthDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthOauthDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4700,7 +4700,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4761,7 +4761,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4827,14 +4827,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthOidcDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthOidcDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthOidcDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4886,7 +4886,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -4947,7 +4947,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5013,7 +5013,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5079,14 +5079,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthTokenManagementDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthTokenManagementDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthTokenManagementDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5138,7 +5138,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5199,7 +5199,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5260,7 +5260,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5326,7 +5326,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5392,14 +5392,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthTokenProviderDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthTokenProviderDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthTokenProviderDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5451,7 +5451,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5512,7 +5512,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5573,7 +5573,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5639,14 +5639,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthWebSessionDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.AuthWebSessionDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthWebSessionDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5698,7 +5698,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5759,7 +5759,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5825,7 +5825,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5901,7 +5901,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -5909,7 +5909,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthenticationChallengePoliciesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AuthenticationChallengePoliciesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthenticationChallengePoliciesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5969,7 +5969,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6039,7 +6039,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6111,7 +6111,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6177,7 +6177,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6238,7 +6238,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6308,7 +6308,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6369,7 +6369,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6439,7 +6439,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6500,7 +6500,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6570,7 +6570,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6646,7 +6646,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6654,7 +6654,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.AuthnReqListsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.AuthnReqListsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.AuthnReqListsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6714,7 +6714,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6784,7 +6784,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6856,7 +6856,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -6922,14 +6922,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.BackupGet(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.BackupGet(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.BackupGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6981,7 +6981,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7057,7 +7057,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7065,7 +7065,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.CertificatesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.CertificatesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.CertificatesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7125,7 +7125,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7133,7 +7133,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.CertificatesIdFileGet(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.CertificatesIdFileGet(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.CertificatesIdFileGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7193,7 +7193,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7263,7 +7263,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7335,7 +7335,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7401,7 +7401,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7462,7 +7462,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7523,7 +7523,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7593,7 +7593,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7663,7 +7663,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7724,7 +7724,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7732,7 +7732,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ConfigImportPost(context.Background()).Body(body).Execute()
+    r, err := apiClient.DefaultApi.ConfigImportPost(context.Background()).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ConfigImportPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7788,7 +7788,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7849,7 +7849,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7919,7 +7919,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -7928,7 +7928,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ConfigImportWorkflowsPost(context.Background()).FailFast(failFast).ExportData(exportData).Execute()
+    r, err := apiClient.DefaultApi.ConfigImportWorkflowsPost(context.Background()).FailFast(failFast).ExportData(exportData).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ConfigImportWorkflowsPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7985,14 +7985,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.DefaultsEntitiesApplicationDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.DefaultsEntitiesApplicationDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.DefaultsEntitiesApplicationDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8044,7 +8044,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8105,7 +8105,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8171,7 +8171,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8247,7 +8247,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8255,7 +8255,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.EngineListenersIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.EngineListenersIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.EngineListenersIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8315,7 +8315,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8385,7 +8385,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8457,7 +8457,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8523,7 +8523,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8599,7 +8599,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8669,7 +8669,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8745,7 +8745,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8753,7 +8753,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.EnginesIdConfigPost(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.EnginesIdConfigPost(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.EnginesIdConfigPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8813,7 +8813,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8821,7 +8821,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.EnginesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.EnginesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.EnginesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8881,7 +8881,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -8951,7 +8951,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9023,7 +9023,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9089,7 +9089,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9097,7 +9097,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.EnginesRegistrationTokenPost(context.Background()).EngineRegistrationToken(engineRegistrationToken).Execute()
+    r, err := apiClient.DefaultApi.EnginesRegistrationTokenPost(context.Background()).EngineRegistrationToken(engineRegistrationToken).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.EnginesRegistrationTokenPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9153,7 +9153,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9214,14 +9214,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.EnvironmentDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.EnvironmentDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.EnvironmentDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9273,7 +9273,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9334,7 +9334,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9400,7 +9400,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9476,7 +9476,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9484,7 +9484,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.GlobalUnprotectedResourcesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.GlobalUnprotectedResourcesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.GlobalUnprotectedResourcesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9544,7 +9544,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9614,7 +9614,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9686,7 +9686,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9752,7 +9752,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9822,7 +9822,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9883,7 +9883,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9959,7 +9959,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -9967,7 +9967,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HighAvailabilityAvailabilityProfilesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.HighAvailabilityAvailabilityProfilesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HighAvailabilityAvailabilityProfilesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10027,7 +10027,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10097,7 +10097,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10169,7 +10169,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10235,7 +10235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10296,7 +10296,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10366,7 +10366,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10442,7 +10442,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10450,7 +10450,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HighAvailabilityLoadBalancingStrategiesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.HighAvailabilityLoadBalancingStrategiesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HighAvailabilityLoadBalancingStrategiesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10510,7 +10510,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10580,7 +10580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10652,7 +10652,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10718,7 +10718,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10779,7 +10779,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10855,7 +10855,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10863,7 +10863,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HsmProvidersIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.HsmProvidersIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HsmProvidersIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10923,7 +10923,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -10993,7 +10993,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11065,7 +11065,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11131,14 +11131,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HttpConfigMonitoringDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.HttpConfigMonitoringDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HttpConfigMonitoringDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11190,7 +11190,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11251,7 +11251,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11317,14 +11317,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HttpConfigRequestHostSourceDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.HttpConfigRequestHostSourceDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HttpConfigRequestHostSourceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11376,7 +11376,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11437,7 +11437,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11503,14 +11503,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HttpConfigRequestIpSourceDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.HttpConfigRequestIpSourceDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HttpConfigRequestIpSourceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11562,7 +11562,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11623,7 +11623,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11689,14 +11689,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.HttpConfigRequestProtocolSourceDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.HttpConfigRequestProtocolSourceDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.HttpConfigRequestProtocolSourceDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11748,7 +11748,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11809,7 +11809,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11875,7 +11875,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -11943,7 +11943,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12013,7 +12013,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12085,7 +12085,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12146,7 +12146,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12216,7 +12216,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12292,7 +12292,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12300,7 +12300,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.IdentityMappingsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.IdentityMappingsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.IdentityMappingsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12360,7 +12360,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12430,7 +12430,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12502,7 +12502,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12568,7 +12568,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12634,7 +12634,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12710,7 +12710,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12718,7 +12718,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsIdCertificateGet(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsIdCertificateGet(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsIdCertificateGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12778,7 +12778,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12786,7 +12786,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsIdCsrGet(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsIdCsrGet(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsIdCsrGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12846,7 +12846,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12918,7 +12918,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12990,7 +12990,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -12998,7 +12998,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13058,7 +13058,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13128,7 +13128,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13200,7 +13200,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13209,7 +13209,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsIdPemPost(context.Background(), id).ExportParameters(exportParameters).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsIdPemPost(context.Background(), id).ExportParameters(exportParameters).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsIdPemPost``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13270,7 +13270,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13279,7 +13279,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsIdPkcs12Post(context.Background(), id).ExportParameters(exportParameters).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsIdPkcs12Post(context.Background(), id).ExportParameters(exportParameters).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsIdPkcs12Post``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13340,7 +13340,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13412,7 +13412,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13478,7 +13478,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13539,7 +13539,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13548,7 +13548,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.KeyPairsKeyPairIdChainCertificatesChainCertificateIdDelete(context.Background(), keyPairId, chainCertificateId).Execute()
+    r, err := apiClient.DefaultApi.KeyPairsKeyPairIdChainCertificatesChainCertificateIdDelete(context.Background(), keyPairId, chainCertificateId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.KeyPairsKeyPairIdChainCertificatesChainCertificateIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13610,7 +13610,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13671,7 +13671,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13732,7 +13732,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13798,7 +13798,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13864,14 +13864,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.OauthAuthServerDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.OauthAuthServerDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.OauthAuthServerDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13923,7 +13923,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -13984,7 +13984,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14050,14 +14050,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.OauthKeyManagementDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.OauthKeyManagementDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.OauthKeyManagementDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14109,7 +14109,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14170,7 +14170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14231,7 +14231,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14297,7 +14297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14363,14 +14363,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.OidcProviderDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.OidcProviderDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.OidcProviderDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14422,7 +14422,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14483,7 +14483,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14553,7 +14553,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14614,7 +14614,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14675,7 +14675,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14741,14 +14741,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.PingfederateAccessTokensDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.PingfederateAccessTokensDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.PingfederateAccessTokensDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14800,7 +14800,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14861,7 +14861,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -14927,14 +14927,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.PingfederateAdminDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.PingfederateAdminDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.PingfederateAdminDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14986,7 +14986,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15047,7 +15047,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15113,14 +15113,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.PingfederateDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.PingfederateDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.PingfederateDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15172,7 +15172,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15233,7 +15233,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15294,7 +15294,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15360,14 +15360,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.PingfederateRuntimeDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.PingfederateRuntimeDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.PingfederateRuntimeDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15419,7 +15419,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15480,7 +15480,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15541,7 +15541,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15607,14 +15607,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.PingoneCustomersDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.PingoneCustomersDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.PingoneCustomersDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15666,7 +15666,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15727,7 +15727,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15788,7 +15788,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15854,7 +15854,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15930,7 +15930,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -15938,7 +15938,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ProxiesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.ProxiesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ProxiesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15998,7 +15998,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16068,7 +16068,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16140,7 +16140,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16206,7 +16206,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16284,7 +16284,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16292,7 +16292,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.RedirectsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.RedirectsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.RedirectsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16352,7 +16352,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16422,7 +16422,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16494,7 +16494,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16560,7 +16560,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16621,7 +16621,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16691,7 +16691,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16767,7 +16767,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16775,7 +16775,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.RejectionHandlersIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.RejectionHandlersIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.RejectionHandlersIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16835,7 +16835,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16905,7 +16905,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -16977,7 +16977,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17043,7 +17043,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17104,7 +17104,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17174,7 +17174,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17250,7 +17250,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17258,7 +17258,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.RulesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.RulesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.RulesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17318,7 +17318,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17388,7 +17388,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17460,7 +17460,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17526,7 +17526,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17587,7 +17587,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17663,7 +17663,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17671,7 +17671,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.RulesetsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.RulesetsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.RulesetsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17731,7 +17731,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17801,7 +17801,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17873,7 +17873,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -17939,7 +17939,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18000,7 +18000,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18068,7 +18068,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18076,7 +18076,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.SharedSecretsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.SharedSecretsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.SharedSecretsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18136,7 +18136,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18206,7 +18206,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18272,7 +18272,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18348,7 +18348,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18356,7 +18356,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.SidebandClientsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.SidebandClientsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.SidebandClientsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18416,7 +18416,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18486,7 +18486,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18558,7 +18558,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18624,7 +18624,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18685,7 +18685,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18755,7 +18755,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18831,7 +18831,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18839,7 +18839,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.SiteAuthenticatorsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.SiteAuthenticatorsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.SiteAuthenticatorsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -18899,7 +18899,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -18969,7 +18969,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19041,7 +19041,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19107,7 +19107,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19183,7 +19183,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19191,7 +19191,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.SitesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.SitesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.SitesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -19251,7 +19251,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19321,7 +19321,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19393,7 +19393,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19459,7 +19459,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19535,7 +19535,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19543,7 +19543,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.ThirdPartyServicesIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.ThirdPartyServicesIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.ThirdPartyServicesIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -19603,7 +19603,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19673,7 +19673,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19745,7 +19745,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19811,14 +19811,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.TokenProviderSettingsDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.TokenProviderSettingsDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.TokenProviderSettingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -19870,7 +19870,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19931,7 +19931,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -19997,7 +19997,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20073,7 +20073,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20081,7 +20081,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.TrustedCertificateGroupsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.TrustedCertificateGroupsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.TrustedCertificateGroupsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20141,7 +20141,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20211,7 +20211,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20283,7 +20283,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20349,14 +20349,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.UnknownResourcesSettingsDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.UnknownResourcesSettingsDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.UnknownResourcesSettingsDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -20408,7 +20408,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20469,7 +20469,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20535,7 +20535,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20611,7 +20611,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20681,7 +20681,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20753,7 +20753,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20825,7 +20825,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20886,7 +20886,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20962,7 +20962,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -20970,7 +20970,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.VirtualhostsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.VirtualhostsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.VirtualhostsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -21030,7 +21030,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21100,7 +21100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21172,7 +21172,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21238,7 +21238,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21299,14 +21299,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.WebSessionManagementDelete(context.Background()).Execute()
+    r, err := apiClient.DefaultApi.WebSessionManagementDelete(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.WebSessionManagementDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -21358,7 +21358,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21419,7 +21419,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21480,7 +21480,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21541,7 +21541,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21607,7 +21607,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21668,7 +21668,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21734,7 +21734,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21800,7 +21800,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21861,7 +21861,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21922,7 +21922,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -21983,7 +21983,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -22059,7 +22059,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -22067,7 +22067,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DefaultApi.WebSessionsIdDelete(context.Background(), id).Execute()
+    r, err := apiClient.DefaultApi.WebSessionsIdDelete(context.Background(), id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DefaultApi.WebSessionsIdDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -22127,7 +22127,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -22197,7 +22197,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {
@@ -22269,7 +22269,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/pingidentity/pingaccess-go-client"
 )
 
 func main() {

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** | (sortable) The HSM provider&#39;s class name. | 
 **Id** | Pointer to **int32** | When creating a new HsmProvider, this is the ID for the HsmProvider. If not specified, an ID will be automatically assigned. When updating an existing HsmProvider, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The HSM provider&#39;s name. | 
-**Configuration** | Pointer to **string** | The HSM provider&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The HSM provider&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *HsmProvider) GetConfiguration() string`
+`func (o *HsmProvider) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *HsmProvider) GetConfigurationOk() (*string, bool)`
+`func (o *HsmProvider) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *HsmProvider) SetConfiguration(v string)`
+`func (o *HsmProvider) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

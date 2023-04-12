@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **RoleMapping** | Pointer to [**RoleMappingConfiguration**](RoleMappingConfiguration.md) |  | [optional] 
 **Enabled** | Pointer to **bool** | This field is true if OAuth authentication to the Administrative API is enabled. | [optional] 
 **AccessTokenValidator** | Pointer to [**EmbeddableAccessTokenValidator**](EmbeddableAccessTokenValidator.md) |  | [optional] 
-**ClientId** | Pointer to **string** | The client_id of the OAuth client used for validating OAuth access tokens. (DEPRECATED - to be removed in a future release; please use &#39;clientCredentials&#39; instead) | [optional] 
 **ClientSecret** | Pointer to [**HiddenField**](HiddenField.md) |  | [optional] 
+**ClientId** | Pointer to **string** | The client_id of the OAuth client used for validating OAuth access tokens. (DEPRECATED - to be removed in a future release; please use &#39;clientCredentials&#39; instead) | [optional] 
 
 ## Methods
 
@@ -177,31 +177,6 @@ SetAccessTokenValidator sets AccessTokenValidator field to given value.
 
 HasAccessTokenValidator returns a boolean if a field has been set.
 
-### GetClientId
-
-`func (o *OAuthConfig) GetClientId() string`
-
-GetClientId returns the ClientId field if non-nil, zero value otherwise.
-
-### GetClientIdOk
-
-`func (o *OAuthConfig) GetClientIdOk() (*string, bool)`
-
-GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientId
-
-`func (o *OAuthConfig) SetClientId(v string)`
-
-SetClientId sets ClientId field to given value.
-
-### HasClientId
-
-`func (o *OAuthConfig) HasClientId() bool`
-
-HasClientId returns a boolean if a field has been set.
-
 ### GetClientSecret
 
 `func (o *OAuthConfig) GetClientSecret() HiddenField`
@@ -226,6 +201,31 @@ SetClientSecret sets ClientSecret field to given value.
 `func (o *OAuthConfig) HasClientSecret() bool`
 
 HasClientSecret returns a boolean if a field has been set.
+
+### GetClientId
+
+`func (o *OAuthConfig) GetClientId() string`
+
+GetClientId returns the ClientId field if non-nil, zero value otherwise.
+
+### GetClientIdOk
+
+`func (o *OAuthConfig) GetClientIdOk() (*string, bool)`
+
+GetClientIdOk returns a tuple with the ClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClientId
+
+`func (o *OAuthConfig) SetClientId(v string)`
+
+SetClientId sets ClientId field to given value.
+
+### HasClientId
+
+`func (o *OAuthConfig) HasClientId() bool`
+
+HasClientId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | The class name of the OpenID Connect provider plugin. | 
-**Configuration** | Pointer to **string** | The OpenID Connect provider plugin&#39;s configuration data. | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The OpenID Connect provider plugin&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -48,20 +48,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetConfiguration
 
-`func (o *OIDCProviderPlugin) GetConfiguration() string`
+`func (o *OIDCProviderPlugin) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *OIDCProviderPlugin) GetConfigurationOk() (*string, bool)`
+`func (o *OIDCProviderPlugin) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *OIDCProviderPlugin) SetConfiguration(v string)`
+`func (o *OIDCProviderPlugin) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **AccessControlDirectives** | [**[]AdminAccessControlDirective**](AdminAccessControlDirective.md) | The set of access control directives. | 
 **UseSlo** | **bool** | Indicates whether single log out (SLO) is enabled or not. | 
 **FipsMode** | **bool** | Indicates whether FIPS mode is enabled or not. | 
+**DisplayLogSettings** | **bool** |  | 
 **ConfigurationExports** | [**ConfigStatuses**](ConfigStatuses.md) |  | 
 **ConfigurationImports** | [**ConfigStatuses**](ConfigStatuses.md) |  | 
 **SniEnabled** | **bool** | Indicates that SNI is enabled or not. | 
@@ -25,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewSessionInfo
 
-`func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int32, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int32, showWarning bool, ) *SessionInfo`
+`func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int32, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, displayLogSettings bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int32, showWarning bool, ) *SessionInfo`
 
 NewSessionInfo instantiates a new SessionInfo object
 This constructor will assign default values to properties that have it defined,
@@ -258,6 +259,26 @@ and a boolean to check if the value has been set.
 `func (o *SessionInfo) SetFipsMode(v bool)`
 
 SetFipsMode sets FipsMode field to given value.
+
+
+### GetDisplayLogSettings
+
+`func (o *SessionInfo) GetDisplayLogSettings() bool`
+
+GetDisplayLogSettings returns the DisplayLogSettings field if non-nil, zero value otherwise.
+
+### GetDisplayLogSettingsOk
+
+`func (o *SessionInfo) GetDisplayLogSettingsOk() (*bool, bool)`
+
+GetDisplayLogSettingsOk returns a tuple with the DisplayLogSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayLogSettings
+
+`func (o *SessionInfo) SetDisplayLogSettings(v bool)`
+
+SetDisplayLogSettings sets DisplayLogSettings field to given value.
 
 
 ### GetConfigurationExports
