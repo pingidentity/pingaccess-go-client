@@ -26,7 +26,7 @@ type AccessTokenValidator struct {
 	// (sortable) The access token validator's name.
 	Name string `json:"name"`
 	// The access token validator's configuration data. - This value is a PingAccess plugin configuration (JSON).
-	Configuration map[string]interface{} `json:"configuration,omitempty"`
+	Configuration *map[string]interface{} `json:"configuration,omitempty"`
 }
 
 // NewAccessTokenValidator instantiates a new AccessTokenValidator object
@@ -134,14 +134,14 @@ func (o *AccessTokenValidator) GetConfiguration() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return o.Configuration
+	return *o.Configuration
 }
 
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccessTokenValidator) GetConfigurationOk() (map[string]interface{}, bool) {
+func (o *AccessTokenValidator) GetConfigurationOk() (*map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Configuration) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Configuration, true
 }
@@ -157,7 +157,7 @@ func (o *AccessTokenValidator) HasConfiguration() bool {
 
 // SetConfiguration gets a reference to the given map[string]interface{} and assigns it to the Configuration field.
 func (o *AccessTokenValidator) SetConfiguration(v map[string]interface{}) {
-	o.Configuration = v
+	o.Configuration = &v
 }
 
 func (o AccessTokenValidator) MarshalJSON() ([]byte, error) {

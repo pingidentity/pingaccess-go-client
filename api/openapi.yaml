@@ -10450,8 +10450,20 @@ components:
         configuration:
           description: The access token validator's configuration data. - This value
             is a PingAccess plugin configuration (JSON).
-          properties: {}
-          type: object
+          properties:
+            description:
+              type: string
+            path:
+              type: string
+            subjectAttributeName:
+              type: string
+            issuer:
+              type: string
+            audience:
+              type: string
+          required:
+          - path
+          type: map
       required:
       - className
       - name
