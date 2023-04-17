@@ -14,6 +14,7 @@ openapi-generator generate \
     --git-host github.com \
     --git-repo-id pingaccess-go-client \
     --git-user-id pingidentity \
+    --type-mappings=integer=int64,number=float64 \
     --additional-properties=enumClassPrefix=true,packageName=configurationapi
 
 rm -r test/
