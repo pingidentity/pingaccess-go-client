@@ -20,11 +20,11 @@ var _ MappedNullable = &Application{}
 // Application An application.
 type Application struct {
 	// When creating a new Application, this is the ID for the Application. If not specified, an ID will be automatically assigned. When updating an existing Application, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) True if the application is enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// (DEPRECATED - to be removed in a future release; this field is no longer used when processing requests for an application.)
-	AgentCacheInvalidatedResponseDuration *int32 `json:"agentCacheInvalidatedResponseDuration,omitempty"`
+	AgentCacheInvalidatedResponseDuration *int64 `json:"agentCacheInvalidatedResponseDuration,omitempty"`
 	// (DEPRECATED - to be removed in a future release; this field is no longer used when processing requests for an application.)
 	AgentCacheInvalidatedExpiration *int64 `json:"agentCacheInvalidatedExpiration,omitempty"`
 	// The last modified time of the configuration for this application, its resources and associated policy, as the number of milliseconds since January 1, 1970, 00:00:00 GMT. This field is read-only.
@@ -38,7 +38,7 @@ type Application struct {
 	// Enable explicit, manual ordering of application resources and permit regex path patterns.
 	ManualOrderingEnabled *bool `json:"manualOrderingEnabled,omitempty"`
 	// The explicit resource order defined when manual ordering is enabled. Each existing resource ID must be represented. (Required when 'manualOrderingEnabled' is true.)
-	ResourceOrder   []int32          `json:"resourceOrder,omitempty"`
+	ResourceOrder   []int64          `json:"resourceOrder,omitempty"`
 	ApplicationType *ApplicationType `json:"applicationType,omitempty"`
 	DefaultAuthType DefaultAuthType  `json:"defaultAuthType"`
 	// Enable SPA support.
@@ -55,27 +55,27 @@ type Application struct {
 	// When true, PingAccess will not remove empty path segments from the request URL before matching a request against the resources in this application. Defaults to false.
 	AllowEmptyPathSegments *bool `json:"allowEmptyPathSegments,omitempty"`
 	// The ID of the web session associated with the application or zero if none.
-	WebSessionId *int32 `json:"webSessionId,omitempty"`
+	WebSessionId *int64 `json:"webSessionId,omitempty"`
 	// Branded URL at the OpenID Connect provider to redirect unauthenticated requests to. When specified, this overrides the global token provider's issuer field.
 	Issuer *string `json:"issuer,omitempty"`
 	// The ID of the site associated with the application or zero if none.
-	SiteId int32 `json:"siteId"`
+	SiteId int64 `json:"siteId"`
 	// The ID of the agent associated with the application or zero if none.
-	AgentId int32 `json:"agentId"`
+	AgentId int64 `json:"agentId"`
 	// The ID of the sideband client associated with the application or null if none.
 	SidebandClientId string `json:"sidebandClientId"`
 	// An array of virtual host IDs associated with the application.
-	VirtualHostIds []int32 `json:"virtualHostIds"`
+	VirtualHostIds []int64 `json:"virtualHostIds"`
 	// A map of Identity Mappings associated with the application. The key is 'Web' or 'API' and the value is an Identity Mapping ID.  Key type: String Value type: Integer
-	IdentityMappingIds *map[string]int32 `json:"identityMappingIds,omitempty"`
+	IdentityMappingIds *map[string]int64 `json:"identityMappingIds,omitempty"`
 	// The ID of the access token validator for local token validation, 1 if the application is protected remotely by an Authorization Server, or zero if unprotected. Only applies to applications of type API.
-	AccessValidatorId *int32 `json:"accessValidatorId,omitempty"`
+	AccessValidatorId *int64 `json:"accessValidatorId,omitempty"`
 	// A map of policy items associated with the application.  The key is 'Web' or 'API' and the value is a list of PolicyItems.  Key type: String Value type: PolicyItem[]
 	Policy *map[string][]PolicyItem `json:"policy,omitempty"`
 	// The UUID of the authentication challenge policy associated with the application.
 	AuthenticationChallengePolicyId string `json:"authenticationChallengePolicyId"`
 	// The ID of the risk policy to use by default for this application.
-	RiskPolicyId *int32 `json:"riskPolicyId,omitempty"`
+	RiskPolicyId *int64 `json:"riskPolicyId,omitempty"`
 	// When true, PingAccess will deploy an  instance of the reserved PA resources and runtime API endpoints using this application context root plus the  reserved application context root as the base path. Default value: false.
 	DeployReservedResources *bool `json:"deployReservedResources,omitempty"`
 }
@@ -84,7 +84,7 @@ type Application struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApplication(name string, defaultAuthType DefaultAuthType, spaSupportEnabled bool, contextRoot string, siteId int32, agentId int32, sidebandClientId string, virtualHostIds []int32, authenticationChallengePolicyId string) *Application {
+func NewApplication(name string, defaultAuthType DefaultAuthType, spaSupportEnabled bool, contextRoot string, siteId int64, agentId int64, sidebandClientId string, virtualHostIds []int64, authenticationChallengePolicyId string) *Application {
 	this := Application{}
 	this.Name = name
 	this.DefaultAuthType = defaultAuthType
@@ -107,9 +107,9 @@ func NewApplicationWithDefaults() *Application {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Application) GetId() int32 {
+func (o *Application) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -117,7 +117,7 @@ func (o *Application) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetIdOk() (*int32, bool) {
+func (o *Application) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *Application) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Application) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Application) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -171,9 +171,9 @@ func (o *Application) SetEnabled(v bool) {
 }
 
 // GetAgentCacheInvalidatedResponseDuration returns the AgentCacheInvalidatedResponseDuration field value if set, zero value otherwise.
-func (o *Application) GetAgentCacheInvalidatedResponseDuration() int32 {
+func (o *Application) GetAgentCacheInvalidatedResponseDuration() int64 {
 	if o == nil || IsNil(o.AgentCacheInvalidatedResponseDuration) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AgentCacheInvalidatedResponseDuration
@@ -181,7 +181,7 @@ func (o *Application) GetAgentCacheInvalidatedResponseDuration() int32 {
 
 // GetAgentCacheInvalidatedResponseDurationOk returns a tuple with the AgentCacheInvalidatedResponseDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetAgentCacheInvalidatedResponseDurationOk() (*int32, bool) {
+func (o *Application) GetAgentCacheInvalidatedResponseDurationOk() (*int64, bool) {
 	if o == nil || IsNil(o.AgentCacheInvalidatedResponseDuration) {
 		return nil, false
 	}
@@ -197,8 +197,8 @@ func (o *Application) HasAgentCacheInvalidatedResponseDuration() bool {
 	return false
 }
 
-// SetAgentCacheInvalidatedResponseDuration gets a reference to the given int32 and assigns it to the AgentCacheInvalidatedResponseDuration field.
-func (o *Application) SetAgentCacheInvalidatedResponseDuration(v int32) {
+// SetAgentCacheInvalidatedResponseDuration gets a reference to the given int64 and assigns it to the AgentCacheInvalidatedResponseDuration field.
+func (o *Application) SetAgentCacheInvalidatedResponseDuration(v int64) {
 	o.AgentCacheInvalidatedResponseDuration = &v
 }
 
@@ -387,9 +387,9 @@ func (o *Application) SetManualOrderingEnabled(v bool) {
 }
 
 // GetResourceOrder returns the ResourceOrder field value if set, zero value otherwise.
-func (o *Application) GetResourceOrder() []int32 {
+func (o *Application) GetResourceOrder() []int64 {
 	if o == nil || IsNil(o.ResourceOrder) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.ResourceOrder
@@ -397,7 +397,7 @@ func (o *Application) GetResourceOrder() []int32 {
 
 // GetResourceOrderOk returns a tuple with the ResourceOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetResourceOrderOk() ([]int32, bool) {
+func (o *Application) GetResourceOrderOk() ([]int64, bool) {
 	if o == nil || IsNil(o.ResourceOrder) {
 		return nil, false
 	}
@@ -413,8 +413,8 @@ func (o *Application) HasResourceOrder() bool {
 	return false
 }
 
-// SetResourceOrder gets a reference to the given []int32 and assigns it to the ResourceOrder field.
-func (o *Application) SetResourceOrder(v []int32) {
+// SetResourceOrder gets a reference to the given []int64 and assigns it to the ResourceOrder field.
+func (o *Application) SetResourceOrder(v []int64) {
 	o.ResourceOrder = v
 }
 
@@ -683,9 +683,9 @@ func (o *Application) SetAllowEmptyPathSegments(v bool) {
 }
 
 // GetWebSessionId returns the WebSessionId field value if set, zero value otherwise.
-func (o *Application) GetWebSessionId() int32 {
+func (o *Application) GetWebSessionId() int64 {
 	if o == nil || IsNil(o.WebSessionId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebSessionId
@@ -693,7 +693,7 @@ func (o *Application) GetWebSessionId() int32 {
 
 // GetWebSessionIdOk returns a tuple with the WebSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetWebSessionIdOk() (*int32, bool) {
+func (o *Application) GetWebSessionIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.WebSessionId) {
 		return nil, false
 	}
@@ -709,8 +709,8 @@ func (o *Application) HasWebSessionId() bool {
 	return false
 }
 
-// SetWebSessionId gets a reference to the given int32 and assigns it to the WebSessionId field.
-func (o *Application) SetWebSessionId(v int32) {
+// SetWebSessionId gets a reference to the given int64 and assigns it to the WebSessionId field.
+func (o *Application) SetWebSessionId(v int64) {
 	o.WebSessionId = &v
 }
 
@@ -747,9 +747,9 @@ func (o *Application) SetIssuer(v string) {
 }
 
 // GetSiteId returns the SiteId field value
-func (o *Application) GetSiteId() int32 {
+func (o *Application) GetSiteId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -758,7 +758,7 @@ func (o *Application) GetSiteId() int32 {
 
 // GetSiteIdOk returns a tuple with the SiteId field value
 // and a boolean to check if the value has been set.
-func (o *Application) GetSiteIdOk() (*int32, bool) {
+func (o *Application) GetSiteIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -766,14 +766,14 @@ func (o *Application) GetSiteIdOk() (*int32, bool) {
 }
 
 // SetSiteId sets field value
-func (o *Application) SetSiteId(v int32) {
+func (o *Application) SetSiteId(v int64) {
 	o.SiteId = v
 }
 
 // GetAgentId returns the AgentId field value
-func (o *Application) GetAgentId() int32 {
+func (o *Application) GetAgentId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -782,7 +782,7 @@ func (o *Application) GetAgentId() int32 {
 
 // GetAgentIdOk returns a tuple with the AgentId field value
 // and a boolean to check if the value has been set.
-func (o *Application) GetAgentIdOk() (*int32, bool) {
+func (o *Application) GetAgentIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -790,7 +790,7 @@ func (o *Application) GetAgentIdOk() (*int32, bool) {
 }
 
 // SetAgentId sets field value
-func (o *Application) SetAgentId(v int32) {
+func (o *Application) SetAgentId(v int64) {
 	o.AgentId = v
 }
 
@@ -819,9 +819,9 @@ func (o *Application) SetSidebandClientId(v string) {
 }
 
 // GetVirtualHostIds returns the VirtualHostIds field value
-func (o *Application) GetVirtualHostIds() []int32 {
+func (o *Application) GetVirtualHostIds() []int64 {
 	if o == nil {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 
@@ -830,7 +830,7 @@ func (o *Application) GetVirtualHostIds() []int32 {
 
 // GetVirtualHostIdsOk returns a tuple with the VirtualHostIds field value
 // and a boolean to check if the value has been set.
-func (o *Application) GetVirtualHostIdsOk() ([]int32, bool) {
+func (o *Application) GetVirtualHostIdsOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -838,14 +838,14 @@ func (o *Application) GetVirtualHostIdsOk() ([]int32, bool) {
 }
 
 // SetVirtualHostIds sets field value
-func (o *Application) SetVirtualHostIds(v []int32) {
+func (o *Application) SetVirtualHostIds(v []int64) {
 	o.VirtualHostIds = v
 }
 
 // GetIdentityMappingIds returns the IdentityMappingIds field value if set, zero value otherwise.
-func (o *Application) GetIdentityMappingIds() map[string]int32 {
+func (o *Application) GetIdentityMappingIds() map[string]int64 {
 	if o == nil || IsNil(o.IdentityMappingIds) {
-		var ret map[string]int32
+		var ret map[string]int64
 		return ret
 	}
 	return *o.IdentityMappingIds
@@ -853,7 +853,7 @@ func (o *Application) GetIdentityMappingIds() map[string]int32 {
 
 // GetIdentityMappingIdsOk returns a tuple with the IdentityMappingIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetIdentityMappingIdsOk() (*map[string]int32, bool) {
+func (o *Application) GetIdentityMappingIdsOk() (*map[string]int64, bool) {
 	if o == nil || IsNil(o.IdentityMappingIds) {
 		return nil, false
 	}
@@ -869,15 +869,15 @@ func (o *Application) HasIdentityMappingIds() bool {
 	return false
 }
 
-// SetIdentityMappingIds gets a reference to the given map[string]int32 and assigns it to the IdentityMappingIds field.
-func (o *Application) SetIdentityMappingIds(v map[string]int32) {
+// SetIdentityMappingIds gets a reference to the given map[string]int64 and assigns it to the IdentityMappingIds field.
+func (o *Application) SetIdentityMappingIds(v map[string]int64) {
 	o.IdentityMappingIds = &v
 }
 
 // GetAccessValidatorId returns the AccessValidatorId field value if set, zero value otherwise.
-func (o *Application) GetAccessValidatorId() int32 {
+func (o *Application) GetAccessValidatorId() int64 {
 	if o == nil || IsNil(o.AccessValidatorId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AccessValidatorId
@@ -885,7 +885,7 @@ func (o *Application) GetAccessValidatorId() int32 {
 
 // GetAccessValidatorIdOk returns a tuple with the AccessValidatorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetAccessValidatorIdOk() (*int32, bool) {
+func (o *Application) GetAccessValidatorIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AccessValidatorId) {
 		return nil, false
 	}
@@ -901,8 +901,8 @@ func (o *Application) HasAccessValidatorId() bool {
 	return false
 }
 
-// SetAccessValidatorId gets a reference to the given int32 and assigns it to the AccessValidatorId field.
-func (o *Application) SetAccessValidatorId(v int32) {
+// SetAccessValidatorId gets a reference to the given int64 and assigns it to the AccessValidatorId field.
+func (o *Application) SetAccessValidatorId(v int64) {
 	o.AccessValidatorId = &v
 }
 
@@ -963,9 +963,9 @@ func (o *Application) SetAuthenticationChallengePolicyId(v string) {
 }
 
 // GetRiskPolicyId returns the RiskPolicyId field value if set, zero value otherwise.
-func (o *Application) GetRiskPolicyId() int32 {
+func (o *Application) GetRiskPolicyId() int64 {
 	if o == nil || IsNil(o.RiskPolicyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RiskPolicyId
@@ -973,7 +973,7 @@ func (o *Application) GetRiskPolicyId() int32 {
 
 // GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Application) GetRiskPolicyIdOk() (*int32, bool) {
+func (o *Application) GetRiskPolicyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.RiskPolicyId) {
 		return nil, false
 	}
@@ -989,8 +989,8 @@ func (o *Application) HasRiskPolicyId() bool {
 	return false
 }
 
-// SetRiskPolicyId gets a reference to the given int32 and assigns it to the RiskPolicyId field.
-func (o *Application) SetRiskPolicyId(v int32) {
+// SetRiskPolicyId gets a reference to the given int64 and assigns it to the RiskPolicyId field.
+func (o *Application) SetRiskPolicyId(v int64) {
 	o.RiskPolicyId = &v
 }
 

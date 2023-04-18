@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The id for the agent certificate. | [optional] 
+**Id** | Pointer to **int64** | The id for the agent certificate. | [optional] 
 **SerialNumber** | **string** | (sortable) The Serial Number for the agent certificate. | 
 **Alias** | **string** | (sortable) The alias for the agent certificate. | 
 **SubjectDn** | **string** | (sortable) The Subject DN for the agent certificate. | 
@@ -43,20 +43,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AgentCertificate) GetId() int32`
+`func (o *AgentCertificate) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AgentCertificate) GetIdOk() (*int32, bool)`
+`func (o *AgentCertificate) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AgentCertificate) SetId(v int32)`
+`func (o *AgentCertificate) SetId(v int64)`
 
 SetId sets Id field to given value.
 

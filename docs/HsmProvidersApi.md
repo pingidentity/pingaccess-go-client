@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of HSM Providers per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of HSM Providers per page (optional)
     filter := "filter_example" // string | Search for HSM Provider with name matching filter text (optional)
     name := "name_example" // string | Get a specific HSM Provider by name (case-sensitive) (optional)
     sortKey := "sortKey_example" // string | A comma separated list of HSM Provider attributes (keys) to be used to sort the results (optional)
@@ -329,8 +329,8 @@ Other parameters are passed through a pointer to a apiGetHsmProvidersRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of HSM Providers per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of HSM Providers per page | 
  **filter** | **string** | Search for HSM Provider with name matching filter text | 
  **name** | **string** | Get a specific HSM Provider by name (case-sensitive) | 
  **sortKey** | **string** | A comma separated list of HSM Provider attributes (keys) to be used to sort the results | 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new Engine, this is the ID for the Engine. If not specified, an ID will be automatically assigned. When updating an existing Engine, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new Engine, this is the ID for the Engine. If not specified, an ID will be automatically assigned. When updating an existing Engine, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the engine. | 
 **Description** | Pointer to **string** | (sortable) The description of the engine. | [optional] 
 **ConfigReplicationEnabled** | Pointer to **bool** | (sortable) Set to true when configuration replication for this engine is enabled. False when configuration replication is suspended. | [optional] 
 **Keys** | Pointer to [**[]PublicKey**](PublicKey.md) | An array of public keys associated with the engine. | [optional] 
-**HttpProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
-**HttpsProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
-**SelectedCertificateId** | Pointer to **int32** | The ID of the certificate the engine will use to contact PingAccess via SSL/TLS. | [optional] 
+**HttpProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
+**HttpsProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
+**SelectedCertificateId** | Pointer to **int64** | The ID of the certificate the engine will use to contact PingAccess via SSL/TLS. | [optional] 
 **CertificateHash** | Pointer to [**Hash**](Hash.md) |  | [optional] 
 
 ## Methods
@@ -35,20 +35,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Engine) GetId() int32`
+`func (o *Engine) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Engine) GetIdOk() (*int32, bool)`
+`func (o *Engine) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Engine) SetId(v int32)`
+`func (o *Engine) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -155,20 +155,20 @@ HasKeys returns a boolean if a field has been set.
 
 ### GetHttpProxyId
 
-`func (o *Engine) GetHttpProxyId() int32`
+`func (o *Engine) GetHttpProxyId() int64`
 
 GetHttpProxyId returns the HttpProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpProxyIdOk
 
-`func (o *Engine) GetHttpProxyIdOk() (*int32, bool)`
+`func (o *Engine) GetHttpProxyIdOk() (*int64, bool)`
 
 GetHttpProxyIdOk returns a tuple with the HttpProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpProxyId
 
-`func (o *Engine) SetHttpProxyId(v int32)`
+`func (o *Engine) SetHttpProxyId(v int64)`
 
 SetHttpProxyId sets HttpProxyId field to given value.
 
@@ -180,20 +180,20 @@ HasHttpProxyId returns a boolean if a field has been set.
 
 ### GetHttpsProxyId
 
-`func (o *Engine) GetHttpsProxyId() int32`
+`func (o *Engine) GetHttpsProxyId() int64`
 
 GetHttpsProxyId returns the HttpsProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpsProxyIdOk
 
-`func (o *Engine) GetHttpsProxyIdOk() (*int32, bool)`
+`func (o *Engine) GetHttpsProxyIdOk() (*int64, bool)`
 
 GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpsProxyId
 
-`func (o *Engine) SetHttpsProxyId(v int32)`
+`func (o *Engine) SetHttpsProxyId(v int64)`
 
 SetHttpsProxyId sets HttpsProxyId field to given value.
 
@@ -205,20 +205,20 @@ HasHttpsProxyId returns a boolean if a field has been set.
 
 ### GetSelectedCertificateId
 
-`func (o *Engine) GetSelectedCertificateId() int32`
+`func (o *Engine) GetSelectedCertificateId() int64`
 
 GetSelectedCertificateId returns the SelectedCertificateId field if non-nil, zero value otherwise.
 
 ### GetSelectedCertificateIdOk
 
-`func (o *Engine) GetSelectedCertificateIdOk() (*int32, bool)`
+`func (o *Engine) GetSelectedCertificateIdOk() (*int64, bool)`
 
 GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelectedCertificateId
 
-`func (o *Engine) SetSelectedCertificateId(v int32)`
+`func (o *Engine) SetSelectedCertificateId(v int64)`
 
 SetSelectedCertificateId sets SelectedCertificateId field to given value.
 

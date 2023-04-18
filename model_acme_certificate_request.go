@@ -22,7 +22,7 @@ type AcmeCertificateRequest struct {
 	// When creating a new AcmeCertificateRequest, this is the ID for the AcmeCertificateRequest. If not specified, an ID will be automatically assigned. When updating an existing AcmeCertificateRequest, this field is ignored and the ID is determined by the path parameter.
 	Id *string `json:"id,omitempty"`
 	// The ID of the Key Pair for which a signed certificate will be requested.
-	KeyPairId      int32           `json:"keyPairId"`
+	KeyPairId      int64           `json:"keyPairId"`
 	AcmeCertStatus *AcmeCertStatus `json:"acmeCertStatus,omitempty"`
 	// The URL at the ACME server for the associated ACME order.
 	Url *string `json:"url,omitempty"`
@@ -36,7 +36,7 @@ type AcmeCertificateRequest struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAcmeCertificateRequest(keyPairId int32) *AcmeCertificateRequest {
+func NewAcmeCertificateRequest(keyPairId int64) *AcmeCertificateRequest {
 	this := AcmeCertificateRequest{}
 	this.KeyPairId = keyPairId
 	return &this
@@ -83,9 +83,9 @@ func (o *AcmeCertificateRequest) SetId(v string) {
 }
 
 // GetKeyPairId returns the KeyPairId field value
-func (o *AcmeCertificateRequest) GetKeyPairId() int32 {
+func (o *AcmeCertificateRequest) GetKeyPairId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -94,7 +94,7 @@ func (o *AcmeCertificateRequest) GetKeyPairId() int32 {
 
 // GetKeyPairIdOk returns a tuple with the KeyPairId field value
 // and a boolean to check if the value has been set.
-func (o *AcmeCertificateRequest) GetKeyPairIdOk() (*int32, bool) {
+func (o *AcmeCertificateRequest) GetKeyPairIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -102,7 +102,7 @@ func (o *AcmeCertificateRequest) GetKeyPairIdOk() (*int32, bool) {
 }
 
 // SetKeyPairId sets field value
-func (o *AcmeCertificateRequest) SetKeyPairId(v int32) {
+func (o *AcmeCertificateRequest) SetKeyPairId(v int64) {
 	o.KeyPairId = v
 }
 

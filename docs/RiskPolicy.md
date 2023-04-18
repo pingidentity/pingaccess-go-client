@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | (sortable) The class name of the risk policy implementation. | 
-**Id** | Pointer to **int32** | When creating a new RiskPolicy, this is the ID for the RiskPolicy. If not specified, an ID will be automatically assigned. When updating an existing RiskPolicy, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new RiskPolicy, this is the ID for the RiskPolicy. If not specified, an ID will be automatically assigned. When updating an existing RiskPolicy, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the risk policy. | 
 **Configuration** | Pointer to **map[string]interface{}** | The configuration data  of the risk policy. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
@@ -50,20 +50,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetId
 
-`func (o *RiskPolicy) GetId() int32`
+`func (o *RiskPolicy) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *RiskPolicy) GetIdOk() (*int32, bool)`
+`func (o *RiskPolicy) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *RiskPolicy) SetId(v int32)`
+`func (o *RiskPolicy) SetId(v int64)`
 
 SetId sets Id field to given value.
 

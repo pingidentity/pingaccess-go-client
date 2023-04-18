@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new Site, this is the ID for the Site. If not specified, an ID will be automatically assigned. When updating an existing Site, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new Site, this is the ID for the Site. If not specified, an ID will be automatically assigned. When updating an existing Site, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the site. | 
 **Targets** | **[]string** | The {hostname}:{port} pairs for the hosts that make up the site. | 
 **Secure** | Pointer to **bool** | (sortable) This field is true if the site expects HTTPS connections. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | The ID of the trusted certificate group associated with the site. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The ID of the trusted certificate group associated with the site. | [optional] 
 **SendPaCookie** | Pointer to **bool** | (sortable) This field is true if the PingAccess Token or OAuth Access Token should be included in the request to the site. | [optional] 
 **UseTargetHostHeader** | Pointer to **bool** | (sortable) Setting this field to true causes PingAccess to adjust the Host header to the site&#39;s selected target host rather than the virtual host configured in the application. | [optional] 
-**KeepAliveTimeout** | Pointer to **int32** | (sortable) The time, in milliseconds, that an HTTP persistent connection to the site can be idle before PingAccess closes the connection. | [optional] 
-**MaxConnections** | Pointer to **int32** | (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections. | [optional] 
-**MaxWebSocketConnections** | Pointer to **int32** | (sortable) The maximum number of WebSocket connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections. | [optional] 
-**SiteAuthenticatorIds** | Pointer to **[]int32** | The IDs of the site authenticators associated with the site. | [optional] 
+**KeepAliveTimeout** | Pointer to **int64** | (sortable) The time, in milliseconds, that an HTTP persistent connection to the site can be idle before PingAccess closes the connection. | [optional] 
+**MaxConnections** | Pointer to **int64** | (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections. | [optional] 
+**MaxWebSocketConnections** | Pointer to **int64** | (sortable) The maximum number of WebSocket connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections. | [optional] 
+**SiteAuthenticatorIds** | Pointer to **[]int64** | The IDs of the site authenticators associated with the site. | [optional] 
 **SkipHostnameVerification** | Pointer to **bool** | (sortable) This field is true if the hostname verification of the site&#39;s certificate should be skipped. | [optional] 
 **ExpectedHostname** | Pointer to **string** | (sortable) The name of the host expected in the site&#39;s certificate. | [optional] 
-**AvailabilityProfileId** | Pointer to **int32** | The ID of the availability profile associated with the site. | [optional] 
-**LoadBalancingStrategyId** | Pointer to **int32** | The ID of the load balancing strategy associated with the site. | [optional] 
+**AvailabilityProfileId** | Pointer to **int64** | The ID of the availability profile associated with the site. | [optional] 
+**LoadBalancingStrategyId** | Pointer to **int64** | The ID of the load balancing strategy associated with the site. | [optional] 
 **UseProxy** | Pointer to **bool** | (sortable) True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
 
 ## Methods
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Site) GetId() int32`
+`func (o *Site) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Site) GetIdOk() (*int32, bool)`
+`func (o *Site) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Site) SetId(v int32)`
+`func (o *Site) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -132,20 +132,20 @@ HasSecure returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *Site) GetTrustedCertificateGroupId() int32`
+`func (o *Site) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *Site) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *Site) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *Site) SetTrustedCertificateGroupId(v int32)`
+`func (o *Site) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 
@@ -207,20 +207,20 @@ HasUseTargetHostHeader returns a boolean if a field has been set.
 
 ### GetKeepAliveTimeout
 
-`func (o *Site) GetKeepAliveTimeout() int32`
+`func (o *Site) GetKeepAliveTimeout() int64`
 
 GetKeepAliveTimeout returns the KeepAliveTimeout field if non-nil, zero value otherwise.
 
 ### GetKeepAliveTimeoutOk
 
-`func (o *Site) GetKeepAliveTimeoutOk() (*int32, bool)`
+`func (o *Site) GetKeepAliveTimeoutOk() (*int64, bool)`
 
 GetKeepAliveTimeoutOk returns a tuple with the KeepAliveTimeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeepAliveTimeout
 
-`func (o *Site) SetKeepAliveTimeout(v int32)`
+`func (o *Site) SetKeepAliveTimeout(v int64)`
 
 SetKeepAliveTimeout sets KeepAliveTimeout field to given value.
 
@@ -232,20 +232,20 @@ HasKeepAliveTimeout returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *Site) GetMaxConnections() int32`
+`func (o *Site) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *Site) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *Site) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *Site) SetMaxConnections(v int32)`
+`func (o *Site) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 
@@ -257,20 +257,20 @@ HasMaxConnections returns a boolean if a field has been set.
 
 ### GetMaxWebSocketConnections
 
-`func (o *Site) GetMaxWebSocketConnections() int32`
+`func (o *Site) GetMaxWebSocketConnections() int64`
 
 GetMaxWebSocketConnections returns the MaxWebSocketConnections field if non-nil, zero value otherwise.
 
 ### GetMaxWebSocketConnectionsOk
 
-`func (o *Site) GetMaxWebSocketConnectionsOk() (*int32, bool)`
+`func (o *Site) GetMaxWebSocketConnectionsOk() (*int64, bool)`
 
 GetMaxWebSocketConnectionsOk returns a tuple with the MaxWebSocketConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxWebSocketConnections
 
-`func (o *Site) SetMaxWebSocketConnections(v int32)`
+`func (o *Site) SetMaxWebSocketConnections(v int64)`
 
 SetMaxWebSocketConnections sets MaxWebSocketConnections field to given value.
 
@@ -282,20 +282,20 @@ HasMaxWebSocketConnections returns a boolean if a field has been set.
 
 ### GetSiteAuthenticatorIds
 
-`func (o *Site) GetSiteAuthenticatorIds() []int32`
+`func (o *Site) GetSiteAuthenticatorIds() []int64`
 
 GetSiteAuthenticatorIds returns the SiteAuthenticatorIds field if non-nil, zero value otherwise.
 
 ### GetSiteAuthenticatorIdsOk
 
-`func (o *Site) GetSiteAuthenticatorIdsOk() (*[]int32, bool)`
+`func (o *Site) GetSiteAuthenticatorIdsOk() (*[]int64, bool)`
 
 GetSiteAuthenticatorIdsOk returns a tuple with the SiteAuthenticatorIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteAuthenticatorIds
 
-`func (o *Site) SetSiteAuthenticatorIds(v []int32)`
+`func (o *Site) SetSiteAuthenticatorIds(v []int64)`
 
 SetSiteAuthenticatorIds sets SiteAuthenticatorIds field to given value.
 
@@ -357,20 +357,20 @@ HasExpectedHostname returns a boolean if a field has been set.
 
 ### GetAvailabilityProfileId
 
-`func (o *Site) GetAvailabilityProfileId() int32`
+`func (o *Site) GetAvailabilityProfileId() int64`
 
 GetAvailabilityProfileId returns the AvailabilityProfileId field if non-nil, zero value otherwise.
 
 ### GetAvailabilityProfileIdOk
 
-`func (o *Site) GetAvailabilityProfileIdOk() (*int32, bool)`
+`func (o *Site) GetAvailabilityProfileIdOk() (*int64, bool)`
 
 GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailabilityProfileId
 
-`func (o *Site) SetAvailabilityProfileId(v int32)`
+`func (o *Site) SetAvailabilityProfileId(v int64)`
 
 SetAvailabilityProfileId sets AvailabilityProfileId field to given value.
 
@@ -382,20 +382,20 @@ HasAvailabilityProfileId returns a boolean if a field has been set.
 
 ### GetLoadBalancingStrategyId
 
-`func (o *Site) GetLoadBalancingStrategyId() int32`
+`func (o *Site) GetLoadBalancingStrategyId() int64`
 
 GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field if non-nil, zero value otherwise.
 
 ### GetLoadBalancingStrategyIdOk
 
-`func (o *Site) GetLoadBalancingStrategyIdOk() (*int32, bool)`
+`func (o *Site) GetLoadBalancingStrategyIdOk() (*int64, bool)`
 
 GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadBalancingStrategyId
 
-`func (o *Site) SetLoadBalancingStrategyId(v int32)`
+`func (o *Site) SetLoadBalancingStrategyId(v int64)`
 
 SetLoadBalancingStrategyId sets LoadBalancingStrategyId field to given value.
 

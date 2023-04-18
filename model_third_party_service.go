@@ -28,17 +28,17 @@ type ThirdPartyService struct {
 	// (sortable) This field is true if the third-party service expects HTTPS connections.
 	Secure *bool `json:"secure,omitempty"`
 	// The ID of the trusted certificate group associated with the third-party service.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the third-party service. -1 indicates unlimited connections.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections *int64 `json:"maxConnections,omitempty"`
 	// (sortable) This field is true if the hostname verification of the third-party service's certificate should be skipped.
 	SkipHostnameVerification *bool `json:"skipHostnameVerification,omitempty"`
 	// (sortable) The name of the host expected in the third-party service's certificate.
 	ExpectedHostname *string `json:"expectedHostname,omitempty"`
 	// The ID of the availability profile associated with the third-party service.
-	AvailabilityProfileId *int32 `json:"availabilityProfileId,omitempty"`
+	AvailabilityProfileId *int64 `json:"availabilityProfileId,omitempty"`
 	// The ID of the load balancing strategy associated with the third-party service.
-	LoadBalancingStrategyId *int32 `json:"loadBalancingStrategyId,omitempty"`
+	LoadBalancingStrategyId *int64 `json:"loadBalancingStrategyId,omitempty"`
 	// (sortable) True if a proxy should be used for HTTP or HTTPS requests.
 	UseProxy *bool `json:"useProxy,omitempty"`
 	// (sortable) The Host header field value in the requests sent to a Third-Party Services. When set, PingAccess will use the hostValue as the Host header field value. Otherwise, the target value will be used.
@@ -177,9 +177,9 @@ func (o *ThirdPartyService) SetSecure(v bool) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *ThirdPartyService) GetTrustedCertificateGroupId() int32 {
+func (o *ThirdPartyService) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -187,7 +187,7 @@ func (o *ThirdPartyService) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ThirdPartyService) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *ThirdPartyService) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -203,15 +203,15 @@ func (o *ThirdPartyService) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *ThirdPartyService) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *ThirdPartyService) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *ThirdPartyService) GetMaxConnections() int32 {
+func (o *ThirdPartyService) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -219,7 +219,7 @@ func (o *ThirdPartyService) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ThirdPartyService) GetMaxConnectionsOk() (*int32, bool) {
+func (o *ThirdPartyService) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -235,8 +235,8 @@ func (o *ThirdPartyService) HasMaxConnections() bool {
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *ThirdPartyService) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *ThirdPartyService) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 
@@ -305,9 +305,9 @@ func (o *ThirdPartyService) SetExpectedHostname(v string) {
 }
 
 // GetAvailabilityProfileId returns the AvailabilityProfileId field value if set, zero value otherwise.
-func (o *ThirdPartyService) GetAvailabilityProfileId() int32 {
+func (o *ThirdPartyService) GetAvailabilityProfileId() int64 {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AvailabilityProfileId
@@ -315,7 +315,7 @@ func (o *ThirdPartyService) GetAvailabilityProfileId() int32 {
 
 // GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ThirdPartyService) GetAvailabilityProfileIdOk() (*int32, bool) {
+func (o *ThirdPartyService) GetAvailabilityProfileIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
 		return nil, false
 	}
@@ -331,15 +331,15 @@ func (o *ThirdPartyService) HasAvailabilityProfileId() bool {
 	return false
 }
 
-// SetAvailabilityProfileId gets a reference to the given int32 and assigns it to the AvailabilityProfileId field.
-func (o *ThirdPartyService) SetAvailabilityProfileId(v int32) {
+// SetAvailabilityProfileId gets a reference to the given int64 and assigns it to the AvailabilityProfileId field.
+func (o *ThirdPartyService) SetAvailabilityProfileId(v int64) {
 	o.AvailabilityProfileId = &v
 }
 
 // GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field value if set, zero value otherwise.
-func (o *ThirdPartyService) GetLoadBalancingStrategyId() int32 {
+func (o *ThirdPartyService) GetLoadBalancingStrategyId() int64 {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LoadBalancingStrategyId
@@ -347,7 +347,7 @@ func (o *ThirdPartyService) GetLoadBalancingStrategyId() int32 {
 
 // GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ThirdPartyService) GetLoadBalancingStrategyIdOk() (*int32, bool) {
+func (o *ThirdPartyService) GetLoadBalancingStrategyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
 		return nil, false
 	}
@@ -363,8 +363,8 @@ func (o *ThirdPartyService) HasLoadBalancingStrategyId() bool {
 	return false
 }
 
-// SetLoadBalancingStrategyId gets a reference to the given int32 and assigns it to the LoadBalancingStrategyId field.
-func (o *ThirdPartyService) SetLoadBalancingStrategyId(v int32) {
+// SetLoadBalancingStrategyId gets a reference to the given int64 and assigns it to the LoadBalancingStrategyId field.
+func (o *ThirdPartyService) SetLoadBalancingStrategyId(v int64) {
 	o.LoadBalancingStrategyId = &v
 }
 

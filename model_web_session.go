@@ -20,20 +20,20 @@ var _ MappedNullable = &WebSession{}
 // WebSession A web session.
 type WebSession struct {
 	// When creating a new WebSession, this is the ID for the WebSession. If not specified, an ID will be automatically assigned. When updating an existing WebSession, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the web session.
 	Name                    string                   `json:"name"`
 	RequestPreservationType *RequestPreservationType `json:"requestPreservationType,omitempty"`
 	// Enabling will allow PA to push the payload of an OAuth 2.0 authorization request to the authorization server via a direct request and provide it with a request URI that is used as reference to the data in a subsequent call to the authorization endpoint.
 	EnablePushAuthorization *bool `json:"enablePushAuthorization,omitempty"`
 	// (sortable) The length of time you want the PA Token to remain active. Once the PA Token expires, an authenticated user must re-authenticate.
-	SessionTimeoutInMinutes *int32 `json:"sessionTimeoutInMinutes,omitempty"`
+	SessionTimeoutInMinutes *int64 `json:"sessionTimeoutInMinutes,omitempty"`
 	// (sortable) Specify if PingAccess should validate sessions with the configured PingFederate instance during request processing.
 	ValidateSessionIsAlive *bool `json:"validateSessionIsAlive,omitempty"`
 	// (sortable) Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider.
 	SendRequestedUrlToProvider *bool `json:"sendRequestedUrlToProvider,omitempty"`
 	// (sortable) Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled.
-	RefreshUserInfoClaimsInterval *int32 `json:"refreshUserInfoClaimsInterval,omitempty"`
+	RefreshUserInfoClaimsInterval *int64 `json:"refreshUserInfoClaimsInterval,omitempty"`
 	// (sortable) Specify if PingAccess should provide feedback to the authentication authority. For example, tell the authority that the user is being redirected because their session expired.
 	ProvideAuthenticationFeedback *bool `json:"provideAuthenticationFeedback,omitempty"`
 	// (sortable) Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie.
@@ -49,7 +49,7 @@ type WebSession struct {
 	// (sortable) Enable the HttpOnly flag on cookies that contain the PA Token.
 	HttpOnlyCookie *bool `json:"httpOnlyCookie,omitempty"`
 	// (sortable) The length of time you want the PingAccess Token to remain active when no activity is detected.
-	IdleTimeoutInMinutes *int32 `json:"idleTimeoutInMinutes,omitempty"`
+	IdleTimeoutInMinutes *int64 `json:"idleTimeoutInMinutes,omitempty"`
 	// (sortable) Enter a unique identifier between 1 and 32 characters that defines who the PA Token is applicable to.
 	Audience   string                `json:"audience"`
 	CookieType *WebSessionCookieType `json:"cookieType,omitempty"`
@@ -67,7 +67,7 @@ type WebSession struct {
 	// (sortable) Specify if PingAccess should produce a 415 HTTP response when it receives an unauthenticated POST request with a content type unsupported by request preservation. The only content type supported by request preservation is application/x-www-form-urlencoded. When disabled, PingAccess will challenge an unauthenticated POST request using an unsupported content type with the same challenge response sent to an unauthenticated GET request. The default is false.
 	FailOnUnsupportedPreservationContentType bool `json:"failOnUnsupportedPreservationContentType"`
 	// (sortable) Specify the number of seconds to cache PingFederate Session State information.
-	PfsessionStateCacheInSeconds *int32 `json:"pfsessionStateCacheInSeconds,omitempty"`
+	PfsessionStateCacheInSeconds *int64 `json:"pfsessionStateCacheInSeconds,omitempty"`
 }
 
 // NewWebSession instantiates a new WebSession object
@@ -92,9 +92,9 @@ func NewWebSessionWithDefaults() *WebSession {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *WebSession) GetId() int32 {
+func (o *WebSession) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -102,7 +102,7 @@ func (o *WebSession) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSession) GetIdOk() (*int32, bool) {
+func (o *WebSession) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -118,8 +118,8 @@ func (o *WebSession) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *WebSession) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *WebSession) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -212,9 +212,9 @@ func (o *WebSession) SetEnablePushAuthorization(v bool) {
 }
 
 // GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field value if set, zero value otherwise.
-func (o *WebSession) GetSessionTimeoutInMinutes() int32 {
+func (o *WebSession) GetSessionTimeoutInMinutes() int64 {
 	if o == nil || IsNil(o.SessionTimeoutInMinutes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SessionTimeoutInMinutes
@@ -222,7 +222,7 @@ func (o *WebSession) GetSessionTimeoutInMinutes() int32 {
 
 // GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int32, bool) {
+func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int64, bool) {
 	if o == nil || IsNil(o.SessionTimeoutInMinutes) {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *WebSession) HasSessionTimeoutInMinutes() bool {
 	return false
 }
 
-// SetSessionTimeoutInMinutes gets a reference to the given int32 and assigns it to the SessionTimeoutInMinutes field.
-func (o *WebSession) SetSessionTimeoutInMinutes(v int32) {
+// SetSessionTimeoutInMinutes gets a reference to the given int64 and assigns it to the SessionTimeoutInMinutes field.
+func (o *WebSession) SetSessionTimeoutInMinutes(v int64) {
 	o.SessionTimeoutInMinutes = &v
 }
 
@@ -308,9 +308,9 @@ func (o *WebSession) SetSendRequestedUrlToProvider(v bool) {
 }
 
 // GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field value if set, zero value otherwise.
-func (o *WebSession) GetRefreshUserInfoClaimsInterval() int32 {
+func (o *WebSession) GetRefreshUserInfoClaimsInterval() int64 {
 	if o == nil || IsNil(o.RefreshUserInfoClaimsInterval) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RefreshUserInfoClaimsInterval
@@ -318,7 +318,7 @@ func (o *WebSession) GetRefreshUserInfoClaimsInterval() int32 {
 
 // GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool) {
+func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int64, bool) {
 	if o == nil || IsNil(o.RefreshUserInfoClaimsInterval) {
 		return nil, false
 	}
@@ -334,8 +334,8 @@ func (o *WebSession) HasRefreshUserInfoClaimsInterval() bool {
 	return false
 }
 
-// SetRefreshUserInfoClaimsInterval gets a reference to the given int32 and assigns it to the RefreshUserInfoClaimsInterval field.
-func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int32) {
+// SetRefreshUserInfoClaimsInterval gets a reference to the given int64 and assigns it to the RefreshUserInfoClaimsInterval field.
+func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int64) {
 	o.RefreshUserInfoClaimsInterval = &v
 }
 
@@ -564,9 +564,9 @@ func (o *WebSession) SetHttpOnlyCookie(v bool) {
 }
 
 // GetIdleTimeoutInMinutes returns the IdleTimeoutInMinutes field value if set, zero value otherwise.
-func (o *WebSession) GetIdleTimeoutInMinutes() int32 {
+func (o *WebSession) GetIdleTimeoutInMinutes() int64 {
 	if o == nil || IsNil(o.IdleTimeoutInMinutes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.IdleTimeoutInMinutes
@@ -574,7 +574,7 @@ func (o *WebSession) GetIdleTimeoutInMinutes() int32 {
 
 // GetIdleTimeoutInMinutesOk returns a tuple with the IdleTimeoutInMinutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSession) GetIdleTimeoutInMinutesOk() (*int32, bool) {
+func (o *WebSession) GetIdleTimeoutInMinutesOk() (*int64, bool) {
 	if o == nil || IsNil(o.IdleTimeoutInMinutes) {
 		return nil, false
 	}
@@ -590,8 +590,8 @@ func (o *WebSession) HasIdleTimeoutInMinutes() bool {
 	return false
 }
 
-// SetIdleTimeoutInMinutes gets a reference to the given int32 and assigns it to the IdleTimeoutInMinutes field.
-func (o *WebSession) SetIdleTimeoutInMinutes(v int32) {
+// SetIdleTimeoutInMinutes gets a reference to the given int64 and assigns it to the IdleTimeoutInMinutes field.
+func (o *WebSession) SetIdleTimeoutInMinutes(v int64) {
 	o.IdleTimeoutInMinutes = &v
 }
 
@@ -924,9 +924,9 @@ func (o *WebSession) SetFailOnUnsupportedPreservationContentType(v bool) {
 }
 
 // GetPfsessionStateCacheInSeconds returns the PfsessionStateCacheInSeconds field value if set, zero value otherwise.
-func (o *WebSession) GetPfsessionStateCacheInSeconds() int32 {
+func (o *WebSession) GetPfsessionStateCacheInSeconds() int64 {
 	if o == nil || IsNil(o.PfsessionStateCacheInSeconds) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PfsessionStateCacheInSeconds
@@ -934,7 +934,7 @@ func (o *WebSession) GetPfsessionStateCacheInSeconds() int32 {
 
 // GetPfsessionStateCacheInSecondsOk returns a tuple with the PfsessionStateCacheInSeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSession) GetPfsessionStateCacheInSecondsOk() (*int32, bool) {
+func (o *WebSession) GetPfsessionStateCacheInSecondsOk() (*int64, bool) {
 	if o == nil || IsNil(o.PfsessionStateCacheInSeconds) {
 		return nil, false
 	}
@@ -950,8 +950,8 @@ func (o *WebSession) HasPfsessionStateCacheInSeconds() bool {
 	return false
 }
 
-// SetPfsessionStateCacheInSeconds gets a reference to the given int32 and assigns it to the PfsessionStateCacheInSeconds field.
-func (o *WebSession) SetPfsessionStateCacheInSeconds(v int32) {
+// SetPfsessionStateCacheInSeconds gets a reference to the given int64 and assigns it to the PfsessionStateCacheInSeconds field.
+func (o *WebSession) SetPfsessionStateCacheInSeconds(v int64) {
 	o.PfsessionStateCacheInSeconds = &v
 }
 

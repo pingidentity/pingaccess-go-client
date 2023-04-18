@@ -363,8 +363,8 @@ func (a *AuthnReqListsApiService) GetAuthnReqListExecute(r ApiGetAuthnReqListReq
 type ApiGetAuthnReqListsRequest struct {
 	ctx           context.Context
 	ApiService    *AuthnReqListsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetAuthnReqListsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAuthnReqListsRequest) Page(page int32) ApiGetAuthnReqListsRequest {
+func (r ApiGetAuthnReqListsRequest) Page(page int64) ApiGetAuthnReqListsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Authentication Requirements per page
-func (r ApiGetAuthnReqListsRequest) NumberPerPage(numberPerPage int32) ApiGetAuthnReqListsRequest {
+func (r ApiGetAuthnReqListsRequest) NumberPerPage(numberPerPage int64) ApiGetAuthnReqListsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

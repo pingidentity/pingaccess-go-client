@@ -21,7 +21,7 @@ var _ MappedNullable = &TrustedCert{}
 // TrustedCert A trusted certificate.
 type TrustedCert struct {
 	// When creating a new TrustedCert, this is the ID for the TrustedCert. If not specified, an ID will be automatically assigned. When updating an existing TrustedCert, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The serial number for the certificate.
 	SerialNumber string `json:"serialNumber"`
 	// (sortable) The alias for the certificate.
@@ -76,9 +76,9 @@ func NewTrustedCertWithDefaults() *TrustedCert {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *TrustedCert) GetId() int32 {
+func (o *TrustedCert) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -86,7 +86,7 @@ func (o *TrustedCert) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrustedCert) GetIdOk() (*int32, bool) {
+func (o *TrustedCert) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *TrustedCert) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *TrustedCert) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *TrustedCert) SetId(v int64) {
 	o.Id = &v
 }
 

@@ -20,11 +20,11 @@ var _ MappedNullable = &HttpsListener{}
 // HttpsListener An HTTPS listener.
 type HttpsListener struct {
 	// (sortable) The ID of the HTTPS listener.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the HTTPS listener.
 	Name string `json:"name"`
 	// The ID of the default key pair used by the HTTPS listener.
-	KeyPairId int32 `json:"keyPairId"`
+	KeyPairId int64 `json:"keyPairId"`
 	// (sortable) Enable server cipher suite ordering for the HTTPS listener.
 	UseServerCipherSuiteOrder bool `json:"useServerCipherSuiteOrder"`
 	// Indicates whether an admin or engine restart is required to update the HTTPS listener. Cannot be True for the ENGINE listener.
@@ -35,7 +35,7 @@ type HttpsListener struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpsListener(name string, keyPairId int32, useServerCipherSuiteOrder bool, restartRequired bool) *HttpsListener {
+func NewHttpsListener(name string, keyPairId int64, useServerCipherSuiteOrder bool, restartRequired bool) *HttpsListener {
 	this := HttpsListener{}
 	this.Name = name
 	this.KeyPairId = keyPairId
@@ -53,9 +53,9 @@ func NewHttpsListenerWithDefaults() *HttpsListener {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *HttpsListener) GetId() int32 {
+func (o *HttpsListener) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -63,7 +63,7 @@ func (o *HttpsListener) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpsListener) GetIdOk() (*int32, bool) {
+func (o *HttpsListener) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -79,8 +79,8 @@ func (o *HttpsListener) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *HttpsListener) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *HttpsListener) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -109,9 +109,9 @@ func (o *HttpsListener) SetName(v string) {
 }
 
 // GetKeyPairId returns the KeyPairId field value
-func (o *HttpsListener) GetKeyPairId() int32 {
+func (o *HttpsListener) GetKeyPairId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -120,7 +120,7 @@ func (o *HttpsListener) GetKeyPairId() int32 {
 
 // GetKeyPairIdOk returns a tuple with the KeyPairId field value
 // and a boolean to check if the value has been set.
-func (o *HttpsListener) GetKeyPairIdOk() (*int32, bool) {
+func (o *HttpsListener) GetKeyPairIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *HttpsListener) GetKeyPairIdOk() (*int32, bool) {
 }
 
 // SetKeyPairId sets field value
-func (o *HttpsListener) SetKeyPairId(v int32) {
+func (o *HttpsListener) SetKeyPairId(v int64) {
 	o.KeyPairId = v
 }
 

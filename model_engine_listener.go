@@ -20,22 +20,22 @@ var _ MappedNullable = &EngineListener{}
 // EngineListener An engine listener.
 type EngineListener struct {
 	// When creating a new EngineListener, this is the ID for the EngineListener. If not specified, an ID will be automatically assigned. When updating an existing EngineListener, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the engine listener.
 	Name string `json:"name"`
 	// (sortable) The port the engine listener listens on.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// (sortable) Indicator if the engine listener should listen to HTTPS connections.
 	Secure *bool `json:"secure,omitempty"`
 	// Trusted Certificate Group assigned to engine listener for client certificate authentication.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 }
 
 // NewEngineListener instantiates a new EngineListener object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEngineListener(name string, port int32) *EngineListener {
+func NewEngineListener(name string, port int64) *EngineListener {
 	this := EngineListener{}
 	this.Name = name
 	this.Port = port
@@ -51,9 +51,9 @@ func NewEngineListenerWithDefaults() *EngineListener {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *EngineListener) GetId() int32 {
+func (o *EngineListener) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -61,7 +61,7 @@ func (o *EngineListener) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EngineListener) GetIdOk() (*int32, bool) {
+func (o *EngineListener) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -77,8 +77,8 @@ func (o *EngineListener) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *EngineListener) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *EngineListener) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -107,9 +107,9 @@ func (o *EngineListener) SetName(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *EngineListener) GetPort() int32 {
+func (o *EngineListener) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -118,7 +118,7 @@ func (o *EngineListener) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *EngineListener) GetPortOk() (*int32, bool) {
+func (o *EngineListener) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *EngineListener) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *EngineListener) SetPort(v int32) {
+func (o *EngineListener) SetPort(v int64) {
 	o.Port = v
 }
 
@@ -163,9 +163,9 @@ func (o *EngineListener) SetSecure(v bool) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *EngineListener) GetTrustedCertificateGroupId() int32 {
+func (o *EngineListener) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -173,7 +173,7 @@ func (o *EngineListener) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EngineListener) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *EngineListener) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -189,8 +189,8 @@ func (o *EngineListener) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *EngineListener) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *EngineListener) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

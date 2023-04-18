@@ -24,7 +24,7 @@ type Redirect struct {
 	Source *HostPort       `json:"source,omitempty"`
 	Target *TargetHostPort `json:"target,omitempty"`
 	// (sortable) The Redirect HTTP status code used by the response.
-	ResponseCode *int32      `json:"responseCode,omitempty"`
+	ResponseCode *int64      `json:"responseCode,omitempty"`
 	AuditLevel   *AuditLevel `json:"auditLevel,omitempty"`
 }
 
@@ -142,9 +142,9 @@ func (o *Redirect) SetTarget(v TargetHostPort) {
 }
 
 // GetResponseCode returns the ResponseCode field value if set, zero value otherwise.
-func (o *Redirect) GetResponseCode() int32 {
+func (o *Redirect) GetResponseCode() int64 {
 	if o == nil || IsNil(o.ResponseCode) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ResponseCode
@@ -152,7 +152,7 @@ func (o *Redirect) GetResponseCode() int32 {
 
 // GetResponseCodeOk returns a tuple with the ResponseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Redirect) GetResponseCodeOk() (*int32, bool) {
+func (o *Redirect) GetResponseCodeOk() (*int64, bool) {
 	if o == nil || IsNil(o.ResponseCode) {
 		return nil, false
 	}
@@ -168,8 +168,8 @@ func (o *Redirect) HasResponseCode() bool {
 	return false
 }
 
-// SetResponseCode gets a reference to the given int32 and assigns it to the ResponseCode field.
-func (o *Redirect) SetResponseCode(v int32) {
+// SetResponseCode gets a reference to the given int64 and assigns it to the ResponseCode field.
+func (o *Redirect) SetResponseCode(v int64) {
 	o.ResponseCode = &v
 }
 

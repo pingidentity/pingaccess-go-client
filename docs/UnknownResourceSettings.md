@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ErrorStatusCode** | **int32** | The HTTP error response status code | 
+**ErrorStatusCode** | **int64** | The HTTP error response status code | 
 **ErrorTemplateFile** | **string** | The name of the velocity template file to use for generating the error response body | 
 **ErrorContentType** | [**ContentType**](ContentType.md) |  | 
 **AgentDefaultMode** | [**UnknownResourceMode**](UnknownResourceMode.md) |  | 
-**AgentDefaultCacheTTL** | **int32** | The default agent resource cache TTL (in seconds) to be used for unknown resources when a request cannot be mapped to a known virtual host. | 
+**AgentDefaultCacheTTL** | **int64** | The default agent resource cache TTL (in seconds) to be used for unknown resources when a request cannot be mapped to a known virtual host. | 
 **AuditLevel** | Pointer to [**AuditLevel**](AuditLevel.md) |  | [optional] 
 
 ## Methods
 
 ### NewUnknownResourceSettings
 
-`func NewUnknownResourceSettings(errorStatusCode int32, errorTemplateFile string, errorContentType ContentType, agentDefaultMode UnknownResourceMode, agentDefaultCacheTTL int32, ) *UnknownResourceSettings`
+`func NewUnknownResourceSettings(errorStatusCode int64, errorTemplateFile string, errorContentType ContentType, agentDefaultMode UnknownResourceMode, agentDefaultCacheTTL int64, ) *UnknownResourceSettings`
 
 NewUnknownResourceSettings instantiates a new UnknownResourceSettings object
 This constructor will assign default values to properties that have it defined,
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetErrorStatusCode
 
-`func (o *UnknownResourceSettings) GetErrorStatusCode() int32`
+`func (o *UnknownResourceSettings) GetErrorStatusCode() int64`
 
 GetErrorStatusCode returns the ErrorStatusCode field if non-nil, zero value otherwise.
 
 ### GetErrorStatusCodeOk
 
-`func (o *UnknownResourceSettings) GetErrorStatusCodeOk() (*int32, bool)`
+`func (o *UnknownResourceSettings) GetErrorStatusCodeOk() (*int64, bool)`
 
 GetErrorStatusCodeOk returns a tuple with the ErrorStatusCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrorStatusCode
 
-`func (o *UnknownResourceSettings) SetErrorStatusCode(v int32)`
+`func (o *UnknownResourceSettings) SetErrorStatusCode(v int64)`
 
 SetErrorStatusCode sets ErrorStatusCode field to given value.
 
@@ -112,20 +112,20 @@ SetAgentDefaultMode sets AgentDefaultMode field to given value.
 
 ### GetAgentDefaultCacheTTL
 
-`func (o *UnknownResourceSettings) GetAgentDefaultCacheTTL() int32`
+`func (o *UnknownResourceSettings) GetAgentDefaultCacheTTL() int64`
 
 GetAgentDefaultCacheTTL returns the AgentDefaultCacheTTL field if non-nil, zero value otherwise.
 
 ### GetAgentDefaultCacheTTLOk
 
-`func (o *UnknownResourceSettings) GetAgentDefaultCacheTTLOk() (*int32, bool)`
+`func (o *UnknownResourceSettings) GetAgentDefaultCacheTTLOk() (*int64, bool)`
 
 GetAgentDefaultCacheTTLOk returns a tuple with the AgentDefaultCacheTTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentDefaultCacheTTL
 
-`func (o *UnknownResourceSettings) SetAgentDefaultCacheTTL(v int32)`
+`func (o *UnknownResourceSettings) SetAgentDefaultCacheTTL(v int64)`
 
 SetAgentDefaultCacheTTL sets AgentDefaultCacheTTL field to given value.
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &Resource{}
 // Resource A resource.
 type Resource struct {
 	// When creating a new Resource, this is the ID for the Resource. If not specified, an ID will be automatically assigned. When updating an existing Resource, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the resource.
 	Name string `json:"name"`
 	// An array of HTTP methods configured for the resource.
@@ -42,14 +42,14 @@ type Resource struct {
 	Policy                  *map[string][]PolicyItem `json:"policy,omitempty"`
 	DefaultAuthTypeOverride DefaultAuthType          `json:"defaultAuthTypeOverride"`
 	// The id of the associated application. This field is read-only.
-	ApplicationId             *int32                     `json:"applicationId,omitempty"`
+	ApplicationId             *int64                     `json:"applicationId,omitempty"`
 	QueryParamConfig          *QueryParamConfig          `json:"queryParamConfig,omitempty"`
 	ResourceType              *ResourceType              `json:"resourceType,omitempty"`
 	ResourceTypeConfiguration *ResourceTypeConfiguration `json:"resourceTypeConfiguration,omitempty"`
 	// The UUID of the authentication challenge policy associated with the resource. This policy takes precedence over an application-level policy.
 	AuthenticationChallengePolicyId string `json:"authenticationChallengePolicyId"`
 	// The ID of the risk policy to use for this resource. This risk policy takes precedence over an application-level risk policy.
-	RiskPolicyId *int32 `json:"riskPolicyId,omitempty"`
+	RiskPolicyId *int64 `json:"riskPolicyId,omitempty"`
 }
 
 // NewResource instantiates a new Resource object
@@ -74,9 +74,9 @@ func NewResourceWithDefaults() *Resource {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Resource) GetId() int32 {
+func (o *Resource) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -84,7 +84,7 @@ func (o *Resource) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetIdOk() (*int32, bool) {
+func (o *Resource) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *Resource) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Resource) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Resource) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -434,9 +434,9 @@ func (o *Resource) SetDefaultAuthTypeOverride(v DefaultAuthType) {
 }
 
 // GetApplicationId returns the ApplicationId field value if set, zero value otherwise.
-func (o *Resource) GetApplicationId() int32 {
+func (o *Resource) GetApplicationId() int64 {
 	if o == nil || IsNil(o.ApplicationId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ApplicationId
@@ -444,7 +444,7 @@ func (o *Resource) GetApplicationId() int32 {
 
 // GetApplicationIdOk returns a tuple with the ApplicationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetApplicationIdOk() (*int32, bool) {
+func (o *Resource) GetApplicationIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.ApplicationId) {
 		return nil, false
 	}
@@ -460,8 +460,8 @@ func (o *Resource) HasApplicationId() bool {
 	return false
 }
 
-// SetApplicationId gets a reference to the given int32 and assigns it to the ApplicationId field.
-func (o *Resource) SetApplicationId(v int32) {
+// SetApplicationId gets a reference to the given int64 and assigns it to the ApplicationId field.
+func (o *Resource) SetApplicationId(v int64) {
 	o.ApplicationId = &v
 }
 
@@ -586,9 +586,9 @@ func (o *Resource) SetAuthenticationChallengePolicyId(v string) {
 }
 
 // GetRiskPolicyId returns the RiskPolicyId field value if set, zero value otherwise.
-func (o *Resource) GetRiskPolicyId() int32 {
+func (o *Resource) GetRiskPolicyId() int64 {
 	if o == nil || IsNil(o.RiskPolicyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RiskPolicyId
@@ -596,7 +596,7 @@ func (o *Resource) GetRiskPolicyId() int32 {
 
 // GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetRiskPolicyIdOk() (*int32, bool) {
+func (o *Resource) GetRiskPolicyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.RiskPolicyId) {
 		return nil, false
 	}
@@ -612,8 +612,8 @@ func (o *Resource) HasRiskPolicyId() bool {
 	return false
 }
 
-// SetRiskPolicyId gets a reference to the given int32 and assigns it to the RiskPolicyId field.
-func (o *Resource) SetRiskPolicyId(v int32) {
+// SetRiskPolicyId gets a reference to the given int64 and assigns it to the RiskPolicyId field.
+func (o *Resource) SetRiskPolicyId(v int64) {
 	o.RiskPolicyId = &v
 }
 

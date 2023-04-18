@@ -10448,7 +10448,22 @@ components:
           description: (sortable) The access token validator's name.
           type: string
         configuration:
-          $ref: '#/components/schemas/AccessTokenValidator_configuration'
+          description: The access token validator's configuration data. - This value
+            is a PingAccess plugin configuration (JSON).
+          properties:
+            description:
+              type: string
+            path:
+              type: string
+            subjectAttributeName:
+              type: string
+            issuer:
+              type: string
+            audience:
+              type: string
+          required:
+          - path
+          type: map
       required:
       - className
       - name
@@ -10483,7 +10498,7 @@ components:
         keyAlgorithm: keyAlgorithm
         id: id
         publicKey:
-          created: 2000-01-23T04:56:07.000Z
+          created: 2000-01-23T04:56:07.000+00:00
           jwk: "{}"
         acmeServerId: acmeServerId
         url: url
@@ -10520,6 +10535,7 @@ components:
     AcmeCertStatus:
       description: The status of a certificate.
       example:
+        state: null
         problems:
           key:
             detail: detail
@@ -10544,6 +10560,7 @@ components:
       example:
         acmeAccountId: acmeAccountId
         acmeCertStatus:
+          state: null
           problems:
             key:
               detail: detail
@@ -10673,6 +10690,7 @@ components:
         expirationWarningInMinutes: 6
         idleTimeoutInMinutes: 5
         sessionPollIntervalInSeconds: 0
+        cookieType: null
         timeoutGroovyScript: timeoutGroovyScript
       properties:
         sessionPollIntervalInSeconds:
@@ -10797,6 +10815,7 @@ components:
       description: An admin web session OIDC configuration.
       example:
         pfsessionStateCacheInSeconds: 1
+        oidcLoginType: null
         sendRequestedUrlToProvider: true
         enablePushAuthorization: true
         enableRefreshUser: true
@@ -10804,10 +10823,12 @@ components:
         provideAuthenticationFeedback: true
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
           keyPairId: 0
+        pkceChallengeType: null
         scopes:
         - scopes
         - scopes
@@ -10876,9 +10897,11 @@ components:
           headerNameList:
           - headerNameList
           - headerNameList
+          listValueLocation: null
         description: description
         certificateHash:
           hexValue: hexValue
+          algorithm: null
         sharedSecretIds:
         - 1
         - 1
@@ -10890,6 +10913,7 @@ components:
         - failoverHosts
         overrideIpSource: true
         name: name
+        unknownResourceMode: null
         id: 0
         failedRetryTimeout: 5
       properties:
@@ -10960,15 +10984,17 @@ components:
     AgentCertificate:
       description: An agent certificate.
       example:
-        expires: 2000-01-23T04:56:07.000Z
+        expires: 2000-01-23T04:56:07.000+00:00
         serialNumber: serialNumber
         issuerDn: issuerDn
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         chainCertificate: true
         sha256sum: sha256sum
-        validFrom: 2000-01-23T04:56:07.000Z
+        validFrom: 2000-01-23T04:56:07.000+00:00
         signatureAlgorithm: signatureAlgorithm
         sha1sum: sha1sum
         md5sum: md5sum
@@ -10978,6 +11004,7 @@ components:
         id: 0
         subjectCn: subjectCn
         subjectDn: subjectDn
+        status: null
       properties:
         id:
           description: The id for the agent certificate.
@@ -11057,15 +11084,17 @@ components:
       description: A collection of agent certificates.
       example:
         items:
-        - expires: 2000-01-23T04:56:07.000Z
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           chainCertificate: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -11075,15 +11104,18 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
-        - expires: 2000-01-23T04:56:07.000Z
+          status: null
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           chainCertificate: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -11093,6 +11125,7 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
+          status: null
       properties:
         items:
           description: The actual list of agent certificates.
@@ -11112,9 +11145,11 @@ components:
             headerNameList:
             - headerNameList
             - headerNameList
+            listValueLocation: null
           description: description
           certificateHash:
             hexValue: hexValue
+            algorithm: null
           sharedSecretIds:
           - 1
           - 1
@@ -11126,6 +11161,7 @@ components:
           - failoverHosts
           overrideIpSource: true
           name: name
+          unknownResourceMode: null
           id: 0
           failedRetryTimeout: 5
         - selectedCertificateId: 2
@@ -11134,9 +11170,11 @@ components:
             headerNameList:
             - headerNameList
             - headerNameList
+            listValueLocation: null
           description: description
           certificateHash:
             hexValue: hexValue
+            algorithm: null
           sharedSecretIds:
           - 1
           - 1
@@ -11148,6 +11186,7 @@ components:
           - failoverHosts
           overrideIpSource: true
           name: name
+          unknownResourceMode: null
           id: 0
           failedRetryTimeout: 5
       properties:
@@ -11225,25 +11264,30 @@ components:
     Application:
       description: An application.
       example:
+        applicationType: null
         agentId: 9
         virtualHostIds:
         - 3
         - 3
         spaSupportEnabled: true
         webSessionId: 2
+        destination: null
         description: description
         allowEmptyPathSegments: true
         agentCacheInvalidatedExpiration: 1
         enabled: true
         agentCacheInvalidatedResponseDuration: 6
         issuer: issuer
+        defaultAuthType: null
         id: 0
         fallbackPostEncoding: fallbackPostEncoding
         manualOrderingEnabled: true
         policy:
           key:
           - id: 7
+            type: null
           - id: 7
+            type: null
         authenticationChallengePolicyId: authenticationChallengePolicyId
         resourceOrder:
         - 5
@@ -11438,25 +11482,30 @@ components:
       description: A collection of applications.
       example:
         items:
-        - agentId: 9
+        - applicationType: null
+          agentId: 9
           virtualHostIds:
           - 3
           - 3
           spaSupportEnabled: true
           webSessionId: 2
+          destination: null
           description: description
           allowEmptyPathSegments: true
           agentCacheInvalidatedExpiration: 1
           enabled: true
           agentCacheInvalidatedResponseDuration: 6
           issuer: issuer
+          defaultAuthType: null
           id: 0
           fallbackPostEncoding: fallbackPostEncoding
           manualOrderingEnabled: true
           policy:
             key:
             - id: 7
+              type: null
             - id: 7
+              type: null
           authenticationChallengePolicyId: authenticationChallengePolicyId
           resourceOrder:
           - 5
@@ -11474,25 +11523,30 @@ components:
           sidebandClientId: sidebandClientId
           accessValidatorId: 4
           caseSensitivePath: true
-        - agentId: 9
+        - applicationType: null
+          agentId: 9
           virtualHostIds:
           - 3
           - 3
           spaSupportEnabled: true
           webSessionId: 2
+          destination: null
           description: description
           allowEmptyPathSegments: true
           agentCacheInvalidatedExpiration: 1
           enabled: true
           agentCacheInvalidatedResponseDuration: 6
           issuer: issuer
+          defaultAuthType: null
           id: 0
           fallbackPostEncoding: fallbackPostEncoding
           manualOrderingEnabled: true
           policy:
             key:
             - id: 7
+              type: null
             - id: 7
+              type: null
           authenticationChallengePolicyId: authenticationChallengePolicyId
           resourceOrder:
           - 5
@@ -11774,6 +11828,7 @@ components:
       description: The third-party OAuth 2.0 Authorization Server configuration.
       example:
         trustedCertificateGroupId: 0
+        auditLevel: null
         introspectionEndpoint: introspectionEndpoint
         description: description
         useProxy: true
@@ -11787,6 +11842,7 @@ components:
         subjectAttributeName: subjectAttributeName
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
@@ -11991,14 +12047,16 @@ components:
     ChainCertificate:
       description: A chain certificate.
       example:
-        expires: 2000-01-23T04:56:07.000Z
+        expires: 2000-01-23T04:56:07.000+00:00
         serialNumber: serialNumber
         issuerDn: issuerDn
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         sha256sum: sha256sum
-        validFrom: 2000-01-23T04:56:07.000Z
+        validFrom: 2000-01-23T04:56:07.000+00:00
         signatureAlgorithm: signatureAlgorithm
         sha1sum: sha1sum
         md5sum: md5sum
@@ -12006,6 +12064,7 @@ components:
         id: 1
         subjectCn: subjectCn
         subjectDn: subjectDn
+        status: null
       properties:
         id:
           description: The Id for the chain certificate.
@@ -12285,6 +12344,7 @@ components:
           category: category
           value: value
         label: label
+        type: null
         fields:
         - null
         - null
@@ -12499,6 +12559,7 @@ components:
             category: category
             value: value
           label: label
+          type: null
           fields:
           - null
           - null
@@ -12539,6 +12600,7 @@ components:
             category: category
             value: value
           label: label
+          type: null
           fields:
           - null
           - null
@@ -12608,6 +12670,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -12648,6 +12711,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -12692,6 +12756,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -12732,6 +12797,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -12794,9 +12860,9 @@ components:
         httpProxyId: 6
         httpsProxyId: 1
         keys:
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           jwk: "{}"
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           jwk: "{}"
         selectedCertificateId: 5
         name: name
@@ -12805,6 +12871,7 @@ components:
         configReplicationEnabled: true
         certificateHash:
           hexValue: hexValue
+          algorithm: null
       properties:
         id:
           description: "When creating a new Engine, this is the ID for the Engine.\
@@ -12849,15 +12916,17 @@ components:
     EngineCertificate:
       description: An engine certificate.
       example:
-        expires: 2000-01-23T04:56:07.000Z
+        expires: 2000-01-23T04:56:07.000+00:00
         serialNumber: serialNumber
         issuerDn: issuerDn
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         chainCertificate: true
         sha256sum: sha256sum
-        validFrom: 2000-01-23T04:56:07.000Z
+        validFrom: 2000-01-23T04:56:07.000+00:00
         signatureAlgorithm: signatureAlgorithm
         sha1sum: sha1sum
         md5sum: md5sum
@@ -12867,6 +12936,7 @@ components:
         id: 0
         subjectCn: subjectCn
         subjectDn: subjectDn
+        status: null
       properties:
         id:
           description: The id for the engine certificate.
@@ -12946,15 +13016,17 @@ components:
       description: A collection of engine certificates.
       example:
         items:
-        - expires: 2000-01-23T04:56:07.000Z
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           chainCertificate: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -12964,15 +13036,18 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
-        - expires: 2000-01-23T04:56:07.000Z
+          status: null
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           chainCertificate: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -12982,6 +13057,7 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
+          status: null
       properties:
         items:
           description: The actual list of engine certificates.
@@ -13150,9 +13226,9 @@ components:
         - httpProxyId: 6
           httpsProxyId: 1
           keys:
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
           selectedCertificateId: 5
           name: name
@@ -13161,12 +13237,13 @@ components:
           configReplicationEnabled: true
           certificateHash:
             hexValue: hexValue
+            algorithm: null
         - httpProxyId: 6
           httpsProxyId: 1
           keys:
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
           selectedCertificateId: 5
           name: name
@@ -13175,6 +13252,7 @@ components:
           configReplicationEnabled: true
           certificateHash:
             hexValue: hexValue
+            algorithm: null
       properties:
         items:
           description: An array of engines.
@@ -13245,6 +13323,7 @@ components:
       type: object
     GeneralName:
       example:
+        name: null
         value: value
       properties:
         name:
@@ -13270,6 +13349,7 @@ components:
     GlobalUnprotectedResource:
       description: A global unprotected resource.
       example:
+        auditLevel: null
         wildcardPath: wildcardPath
         name: name
         description: description
@@ -13304,12 +13384,14 @@ components:
       description: A collection of global unprotected resource items.
       example:
         items:
-        - wildcardPath: wildcardPath
+        - auditLevel: null
+          wildcardPath: wildcardPath
           name: name
           description: description
           id: id
           enabled: true
-        - wildcardPath: wildcardPath
+        - auditLevel: null
+          wildcardPath: wildcardPath
           name: name
           description: description
           id: id
@@ -13326,6 +13408,7 @@ components:
     Hash:
       example:
         hexValue: hexValue
+        algorithm: null
       properties:
         algorithm:
           $ref: '#/components/schemas/HashAlgorithm'
@@ -13379,6 +13462,7 @@ components:
         headerNameList:
         - headerNameList
         - headerNameList
+        listValueLocation: null
       properties:
         headerNameList:
           description: An array of header names used to identify the host source name.
@@ -13486,7 +13570,8 @@ components:
       - port
       type: object
     HttpMonitoring:
-      example: {}
+      example:
+        auditLevel: null
       properties:
         auditLevel:
           $ref: '#/components/schemas/AuditLevel'
@@ -13606,6 +13691,7 @@ components:
         headerNameList:
         - headerNameList
         - headerNameList
+        listValueLocation: null
       properties:
         headerNameList:
           description: An array of header names used to identify the source IP address.
@@ -13738,25 +13824,29 @@ components:
     KeyPair:
       description: A key pair.
       example:
-        expires: 2000-01-23T04:56:07.000Z
+        expires: 2000-01-23T04:56:07.000+00:00
         serialNumber: serialNumber
         issuerDn: issuerDn
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         csrPending: true
         sha256sum: sha256sum
-        validFrom: 2000-01-23T04:56:07.000Z
+        validFrom: 2000-01-23T04:56:07.000+00:00
         signatureAlgorithm: signatureAlgorithm
         chainCertificates:
-        - expires: 2000-01-23T04:56:07.000Z
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -13764,14 +13854,17 @@ components:
           id: 1
           subjectCn: subjectCn
           subjectDn: subjectDn
-        - expires: 2000-01-23T04:56:07.000Z
+          status: null
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -13779,6 +13872,7 @@ components:
           id: 1
           subjectCn: subjectCn
           subjectDn: subjectDn
+          status: null
         sha1sum: sha1sum
         md5sum: md5sum
         alias: alias
@@ -13786,6 +13880,7 @@ components:
         id: 0
         subjectCn: subjectCn
         subjectDn: subjectDn
+        status: null
       properties:
         id:
           description: The Id for the key pair.
@@ -13866,25 +13961,29 @@ components:
       description: A collection of key pairs.
       example:
         items:
-        - expires: 2000-01-23T04:56:07.000Z
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           csrPending: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           chainCertificates:
-          - expires: 2000-01-23T04:56:07.000Z
+          - expires: 2000-01-23T04:56:07.000+00:00
             serialNumber: serialNumber
             issuerDn: issuerDn
             subjectAlternativeNames:
-            - value: value
-            - value: value
+            - name: null
+              value: value
+            - name: null
+              value: value
             sha256sum: sha256sum
-            validFrom: 2000-01-23T04:56:07.000Z
+            validFrom: 2000-01-23T04:56:07.000+00:00
             signatureAlgorithm: signatureAlgorithm
             sha1sum: sha1sum
             md5sum: md5sum
@@ -13892,14 +13991,17 @@ components:
             id: 1
             subjectCn: subjectCn
             subjectDn: subjectDn
-          - expires: 2000-01-23T04:56:07.000Z
+            status: null
+          - expires: 2000-01-23T04:56:07.000+00:00
             serialNumber: serialNumber
             issuerDn: issuerDn
             subjectAlternativeNames:
-            - value: value
-            - value: value
+            - name: null
+              value: value
+            - name: null
+              value: value
             sha256sum: sha256sum
-            validFrom: 2000-01-23T04:56:07.000Z
+            validFrom: 2000-01-23T04:56:07.000+00:00
             signatureAlgorithm: signatureAlgorithm
             sha1sum: sha1sum
             md5sum: md5sum
@@ -13907,6 +14009,7 @@ components:
             id: 1
             subjectCn: subjectCn
             subjectDn: subjectDn
+            status: null
           sha1sum: sha1sum
           md5sum: md5sum
           alias: alias
@@ -13914,25 +14017,30 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
-        - expires: 2000-01-23T04:56:07.000Z
+          status: null
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           csrPending: true
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           chainCertificates:
-          - expires: 2000-01-23T04:56:07.000Z
+          - expires: 2000-01-23T04:56:07.000+00:00
             serialNumber: serialNumber
             issuerDn: issuerDn
             subjectAlternativeNames:
-            - value: value
-            - value: value
+            - name: null
+              value: value
+            - name: null
+              value: value
             sha256sum: sha256sum
-            validFrom: 2000-01-23T04:56:07.000Z
+            validFrom: 2000-01-23T04:56:07.000+00:00
             signatureAlgorithm: signatureAlgorithm
             sha1sum: sha1sum
             md5sum: md5sum
@@ -13940,14 +14048,17 @@ components:
             id: 1
             subjectCn: subjectCn
             subjectDn: subjectDn
-          - expires: 2000-01-23T04:56:07.000Z
+            status: null
+          - expires: 2000-01-23T04:56:07.000+00:00
             serialNumber: serialNumber
             issuerDn: issuerDn
             subjectAlternativeNames:
-            - value: value
-            - value: value
+            - name: null
+              value: value
+            - name: null
+              value: value
             sha256sum: sha256sum
-            validFrom: 2000-01-23T04:56:07.000Z
+            validFrom: 2000-01-23T04:56:07.000+00:00
             signatureAlgorithm: signatureAlgorithm
             sha1sum: sha1sum
             md5sum: md5sum
@@ -13955,6 +14066,7 @@ components:
             id: 1
             subjectCn: subjectCn
             subjectDn: subjectDn
+            status: null
           sha1sum: sha1sum
           md5sum: md5sum
           alias: alias
@@ -13962,6 +14074,7 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
+          status: null
       properties:
         items:
           description: The actual list of key pairs.
@@ -14204,8 +14317,10 @@ components:
         keySize: 1
         city: city
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         organizationUnit: organizationUnit
         signatureAlgorithm: signatureAlgorithm
         organization: organization
@@ -14285,8 +14400,10 @@ components:
     OAuthAuthenticationConfiguration:
       description: Required when the authentication type is 'OAuth'.
       example:
+        configuredAuthorizationServerType: null
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
@@ -14314,6 +14431,7 @@ components:
       description: OAuth client credentials.
       example:
         clientId: clientId
+        credentialsType: null
         clientSecret:
           encryptedValue: encryptedValue
           value: value
@@ -14363,6 +14481,7 @@ components:
         subjectAttributeName: subjectAttributeName
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
@@ -14441,6 +14560,7 @@ components:
           configuration: "{}"
           className: className
         useSlo: true
+        auditLevel: null
         description: description
         requestSupportedScopesOnly: true
         useProxy: true
@@ -14727,6 +14847,7 @@ components:
         useSlo: true
         oidcConfiguration:
           pfsessionStateCacheInSeconds: 1
+          oidcLoginType: null
           sendRequestedUrlToProvider: true
           enablePushAuthorization: true
           enableRefreshUser: true
@@ -14734,10 +14855,12 @@ components:
           provideAuthenticationFeedback: true
           clientCredentials:
             clientId: clientId
+            credentialsType: null
             clientSecret:
               encryptedValue: encryptedValue
               value: value
             keyPairId: 0
+          pkceChallengeType: null
           scopes:
           - scopes
           - scopes
@@ -14860,6 +14983,7 @@ components:
       description: A pattern for matching request URI paths.
       example:
         pattern: pattern
+        type: null
       properties:
         pattern:
           description: "The path-matching pattern, relative to the Application context\
@@ -14882,6 +15006,7 @@ components:
         name: name
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
@@ -14949,8 +15074,10 @@ components:
         skipHostnameVerification: true
         host: host
         oAuthAuthenticationConfig:
+          configuredAuthorizationServerType: null
           clientCredentials:
             clientId: clientId
+            credentialsType: null
             clientSecret:
               encryptedValue: encryptedValue
               value: value
@@ -14958,6 +15085,7 @@ components:
           scopes:
           - scopes
           - scopes
+        authenticationType: null
         adminPassword:
           encryptedValue: encryptedValue
           value: value
@@ -15077,7 +15205,9 @@ components:
           contextRoot: contextRoot
           policy:
           - id: 7
+            type: null
           - id: 7
+            type: null
         basePath: basePath
         port: 2
         skipHostnameVerification: true
@@ -15175,7 +15305,9 @@ components:
         contextRoot: contextRoot
         policy:
         - id: 7
+          type: null
         - id: 7
+          type: null
       properties:
         contextRoot:
           description: The base path of the PingFederate runtime application. Default
@@ -15313,9 +15445,10 @@ components:
         credentialId: credentialId
         pingOneAuthenticationApiEndpoint: pingOneAuthenticationApiEndpoint
         id: id
-        creationDate: 2000-01-23T04:56:07.000Z
+        creationDate: 2000-01-23T04:56:07.000+00:00
         region: region
         pingOneManagementApiEndpoint: pingOneManagementApiEndpoint
+        credentialStatus: null
       properties:
         creationDate:
           description: The date this credential was created in PingOne.
@@ -15440,6 +15573,7 @@ components:
       description: A policy item.
       example:
         id: 7
+        type: null
       properties:
         type:
           $ref: '#/components/schemas/PolicyItemType'
@@ -15486,7 +15620,7 @@ components:
     PublicKey:
       description: A public key.
       example:
-        created: 2000-01-23T04:56:07.000Z
+        created: 2000-01-23T04:56:07.000+00:00
         jwk: "{}"
       properties:
         jwk:
@@ -15508,14 +15642,18 @@ components:
         params:
         - name:
             pattern: pattern
+            type: null
           value:
             matchAny: true
             pattern: pattern
+            type: null
         - name:
             pattern: pattern
+            type: null
           value:
             matchAny: true
             pattern: pattern
+            type: null
       properties:
         matchesNoParams:
           description: Enable this setting to match requests to URLs without query
@@ -15530,6 +15668,7 @@ components:
     QueryParamName:
       example:
         pattern: pattern
+        type: null
       properties:
         pattern:
           description: The string value of the query parameter name.
@@ -15541,9 +15680,11 @@ components:
       example:
         name:
           pattern: pattern
+          type: null
         value:
           matchAny: true
           pattern: pattern
+          type: null
       properties:
         name:
           $ref: '#/components/schemas/QueryParamName'
@@ -15558,6 +15699,7 @@ components:
       example:
         matchAny: true
         pattern: pattern
+        type: null
       properties:
         pattern:
           description: The string value of the query parameter value.
@@ -15587,6 +15729,7 @@ components:
     Redirect:
       description: A Redirect.
       example:
+        auditLevel: null
         id: id
         source:
           port: 0
@@ -15618,7 +15761,8 @@ components:
       description: A collection of Redirects.
       example:
         items:
-        - id: id
+        - auditLevel: null
+          id: id
           source:
             port: 0
             host: host
@@ -15627,7 +15771,8 @@ components:
             host: host
             secure: true
           responseCode: 1
-        - id: id
+        - auditLevel: null
+          id: id
           source:
             port: 0
             host: host
@@ -15702,9 +15847,9 @@ components:
         httpProxyId: 6
         httpsProxyId: 1
         keys:
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           jwk: "{}"
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           jwk: "{}"
         selectedCertificateId: 5
         name: name
@@ -15714,6 +15859,7 @@ components:
         configReplicationEnabled: true
         certificateHash:
           hexValue: hexValue
+          algorithm: null
       properties:
         id:
           description: The ID of the replica admin. This field is read-only.
@@ -15762,9 +15908,9 @@ components:
         - httpProxyId: 6
           httpsProxyId: 1
           keys:
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
           selectedCertificateId: 5
           name: name
@@ -15774,12 +15920,13 @@ components:
           configReplicationEnabled: true
           certificateHash:
             hexValue: hexValue
+            algorithm: null
         - httpProxyId: 6
           httpsProxyId: 1
           keys:
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
-          - created: 2000-01-23T04:56:07.000Z
+          - created: 2000-01-23T04:56:07.000+00:00
             jwk: "{}"
           selectedCertificateId: 5
           name: name
@@ -15789,6 +15936,7 @@ components:
           configReplicationEnabled: true
           certificateHash:
             hexValue: hexValue
+            algorithm: null
       properties:
         items:
           description: An array of replica admin values.
@@ -15879,6 +16027,8 @@ components:
         methods:
         - methods
         - methods
+        auditLevel: null
+        defaultAuthTypeOverride: null
         riskPolicyId: 1
         enabled: true
         rootResource: true
@@ -15889,24 +16039,33 @@ components:
           params:
           - name:
               pattern: pattern
+              type: null
             value:
               matchAny: true
               pattern: pattern
+              type: null
           - name:
               pattern: pattern
+              type: null
             value:
               matchAny: true
               pattern: pattern
+              type: null
         id: 0
         pathPatterns:
         - pattern: pattern
+          type: null
         - pattern: pattern
+          type: null
         unprotected: true
         applicationId: 6
         policy:
           key:
           - id: 7
+            type: null
           - id: 7
+            type: null
+        resourceType: null
         authenticationChallengePolicyId: authenticationChallengePolicyId
       properties:
         id:
@@ -16000,6 +16159,8 @@ components:
           location: location
           id: id
         pattern: pattern
+        patternType: null
+        type: null
       properties:
         name:
           description: The name of the associated resource.
@@ -16040,6 +16201,8 @@ components:
             location: location
             id: id
           pattern: pattern
+          patternType: null
+          type: null
         - methods:
           - methods
           - methods
@@ -16048,6 +16211,8 @@ components:
             location: location
             id: id
           pattern: pattern
+          patternType: null
+          type: null
       properties:
         entries:
           description: Resource Matching Entries.
@@ -16100,6 +16265,8 @@ components:
           methods:
           - methods
           - methods
+          auditLevel: null
+          defaultAuthTypeOverride: null
           riskPolicyId: 1
           enabled: true
           rootResource: true
@@ -16110,24 +16277,33 @@ components:
             params:
             - name:
                 pattern: pattern
+                type: null
               value:
                 matchAny: true
                 pattern: pattern
+                type: null
             - name:
                 pattern: pattern
+                type: null
               value:
                 matchAny: true
                 pattern: pattern
+                type: null
           id: 0
           pathPatterns:
           - pattern: pattern
+            type: null
           - pattern: pattern
+            type: null
           unprotected: true
           applicationId: 6
           policy:
             key:
             - id: 7
+              type: null
             - id: 7
+              type: null
+          resourceType: null
           authenticationChallengePolicyId: authenticationChallengePolicyId
         - resourceTypeConfiguration:
             responseGenerator:
@@ -16139,6 +16315,8 @@ components:
           methods:
           - methods
           - methods
+          auditLevel: null
+          defaultAuthTypeOverride: null
           riskPolicyId: 1
           enabled: true
           rootResource: true
@@ -16149,24 +16327,33 @@ components:
             params:
             - name:
                 pattern: pattern
+                type: null
               value:
                 matchAny: true
                 pattern: pattern
+                type: null
             - name:
                 pattern: pattern
+                type: null
               value:
                 matchAny: true
                 pattern: pattern
+                type: null
           id: 0
           pathPatterns:
           - pattern: pattern
+            type: null
           - pattern: pattern
+            type: null
           unprotected: true
           applicationId: 6
           policy:
             key:
             - id: 7
+              type: null
             - id: 7
+              type: null
+          resourceType: null
           authenticationChallengePolicyId: authenticationChallengePolicyId
       properties:
         items:
@@ -16363,6 +16550,7 @@ components:
             category: category
             value: value
           label: label
+          type: null
           fields:
           - null
           - null
@@ -16403,6 +16591,7 @@ components:
             category: category
             value: value
           label: label
+          type: null
           fields:
           - null
           - null
@@ -16427,6 +16616,7 @@ components:
               value: value
           required: true
         type: type
+        category: null
       properties:
         configurationFields:
           description: The list of configuration fields of the rule
@@ -16490,6 +16680,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -16530,6 +16721,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -16554,6 +16746,7 @@ components:
                 value: value
             required: true
           type: type
+          category: null
         - modes:
           - null
           - null
@@ -16578,6 +16771,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -16618,6 +16812,7 @@ components:
               category: category
               value: value
             label: label
+            type: null
             fields:
             - null
             - null
@@ -16642,6 +16837,7 @@ components:
                 value: value
             required: true
           type: type
+          category: null
       properties:
         items:
           description: The actual list of rule descriptors.
@@ -16664,8 +16860,10 @@ components:
     RuleSet:
       description: A rule set.
       example:
+        successCriteria: null
         name: name
         id: 0
+        elementType: null
         policy:
         - 6
         - 6
@@ -16735,13 +16933,17 @@ components:
       description: A collection of rule sets.
       example:
         items:
-        - name: name
+        - successCriteria: null
+          name: name
           id: 0
+          elementType: null
           policy:
           - 6
           - 6
-        - name: name
+        - successCriteria: null
+          name: name
           id: 0
+          elementType: null
           policy:
           - 6
           - 6
@@ -16987,7 +17189,7 @@ components:
     SharedSecret:
       description: A shared secret.
       example:
-        created: 2000-01-23T04:56:07.000Z
+        created: 2000-01-23T04:56:07.000+00:00
         id: 0
         secret:
           encryptedValue: encryptedValue
@@ -17014,12 +17216,12 @@ components:
       description: A collection of shared secrets.
       example:
         items:
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           id: 0
           secret:
             encryptedValue: encryptedValue
             value: value
-        - created: 2000-01-23T04:56:07.000Z
+        - created: 2000-01-23T04:56:07.000+00:00
           id: 0
           secret:
             encryptedValue: encryptedValue
@@ -17044,13 +17246,15 @@ components:
             secret:
               encryptedValue: encryptedValue
               value: value
-          created: 2000-01-23T04:56:07.000Z
+          created: 2000-01-23T04:56:07.000+00:00
+          credentialsType: null
         - sharedSecretConfig:
             sharedSecretHeaderName: sharedSecretHeaderName
             secret:
               encryptedValue: encryptedValue
               value: value
-          created: 2000-01-23T04:56:07.000Z
+          created: 2000-01-23T04:56:07.000+00:00
+          credentialsType: null
         id: id
       properties:
         id:
@@ -17082,7 +17286,8 @@ components:
           secret:
             encryptedValue: encryptedValue
             value: value
-        created: 2000-01-23T04:56:07.000Z
+        created: 2000-01-23T04:56:07.000+00:00
+        credentialsType: null
       properties:
         created:
           description: "The created date of the credentials as the number of milliseconds\
@@ -17112,13 +17317,15 @@ components:
               secret:
                 encryptedValue: encryptedValue
                 value: value
-            created: 2000-01-23T04:56:07.000Z
+            created: 2000-01-23T04:56:07.000+00:00
+            credentialsType: null
           - sharedSecretConfig:
               sharedSecretHeaderName: sharedSecretHeaderName
               secret:
                 encryptedValue: encryptedValue
                 value: value
-            created: 2000-01-23T04:56:07.000Z
+            created: 2000-01-23T04:56:07.000+00:00
+            credentialsType: null
           id: id
         - name: name
           description: description
@@ -17128,13 +17335,15 @@ components:
               secret:
                 encryptedValue: encryptedValue
                 value: value
-            created: 2000-01-23T04:56:07.000Z
+            created: 2000-01-23T04:56:07.000+00:00
+            credentialsType: null
           - sharedSecretConfig:
               sharedSecretHeaderName: sharedSecretHeaderName
               secret:
                 encryptedValue: encryptedValue
                 value: value
-            created: 2000-01-23T04:56:07.000Z
+            created: 2000-01-23T04:56:07.000+00:00
+            credentialsType: null
           id: id
       properties:
         items:
@@ -17553,6 +17762,7 @@ components:
     TokenProviderSetting:
       description: Settings for a token provider.
       example:
+        type: null
         useThirdParty: true
       properties:
         useThirdParty:
@@ -17572,14 +17782,16 @@ components:
     TrustedCert:
       description: A trusted certificate.
       example:
-        expires: 2000-01-23T04:56:07.000Z
+        expires: 2000-01-23T04:56:07.000+00:00
         serialNumber: serialNumber
         issuerDn: issuerDn
         subjectAlternativeNames:
-        - value: value
-        - value: value
+        - name: null
+          value: value
+        - name: null
+          value: value
         sha256sum: sha256sum
-        validFrom: 2000-01-23T04:56:07.000Z
+        validFrom: 2000-01-23T04:56:07.000+00:00
         signatureAlgorithm: signatureAlgorithm
         sha1sum: sha1sum
         md5sum: md5sum
@@ -17587,6 +17799,7 @@ components:
         id: 0
         subjectCn: subjectCn
         subjectDn: subjectDn
+        status: null
       properties:
         id:
           description: "When creating a new TrustedCert, this is the ID for the TrustedCert.\
@@ -17756,14 +17969,16 @@ components:
       description: A collection of trusted certificates.
       example:
         items:
-        - expires: 2000-01-23T04:56:07.000Z
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -17771,14 +17986,17 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
-        - expires: 2000-01-23T04:56:07.000Z
+          status: null
+        - expires: 2000-01-23T04:56:07.000+00:00
           serialNumber: serialNumber
           issuerDn: issuerDn
           subjectAlternativeNames:
-          - value: value
-          - value: value
+          - name: null
+            value: value
+          - name: null
+            value: value
           sha256sum: sha256sum
-          validFrom: 2000-01-23T04:56:07.000Z
+          validFrom: 2000-01-23T04:56:07.000+00:00
           signatureAlgorithm: signatureAlgorithm
           sha1sum: sha1sum
           md5sum: md5sum
@@ -17786,6 +18004,7 @@ components:
           id: 0
           subjectCn: subjectCn
           subjectDn: subjectDn
+          status: null
       properties:
         items:
           description: A collection of trusted certificate items.
@@ -17803,8 +18022,11 @@ components:
     UnknownResourceSettings:
       description: Global settings for unknown resources.
       example:
+        errorContentType: null
         errorTemplateFile: errorTemplateFile
+        auditLevel: null
         errorStatusCode: 0
+        agentDefaultMode: null
         agentDefaultCacheTTL: 6
       properties:
         errorStatusCode:
@@ -17989,8 +18211,10 @@ components:
     WebSession:
       description: A web session.
       example:
+        webStorageType: null
         pfsessionStateCacheInSeconds: 5
         idleTimeoutInMinutes: 5
+        oidcLoginType: null
         sendRequestedUrlToProvider: true
         secureCookie: true
         enableRefreshUser: true
@@ -17999,8 +18223,10 @@ components:
         sessionTimeoutInMinutes: 6
         provideAuthenticationFeedback: true
         httpOnlyCookie: true
+        sameSite: null
         clientCredentials:
           clientId: clientId
+          credentialsType: null
           clientSecret:
             encryptedValue: encryptedValue
             value: value
@@ -18011,11 +18237,14 @@ components:
         - promptParameter
         - promptParameter
         audience: audience
+        requestPreservationType: null
+        cookieType: null
         timeoutGroovyScript: timeoutGroovyScript
         enablePushAuthorization: true
         requestProfile: true
         failOnUnsupportedPreservationContentType: true
         name: name
+        pkceChallengeType: null
         scopes:
         - scopes
         - scopes
@@ -18214,8 +18443,10 @@ components:
       description: A collection of web sessions.
       example:
         items:
-        - pfsessionStateCacheInSeconds: 5
+        - webStorageType: null
+          pfsessionStateCacheInSeconds: 5
           idleTimeoutInMinutes: 5
+          oidcLoginType: null
           sendRequestedUrlToProvider: true
           secureCookie: true
           enableRefreshUser: true
@@ -18224,8 +18455,10 @@ components:
           sessionTimeoutInMinutes: 6
           provideAuthenticationFeedback: true
           httpOnlyCookie: true
+          sameSite: null
           clientCredentials:
             clientId: clientId
+            credentialsType: null
             clientSecret:
               encryptedValue: encryptedValue
               value: value
@@ -18236,17 +18469,22 @@ components:
           - promptParameter
           - promptParameter
           audience: audience
+          requestPreservationType: null
+          cookieType: null
           timeoutGroovyScript: timeoutGroovyScript
           enablePushAuthorization: true
           requestProfile: true
           failOnUnsupportedPreservationContentType: true
           name: name
+          pkceChallengeType: null
           scopes:
           - scopes
           - scopes
           cacheUserAttributes: true
-        - pfsessionStateCacheInSeconds: 5
+        - webStorageType: null
+          pfsessionStateCacheInSeconds: 5
           idleTimeoutInMinutes: 5
+          oidcLoginType: null
           sendRequestedUrlToProvider: true
           secureCookie: true
           enableRefreshUser: true
@@ -18255,8 +18493,10 @@ components:
           sessionTimeoutInMinutes: 6
           provideAuthenticationFeedback: true
           httpOnlyCookie: true
+          sameSite: null
           clientCredentials:
             clientId: clientId
+            credentialsType: null
             clientSecret:
               encryptedValue: encryptedValue
               value: value
@@ -18267,11 +18507,14 @@ components:
           - promptParameter
           - promptParameter
           audience: audience
+          requestPreservationType: null
+          cookieType: null
           timeoutGroovyScript: timeoutGroovyScript
           enablePushAuthorization: true
           requestProfile: true
           failOnUnsupportedPreservationContentType: true
           name: name
+          pkceChallengeType: null
           scopes:
           - scopes
           - scopes
@@ -18321,21 +18564,4 @@ components:
       required:
       - alias
       - fileData
-      type: object
-    AccessTokenValidator_configuration:
-      description: The access token validator's configuration data. - This value is
-        a PingAccess plugin configuration (JSON).
-      properties:
-        description:
-          type: string
-        path:
-          type: string
-        subjectAttributeName:
-          type: string
-        issuer:
-          type: string
-        audience:
-          type: string
-      required:
-      - path
       type: object

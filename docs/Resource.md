@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new Resource, this is the ID for the Resource. If not specified, an ID will be automatically assigned. When updating an existing Resource, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new Resource, this is the ID for the Resource. If not specified, an ID will be automatically assigned. When updating an existing Resource, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the resource. | 
 **Methods** | **[]string** | An array of HTTP methods configured for the resource. | 
 **PathPatterns** | Pointer to [**[]PathPattern**](PathPattern.md) | A list of one or more request path-matching patterns. | [optional] 
@@ -16,12 +16,12 @@ Name | Type | Description | Notes
 **Unprotected** | Pointer to **bool** | (sortable) True if the resource is unprotected. | [optional] 
 **Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the resource.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems.  Key type: String Value type: PolicyItem[] | [optional] 
 **DefaultAuthTypeOverride** | [**DefaultAuthType**](DefaultAuthType.md) |  | 
-**ApplicationId** | Pointer to **int32** | The id of the associated application. This field is read-only. | [optional] 
+**ApplicationId** | Pointer to **int64** | The id of the associated application. This field is read-only. | [optional] 
 **QueryParamConfig** | Pointer to [**QueryParamConfig**](QueryParamConfig.md) |  | [optional] 
 **ResourceType** | Pointer to [**ResourceType**](ResourceType.md) |  | [optional] 
 **ResourceTypeConfiguration** | Pointer to [**ResourceTypeConfiguration**](ResourceTypeConfiguration.md) |  | [optional] 
 **AuthenticationChallengePolicyId** | **string** | The UUID of the authentication challenge policy associated with the resource. This policy takes precedence over an application-level policy. | 
-**RiskPolicyId** | Pointer to **int32** | The ID of the risk policy to use for this resource. This risk policy takes precedence over an application-level risk policy. | [optional] 
+**RiskPolicyId** | Pointer to **int64** | The ID of the risk policy to use for this resource. This risk policy takes precedence over an application-level risk policy. | [optional] 
 
 ## Methods
 
@@ -44,20 +44,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Resource) GetId() int32`
+`func (o *Resource) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Resource) GetIdOk() (*int32, bool)`
+`func (o *Resource) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Resource) SetId(v int32)`
+`func (o *Resource) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -329,20 +329,20 @@ SetDefaultAuthTypeOverride sets DefaultAuthTypeOverride field to given value.
 
 ### GetApplicationId
 
-`func (o *Resource) GetApplicationId() int32`
+`func (o *Resource) GetApplicationId() int64`
 
 GetApplicationId returns the ApplicationId field if non-nil, zero value otherwise.
 
 ### GetApplicationIdOk
 
-`func (o *Resource) GetApplicationIdOk() (*int32, bool)`
+`func (o *Resource) GetApplicationIdOk() (*int64, bool)`
 
 GetApplicationIdOk returns a tuple with the ApplicationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplicationId
 
-`func (o *Resource) SetApplicationId(v int32)`
+`func (o *Resource) SetApplicationId(v int64)`
 
 SetApplicationId sets ApplicationId field to given value.
 
@@ -449,20 +449,20 @@ SetAuthenticationChallengePolicyId sets AuthenticationChallengePolicyId field to
 
 ### GetRiskPolicyId
 
-`func (o *Resource) GetRiskPolicyId() int32`
+`func (o *Resource) GetRiskPolicyId() int64`
 
 GetRiskPolicyId returns the RiskPolicyId field if non-nil, zero value otherwise.
 
 ### GetRiskPolicyIdOk
 
-`func (o *Resource) GetRiskPolicyIdOk() (*int32, bool)`
+`func (o *Resource) GetRiskPolicyIdOk() (*int64, bool)`
 
 GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskPolicyId
 
-`func (o *Resource) SetRiskPolicyId(v int32)`
+`func (o *Resource) SetRiskPolicyId(v int64)`
 
 SetRiskPolicyId sets RiskPolicyId field to given value.
 

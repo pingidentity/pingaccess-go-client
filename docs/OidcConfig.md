@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthnReqListId** | Pointer to **int32** | The ID of the authentication requirement list for Administrative SSO login to PingAccess. | [optional] 
+**AuthnReqListId** | Pointer to **int64** | The ID of the authentication requirement list for Administrative SSO login to PingAccess. | [optional] 
 **Enabled** | Pointer to **bool** | This field is true to enable Administrator SSO Authentication. | [optional] 
 **UseSlo** | Pointer to **bool** | Enable if OIDC single log out should be used on the /pa/oidc/logout for admin console. | [optional] 
 **UsernameAttributeName** | Pointer to **string** | Attribute to display as the logged in user. If not set, the sub attribute will be used. | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAuthnReqListId
 
-`func (o *OidcConfig) GetAuthnReqListId() int32`
+`func (o *OidcConfig) GetAuthnReqListId() int64`
 
 GetAuthnReqListId returns the AuthnReqListId field if non-nil, zero value otherwise.
 
 ### GetAuthnReqListIdOk
 
-`func (o *OidcConfig) GetAuthnReqListIdOk() (*int32, bool)`
+`func (o *OidcConfig) GetAuthnReqListIdOk() (*int64, bool)`
 
 GetAuthnReqListIdOk returns a tuple with the AuthnReqListId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthnReqListId
 
-`func (o *OidcConfig) SetAuthnReqListId(v int32)`
+`func (o *OidcConfig) SetAuthnReqListId(v int64)`
 
 SetAuthnReqListId sets AuthnReqListId field to given value.
 

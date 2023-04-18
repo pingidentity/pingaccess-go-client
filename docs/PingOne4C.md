@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the PingOne for Customers OIDC provider. | [optional] 
 **Issuer** | **string** | The issuer url of the PingOne for Customers OIDC provider. | 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to PingOne for Customers OIDC provider. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to PingOne for Customers OIDC provider. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTPS requests. | [optional] 
 
 ## Methods
@@ -75,20 +75,20 @@ SetIssuer sets Issuer field to given value.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *PingOne4C) GetTrustedCertificateGroupId() int32`
+`func (o *PingOne4C) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *PingOne4C) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *PingOne4C) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *PingOne4C) SetTrustedCertificateGroupId(v int32)`
+`func (o *PingOne4C) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

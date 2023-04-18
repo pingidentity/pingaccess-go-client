@@ -363,8 +363,8 @@ func (a *RedirectsApiService) GetRedirectExecute(r ApiGetRedirectRequest) (*Redi
 type ApiGetRedirectsRequest struct {
 	ctx           context.Context
 	ApiService    *RedirectsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	source        *string
 	target        *string
@@ -373,13 +373,13 @@ type ApiGetRedirectsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetRedirectsRequest) Page(page int32) ApiGetRedirectsRequest {
+func (r ApiGetRedirectsRequest) Page(page int64) ApiGetRedirectsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Redirects per page
-func (r ApiGetRedirectsRequest) NumberPerPage(numberPerPage int32) ApiGetRedirectsRequest {
+func (r ApiGetRedirectsRequest) NumberPerPage(numberPerPage int64) ApiGetRedirectsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

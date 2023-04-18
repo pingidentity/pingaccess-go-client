@@ -25,7 +25,7 @@ type AdminWebSessionOidcConfiguration struct {
 	// Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider.
 	SendRequestedUrlToProvider *bool `json:"sendRequestedUrlToProvider,omitempty"`
 	// Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled.
-	RefreshUserInfoClaimsInterval *int32 `json:"refreshUserInfoClaimsInterval,omitempty"`
+	RefreshUserInfoClaimsInterval *int64 `json:"refreshUserInfoClaimsInterval,omitempty"`
 	ProvideAuthenticationFeedback *bool  `json:"provideAuthenticationFeedback,omitempty"`
 	// Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie.
 	CacheUserAttributes *bool `json:"cacheUserAttributes,omitempty"`
@@ -38,7 +38,7 @@ type AdminWebSessionOidcConfiguration struct {
 	PkceChallengeType *PkceChallengeType     `json:"pkceChallengeType,omitempty"`
 	ClientCredentials OAuthClientCredentials `json:"clientCredentials"`
 	// Specify the number of seconds to cache PingFederate Session State information.
-	PfsessionStateCacheInSeconds *int32 `json:"pfsessionStateCacheInSeconds,omitempty"`
+	PfsessionStateCacheInSeconds *int64 `json:"pfsessionStateCacheInSeconds,omitempty"`
 }
 
 // NewAdminWebSessionOidcConfiguration instantiates a new AdminWebSessionOidcConfiguration object
@@ -156,9 +156,9 @@ func (o *AdminWebSessionOidcConfiguration) SetSendRequestedUrlToProvider(v bool)
 }
 
 // GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field value if set, zero value otherwise.
-func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int32 {
+func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int64 {
 	if o == nil || IsNil(o.RefreshUserInfoClaimsInterval) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RefreshUserInfoClaimsInterval
@@ -166,7 +166,7 @@ func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() in
 
 // GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool) {
+func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int64, bool) {
 	if o == nil || IsNil(o.RefreshUserInfoClaimsInterval) {
 		return nil, false
 	}
@@ -182,8 +182,8 @@ func (o *AdminWebSessionOidcConfiguration) HasRefreshUserInfoClaimsInterval() bo
 	return false
 }
 
-// SetRefreshUserInfoClaimsInterval gets a reference to the given int32 and assigns it to the RefreshUserInfoClaimsInterval field.
-func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int32) {
+// SetRefreshUserInfoClaimsInterval gets a reference to the given int64 and assigns it to the RefreshUserInfoClaimsInterval field.
+func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int64) {
 	o.RefreshUserInfoClaimsInterval = &v
 }
 
@@ -436,9 +436,9 @@ func (o *AdminWebSessionOidcConfiguration) SetClientCredentials(v OAuthClientCre
 }
 
 // GetPfsessionStateCacheInSeconds returns the PfsessionStateCacheInSeconds field value if set, zero value otherwise.
-func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSeconds() int32 {
+func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSeconds() int64 {
 	if o == nil || IsNil(o.PfsessionStateCacheInSeconds) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PfsessionStateCacheInSeconds
@@ -446,7 +446,7 @@ func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSeconds() int
 
 // GetPfsessionStateCacheInSecondsOk returns a tuple with the PfsessionStateCacheInSeconds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSecondsOk() (*int32, bool) {
+func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSecondsOk() (*int64, bool) {
 	if o == nil || IsNil(o.PfsessionStateCacheInSeconds) {
 		return nil, false
 	}
@@ -462,8 +462,8 @@ func (o *AdminWebSessionOidcConfiguration) HasPfsessionStateCacheInSeconds() boo
 	return false
 }
 
-// SetPfsessionStateCacheInSeconds gets a reference to the given int32 and assigns it to the PfsessionStateCacheInSeconds field.
-func (o *AdminWebSessionOidcConfiguration) SetPfsessionStateCacheInSeconds(v int32) {
+// SetPfsessionStateCacheInSeconds gets a reference to the given int64 and assigns it to the PfsessionStateCacheInSeconds field.
+func (o *AdminWebSessionOidcConfiguration) SetPfsessionStateCacheInSeconds(v int64) {
 	o.PfsessionStateCacheInSeconds = &v
 }
 

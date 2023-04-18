@@ -901,8 +901,8 @@ func (a *KeyPairsApiService) GetKeyPairExecute(r ApiGetKeyPairRequest) (*KeyPair
 type ApiGetKeyPairsRequest struct {
 	ctx           context.Context
 	ApiService    *KeyPairsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	alias         *string
 	sortKey       *string
@@ -910,13 +910,13 @@ type ApiGetKeyPairsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetKeyPairsRequest) Page(page int32) ApiGetKeyPairsRequest {
+func (r ApiGetKeyPairsRequest) Page(page int64) ApiGetKeyPairsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Key Pairs per page
-func (r ApiGetKeyPairsRequest) NumberPerPage(numberPerPage int32) ApiGetKeyPairsRequest {
+func (r ApiGetKeyPairsRequest) NumberPerPage(numberPerPage int64) ApiGetKeyPairsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

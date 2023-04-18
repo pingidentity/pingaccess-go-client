@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **BackChannelSecure** | Pointer to **bool** | Enable if PingFederate is expecting HTTPS connections for calls via the Back Channel hostnames. | [optional] 
 **UseSlo** | Pointer to **bool** | Enable if OIDC single log out should be used on the /pa/oidc/logout on the engines. | [optional] 
 **Application** | Pointer to [**PingFederateRuntimeApplication**](PingFederateRuntimeApplication.md) |  | [optional] 
-**AvailabilityProfileId** | Pointer to **int32** | The ID of the availability profile to use for the PingFederate runtime. When set to 0, an availability profile defined by the pa.default.availability.ondemand properties in run.properties will be used for back end communication to PingFederate. | [optional] 
-**LoadBalancingStrategyId** | Pointer to **int32** | The ID of the load balancing strategy to use for requests to the PingFederate targets. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to PingFederate. | [optional] 
+**AvailabilityProfileId** | Pointer to **int64** | The ID of the availability profile to use for the PingFederate runtime. When set to 0, an availability profile defined by the pa.default.availability.ondemand properties in run.properties will be used for back end communication to PingFederate. | [optional] 
+**LoadBalancingStrategyId** | Pointer to **int64** | The ID of the load balancing strategy to use for requests to the PingFederate targets. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to PingFederate. | [optional] 
 **Host** | **string** | The host name or IP address for PingFederate Runtime. This field is ignored and can be an empty string when the PingFederate application is configured. | 
-**Port** | **int32** | The port number for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | 
+**Port** | **int64** | The port number for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | 
 **Secure** | Pointer to **bool** | Enable if PingFederate is expecting HTTPS connections. This field is ignored when the PingFederate application is configured. In this case, use backChannelSecure instead. | [optional] 
 **BasePath** | Pointer to **string** | The base path, if needed, for PingFederate Runtime. This field is ignored when the PingFederate application is configured. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewPingFederateRuntime
 
-`func NewPingFederateRuntime(host string, port int32, ) *PingFederateRuntime`
+`func NewPingFederateRuntime(host string, port int64, ) *PingFederateRuntime`
 
 NewPingFederateRuntime instantiates a new PingFederateRuntime object
 This constructor will assign default values to properties that have it defined,
@@ -217,20 +217,20 @@ HasApplication returns a boolean if a field has been set.
 
 ### GetAvailabilityProfileId
 
-`func (o *PingFederateRuntime) GetAvailabilityProfileId() int32`
+`func (o *PingFederateRuntime) GetAvailabilityProfileId() int64`
 
 GetAvailabilityProfileId returns the AvailabilityProfileId field if non-nil, zero value otherwise.
 
 ### GetAvailabilityProfileIdOk
 
-`func (o *PingFederateRuntime) GetAvailabilityProfileIdOk() (*int32, bool)`
+`func (o *PingFederateRuntime) GetAvailabilityProfileIdOk() (*int64, bool)`
 
 GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailabilityProfileId
 
-`func (o *PingFederateRuntime) SetAvailabilityProfileId(v int32)`
+`func (o *PingFederateRuntime) SetAvailabilityProfileId(v int64)`
 
 SetAvailabilityProfileId sets AvailabilityProfileId field to given value.
 
@@ -242,20 +242,20 @@ HasAvailabilityProfileId returns a boolean if a field has been set.
 
 ### GetLoadBalancingStrategyId
 
-`func (o *PingFederateRuntime) GetLoadBalancingStrategyId() int32`
+`func (o *PingFederateRuntime) GetLoadBalancingStrategyId() int64`
 
 GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field if non-nil, zero value otherwise.
 
 ### GetLoadBalancingStrategyIdOk
 
-`func (o *PingFederateRuntime) GetLoadBalancingStrategyIdOk() (*int32, bool)`
+`func (o *PingFederateRuntime) GetLoadBalancingStrategyIdOk() (*int64, bool)`
 
 GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadBalancingStrategyId
 
-`func (o *PingFederateRuntime) SetLoadBalancingStrategyId(v int32)`
+`func (o *PingFederateRuntime) SetLoadBalancingStrategyId(v int64)`
 
 SetLoadBalancingStrategyId sets LoadBalancingStrategyId field to given value.
 
@@ -267,20 +267,20 @@ HasLoadBalancingStrategyId returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *PingFederateRuntime) GetTrustedCertificateGroupId() int32`
+`func (o *PingFederateRuntime) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *PingFederateRuntime) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *PingFederateRuntime) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *PingFederateRuntime) SetTrustedCertificateGroupId(v int32)`
+`func (o *PingFederateRuntime) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 
@@ -312,20 +312,20 @@ SetHost sets Host field to given value.
 
 ### GetPort
 
-`func (o *PingFederateRuntime) GetPort() int32`
+`func (o *PingFederateRuntime) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *PingFederateRuntime) GetPortOk() (*int32, bool)`
+`func (o *PingFederateRuntime) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *PingFederateRuntime) SetPort(v int32)`
+`func (o *PingFederateRuntime) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &ResourceOrder{}
 // ResourceOrder Specifies an ordering of Application Resources.
 type ResourceOrder struct {
 	// An ordered list of Resource IDs (integers).
-	ResourceIds []int32 `json:"resourceIds,omitempty"`
+	ResourceIds []int64 `json:"resourceIds,omitempty"`
 }
 
 // NewResourceOrder instantiates a new ResourceOrder object
@@ -41,9 +41,9 @@ func NewResourceOrderWithDefaults() *ResourceOrder {
 }
 
 // GetResourceIds returns the ResourceIds field value if set, zero value otherwise.
-func (o *ResourceOrder) GetResourceIds() []int32 {
+func (o *ResourceOrder) GetResourceIds() []int64 {
 	if o == nil || IsNil(o.ResourceIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.ResourceIds
@@ -51,7 +51,7 @@ func (o *ResourceOrder) GetResourceIds() []int32 {
 
 // GetResourceIdsOk returns a tuple with the ResourceIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResourceOrder) GetResourceIdsOk() ([]int32, bool) {
+func (o *ResourceOrder) GetResourceIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.ResourceIds) {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *ResourceOrder) HasResourceIds() bool {
 	return false
 }
 
-// SetResourceIds gets a reference to the given []int32 and assigns it to the ResourceIds field.
-func (o *ResourceOrder) SetResourceIds(v []int32) {
+// SetResourceIds gets a reference to the given []int64 and assigns it to the ResourceIds field.
+func (o *ResourceOrder) SetResourceIds(v []int64) {
 	o.ResourceIds = v
 }
 

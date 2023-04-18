@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **SessionStateCookieName** | Pointer to **string** | The name of the session state cookie. | [optional] 
 **UpdateTokenWindowInSeconds** | Pointer to **int64** | The number of seconds before the idle timeout is updated in the PA token. | [optional] 
 **EncryptionAlgorithm** | Pointer to **string** | The encryption algorithm used when creating encrypted PA tokens and when verifying them from a user&#39;s browser. | [optional] 
-**NonceCookieTimeToLiveInMinutes** | Pointer to **int32** | The number of minutes that the nonce cookie is valid when multiple concurrent authentication requests are made. 0 indicates that the system default value should be used. | [optional] 
+**NonceCookieTimeToLiveInMinutes** | Pointer to **int64** | The number of minutes that the nonce cookie is valid when multiple concurrent authentication requests are made. 0 indicates that the system default value should be used. | [optional] 
 
 ## Methods
 
@@ -235,20 +235,20 @@ HasEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetNonceCookieTimeToLiveInMinutes
 
-`func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutes() int32`
+`func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutes() int64`
 
 GetNonceCookieTimeToLiveInMinutes returns the NonceCookieTimeToLiveInMinutes field if non-nil, zero value otherwise.
 
 ### GetNonceCookieTimeToLiveInMinutesOk
 
-`func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutesOk() (*int32, bool)`
+`func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutesOk() (*int64, bool)`
 
 GetNonceCookieTimeToLiveInMinutesOk returns a tuple with the NonceCookieTimeToLiveInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNonceCookieTimeToLiveInMinutes
 
-`func (o *WebSessionManagement) SetNonceCookieTimeToLiveInMinutes(v int32)`
+`func (o *WebSessionManagement) SetNonceCookieTimeToLiveInMinutes(v int64)`
 
 SetNonceCookieTimeToLiveInMinutes sets NonceCookieTimeToLiveInMinutes field to given value.
 

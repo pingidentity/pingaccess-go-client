@@ -20,7 +20,7 @@ var _ MappedNullable = &NewKeyPairConfig{}
 // NewKeyPairConfig A new key pair.
 type NewKeyPairConfig struct {
 	// The ID for the key pair. If not specified, an ID will be automatically assigned.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// A unique alias name to identify the key pair. Special characters and spaces are allowed.
 	Alias string `json:"alias"`
 	// The common name (CN) identifying the certificate.
@@ -36,7 +36,7 @@ type NewKeyPairConfig struct {
 	// The country (C) where the company is based, using two capital letters.
 	Country string `json:"country"`
 	// The number of days the certificate is valid.
-	ValidDays int32 `json:"validDays"`
+	ValidDays int64 `json:"validDays"`
 	// The key algorithm to use to generate a key.
 	KeyAlgorithm string `json:"keyAlgorithm"`
 	// The Signature Algorithm to use for the key.
@@ -44,16 +44,16 @@ type NewKeyPairConfig struct {
 	// Any additional DNS names or IP addresses that are valid for this certificate.
 	SubjectAlternativeNames []GeneralName `json:"subjectAlternativeNames,omitempty"`
 	// The number of bits used in the key.  Choices depend on selected key algorithm.
-	KeySize int32 `json:"keySize"`
+	KeySize int64 `json:"keySize"`
 	// The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair.
-	HsmProviderId int32 `json:"hsmProviderId"`
+	HsmProviderId int64 `json:"hsmProviderId"`
 }
 
 // NewNewKeyPairConfig instantiates a new NewKeyPairConfig object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNewKeyPairConfig(alias string, commonName string, organization string, organizationUnit string, city string, state string, country string, validDays int32, keyAlgorithm string, keySize int32, hsmProviderId int32) *NewKeyPairConfig {
+func NewNewKeyPairConfig(alias string, commonName string, organization string, organizationUnit string, city string, state string, country string, validDays int64, keyAlgorithm string, keySize int64, hsmProviderId int64) *NewKeyPairConfig {
 	this := NewKeyPairConfig{}
 	this.Alias = alias
 	this.CommonName = commonName
@@ -78,9 +78,9 @@ func NewNewKeyPairConfigWithDefaults() *NewKeyPairConfig {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *NewKeyPairConfig) GetId() int32 {
+func (o *NewKeyPairConfig) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -88,7 +88,7 @@ func (o *NewKeyPairConfig) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NewKeyPairConfig) GetIdOk() (*int32, bool) {
+func (o *NewKeyPairConfig) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -104,8 +104,8 @@ func (o *NewKeyPairConfig) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *NewKeyPairConfig) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *NewKeyPairConfig) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -278,9 +278,9 @@ func (o *NewKeyPairConfig) SetCountry(v string) {
 }
 
 // GetValidDays returns the ValidDays field value
-func (o *NewKeyPairConfig) GetValidDays() int32 {
+func (o *NewKeyPairConfig) GetValidDays() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -289,7 +289,7 @@ func (o *NewKeyPairConfig) GetValidDays() int32 {
 
 // GetValidDaysOk returns a tuple with the ValidDays field value
 // and a boolean to check if the value has been set.
-func (o *NewKeyPairConfig) GetValidDaysOk() (*int32, bool) {
+func (o *NewKeyPairConfig) GetValidDaysOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -297,7 +297,7 @@ func (o *NewKeyPairConfig) GetValidDaysOk() (*int32, bool) {
 }
 
 // SetValidDays sets field value
-func (o *NewKeyPairConfig) SetValidDays(v int32) {
+func (o *NewKeyPairConfig) SetValidDays(v int64) {
 	o.ValidDays = v
 }
 
@@ -390,9 +390,9 @@ func (o *NewKeyPairConfig) SetSubjectAlternativeNames(v []GeneralName) {
 }
 
 // GetKeySize returns the KeySize field value
-func (o *NewKeyPairConfig) GetKeySize() int32 {
+func (o *NewKeyPairConfig) GetKeySize() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -401,7 +401,7 @@ func (o *NewKeyPairConfig) GetKeySize() int32 {
 
 // GetKeySizeOk returns a tuple with the KeySize field value
 // and a boolean to check if the value has been set.
-func (o *NewKeyPairConfig) GetKeySizeOk() (*int32, bool) {
+func (o *NewKeyPairConfig) GetKeySizeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -409,14 +409,14 @@ func (o *NewKeyPairConfig) GetKeySizeOk() (*int32, bool) {
 }
 
 // SetKeySize sets field value
-func (o *NewKeyPairConfig) SetKeySize(v int32) {
+func (o *NewKeyPairConfig) SetKeySize(v int64) {
 	o.KeySize = v
 }
 
 // GetHsmProviderId returns the HsmProviderId field value
-func (o *NewKeyPairConfig) GetHsmProviderId() int32 {
+func (o *NewKeyPairConfig) GetHsmProviderId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -425,7 +425,7 @@ func (o *NewKeyPairConfig) GetHsmProviderId() int32 {
 
 // GetHsmProviderIdOk returns a tuple with the HsmProviderId field value
 // and a boolean to check if the value has been set.
-func (o *NewKeyPairConfig) GetHsmProviderIdOk() (*int32, bool) {
+func (o *NewKeyPairConfig) GetHsmProviderIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -433,7 +433,7 @@ func (o *NewKeyPairConfig) GetHsmProviderIdOk() (*int32, bool) {
 }
 
 // SetHsmProviderId sets field value
-func (o *NewKeyPairConfig) SetHsmProviderId(v int32) {
+func (o *NewKeyPairConfig) SetHsmProviderId(v int64) {
 	o.HsmProviderId = v
 }
 

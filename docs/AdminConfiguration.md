@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HostPort** | **string** | The primary host and port of the administrative console. | 
-**HttpProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
-**HttpsProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
-**StaleEngineTimeout** | Pointer to **int32** | The number of minutes since the last communication from an engine after which the engine will be deleted. Misconfiguration of this value when set less than Engine Polling Delay or a loss of connection in the admin node may result in errant engine deletions. | [optional] 
+**HttpProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
+**HttpsProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
+**StaleEngineTimeout** | Pointer to **int64** | The number of minutes since the last communication from an engine after which the engine will be deleted. Misconfiguration of this value when set less than Engine Polling Delay or a loss of connection in the admin node may result in errant engine deletions. | [optional] 
 **StaleEngineTimeoutEnabled** | Pointer to **bool** | Indicates whether the Stale Engine Timeout is enabled and automatic engine pruning will occur. | [optional] 
 
 ## Methods
@@ -51,20 +51,20 @@ SetHostPort sets HostPort field to given value.
 
 ### GetHttpProxyId
 
-`func (o *AdminConfiguration) GetHttpProxyId() int32`
+`func (o *AdminConfiguration) GetHttpProxyId() int64`
 
 GetHttpProxyId returns the HttpProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpProxyIdOk
 
-`func (o *AdminConfiguration) GetHttpProxyIdOk() (*int32, bool)`
+`func (o *AdminConfiguration) GetHttpProxyIdOk() (*int64, bool)`
 
 GetHttpProxyIdOk returns a tuple with the HttpProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpProxyId
 
-`func (o *AdminConfiguration) SetHttpProxyId(v int32)`
+`func (o *AdminConfiguration) SetHttpProxyId(v int64)`
 
 SetHttpProxyId sets HttpProxyId field to given value.
 
@@ -76,20 +76,20 @@ HasHttpProxyId returns a boolean if a field has been set.
 
 ### GetHttpsProxyId
 
-`func (o *AdminConfiguration) GetHttpsProxyId() int32`
+`func (o *AdminConfiguration) GetHttpsProxyId() int64`
 
 GetHttpsProxyId returns the HttpsProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpsProxyIdOk
 
-`func (o *AdminConfiguration) GetHttpsProxyIdOk() (*int32, bool)`
+`func (o *AdminConfiguration) GetHttpsProxyIdOk() (*int64, bool)`
 
 GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpsProxyId
 
-`func (o *AdminConfiguration) SetHttpsProxyId(v int32)`
+`func (o *AdminConfiguration) SetHttpsProxyId(v int64)`
 
 SetHttpsProxyId sets HttpsProxyId field to given value.
 
@@ -101,20 +101,20 @@ HasHttpsProxyId returns a boolean if a field has been set.
 
 ### GetStaleEngineTimeout
 
-`func (o *AdminConfiguration) GetStaleEngineTimeout() int32`
+`func (o *AdminConfiguration) GetStaleEngineTimeout() int64`
 
 GetStaleEngineTimeout returns the StaleEngineTimeout field if non-nil, zero value otherwise.
 
 ### GetStaleEngineTimeoutOk
 
-`func (o *AdminConfiguration) GetStaleEngineTimeoutOk() (*int32, bool)`
+`func (o *AdminConfiguration) GetStaleEngineTimeoutOk() (*int64, bool)`
 
 GetStaleEngineTimeoutOk returns a tuple with the StaleEngineTimeout field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStaleEngineTimeout
 
-`func (o *AdminConfiguration) SetStaleEngineTimeout(v int32)`
+`func (o *AdminConfiguration) SetStaleEngineTimeout(v int64)`
 
 SetStaleEngineTimeout sets StaleEngineTimeout field to given value.
 

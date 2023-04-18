@@ -477,8 +477,8 @@ func (a *AgentsApiService) GetAgentCertificateExecute(r ApiGetAgentCertificateRe
 type ApiGetAgentCertificatesRequest struct {
 	ctx           context.Context
 	ApiService    *AgentsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	alias         *string
 	sortKey       *string
@@ -486,13 +486,13 @@ type ApiGetAgentCertificatesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAgentCertificatesRequest) Page(page int32) ApiGetAgentCertificatesRequest {
+func (r ApiGetAgentCertificatesRequest) Page(page int64) ApiGetAgentCertificatesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Agent Certificates per page
-func (r ApiGetAgentCertificatesRequest) NumberPerPage(numberPerPage int32) ApiGetAgentCertificatesRequest {
+func (r ApiGetAgentCertificatesRequest) NumberPerPage(numberPerPage int64) ApiGetAgentCertificatesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -753,8 +753,8 @@ func (a *AgentsApiService) GetAgentFileExecute(r ApiGetAgentFileRequest) (*http.
 type ApiGetAgentsRequest struct {
 	ctx           context.Context
 	ApiService    *AgentsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -762,13 +762,13 @@ type ApiGetAgentsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAgentsRequest) Page(page int32) ApiGetAgentsRequest {
+func (r ApiGetAgentsRequest) Page(page int64) ApiGetAgentsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Agents per page
-func (r ApiGetAgentsRequest) NumberPerPage(numberPerPage int32) ApiGetAgentsRequest {
+func (r ApiGetAgentsRequest) NumberPerPage(numberPerPage int64) ApiGetAgentsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

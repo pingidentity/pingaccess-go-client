@@ -249,8 +249,8 @@ func (a *ProxiesApiService) DeleteProxyExecute(r ApiDeleteProxyRequest) (*http.R
 type ApiGetProxiesRequest struct {
 	ctx           context.Context
 	ApiService    *ProxiesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -258,13 +258,13 @@ type ApiGetProxiesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetProxiesRequest) Page(page int32) ApiGetProxiesRequest {
+func (r ApiGetProxiesRequest) Page(page int64) ApiGetProxiesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Proxies per page
-func (r ApiGetProxiesRequest) NumberPerPage(numberPerPage int32) ApiGetProxiesRequest {
+func (r ApiGetProxiesRequest) NumberPerPage(numberPerPage int64) ApiGetProxiesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

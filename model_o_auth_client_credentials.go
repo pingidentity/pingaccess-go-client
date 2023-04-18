@@ -23,7 +23,7 @@ type OAuthClientCredentials struct {
 	ClientId     string       `json:"clientId"`
 	ClientSecret *HiddenField `json:"clientSecret,omitempty"`
 	// Specify the ID of a key pair to use for mutual TLS.
-	KeyPairId       *int32           `json:"keyPairId,omitempty"`
+	KeyPairId       *int64           `json:"keyPairId,omitempty"`
 	CredentialsType *CredentialsType `json:"credentialsType,omitempty"`
 }
 
@@ -102,9 +102,9 @@ func (o *OAuthClientCredentials) SetClientSecret(v HiddenField) {
 }
 
 // GetKeyPairId returns the KeyPairId field value if set, zero value otherwise.
-func (o *OAuthClientCredentials) GetKeyPairId() int32 {
+func (o *OAuthClientCredentials) GetKeyPairId() int64 {
 	if o == nil || IsNil(o.KeyPairId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyPairId
@@ -112,7 +112,7 @@ func (o *OAuthClientCredentials) GetKeyPairId() int32 {
 
 // GetKeyPairIdOk returns a tuple with the KeyPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OAuthClientCredentials) GetKeyPairIdOk() (*int32, bool) {
+func (o *OAuthClientCredentials) GetKeyPairIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.KeyPairId) {
 		return nil, false
 	}
@@ -128,8 +128,8 @@ func (o *OAuthClientCredentials) HasKeyPairId() bool {
 	return false
 }
 
-// SetKeyPairId gets a reference to the given int32 and assigns it to the KeyPairId field.
-func (o *OAuthClientCredentials) SetKeyPairId(v int32) {
+// SetKeyPairId gets a reference to the given int64 and assigns it to the KeyPairId field.
+func (o *OAuthClientCredentials) SetKeyPairId(v int64) {
 	o.KeyPairId = &v
 }
 

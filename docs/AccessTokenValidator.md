@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | (sortable) The access token validator&#39;s class name. | 
-**Id** | Pointer to **int32** | When creating a new AccessTokenValidator, this is the ID for the AccessTokenValidator. If not specified, an ID will be automatically assigned. When updating an existing AccessTokenValidator, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new AccessTokenValidator, this is the ID for the AccessTokenValidator. If not specified, an ID will be automatically assigned. When updating an existing AccessTokenValidator, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The access token validator&#39;s name. | 
-**Configuration** | Pointer to **map[string]interface{}** | The access token validator&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
+**Configuration** | Pointer to [**AccessTokenValidatorConfiguration**](AccessTokenValidatorConfiguration.md) |  | [optional] 
 
 ## Methods
 
@@ -50,20 +50,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetId
 
-`func (o *AccessTokenValidator) GetId() int32`
+`func (o *AccessTokenValidator) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AccessTokenValidator) GetIdOk() (*int32, bool)`
+`func (o *AccessTokenValidator) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AccessTokenValidator) SetId(v int32)`
+`func (o *AccessTokenValidator) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *AccessTokenValidator) GetConfiguration() map[string]interface{}`
+`func (o *AccessTokenValidator) GetConfiguration() AccessTokenValidatorConfiguration`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *AccessTokenValidator) GetConfigurationOk() (*map[string]interface{}, bool)`
+`func (o *AccessTokenValidator) GetConfigurationOk() (*AccessTokenValidatorConfiguration, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *AccessTokenValidator) SetConfiguration(v map[string]interface{})`
+`func (o *AccessTokenValidator) SetConfiguration(v AccessTokenValidatorConfiguration)`
 
 SetConfiguration sets Configuration field to given value.
 

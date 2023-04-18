@@ -363,8 +363,8 @@ func (a *ThirdPartyServicesApiService) GetThirdPartyServiceExecute(r ApiGetThird
 type ApiGetThirdPartyServicesRequest struct {
 	ctx           context.Context
 	ApiService    *ThirdPartyServicesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetThirdPartyServicesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetThirdPartyServicesRequest) Page(page int32) ApiGetThirdPartyServicesRequest {
+func (r ApiGetThirdPartyServicesRequest) Page(page int64) ApiGetThirdPartyServicesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Third-Party Services per page
-func (r ApiGetThirdPartyServicesRequest) NumberPerPage(numberPerPage int32) ApiGetThirdPartyServicesRequest {
+func (r ApiGetThirdPartyServicesRequest) NumberPerPage(numberPerPage int64) ApiGetThirdPartyServicesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

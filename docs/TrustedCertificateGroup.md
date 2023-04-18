@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new TrustedCertificateGroup, this is the ID for the TrustedCertificateGroup. If not specified, an ID will be automatically assigned. When updating an existing TrustedCertificateGroup, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new TrustedCertificateGroup, this is the ID for the TrustedCertificateGroup. If not specified, an ID will be automatically assigned. When updating an existing TrustedCertificateGroup, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the trusted certificate group. | 
 **UseJavaTrustStore** | Pointer to **bool** | (sortable) This field is true if the certificates in the group should also include all certificates in the Java Trust Store. | [optional] 
 **SystemGroup** | Pointer to **bool** | (sortable) This field is read-only and indicates the trusted certificate group cannot be modified. | [optional] 
 **IgnoreAllCertificateErrors** | Pointer to **bool** | (sortable) This field is read-only and is only set to true for the Trust Any certificate group. | [optional] 
 **SkipCertificateDateCheck** | Pointer to **bool** | (sortable) This field is true if certificates that have expired or are not yet valid but have passed the other certificate checks should be trusted. | [optional] 
 **RevocationChecking** | Pointer to [**RevocationChecking**](RevocationChecking.md) |  | [optional] 
-**CertIds** | Pointer to **[]int32** | The IDs of the certificates that are in the trusted certificate group. | [optional] 
+**CertIds** | Pointer to **[]int64** | The IDs of the certificates that are in the trusted certificate group. | [optional] 
 
 ## Methods
 
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *TrustedCertificateGroup) GetId() int32`
+`func (o *TrustedCertificateGroup) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *TrustedCertificateGroup) GetIdOk() (*int32, bool)`
+`func (o *TrustedCertificateGroup) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *TrustedCertificateGroup) SetId(v int32)`
+`func (o *TrustedCertificateGroup) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -204,20 +204,20 @@ HasRevocationChecking returns a boolean if a field has been set.
 
 ### GetCertIds
 
-`func (o *TrustedCertificateGroup) GetCertIds() []int32`
+`func (o *TrustedCertificateGroup) GetCertIds() []int64`
 
 GetCertIds returns the CertIds field if non-nil, zero value otherwise.
 
 ### GetCertIdsOk
 
-`func (o *TrustedCertificateGroup) GetCertIdsOk() (*[]int32, bool)`
+`func (o *TrustedCertificateGroup) GetCertIdsOk() (*[]int64, bool)`
 
 GetCertIdsOk returns a tuple with the CertIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertIds
 
-`func (o *TrustedCertificateGroup) SetCertIds(v []int32)`
+`func (o *TrustedCertificateGroup) SetCertIds(v []int64)`
 
 SetCertIds sets CertIds field to given value.
 

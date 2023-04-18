@@ -167,7 +167,7 @@ import (
 )
 
 func main() {
-    id := int32(56) // int32 | ID of WebSession to get
+    id := int64(56) // int64 | ID of WebSession to get
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -187,7 +187,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** | ID of WebSession to get | 
+**id** | **int64** | ID of WebSession to get | 
 
 ### Other Parameters
 
@@ -237,8 +237,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Web Sessions per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Web Sessions per page (optional)
     filter := "filter_example" // string | Search for Web Sessions with name matching filter text (optional)
     name := "name_example" // string | Get a Web Sessions by name (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Web Session attributes (keys) to be used to sort the results (optional)
@@ -267,8 +267,8 @@ Other parameters are passed through a pointer to a apiGetWebSessionsRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Web Sessions per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Web Sessions per page | 
  **filter** | **string** | Search for Web Sessions with name matching filter text | 
  **name** | **string** | Get a Web Sessions by name | 
  **sortKey** | **string** | A comma separated list of Web Session attributes (keys) to be used to sort the results | 

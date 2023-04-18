@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the PingFederate Runtime token provider. | [optional] 
 **Issuer** | **string** | The issuer url of the PingFederate token provider. | 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to PingFederate. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to PingFederate. | [optional] 
 **UseProxy** | Pointer to **bool** | Set to true if a proxy should be used for HTTP or HTTPS requests. | [optional] 
 **UseSlo** | Pointer to **bool** | Set to true if OIDC single log out should be used on the /pa/oidc/logout on the engines. | [optional] 
 **StsTokenExchangeEndpoint** | Pointer to **string** | The url of the PingFederate STS token-to-token exchange endpoint that is used for token mediation. Specify if it is being served from a different host/port than the issuer is. Otherwise, it is assumed to be {{issuer}}/pf/sts.wst. | [optional] 
@@ -78,20 +78,20 @@ SetIssuer sets Issuer field to given value.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *PingFederateMetadataRuntime) GetTrustedCertificateGroupId() int32`
+`func (o *PingFederateMetadataRuntime) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *PingFederateMetadataRuntime) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *PingFederateMetadataRuntime) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *PingFederateMetadataRuntime) SetTrustedCertificateGroupId(v int32)`
+`func (o *PingFederateMetadataRuntime) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

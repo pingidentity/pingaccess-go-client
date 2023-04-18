@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | (sortable) The class name of the load balancing strategy. | 
-**Id** | Pointer to **int32** | When creating a new LoadBalancingStrategy, this is the ID for the LoadBalancingStrategy. If not specified, an ID will be automatically assigned. When updating an existing LoadBalancingStrategy, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new LoadBalancingStrategy, this is the ID for the LoadBalancingStrategy. If not specified, an ID will be automatically assigned. When updating an existing LoadBalancingStrategy, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the load balancing strategy. | 
 **Configuration** | Pointer to **map[string]interface{}** | The load balancing strategy&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
@@ -50,20 +50,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetId
 
-`func (o *LoadBalancingStrategy) GetId() int32`
+`func (o *LoadBalancingStrategy) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *LoadBalancingStrategy) GetIdOk() (*int32, bool)`
+`func (o *LoadBalancingStrategy) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *LoadBalancingStrategy) SetId(v int32)`
+`func (o *LoadBalancingStrategy) SetId(v int64)`
 
 SetId sets Id field to given value.
 

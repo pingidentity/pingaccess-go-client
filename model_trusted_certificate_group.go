@@ -20,7 +20,7 @@ var _ MappedNullable = &TrustedCertificateGroup{}
 // TrustedCertificateGroup A trusted certificate group.
 type TrustedCertificateGroup struct {
 	// When creating a new TrustedCertificateGroup, this is the ID for the TrustedCertificateGroup. If not specified, an ID will be automatically assigned. When updating an existing TrustedCertificateGroup, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the trusted certificate group.
 	Name string `json:"name"`
 	// (sortable) This field is true if the certificates in the group should also include all certificates in the Java Trust Store.
@@ -33,7 +33,7 @@ type TrustedCertificateGroup struct {
 	SkipCertificateDateCheck *bool               `json:"skipCertificateDateCheck,omitempty"`
 	RevocationChecking       *RevocationChecking `json:"revocationChecking,omitempty"`
 	// The IDs of the certificates that are in the trusted certificate group.
-	CertIds []int32 `json:"certIds,omitempty"`
+	CertIds []int64 `json:"certIds,omitempty"`
 }
 
 // NewTrustedCertificateGroup instantiates a new TrustedCertificateGroup object
@@ -55,9 +55,9 @@ func NewTrustedCertificateGroupWithDefaults() *TrustedCertificateGroup {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *TrustedCertificateGroup) GetId() int32 {
+func (o *TrustedCertificateGroup) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -65,7 +65,7 @@ func (o *TrustedCertificateGroup) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrustedCertificateGroup) GetIdOk() (*int32, bool) {
+func (o *TrustedCertificateGroup) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -81,8 +81,8 @@ func (o *TrustedCertificateGroup) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *TrustedCertificateGroup) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *TrustedCertificateGroup) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -271,9 +271,9 @@ func (o *TrustedCertificateGroup) SetRevocationChecking(v RevocationChecking) {
 }
 
 // GetCertIds returns the CertIds field value if set, zero value otherwise.
-func (o *TrustedCertificateGroup) GetCertIds() []int32 {
+func (o *TrustedCertificateGroup) GetCertIds() []int64 {
 	if o == nil || IsNil(o.CertIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.CertIds
@@ -281,7 +281,7 @@ func (o *TrustedCertificateGroup) GetCertIds() []int32 {
 
 // GetCertIdsOk returns a tuple with the CertIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TrustedCertificateGroup) GetCertIdsOk() ([]int32, bool) {
+func (o *TrustedCertificateGroup) GetCertIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.CertIds) {
 		return nil, false
 	}
@@ -297,8 +297,8 @@ func (o *TrustedCertificateGroup) HasCertIds() bool {
 	return false
 }
 
-// SetCertIds gets a reference to the given []int32 and assigns it to the CertIds field.
-func (o *TrustedCertificateGroup) SetCertIds(v []int32) {
+// SetCertIds gets a reference to the given []int64 and assigns it to the CertIds field.
+func (o *TrustedCertificateGroup) SetCertIds(v []int64) {
 	o.CertIds = v
 }
 

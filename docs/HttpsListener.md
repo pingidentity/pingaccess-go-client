@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | (sortable) The ID of the HTTPS listener. | [optional] 
+**Id** | Pointer to **int64** | (sortable) The ID of the HTTPS listener. | [optional] 
 **Name** | **string** | (sortable) The name of the HTTPS listener. | 
-**KeyPairId** | **int32** | The ID of the default key pair used by the HTTPS listener. | 
+**KeyPairId** | **int64** | The ID of the default key pair used by the HTTPS listener. | 
 **UseServerCipherSuiteOrder** | **bool** | (sortable) Enable server cipher suite ordering for the HTTPS listener. | 
 **RestartRequired** | **bool** | Indicates whether an admin or engine restart is required to update the HTTPS listener. Cannot be True for the ENGINE listener. | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewHttpsListener
 
-`func NewHttpsListener(name string, keyPairId int32, useServerCipherSuiteOrder bool, restartRequired bool, ) *HttpsListener`
+`func NewHttpsListener(name string, keyPairId int64, useServerCipherSuiteOrder bool, restartRequired bool, ) *HttpsListener`
 
 NewHttpsListener instantiates a new HttpsListener object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *HttpsListener) GetId() int32`
+`func (o *HttpsListener) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *HttpsListener) GetIdOk() (*int32, bool)`
+`func (o *HttpsListener) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *HttpsListener) SetId(v int32)`
+`func (o *HttpsListener) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -76,20 +76,20 @@ SetName sets Name field to given value.
 
 ### GetKeyPairId
 
-`func (o *HttpsListener) GetKeyPairId() int32`
+`func (o *HttpsListener) GetKeyPairId() int64`
 
 GetKeyPairId returns the KeyPairId field if non-nil, zero value otherwise.
 
 ### GetKeyPairIdOk
 
-`func (o *HttpsListener) GetKeyPairIdOk() (*int32, bool)`
+`func (o *HttpsListener) GetKeyPairIdOk() (*int64, bool)`
 
 GetKeyPairIdOk returns a tuple with the KeyPairId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyPairId
 
-`func (o *HttpsListener) SetKeyPairId(v int32)`
+`func (o *HttpsListener) SetKeyPairId(v int64)`
 
 SetKeyPairId sets KeyPairId field to given value.
 

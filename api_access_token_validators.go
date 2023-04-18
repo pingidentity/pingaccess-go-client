@@ -473,8 +473,8 @@ func (a *AccessTokenValidatorsApiService) GetAccessTokenValidatorDescriptorsExec
 type ApiGetAccessTokenValidatorsRequest struct {
 	ctx           context.Context
 	ApiService    *AccessTokenValidatorsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -482,13 +482,13 @@ type ApiGetAccessTokenValidatorsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAccessTokenValidatorsRequest) Page(page int32) ApiGetAccessTokenValidatorsRequest {
+func (r ApiGetAccessTokenValidatorsRequest) Page(page int64) ApiGetAccessTokenValidatorsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Access Token Validators per page
-func (r ApiGetAccessTokenValidatorsRequest) NumberPerPage(numberPerPage int32) ApiGetAccessTokenValidatorsRequest {
+func (r ApiGetAccessTokenValidatorsRequest) NumberPerPage(numberPerPage int64) ApiGetAccessTokenValidatorsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

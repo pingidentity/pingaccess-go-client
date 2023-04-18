@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **SesTimeout** | **int64** | Maximum length of time that a session is allowed to live, regardless of user activity, -1 indicates disabled. | 
 **Sub** | **string** | The Session&#39;s subject. | 
 **Flash** | **string** | The Warning message. | 
-**PollIntervalSeconds** | **int32** | Session poll interval configuration in seconds. | 
+**PollIntervalSeconds** | **int64** | Session poll interval configuration in seconds. | 
 **Roles** | [**[]Role**](Role.md) | The user&#39;s roles. | 
 **AccessControlDirectives** | [**[]AdminAccessControlDirective**](AdminAccessControlDirective.md) | The set of access control directives. | 
 **UseSlo** | **bool** | Indicates whether single log out (SLO) is enabled or not. | 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **ConfigurationExports** | [**ConfigStatuses**](ConfigStatuses.md) |  | 
 **ConfigurationImports** | [**ConfigStatuses**](ConfigStatuses.md) |  | 
 **SniEnabled** | **bool** | Indicates that SNI is enabled or not. | 
-**MaxFileUploadSize** | **int32** | The maximum file upload size in bytes. | 
+**MaxFileUploadSize** | **int64** | The maximum file upload size in bytes. | 
 **ShowWarning** | **bool** | Indicates that a warning needs to be shown or not. | 
 
 ## Methods
 
 ### NewSessionInfo
 
-`func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int32, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, displayLogSettings bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int32, showWarning bool, ) *SessionInfo`
+`func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int64, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, displayLogSettings bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int64, showWarning bool, ) *SessionInfo`
 
 NewSessionInfo instantiates a new SessionInfo object
 This constructor will assign default values to properties that have it defined,
@@ -163,20 +163,20 @@ SetFlash sets Flash field to given value.
 
 ### GetPollIntervalSeconds
 
-`func (o *SessionInfo) GetPollIntervalSeconds() int32`
+`func (o *SessionInfo) GetPollIntervalSeconds() int64`
 
 GetPollIntervalSeconds returns the PollIntervalSeconds field if non-nil, zero value otherwise.
 
 ### GetPollIntervalSecondsOk
 
-`func (o *SessionInfo) GetPollIntervalSecondsOk() (*int32, bool)`
+`func (o *SessionInfo) GetPollIntervalSecondsOk() (*int64, bool)`
 
 GetPollIntervalSecondsOk returns a tuple with the PollIntervalSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPollIntervalSeconds
 
-`func (o *SessionInfo) SetPollIntervalSeconds(v int32)`
+`func (o *SessionInfo) SetPollIntervalSeconds(v int64)`
 
 SetPollIntervalSeconds sets PollIntervalSeconds field to given value.
 
@@ -343,20 +343,20 @@ SetSniEnabled sets SniEnabled field to given value.
 
 ### GetMaxFileUploadSize
 
-`func (o *SessionInfo) GetMaxFileUploadSize() int32`
+`func (o *SessionInfo) GetMaxFileUploadSize() int64`
 
 GetMaxFileUploadSize returns the MaxFileUploadSize field if non-nil, zero value otherwise.
 
 ### GetMaxFileUploadSizeOk
 
-`func (o *SessionInfo) GetMaxFileUploadSizeOk() (*int32, bool)`
+`func (o *SessionInfo) GetMaxFileUploadSizeOk() (*int64, bool)`
 
 GetMaxFileUploadSizeOk returns a tuple with the MaxFileUploadSize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxFileUploadSize
 
-`func (o *SessionInfo) SetMaxFileUploadSize(v int32)`
+`func (o *SessionInfo) SetMaxFileUploadSize(v int64)`
 
 SetMaxFileUploadSize sets MaxFileUploadSize field to given value.
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The algorithm name. | 
-**KeySizes** | **[]int32** | The list of available key sizes. | 
-**DefaultKeySize** | **int32** | The default key size value to use. | 
+**KeySizes** | **[]int64** | The list of available key sizes. | 
+**DefaultKeySize** | **int64** | The default key size value to use. | 
 **DefaultSignatureAlgorithm** | **string** | The default signature algorithm to use. | 
 **SignatureAlgorithms** | **[]string** | The list of available signature algorithms. | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewKeyAlgorithm
 
-`func NewKeyAlgorithm(name string, keySizes []int32, defaultKeySize int32, defaultSignatureAlgorithm string, signatureAlgorithms []string, ) *KeyAlgorithm`
+`func NewKeyAlgorithm(name string, keySizes []int64, defaultKeySize int64, defaultSignatureAlgorithm string, signatureAlgorithms []string, ) *KeyAlgorithm`
 
 NewKeyAlgorithm instantiates a new KeyAlgorithm object
 This constructor will assign default values to properties that have it defined,
@@ -51,40 +51,40 @@ SetName sets Name field to given value.
 
 ### GetKeySizes
 
-`func (o *KeyAlgorithm) GetKeySizes() []int32`
+`func (o *KeyAlgorithm) GetKeySizes() []int64`
 
 GetKeySizes returns the KeySizes field if non-nil, zero value otherwise.
 
 ### GetKeySizesOk
 
-`func (o *KeyAlgorithm) GetKeySizesOk() (*[]int32, bool)`
+`func (o *KeyAlgorithm) GetKeySizesOk() (*[]int64, bool)`
 
 GetKeySizesOk returns a tuple with the KeySizes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeySizes
 
-`func (o *KeyAlgorithm) SetKeySizes(v []int32)`
+`func (o *KeyAlgorithm) SetKeySizes(v []int64)`
 
 SetKeySizes sets KeySizes field to given value.
 
 
 ### GetDefaultKeySize
 
-`func (o *KeyAlgorithm) GetDefaultKeySize() int32`
+`func (o *KeyAlgorithm) GetDefaultKeySize() int64`
 
 GetDefaultKeySize returns the DefaultKeySize field if non-nil, zero value otherwise.
 
 ### GetDefaultKeySizeOk
 
-`func (o *KeyAlgorithm) GetDefaultKeySizeOk() (*int32, bool)`
+`func (o *KeyAlgorithm) GetDefaultKeySizeOk() (*int64, bool)`
 
 GetDefaultKeySizeOk returns a tuple with the DefaultKeySize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultKeySize
 
-`func (o *KeyAlgorithm) SetDefaultKeySize(v int32)`
+`func (o *KeyAlgorithm) SetDefaultKeySize(v int64)`
 
 SetDefaultKeySize sets DefaultKeySize field to given value.
 

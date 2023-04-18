@@ -151,7 +151,7 @@ import (
 )
 
 func main() {
-    openIDConnectProvider := *openapiclient.NewAuthorizationServer([]string{"Targets_example"}, int32(123), "SubjectAttributeName_example", "IntrospectionEndpoint_example") // AuthorizationServer | OAuth 2.0 Authorization Server configuration
+    openIDConnectProvider := *openapiclient.NewAuthorizationServer([]string{"Targets_example"}, int64(123), "SubjectAttributeName_example", "IntrospectionEndpoint_example") // AuthorizationServer | OAuth 2.0 Authorization Server configuration
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

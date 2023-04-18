@@ -20,24 +20,24 @@ var _ MappedNullable = &VirtualHost{}
 // VirtualHost A virtual host.
 type VirtualHost struct {
 	// When creating a new VirtualHost, this is the ID for the VirtualHost. If not specified, an ID will be automatically assigned. When updating an existing VirtualHost, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The host name for the Virtual Host.
 	Host string `json:"host"`
 	// (sortable) The integer port number for the Virtual Host.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// (sortable) Indicates the number of seconds the Agent can cache resources for this application.
-	AgentResourceCacheTTL *int32 `json:"agentResourceCacheTTL,omitempty"`
+	AgentResourceCacheTTL *int64 `json:"agentResourceCacheTTL,omitempty"`
 	// Key pair assigned to Virtual Host used by SNI, If no key pair is assigned to a virtual host, ENGINE HTTPS Listener key pair will be used.
-	KeyPairId *int32 `json:"keyPairId,omitempty"`
+	KeyPairId *int64 `json:"keyPairId,omitempty"`
 	// Trusted Certificate Group assigned to Virtual Host for client certificate authentication.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 }
 
 // NewVirtualHost instantiates a new VirtualHost object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualHost(host string, port int32) *VirtualHost {
+func NewVirtualHost(host string, port int64) *VirtualHost {
 	this := VirtualHost{}
 	this.Host = host
 	this.Port = port
@@ -53,9 +53,9 @@ func NewVirtualHostWithDefaults() *VirtualHost {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *VirtualHost) GetId() int32 {
+func (o *VirtualHost) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -63,7 +63,7 @@ func (o *VirtualHost) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualHost) GetIdOk() (*int32, bool) {
+func (o *VirtualHost) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -79,8 +79,8 @@ func (o *VirtualHost) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *VirtualHost) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *VirtualHost) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -109,9 +109,9 @@ func (o *VirtualHost) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *VirtualHost) GetPort() int32 {
+func (o *VirtualHost) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -120,7 +120,7 @@ func (o *VirtualHost) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *VirtualHost) GetPortOk() (*int32, bool) {
+func (o *VirtualHost) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -128,14 +128,14 @@ func (o *VirtualHost) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *VirtualHost) SetPort(v int32) {
+func (o *VirtualHost) SetPort(v int64) {
 	o.Port = v
 }
 
 // GetAgentResourceCacheTTL returns the AgentResourceCacheTTL field value if set, zero value otherwise.
-func (o *VirtualHost) GetAgentResourceCacheTTL() int32 {
+func (o *VirtualHost) GetAgentResourceCacheTTL() int64 {
 	if o == nil || IsNil(o.AgentResourceCacheTTL) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AgentResourceCacheTTL
@@ -143,7 +143,7 @@ func (o *VirtualHost) GetAgentResourceCacheTTL() int32 {
 
 // GetAgentResourceCacheTTLOk returns a tuple with the AgentResourceCacheTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualHost) GetAgentResourceCacheTTLOk() (*int32, bool) {
+func (o *VirtualHost) GetAgentResourceCacheTTLOk() (*int64, bool) {
 	if o == nil || IsNil(o.AgentResourceCacheTTL) {
 		return nil, false
 	}
@@ -159,15 +159,15 @@ func (o *VirtualHost) HasAgentResourceCacheTTL() bool {
 	return false
 }
 
-// SetAgentResourceCacheTTL gets a reference to the given int32 and assigns it to the AgentResourceCacheTTL field.
-func (o *VirtualHost) SetAgentResourceCacheTTL(v int32) {
+// SetAgentResourceCacheTTL gets a reference to the given int64 and assigns it to the AgentResourceCacheTTL field.
+func (o *VirtualHost) SetAgentResourceCacheTTL(v int64) {
 	o.AgentResourceCacheTTL = &v
 }
 
 // GetKeyPairId returns the KeyPairId field value if set, zero value otherwise.
-func (o *VirtualHost) GetKeyPairId() int32 {
+func (o *VirtualHost) GetKeyPairId() int64 {
 	if o == nil || IsNil(o.KeyPairId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeyPairId
@@ -175,7 +175,7 @@ func (o *VirtualHost) GetKeyPairId() int32 {
 
 // GetKeyPairIdOk returns a tuple with the KeyPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualHost) GetKeyPairIdOk() (*int32, bool) {
+func (o *VirtualHost) GetKeyPairIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.KeyPairId) {
 		return nil, false
 	}
@@ -191,15 +191,15 @@ func (o *VirtualHost) HasKeyPairId() bool {
 	return false
 }
 
-// SetKeyPairId gets a reference to the given int32 and assigns it to the KeyPairId field.
-func (o *VirtualHost) SetKeyPairId(v int32) {
+// SetKeyPairId gets a reference to the given int64 and assigns it to the KeyPairId field.
+func (o *VirtualHost) SetKeyPairId(v int64) {
 	o.KeyPairId = &v
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *VirtualHost) GetTrustedCertificateGroupId() int32 {
+func (o *VirtualHost) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -207,7 +207,7 @@ func (o *VirtualHost) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualHost) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *VirtualHost) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -223,8 +223,8 @@ func (o *VirtualHost) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *VirtualHost) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *VirtualHost) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

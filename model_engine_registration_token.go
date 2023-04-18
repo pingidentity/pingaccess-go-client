@@ -20,20 +20,20 @@ var _ MappedNullable = &EngineRegistrationToken{}
 // EngineRegistrationToken A JWT to be used to initialize self-registration of an engine with its administrative console.
 type EngineRegistrationToken struct {
 	// The ID of the proxy to use for HTTP requests or zero if none.
-	HttpProxyId *int32 `json:"httpProxyId,omitempty"`
+	HttpProxyId *int64 `json:"httpProxyId,omitempty"`
 	// The ID of the proxy to use for HTTPS requests or zero if none.
-	HttpsProxyId *int32 `json:"httpsProxyId,omitempty"`
+	HttpsProxyId *int64 `json:"httpsProxyId,omitempty"`
 	// The number of seconds after which this token will expire and be unavailable for use to register engines.
-	ExpirationSeconds int32 `json:"expirationSeconds"`
+	ExpirationSeconds int64 `json:"expirationSeconds"`
 	// The ID of the certificate the engine will use to contact PingAccess via SSL/TLS.
-	SelectedCertificateId *int32 `json:"selectedCertificateId,omitempty"`
+	SelectedCertificateId *int64 `json:"selectedCertificateId,omitempty"`
 }
 
 // NewEngineRegistrationToken instantiates a new EngineRegistrationToken object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEngineRegistrationToken(expirationSeconds int32) *EngineRegistrationToken {
+func NewEngineRegistrationToken(expirationSeconds int64) *EngineRegistrationToken {
 	this := EngineRegistrationToken{}
 	this.ExpirationSeconds = expirationSeconds
 	return &this
@@ -48,9 +48,9 @@ func NewEngineRegistrationTokenWithDefaults() *EngineRegistrationToken {
 }
 
 // GetHttpProxyId returns the HttpProxyId field value if set, zero value otherwise.
-func (o *EngineRegistrationToken) GetHttpProxyId() int32 {
+func (o *EngineRegistrationToken) GetHttpProxyId() int64 {
 	if o == nil || IsNil(o.HttpProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpProxyId
@@ -58,7 +58,7 @@ func (o *EngineRegistrationToken) GetHttpProxyId() int32 {
 
 // GetHttpProxyIdOk returns a tuple with the HttpProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EngineRegistrationToken) GetHttpProxyIdOk() (*int32, bool) {
+func (o *EngineRegistrationToken) GetHttpProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpProxyId) {
 		return nil, false
 	}
@@ -74,15 +74,15 @@ func (o *EngineRegistrationToken) HasHttpProxyId() bool {
 	return false
 }
 
-// SetHttpProxyId gets a reference to the given int32 and assigns it to the HttpProxyId field.
-func (o *EngineRegistrationToken) SetHttpProxyId(v int32) {
+// SetHttpProxyId gets a reference to the given int64 and assigns it to the HttpProxyId field.
+func (o *EngineRegistrationToken) SetHttpProxyId(v int64) {
 	o.HttpProxyId = &v
 }
 
 // GetHttpsProxyId returns the HttpsProxyId field value if set, zero value otherwise.
-func (o *EngineRegistrationToken) GetHttpsProxyId() int32 {
+func (o *EngineRegistrationToken) GetHttpsProxyId() int64 {
 	if o == nil || IsNil(o.HttpsProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpsProxyId
@@ -90,7 +90,7 @@ func (o *EngineRegistrationToken) GetHttpsProxyId() int32 {
 
 // GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EngineRegistrationToken) GetHttpsProxyIdOk() (*int32, bool) {
+func (o *EngineRegistrationToken) GetHttpsProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpsProxyId) {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *EngineRegistrationToken) HasHttpsProxyId() bool {
 	return false
 }
 
-// SetHttpsProxyId gets a reference to the given int32 and assigns it to the HttpsProxyId field.
-func (o *EngineRegistrationToken) SetHttpsProxyId(v int32) {
+// SetHttpsProxyId gets a reference to the given int64 and assigns it to the HttpsProxyId field.
+func (o *EngineRegistrationToken) SetHttpsProxyId(v int64) {
 	o.HttpsProxyId = &v
 }
 
 // GetExpirationSeconds returns the ExpirationSeconds field value
-func (o *EngineRegistrationToken) GetExpirationSeconds() int32 {
+func (o *EngineRegistrationToken) GetExpirationSeconds() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -123,7 +123,7 @@ func (o *EngineRegistrationToken) GetExpirationSeconds() int32 {
 
 // GetExpirationSecondsOk returns a tuple with the ExpirationSeconds field value
 // and a boolean to check if the value has been set.
-func (o *EngineRegistrationToken) GetExpirationSecondsOk() (*int32, bool) {
+func (o *EngineRegistrationToken) GetExpirationSecondsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,14 +131,14 @@ func (o *EngineRegistrationToken) GetExpirationSecondsOk() (*int32, bool) {
 }
 
 // SetExpirationSeconds sets field value
-func (o *EngineRegistrationToken) SetExpirationSeconds(v int32) {
+func (o *EngineRegistrationToken) SetExpirationSeconds(v int64) {
 	o.ExpirationSeconds = v
 }
 
 // GetSelectedCertificateId returns the SelectedCertificateId field value if set, zero value otherwise.
-func (o *EngineRegistrationToken) GetSelectedCertificateId() int32 {
+func (o *EngineRegistrationToken) GetSelectedCertificateId() int64 {
 	if o == nil || IsNil(o.SelectedCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SelectedCertificateId
@@ -146,7 +146,7 @@ func (o *EngineRegistrationToken) GetSelectedCertificateId() int32 {
 
 // GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EngineRegistrationToken) GetSelectedCertificateIdOk() (*int32, bool) {
+func (o *EngineRegistrationToken) GetSelectedCertificateIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.SelectedCertificateId) {
 		return nil, false
 	}
@@ -162,8 +162,8 @@ func (o *EngineRegistrationToken) HasSelectedCertificateId() bool {
 	return false
 }
 
-// SetSelectedCertificateId gets a reference to the given int32 and assigns it to the SelectedCertificateId field.
-func (o *EngineRegistrationToken) SetSelectedCertificateId(v int32) {
+// SetSelectedCertificateId gets a reference to the given int64 and assigns it to the SelectedCertificateId field.
+func (o *EngineRegistrationToken) SetSelectedCertificateId(v int64) {
 	o.SelectedCertificateId = &v
 }
 

@@ -31,7 +31,7 @@ type PingFederateAccessToken struct {
 	// Specify if token introspection is enabled.
 	UseTokenIntrospection *bool `json:"useTokenIntrospection,omitempty"`
 	// The Access Validator Id. This field is read-only.
-	AccessValidatorId int32 `json:"accessValidatorId"`
+	AccessValidatorId int64 `json:"accessValidatorId"`
 	// The unique Access Validator name. This field is read-only.
 	Name         *string      `json:"name,omitempty"`
 	ClientSecret *HiddenField `json:"clientSecret,omitempty"`
@@ -43,7 +43,7 @@ type PingFederateAccessToken struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingFederateAccessToken(subjectAttributeName string, accessValidatorId int32) *PingFederateAccessToken {
+func NewPingFederateAccessToken(subjectAttributeName string, accessValidatorId int64) *PingFederateAccessToken {
 	this := PingFederateAccessToken{}
 	this.SubjectAttributeName = subjectAttributeName
 	this.AccessValidatorId = accessValidatorId
@@ -243,9 +243,9 @@ func (o *PingFederateAccessToken) SetUseTokenIntrospection(v bool) {
 }
 
 // GetAccessValidatorId returns the AccessValidatorId field value
-func (o *PingFederateAccessToken) GetAccessValidatorId() int32 {
+func (o *PingFederateAccessToken) GetAccessValidatorId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -254,7 +254,7 @@ func (o *PingFederateAccessToken) GetAccessValidatorId() int32 {
 
 // GetAccessValidatorIdOk returns a tuple with the AccessValidatorId field value
 // and a boolean to check if the value has been set.
-func (o *PingFederateAccessToken) GetAccessValidatorIdOk() (*int32, bool) {
+func (o *PingFederateAccessToken) GetAccessValidatorIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -262,7 +262,7 @@ func (o *PingFederateAccessToken) GetAccessValidatorIdOk() (*int32, bool) {
 }
 
 // SetAccessValidatorId sets field value
-func (o *PingFederateAccessToken) SetAccessValidatorId(v int32) {
+func (o *PingFederateAccessToken) SetAccessValidatorId(v int64) {
 	o.AccessValidatorId = v
 }
 

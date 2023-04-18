@@ -20,7 +20,7 @@ var _ MappedNullable = &ReplicaAdmin{}
 // ReplicaAdmin A replica admin.
 type ReplicaAdmin struct {
 	// The ID of the replica admin. This field is read-only.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// The name of the replica admin.
 	Name string `json:"name"`
 	// The description of the replica admin.
@@ -30,13 +30,13 @@ type ReplicaAdmin struct {
 	// An array of public keys associated with the replica admin.
 	Keys []PublicKey `json:"keys,omitempty"`
 	// The ID of the proxy to use for HTTP requests or zero if none.
-	HttpProxyId *int32 `json:"httpProxyId,omitempty"`
+	HttpProxyId *int64 `json:"httpProxyId,omitempty"`
 	// The ID of the proxy to use for HTTPS requests or zero if none.
-	HttpsProxyId *int32 `json:"httpsProxyId,omitempty"`
+	HttpsProxyId *int64 `json:"httpsProxyId,omitempty"`
 	// The host and port of the replica admin.
 	HostPort string `json:"hostPort"`
 	// The ID of the certificate the replica admin will use to contact PingAccess via SSL/TLS.
-	SelectedCertificateId *int32 `json:"selectedCertificateId,omitempty"`
+	SelectedCertificateId *int64 `json:"selectedCertificateId,omitempty"`
 	CertificateHash       *Hash  `json:"certificateHash,omitempty"`
 }
 
@@ -60,9 +60,9 @@ func NewReplicaAdminWithDefaults() *ReplicaAdmin {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ReplicaAdmin) GetId() int32 {
+func (o *ReplicaAdmin) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -70,7 +70,7 @@ func (o *ReplicaAdmin) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicaAdmin) GetIdOk() (*int32, bool) {
+func (o *ReplicaAdmin) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -86,8 +86,8 @@ func (o *ReplicaAdmin) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ReplicaAdmin) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ReplicaAdmin) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -212,9 +212,9 @@ func (o *ReplicaAdmin) SetKeys(v []PublicKey) {
 }
 
 // GetHttpProxyId returns the HttpProxyId field value if set, zero value otherwise.
-func (o *ReplicaAdmin) GetHttpProxyId() int32 {
+func (o *ReplicaAdmin) GetHttpProxyId() int64 {
 	if o == nil || IsNil(o.HttpProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpProxyId
@@ -222,7 +222,7 @@ func (o *ReplicaAdmin) GetHttpProxyId() int32 {
 
 // GetHttpProxyIdOk returns a tuple with the HttpProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicaAdmin) GetHttpProxyIdOk() (*int32, bool) {
+func (o *ReplicaAdmin) GetHttpProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpProxyId) {
 		return nil, false
 	}
@@ -238,15 +238,15 @@ func (o *ReplicaAdmin) HasHttpProxyId() bool {
 	return false
 }
 
-// SetHttpProxyId gets a reference to the given int32 and assigns it to the HttpProxyId field.
-func (o *ReplicaAdmin) SetHttpProxyId(v int32) {
+// SetHttpProxyId gets a reference to the given int64 and assigns it to the HttpProxyId field.
+func (o *ReplicaAdmin) SetHttpProxyId(v int64) {
 	o.HttpProxyId = &v
 }
 
 // GetHttpsProxyId returns the HttpsProxyId field value if set, zero value otherwise.
-func (o *ReplicaAdmin) GetHttpsProxyId() int32 {
+func (o *ReplicaAdmin) GetHttpsProxyId() int64 {
 	if o == nil || IsNil(o.HttpsProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpsProxyId
@@ -254,7 +254,7 @@ func (o *ReplicaAdmin) GetHttpsProxyId() int32 {
 
 // GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicaAdmin) GetHttpsProxyIdOk() (*int32, bool) {
+func (o *ReplicaAdmin) GetHttpsProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpsProxyId) {
 		return nil, false
 	}
@@ -270,8 +270,8 @@ func (o *ReplicaAdmin) HasHttpsProxyId() bool {
 	return false
 }
 
-// SetHttpsProxyId gets a reference to the given int32 and assigns it to the HttpsProxyId field.
-func (o *ReplicaAdmin) SetHttpsProxyId(v int32) {
+// SetHttpsProxyId gets a reference to the given int64 and assigns it to the HttpsProxyId field.
+func (o *ReplicaAdmin) SetHttpsProxyId(v int64) {
 	o.HttpsProxyId = &v
 }
 
@@ -300,9 +300,9 @@ func (o *ReplicaAdmin) SetHostPort(v string) {
 }
 
 // GetSelectedCertificateId returns the SelectedCertificateId field value if set, zero value otherwise.
-func (o *ReplicaAdmin) GetSelectedCertificateId() int32 {
+func (o *ReplicaAdmin) GetSelectedCertificateId() int64 {
 	if o == nil || IsNil(o.SelectedCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SelectedCertificateId
@@ -310,7 +310,7 @@ func (o *ReplicaAdmin) GetSelectedCertificateId() int32 {
 
 // GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReplicaAdmin) GetSelectedCertificateIdOk() (*int32, bool) {
+func (o *ReplicaAdmin) GetSelectedCertificateIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.SelectedCertificateId) {
 		return nil, false
 	}
@@ -326,8 +326,8 @@ func (o *ReplicaAdmin) HasSelectedCertificateId() bool {
 	return false
 }
 
-// SetSelectedCertificateId gets a reference to the given int32 and assigns it to the SelectedCertificateId field.
-func (o *ReplicaAdmin) SetSelectedCertificateId(v int32) {
+// SetSelectedCertificateId gets a reference to the given int64 and assigns it to the SelectedCertificateId field.
+func (o *ReplicaAdmin) SetSelectedCertificateId(v int64) {
 	o.SelectedCertificateId = &v
 }
 

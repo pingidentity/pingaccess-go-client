@@ -477,8 +477,8 @@ func (a *EnginesApiService) GetEngineCertificateExecute(r ApiGetEngineCertificat
 type ApiGetEngineCertificatesRequest struct {
 	ctx           context.Context
 	ApiService    *EnginesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	alias         *string
 	sortKey       *string
@@ -486,13 +486,13 @@ type ApiGetEngineCertificatesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetEngineCertificatesRequest) Page(page int32) ApiGetEngineCertificatesRequest {
+func (r ApiGetEngineCertificatesRequest) Page(page int64) ApiGetEngineCertificatesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Engine Certificates per page
-func (r ApiGetEngineCertificatesRequest) NumberPerPage(numberPerPage int32) ApiGetEngineCertificatesRequest {
+func (r ApiGetEngineCertificatesRequest) NumberPerPage(numberPerPage int64) ApiGetEngineCertificatesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -969,8 +969,8 @@ func (a *EnginesApiService) GetEngineStatusExecute(r ApiGetEngineStatusRequest) 
 type ApiGetEnginesRequest struct {
 	ctx           context.Context
 	ApiService    *EnginesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -978,13 +978,13 @@ type ApiGetEnginesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetEnginesRequest) Page(page int32) ApiGetEnginesRequest {
+func (r ApiGetEnginesRequest) Page(page int64) ApiGetEnginesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Engines per page
-func (r ApiGetEnginesRequest) NumberPerPage(numberPerPage int32) ApiGetEnginesRequest {
+func (r ApiGetEnginesRequest) NumberPerPage(numberPerPage int64) ApiGetEnginesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

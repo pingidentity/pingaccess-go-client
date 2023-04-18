@@ -20,7 +20,7 @@ var _ MappedNullable = &Agent{}
 // Agent An agent.
 type Agent struct {
 	// When creating a new Agent, this is the ID for the Agent. If not specified, an ID will be automatically assigned. When updating an existing Agent, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the agent.
 	Name string `json:"name"`
 	// (sortable) A description of the agent.
@@ -28,21 +28,21 @@ type Agent struct {
 	// (sortable) The hostname where the agent is listening.
 	Hostname string `json:"hostname"`
 	// (sortable) The port the agent is listening on.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// An array of shared secret ids associated with this agent.
-	SharedSecretIds []int32 `json:"sharedSecretIds"`
+	SharedSecretIds []int64 `json:"sharedSecretIds"`
 	// (sortable) Indicates whether the default IP source is overridden for this agent.
 	OverrideIpSource *bool               `json:"overrideIpSource,omitempty"`
 	IpSource         *IpMultiValueSource `json:"ipSource,omitempty"`
 	// A list of hostname:port strings for the backup PingAccess policy servers.
 	FailoverHosts []string `json:"failoverHosts,omitempty"`
 	// The number of seconds to wait before an agent should retry an unavailable policy server.
-	FailedRetryTimeout *int32 `json:"failedRetryTimeout,omitempty"`
+	FailedRetryTimeout *int64 `json:"failedRetryTimeout,omitempty"`
 	// The max number of times an agent request will be attempted before failing over to a backup policy server and marking the current policy server as unavailable.
-	MaxRetries          *int32               `json:"maxRetries,omitempty"`
+	MaxRetries          *int64               `json:"maxRetries,omitempty"`
 	UnknownResourceMode *UnknownResourceMode `json:"unknownResourceMode,omitempty"`
 	// The ID of the certificate the agent will use to contact PingAccess via SSL/TLS.
-	SelectedCertificateId *int32 `json:"selectedCertificateId,omitempty"`
+	SelectedCertificateId *int64 `json:"selectedCertificateId,omitempty"`
 	CertificateHash       *Hash  `json:"certificateHash,omitempty"`
 }
 
@@ -50,7 +50,7 @@ type Agent struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAgent(name string, hostname string, port int32, sharedSecretIds []int32) *Agent {
+func NewAgent(name string, hostname string, port int64, sharedSecretIds []int64) *Agent {
 	this := Agent{}
 	this.Name = name
 	this.Hostname = hostname
@@ -68,9 +68,9 @@ func NewAgentWithDefaults() *Agent {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Agent) GetId() int32 {
+func (o *Agent) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -78,7 +78,7 @@ func (o *Agent) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Agent) GetIdOk() (*int32, bool) {
+func (o *Agent) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -94,8 +94,8 @@ func (o *Agent) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Agent) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Agent) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -180,9 +180,9 @@ func (o *Agent) SetHostname(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *Agent) GetPort() int32 {
+func (o *Agent) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -191,7 +191,7 @@ func (o *Agent) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *Agent) GetPortOk() (*int32, bool) {
+func (o *Agent) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -199,14 +199,14 @@ func (o *Agent) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *Agent) SetPort(v int32) {
+func (o *Agent) SetPort(v int64) {
 	o.Port = v
 }
 
 // GetSharedSecretIds returns the SharedSecretIds field value
-func (o *Agent) GetSharedSecretIds() []int32 {
+func (o *Agent) GetSharedSecretIds() []int64 {
 	if o == nil {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 
@@ -215,7 +215,7 @@ func (o *Agent) GetSharedSecretIds() []int32 {
 
 // GetSharedSecretIdsOk returns a tuple with the SharedSecretIds field value
 // and a boolean to check if the value has been set.
-func (o *Agent) GetSharedSecretIdsOk() ([]int32, bool) {
+func (o *Agent) GetSharedSecretIdsOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -223,7 +223,7 @@ func (o *Agent) GetSharedSecretIdsOk() ([]int32, bool) {
 }
 
 // SetSharedSecretIds sets field value
-func (o *Agent) SetSharedSecretIds(v []int32) {
+func (o *Agent) SetSharedSecretIds(v []int64) {
 	o.SharedSecretIds = v
 }
 
@@ -324,9 +324,9 @@ func (o *Agent) SetFailoverHosts(v []string) {
 }
 
 // GetFailedRetryTimeout returns the FailedRetryTimeout field value if set, zero value otherwise.
-func (o *Agent) GetFailedRetryTimeout() int32 {
+func (o *Agent) GetFailedRetryTimeout() int64 {
 	if o == nil || IsNil(o.FailedRetryTimeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FailedRetryTimeout
@@ -334,7 +334,7 @@ func (o *Agent) GetFailedRetryTimeout() int32 {
 
 // GetFailedRetryTimeoutOk returns a tuple with the FailedRetryTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Agent) GetFailedRetryTimeoutOk() (*int32, bool) {
+func (o *Agent) GetFailedRetryTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.FailedRetryTimeout) {
 		return nil, false
 	}
@@ -350,15 +350,15 @@ func (o *Agent) HasFailedRetryTimeout() bool {
 	return false
 }
 
-// SetFailedRetryTimeout gets a reference to the given int32 and assigns it to the FailedRetryTimeout field.
-func (o *Agent) SetFailedRetryTimeout(v int32) {
+// SetFailedRetryTimeout gets a reference to the given int64 and assigns it to the FailedRetryTimeout field.
+func (o *Agent) SetFailedRetryTimeout(v int64) {
 	o.FailedRetryTimeout = &v
 }
 
 // GetMaxRetries returns the MaxRetries field value if set, zero value otherwise.
-func (o *Agent) GetMaxRetries() int32 {
+func (o *Agent) GetMaxRetries() int64 {
 	if o == nil || IsNil(o.MaxRetries) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxRetries
@@ -366,7 +366,7 @@ func (o *Agent) GetMaxRetries() int32 {
 
 // GetMaxRetriesOk returns a tuple with the MaxRetries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Agent) GetMaxRetriesOk() (*int32, bool) {
+func (o *Agent) GetMaxRetriesOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxRetries) {
 		return nil, false
 	}
@@ -382,8 +382,8 @@ func (o *Agent) HasMaxRetries() bool {
 	return false
 }
 
-// SetMaxRetries gets a reference to the given int32 and assigns it to the MaxRetries field.
-func (o *Agent) SetMaxRetries(v int32) {
+// SetMaxRetries gets a reference to the given int64 and assigns it to the MaxRetries field.
+func (o *Agent) SetMaxRetries(v int64) {
 	o.MaxRetries = &v
 }
 
@@ -420,9 +420,9 @@ func (o *Agent) SetUnknownResourceMode(v UnknownResourceMode) {
 }
 
 // GetSelectedCertificateId returns the SelectedCertificateId field value if set, zero value otherwise.
-func (o *Agent) GetSelectedCertificateId() int32 {
+func (o *Agent) GetSelectedCertificateId() int64 {
 	if o == nil || IsNil(o.SelectedCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SelectedCertificateId
@@ -430,7 +430,7 @@ func (o *Agent) GetSelectedCertificateId() int32 {
 
 // GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Agent) GetSelectedCertificateIdOk() (*int32, bool) {
+func (o *Agent) GetSelectedCertificateIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.SelectedCertificateId) {
 		return nil, false
 	}
@@ -446,8 +446,8 @@ func (o *Agent) HasSelectedCertificateId() bool {
 	return false
 }
 
-// SetSelectedCertificateId gets a reference to the given int32 and assigns it to the SelectedCertificateId field.
-func (o *Agent) SetSelectedCertificateId(v int32) {
+// SetSelectedCertificateId gets a reference to the given int64 and assigns it to the SelectedCertificateId field.
+func (o *Agent) SetSelectedCertificateId(v int64) {
 	o.SelectedCertificateId = &v
 }
 

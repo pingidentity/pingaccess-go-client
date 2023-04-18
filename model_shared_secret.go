@@ -21,7 +21,7 @@ var _ MappedNullable = &SharedSecret{}
 // SharedSecret A shared secret.
 type SharedSecret struct {
 	// When creating a new SharedSecret, this is the ID for the SharedSecret. If not specified, an ID will be automatically assigned. When updating an existing SharedSecret, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The created date of the secret as the number of milliseconds since January 1, 1970, 00:00:00 GMT.
 	Created *time.Time  `json:"created,omitempty"`
 	Secret  HiddenField `json:"secret"`
@@ -46,9 +46,9 @@ func NewSharedSecretWithDefaults() *SharedSecret {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *SharedSecret) GetId() int32 {
+func (o *SharedSecret) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -56,7 +56,7 @@ func (o *SharedSecret) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SharedSecret) GetIdOk() (*int32, bool) {
+func (o *SharedSecret) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -72,8 +72,8 @@ func (o *SharedSecret) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *SharedSecret) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *SharedSecret) SetId(v int64) {
 	o.Id = &v
 }
 

@@ -24,7 +24,7 @@ type OIDCProvider struct {
 	// The issuer of the third-party OpenID Connect provider.
 	Issuer string `json:"issuer"`
 	// The group of certificates to use when authenticating to third-party OpenID Connect provider.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// True if a proxy should be used for HTTP or HTTPS requests.
 	UseProxy   *bool       `json:"useProxy,omitempty"`
 	AuditLevel *AuditLevel `json:"auditLevel,omitempty"`
@@ -112,9 +112,9 @@ func (o *OIDCProvider) SetIssuer(v string) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *OIDCProvider) GetTrustedCertificateGroupId() int32 {
+func (o *OIDCProvider) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -122,7 +122,7 @@ func (o *OIDCProvider) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OIDCProvider) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *OIDCProvider) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *OIDCProvider) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *OIDCProvider) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *OIDCProvider) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

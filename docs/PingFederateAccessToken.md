@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **SubjectAttributeName** | **string** | The attribute you want to use from the OAuth access token as the subject for auditing purposes. | 
 **SendAudience** | Pointer to **bool** | Enable to send the URI the user requested as the &#39;aud&#39; OAuth parameter for PingAccess to use to select an Access Token Manager. | [optional] 
 **UseTokenIntrospection** | Pointer to **bool** | Specify if token introspection is enabled. | [optional] 
-**AccessValidatorId** | **int32** | The Access Validator Id. This field is read-only. | 
+**AccessValidatorId** | **int64** | The Access Validator Id. This field is read-only. | 
 **Name** | Pointer to **string** | The unique Access Validator name. This field is read-only. | [optional] 
 **ClientSecret** | Pointer to [**HiddenField**](HiddenField.md) |  | [optional] 
 **ClientId** | Pointer to **string** | The Client ID which PingAccess should use when requesting PingFederate to validate access tokens. The client must have Access Token Validation grant type allowed. (DEPRECATED - to be removed in a future release; please use &#39;clientCredentials&#39; instead) | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewPingFederateAccessToken
 
-`func NewPingFederateAccessToken(subjectAttributeName string, accessValidatorId int32, ) *PingFederateAccessToken`
+`func NewPingFederateAccessToken(subjectAttributeName string, accessValidatorId int64, ) *PingFederateAccessToken`
 
 NewPingFederateAccessToken instantiates a new PingFederateAccessToken object
 This constructor will assign default values to properties that have it defined,
@@ -181,20 +181,20 @@ HasUseTokenIntrospection returns a boolean if a field has been set.
 
 ### GetAccessValidatorId
 
-`func (o *PingFederateAccessToken) GetAccessValidatorId() int32`
+`func (o *PingFederateAccessToken) GetAccessValidatorId() int64`
 
 GetAccessValidatorId returns the AccessValidatorId field if non-nil, zero value otherwise.
 
 ### GetAccessValidatorIdOk
 
-`func (o *PingFederateAccessToken) GetAccessValidatorIdOk() (*int32, bool)`
+`func (o *PingFederateAccessToken) GetAccessValidatorIdOk() (*int64, bool)`
 
 GetAccessValidatorIdOk returns a tuple with the AccessValidatorId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessValidatorId
 
-`func (o *PingFederateAccessToken) SetAccessValidatorId(v int32)`
+`func (o *PingFederateAccessToken) SetAccessValidatorId(v int64)`
 
 SetAccessValidatorId sets AccessValidatorId field to given value.
 

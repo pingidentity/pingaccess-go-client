@@ -312,8 +312,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Engine Certificates per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Engine Certificates per page (optional)
     filter := "filter_example" // string | Search for Engine Certificates with alias matching filter text (optional)
     alias := "alias_example" // string | Get Engine Certificates by alias (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Engine Certificate attributes (keys) to be used to sort the results (optional)
@@ -342,8 +342,8 @@ Other parameters are passed through a pointer to a apiGetEngineCertificatesReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Engine Certificates per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Engine Certificates per page | 
  **filter** | **string** | Search for Engine Certificates with alias matching filter text | 
  **alias** | **string** | Get Engine Certificates by alias | 
  **sortKey** | **string** | A comma separated list of Engine Certificate attributes (keys) to be used to sort the results | 
@@ -456,7 +456,7 @@ import (
 )
 
 func main() {
-    engineRegistrationToken := *openapiclient.NewEngineRegistrationToken(int32(123)) // EngineRegistrationToken | The required data to generate an engine self-registration token
+    engineRegistrationToken := *openapiclient.NewEngineRegistrationToken(int64(123)) // EngineRegistrationToken | The required data to generate an engine self-registration token
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -581,8 +581,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Engines per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Engines per page (optional)
     filter := "filter_example" // string | Search for Engines with name matching filter text (optional)
     name := "name_example" // string | Get a Engines by name (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Engine attributes (keys) to be used to sort the results (optional)
@@ -611,8 +611,8 @@ Other parameters are passed through a pointer to a apiGetEnginesRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Engines per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Engines per page | 
  **filter** | **string** | Search for Engines with name matching filter text | 
  **name** | **string** | Get a Engines by name | 
  **sortKey** | **string** | A comma separated list of Engine attributes (keys) to be used to sort the results | 

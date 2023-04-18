@@ -772,7 +772,7 @@ import (
 )
 
 func main() {
-    adminWebSession := *openapiclient.NewAdminBasicWebSession(int32(123), int32(123), int32(123), int32(123), "Audience_example", openapiclient.WebSessionCookieType("Encrypted"), "TimeoutGroovyScript_example") // AdminBasicWebSession | admin web session configuration to update
+    adminWebSession := *openapiclient.NewAdminBasicWebSession(int64(123), int64(123), int64(123), int64(123), "Audience_example", openapiclient.WebSessionCookieType("Encrypted"), "TimeoutGroovyScript_example") // AdminBasicWebSession | admin web session configuration to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The ID of the Administrative user. This value is read-only. | [optional] 
+**Id** | Pointer to **int64** | The ID of the Administrative user. This value is read-only. | [optional] 
 **Username** | **string** | (sortable) The Administrative users&#39;s username. | 
 **Email** | Pointer to **string** | (sortable) The Administrative account&#39;s email. | [optional] 
 **SlaAccepted** | Pointer to **bool** | (sortable) The Administrative account&#39;s sla acceptance indicator. | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *User) GetId() int32`
+`func (o *User) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *User) GetIdOk() (*int32, bool)`
+`func (o *User) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *User) SetId(v int32)`
+`func (o *User) SetId(v int64)`
 
 SetId sets Id field to given value.
 

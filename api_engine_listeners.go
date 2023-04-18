@@ -363,8 +363,8 @@ func (a *EngineListenersApiService) GetEngineListenerExecute(r ApiGetEngineListe
 type ApiGetEngineListenersRequest struct {
 	ctx           context.Context
 	ApiService    *EngineListenersApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetEngineListenersRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetEngineListenersRequest) Page(page int32) ApiGetEngineListenersRequest {
+func (r ApiGetEngineListenersRequest) Page(page int64) ApiGetEngineListenersRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Engine Listeners per page
-func (r ApiGetEngineListenersRequest) NumberPerPage(numberPerPage int32) ApiGetEngineListenersRequest {
+func (r ApiGetEngineListenersRequest) NumberPerPage(numberPerPage int64) ApiGetEngineListenersRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

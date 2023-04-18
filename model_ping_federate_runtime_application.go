@@ -22,9 +22,9 @@ type PingFederateRuntimeApplication struct {
 	// The base path of the PingFederate runtime application. Default value is '/'.
 	ContextRoot *string `json:"contextRoot,omitempty"`
 	// The ID of the primary virtual host to use for front channel requests to the PA proxied PingFederate runtime application. This virtual host will be used for the default OpenID Connect Issuer when an application specific issuer is not configured.
-	PrimaryVirtualHostId int32 `json:"primaryVirtualHostId"`
+	PrimaryVirtualHostId int64 `json:"primaryVirtualHostId"`
 	// Additional virtual host IDs that can be used to proxy the PingFederate runtime application.
-	AdditionalVirtualHostIds []int32 `json:"additionalVirtualHostIds,omitempty"`
+	AdditionalVirtualHostIds []int64 `json:"additionalVirtualHostIds,omitempty"`
 	// A List of PolicyItems associated with the PingFederate runtime application.
 	Policy []PolicyItem `json:"policy,omitempty"`
 	// The header names to contain PEM-encoded client certificates. The list position correlates to the index in the client certificate chain. For example, the first element always maps to the leaf certificate.
@@ -37,7 +37,7 @@ type PingFederateRuntimeApplication struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingFederateRuntimeApplication(primaryVirtualHostId int32) *PingFederateRuntimeApplication {
+func NewPingFederateRuntimeApplication(primaryVirtualHostId int64) *PingFederateRuntimeApplication {
 	this := PingFederateRuntimeApplication{}
 	this.PrimaryVirtualHostId = primaryVirtualHostId
 	return &this
@@ -84,9 +84,9 @@ func (o *PingFederateRuntimeApplication) SetContextRoot(v string) {
 }
 
 // GetPrimaryVirtualHostId returns the PrimaryVirtualHostId field value
-func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostId() int32 {
+func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -95,7 +95,7 @@ func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostId() int32 {
 
 // GetPrimaryVirtualHostIdOk returns a tuple with the PrimaryVirtualHostId field value
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostIdOk() (*int32, bool) {
+func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -103,14 +103,14 @@ func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostIdOk() (*int32, bo
 }
 
 // SetPrimaryVirtualHostId sets field value
-func (o *PingFederateRuntimeApplication) SetPrimaryVirtualHostId(v int32) {
+func (o *PingFederateRuntimeApplication) SetPrimaryVirtualHostId(v int64) {
 	o.PrimaryVirtualHostId = v
 }
 
 // GetAdditionalVirtualHostIds returns the AdditionalVirtualHostIds field value if set, zero value otherwise.
-func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIds() []int32 {
+func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIds() []int64 {
 	if o == nil || IsNil(o.AdditionalVirtualHostIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.AdditionalVirtualHostIds
@@ -118,7 +118,7 @@ func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIds() []int32 {
 
 // GetAdditionalVirtualHostIdsOk returns a tuple with the AdditionalVirtualHostIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIdsOk() ([]int32, bool) {
+func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.AdditionalVirtualHostIds) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *PingFederateRuntimeApplication) HasAdditionalVirtualHostIds() bool {
 	return false
 }
 
-// SetAdditionalVirtualHostIds gets a reference to the given []int32 and assigns it to the AdditionalVirtualHostIds field.
-func (o *PingFederateRuntimeApplication) SetAdditionalVirtualHostIds(v []int32) {
+// SetAdditionalVirtualHostIds gets a reference to the given []int64 and assigns it to the AdditionalVirtualHostIds field.
+func (o *PingFederateRuntimeApplication) SetAdditionalVirtualHostIds(v []int64) {
 	o.AdditionalVirtualHostIds = v
 }
 

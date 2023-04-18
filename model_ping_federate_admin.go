@@ -28,11 +28,11 @@ type PingFederateAdmin struct {
 	// The name of the host expected in the certificate used by PingFederate.
 	ExpectedHostname *string `json:"expectedHostname,omitempty"`
 	// The group of certificates to use when authenticating to PingFederate Administrative API.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// The host name or IP address for PingFederate Administration API.
 	Host string `json:"host"`
 	// The port number for PingFederate Administration API.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// Enable if PingFederate is expecting HTTPS connections.
 	Secure *bool `json:"secure,omitempty"`
 	// The base path, if needed, for Administration API.
@@ -48,7 +48,7 @@ type PingFederateAdmin struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingFederateAdmin(adminPassword HiddenField, host string, port int32) *PingFederateAdmin {
+func NewPingFederateAdmin(adminPassword HiddenField, host string, port int64) *PingFederateAdmin {
 	this := PingFederateAdmin{}
 	this.AdminPassword = adminPassword
 	this.Host = host
@@ -217,9 +217,9 @@ func (o *PingFederateAdmin) SetExpectedHostname(v string) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *PingFederateAdmin) GetTrustedCertificateGroupId() int32 {
+func (o *PingFederateAdmin) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -227,7 +227,7 @@ func (o *PingFederateAdmin) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingFederateAdmin) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *PingFederateAdmin) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -243,8 +243,8 @@ func (o *PingFederateAdmin) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *PingFederateAdmin) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *PingFederateAdmin) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 
@@ -273,9 +273,9 @@ func (o *PingFederateAdmin) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *PingFederateAdmin) GetPort() int32 {
+func (o *PingFederateAdmin) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -284,7 +284,7 @@ func (o *PingFederateAdmin) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *PingFederateAdmin) GetPortOk() (*int32, bool) {
+func (o *PingFederateAdmin) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -292,7 +292,7 @@ func (o *PingFederateAdmin) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *PingFederateAdmin) SetPort(v int32) {
+func (o *PingFederateAdmin) SetPort(v int64) {
 	o.Port = v
 }
 

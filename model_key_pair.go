@@ -21,7 +21,7 @@ var _ MappedNullable = &KeyPair{}
 // KeyPair A key pair.
 type KeyPair struct {
 	// The Id for the key pair.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The Serial Number for the key pair.
 	SerialNumber string `json:"serialNumber"`
 	// (sortable) The Alias for the key pair.
@@ -50,7 +50,7 @@ type KeyPair struct {
 	// (sortable) True if a CSR is generated for this key pair.
 	CsrPending bool `json:"csrPending"`
 	// The HSM Provider ID.  The default value is 0 indicating an HSM is not used for this KeyPair.
-	HsmProviderId *int32 `json:"hsmProviderId,omitempty"`
+	HsmProviderId *int64 `json:"hsmProviderId,omitempty"`
 	// The complete list of certificates in the key pair certificate chain.
 	ChainCertificates []ChainCertificate `json:"chainCertificates,omitempty"`
 }
@@ -83,9 +83,9 @@ func NewKeyPairWithDefaults() *KeyPair {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *KeyPair) GetId() int32 {
+func (o *KeyPair) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -93,7 +93,7 @@ func (o *KeyPair) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyPair) GetIdOk() (*int32, bool) {
+func (o *KeyPair) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -109,8 +109,8 @@ func (o *KeyPair) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *KeyPair) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *KeyPair) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -483,9 +483,9 @@ func (o *KeyPair) SetCsrPending(v bool) {
 }
 
 // GetHsmProviderId returns the HsmProviderId field value if set, zero value otherwise.
-func (o *KeyPair) GetHsmProviderId() int32 {
+func (o *KeyPair) GetHsmProviderId() int64 {
 	if o == nil || IsNil(o.HsmProviderId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HsmProviderId
@@ -493,7 +493,7 @@ func (o *KeyPair) GetHsmProviderId() int32 {
 
 // GetHsmProviderIdOk returns a tuple with the HsmProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyPair) GetHsmProviderIdOk() (*int32, bool) {
+func (o *KeyPair) GetHsmProviderIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HsmProviderId) {
 		return nil, false
 	}
@@ -509,8 +509,8 @@ func (o *KeyPair) HasHsmProviderId() bool {
 	return false
 }
 
-// SetHsmProviderId gets a reference to the given int32 and assigns it to the HsmProviderId field.
-func (o *KeyPair) SetHsmProviderId(v int32) {
+// SetHsmProviderId gets a reference to the given int64 and assigns it to the HsmProviderId field.
+func (o *KeyPair) SetHsmProviderId(v int64) {
 	o.HsmProviderId = &v
 }
 

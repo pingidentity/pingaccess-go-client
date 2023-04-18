@@ -20,7 +20,7 @@ var _ MappedNullable = &Site{}
 // Site A site.
 type Site struct {
 	// When creating a new Site, this is the ID for the Site. If not specified, an ID will be automatically assigned. When updating an existing Site, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the site.
 	Name string `json:"name"`
 	// The {hostname}:{port} pairs for the hosts that make up the site.
@@ -28,27 +28,27 @@ type Site struct {
 	// (sortable) This field is true if the site expects HTTPS connections.
 	Secure *bool `json:"secure,omitempty"`
 	// The ID of the trusted certificate group associated with the site.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// (sortable) This field is true if the PingAccess Token or OAuth Access Token should be included in the request to the site.
 	SendPaCookie *bool `json:"sendPaCookie,omitempty"`
 	// (sortable) Setting this field to true causes PingAccess to adjust the Host header to the site's selected target host rather than the virtual host configured in the application.
 	UseTargetHostHeader *bool `json:"useTargetHostHeader,omitempty"`
 	// (sortable) The time, in milliseconds, that an HTTP persistent connection to the site can be idle before PingAccess closes the connection.
-	KeepAliveTimeout *int32 `json:"keepAliveTimeout,omitempty"`
+	KeepAliveTimeout *int64 `json:"keepAliveTimeout,omitempty"`
 	// (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections.
-	MaxConnections *int32 `json:"maxConnections,omitempty"`
+	MaxConnections *int64 `json:"maxConnections,omitempty"`
 	// (sortable) The maximum number of WebSocket connections you want PingAccess to have open and maintain for the site. -1 indicates unlimited connections.
-	MaxWebSocketConnections *int32 `json:"maxWebSocketConnections,omitempty"`
+	MaxWebSocketConnections *int64 `json:"maxWebSocketConnections,omitempty"`
 	// The IDs of the site authenticators associated with the site.
-	SiteAuthenticatorIds []int32 `json:"siteAuthenticatorIds,omitempty"`
+	SiteAuthenticatorIds []int64 `json:"siteAuthenticatorIds,omitempty"`
 	// (sortable) This field is true if the hostname verification of the site's certificate should be skipped.
 	SkipHostnameVerification *bool `json:"skipHostnameVerification,omitempty"`
 	// (sortable) The name of the host expected in the site's certificate.
 	ExpectedHostname *string `json:"expectedHostname,omitempty"`
 	// The ID of the availability profile associated with the site.
-	AvailabilityProfileId *int32 `json:"availabilityProfileId,omitempty"`
+	AvailabilityProfileId *int64 `json:"availabilityProfileId,omitempty"`
 	// The ID of the load balancing strategy associated with the site.
-	LoadBalancingStrategyId *int32 `json:"loadBalancingStrategyId,omitempty"`
+	LoadBalancingStrategyId *int64 `json:"loadBalancingStrategyId,omitempty"`
 	// (sortable) True if a proxy should be used for HTTP or HTTPS requests.
 	UseProxy *bool `json:"useProxy,omitempty"`
 }
@@ -73,9 +73,9 @@ func NewSiteWithDefaults() *Site {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Site) GetId() int32 {
+func (o *Site) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -83,7 +83,7 @@ func (o *Site) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetIdOk() (*int32, bool) {
+func (o *Site) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *Site) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Site) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Site) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -185,9 +185,9 @@ func (o *Site) SetSecure(v bool) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *Site) GetTrustedCertificateGroupId() int32 {
+func (o *Site) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -195,7 +195,7 @@ func (o *Site) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *Site) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -211,8 +211,8 @@ func (o *Site) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *Site) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *Site) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 
@@ -281,9 +281,9 @@ func (o *Site) SetUseTargetHostHeader(v bool) {
 }
 
 // GetKeepAliveTimeout returns the KeepAliveTimeout field value if set, zero value otherwise.
-func (o *Site) GetKeepAliveTimeout() int32 {
+func (o *Site) GetKeepAliveTimeout() int64 {
 	if o == nil || IsNil(o.KeepAliveTimeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KeepAliveTimeout
@@ -291,7 +291,7 @@ func (o *Site) GetKeepAliveTimeout() int32 {
 
 // GetKeepAliveTimeoutOk returns a tuple with the KeepAliveTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetKeepAliveTimeoutOk() (*int32, bool) {
+func (o *Site) GetKeepAliveTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.KeepAliveTimeout) {
 		return nil, false
 	}
@@ -307,15 +307,15 @@ func (o *Site) HasKeepAliveTimeout() bool {
 	return false
 }
 
-// SetKeepAliveTimeout gets a reference to the given int32 and assigns it to the KeepAliveTimeout field.
-func (o *Site) SetKeepAliveTimeout(v int32) {
+// SetKeepAliveTimeout gets a reference to the given int64 and assigns it to the KeepAliveTimeout field.
+func (o *Site) SetKeepAliveTimeout(v int64) {
 	o.KeepAliveTimeout = &v
 }
 
 // GetMaxConnections returns the MaxConnections field value if set, zero value otherwise.
-func (o *Site) GetMaxConnections() int32 {
+func (o *Site) GetMaxConnections() int64 {
 	if o == nil || IsNil(o.MaxConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxConnections
@@ -323,7 +323,7 @@ func (o *Site) GetMaxConnections() int32 {
 
 // GetMaxConnectionsOk returns a tuple with the MaxConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetMaxConnectionsOk() (*int32, bool) {
+func (o *Site) GetMaxConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxConnections) {
 		return nil, false
 	}
@@ -339,15 +339,15 @@ func (o *Site) HasMaxConnections() bool {
 	return false
 }
 
-// SetMaxConnections gets a reference to the given int32 and assigns it to the MaxConnections field.
-func (o *Site) SetMaxConnections(v int32) {
+// SetMaxConnections gets a reference to the given int64 and assigns it to the MaxConnections field.
+func (o *Site) SetMaxConnections(v int64) {
 	o.MaxConnections = &v
 }
 
 // GetMaxWebSocketConnections returns the MaxWebSocketConnections field value if set, zero value otherwise.
-func (o *Site) GetMaxWebSocketConnections() int32 {
+func (o *Site) GetMaxWebSocketConnections() int64 {
 	if o == nil || IsNil(o.MaxWebSocketConnections) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MaxWebSocketConnections
@@ -355,7 +355,7 @@ func (o *Site) GetMaxWebSocketConnections() int32 {
 
 // GetMaxWebSocketConnectionsOk returns a tuple with the MaxWebSocketConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetMaxWebSocketConnectionsOk() (*int32, bool) {
+func (o *Site) GetMaxWebSocketConnectionsOk() (*int64, bool) {
 	if o == nil || IsNil(o.MaxWebSocketConnections) {
 		return nil, false
 	}
@@ -371,15 +371,15 @@ func (o *Site) HasMaxWebSocketConnections() bool {
 	return false
 }
 
-// SetMaxWebSocketConnections gets a reference to the given int32 and assigns it to the MaxWebSocketConnections field.
-func (o *Site) SetMaxWebSocketConnections(v int32) {
+// SetMaxWebSocketConnections gets a reference to the given int64 and assigns it to the MaxWebSocketConnections field.
+func (o *Site) SetMaxWebSocketConnections(v int64) {
 	o.MaxWebSocketConnections = &v
 }
 
 // GetSiteAuthenticatorIds returns the SiteAuthenticatorIds field value if set, zero value otherwise.
-func (o *Site) GetSiteAuthenticatorIds() []int32 {
+func (o *Site) GetSiteAuthenticatorIds() []int64 {
 	if o == nil || IsNil(o.SiteAuthenticatorIds) {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 	return o.SiteAuthenticatorIds
@@ -387,7 +387,7 @@ func (o *Site) GetSiteAuthenticatorIds() []int32 {
 
 // GetSiteAuthenticatorIdsOk returns a tuple with the SiteAuthenticatorIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetSiteAuthenticatorIdsOk() ([]int32, bool) {
+func (o *Site) GetSiteAuthenticatorIdsOk() ([]int64, bool) {
 	if o == nil || IsNil(o.SiteAuthenticatorIds) {
 		return nil, false
 	}
@@ -403,8 +403,8 @@ func (o *Site) HasSiteAuthenticatorIds() bool {
 	return false
 }
 
-// SetSiteAuthenticatorIds gets a reference to the given []int32 and assigns it to the SiteAuthenticatorIds field.
-func (o *Site) SetSiteAuthenticatorIds(v []int32) {
+// SetSiteAuthenticatorIds gets a reference to the given []int64 and assigns it to the SiteAuthenticatorIds field.
+func (o *Site) SetSiteAuthenticatorIds(v []int64) {
 	o.SiteAuthenticatorIds = v
 }
 
@@ -473,9 +473,9 @@ func (o *Site) SetExpectedHostname(v string) {
 }
 
 // GetAvailabilityProfileId returns the AvailabilityProfileId field value if set, zero value otherwise.
-func (o *Site) GetAvailabilityProfileId() int32 {
+func (o *Site) GetAvailabilityProfileId() int64 {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AvailabilityProfileId
@@ -483,7 +483,7 @@ func (o *Site) GetAvailabilityProfileId() int32 {
 
 // GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetAvailabilityProfileIdOk() (*int32, bool) {
+func (o *Site) GetAvailabilityProfileIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
 		return nil, false
 	}
@@ -499,15 +499,15 @@ func (o *Site) HasAvailabilityProfileId() bool {
 	return false
 }
 
-// SetAvailabilityProfileId gets a reference to the given int32 and assigns it to the AvailabilityProfileId field.
-func (o *Site) SetAvailabilityProfileId(v int32) {
+// SetAvailabilityProfileId gets a reference to the given int64 and assigns it to the AvailabilityProfileId field.
+func (o *Site) SetAvailabilityProfileId(v int64) {
 	o.AvailabilityProfileId = &v
 }
 
 // GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field value if set, zero value otherwise.
-func (o *Site) GetLoadBalancingStrategyId() int32 {
+func (o *Site) GetLoadBalancingStrategyId() int64 {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LoadBalancingStrategyId
@@ -515,7 +515,7 @@ func (o *Site) GetLoadBalancingStrategyId() int32 {
 
 // GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Site) GetLoadBalancingStrategyIdOk() (*int32, bool) {
+func (o *Site) GetLoadBalancingStrategyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
 		return nil, false
 	}
@@ -531,8 +531,8 @@ func (o *Site) HasLoadBalancingStrategyId() bool {
 	return false
 }
 
-// SetLoadBalancingStrategyId gets a reference to the given int32 and assigns it to the LoadBalancingStrategyId field.
-func (o *Site) SetLoadBalancingStrategyId(v int32) {
+// SetLoadBalancingStrategyId gets a reference to the given int64 and assigns it to the LoadBalancingStrategyId field.
+func (o *Site) SetLoadBalancingStrategyId(v int64) {
 	o.LoadBalancingStrategyId = &v
 }
 

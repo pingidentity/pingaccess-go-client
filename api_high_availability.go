@@ -811,8 +811,8 @@ func (a *HighAvailabilityApiService) GetAvailabilityProfileDescriptorsExecute(r 
 type ApiGetAvailabilityProfilesRequest struct {
 	ctx           context.Context
 	ApiService    *HighAvailabilityApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -820,13 +820,13 @@ type ApiGetAvailabilityProfilesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAvailabilityProfilesRequest) Page(page int32) ApiGetAvailabilityProfilesRequest {
+func (r ApiGetAvailabilityProfilesRequest) Page(page int64) ApiGetAvailabilityProfilesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Availability Profiles per page
-func (r ApiGetAvailabilityProfilesRequest) NumberPerPage(numberPerPage int32) ApiGetAvailabilityProfilesRequest {
+func (r ApiGetAvailabilityProfilesRequest) NumberPerPage(numberPerPage int64) ApiGetAvailabilityProfilesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -981,8 +981,8 @@ func (a *HighAvailabilityApiService) GetAvailabilityProfilesExecute(r ApiGetAvai
 type ApiGetLoadBalancingStrategiesRequest struct {
 	ctx           context.Context
 	ApiService    *HighAvailabilityApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -990,13 +990,13 @@ type ApiGetLoadBalancingStrategiesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetLoadBalancingStrategiesRequest) Page(page int32) ApiGetLoadBalancingStrategiesRequest {
+func (r ApiGetLoadBalancingStrategiesRequest) Page(page int64) ApiGetLoadBalancingStrategiesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Load Balancing Strategies per page
-func (r ApiGetLoadBalancingStrategiesRequest) NumberPerPage(numberPerPage int32) ApiGetLoadBalancingStrategiesRequest {
+func (r ApiGetLoadBalancingStrategiesRequest) NumberPerPage(numberPerPage int64) ApiGetLoadBalancingStrategiesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

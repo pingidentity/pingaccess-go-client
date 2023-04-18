@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new HttpClientProxy, this is the ID for the HttpClientProxy. If not specified, an ID will be automatically assigned. When updating an existing HttpClientProxy, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new HttpClientProxy, this is the ID for the HttpClientProxy. If not specified, an ID will be automatically assigned. When updating an existing HttpClientProxy, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the proxy. | 
 **Host** | **string** | (sortable) The proxy host. | 
-**Port** | **int32** | (sortable) The proxy port. | 
+**Port** | **int64** | (sortable) The proxy port. | 
 **Description** | Pointer to **string** | (sortable) A description of the proxy. | [optional] 
 **RequiresAuthentication** | Pointer to **bool** | (sortable) True if the proxy requires authentication. | [optional] 
 **Username** | Pointer to **string** | (sortable) The username used for proxy authentication. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewHttpClientProxy
 
-`func NewHttpClientProxy(name string, host string, port int32, ) *HttpClientProxy`
+`func NewHttpClientProxy(name string, host string, port int64, ) *HttpClientProxy`
 
 NewHttpClientProxy instantiates a new HttpClientProxy object
 This constructor will assign default values to properties that have it defined,
@@ -34,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *HttpClientProxy) GetId() int32`
+`func (o *HttpClientProxy) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *HttpClientProxy) GetIdOk() (*int32, bool)`
+`func (o *HttpClientProxy) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *HttpClientProxy) SetId(v int32)`
+`func (o *HttpClientProxy) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -99,20 +99,20 @@ SetHost sets Host field to given value.
 
 ### GetPort
 
-`func (o *HttpClientProxy) GetPort() int32`
+`func (o *HttpClientProxy) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *HttpClientProxy) GetPortOk() (*int32, bool)`
+`func (o *HttpClientProxy) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *HttpClientProxy) SetPort(v int32)`
+`func (o *HttpClientProxy) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

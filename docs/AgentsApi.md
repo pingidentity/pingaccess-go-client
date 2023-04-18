@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-    agent := *openapiclient.NewAgent("Name_example", "Hostname_example", int32(123), []int32{int32(123)}) // Agent | Agent to add
+    agent := *openapiclient.NewAgent("Name_example", "Hostname_example", int64(123), []int64{int64(123)}) // Agent | Agent to add
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -310,8 +310,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Agent Certificates per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Agent Certificates per page (optional)
     filter := "filter_example" // string | Search for Agent Certificates with alias matching filter text (optional)
     alias := "alias_example" // string | Get Agent Certificates by alias (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Agent Certificate attributes (keys) to be used to sort the results (optional)
@@ -340,8 +340,8 @@ Other parameters are passed through a pointer to a apiGetAgentCertificatesReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Agent Certificates per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Agent Certificates per page | 
  **filter** | **string** | Search for Agent Certificates with alias matching filter text | 
  **alias** | **string** | Get Agent Certificates by alias | 
  **sortKey** | **string** | A comma separated list of Agent Certificate attributes (keys) to be used to sort the results | 
@@ -457,8 +457,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Agents per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Agents per page (optional)
     filter := "filter_example" // string | Search for Agents with name matching filter text (optional)
     name := "name_example" // string | Get Agents by name (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Agent attributes (keys) to be used to sort the results (optional)
@@ -487,8 +487,8 @@ Other parameters are passed through a pointer to a apiGetAgentsRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Agents per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Agents per page | 
  **filter** | **string** | Search for Agents with name matching filter text | 
  **name** | **string** | Get Agents by name | 
  **sortKey** | **string** | A comma separated list of Agent attributes (keys) to be used to sort the results | 
@@ -534,7 +534,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of Agent
-    agent := *openapiclient.NewAgent("Name_example", "Hostname_example", int32(123), []int32{int32(123)}) // Agent | Agent to update
+    agent := *openapiclient.NewAgent("Name_example", "Hostname_example", int64(123), []int64{int64(123)}) // Agent | Agent to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

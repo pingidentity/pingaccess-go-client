@@ -249,8 +249,8 @@ func (a *AuthenticationChallengePoliciesApiService) DeleteAuthenticationChalleng
 type ApiGetAuthenticationChallengePoliciesRequest struct {
 	ctx           context.Context
 	ApiService    *AuthenticationChallengePoliciesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -258,13 +258,13 @@ type ApiGetAuthenticationChallengePoliciesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAuthenticationChallengePoliciesRequest) Page(page int32) ApiGetAuthenticationChallengePoliciesRequest {
+func (r ApiGetAuthenticationChallengePoliciesRequest) Page(page int64) ApiGetAuthenticationChallengePoliciesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Authentication Challenge Policies per page
-func (r ApiGetAuthenticationChallengePoliciesRequest) NumberPerPage(numberPerPage int32) ApiGetAuthenticationChallengePoliciesRequest {
+func (r ApiGetAuthenticationChallengePoliciesRequest) NumberPerPage(numberPerPage int64) ApiGetAuthenticationChallengePoliciesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

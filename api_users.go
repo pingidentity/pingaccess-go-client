@@ -139,8 +139,8 @@ func (a *UsersApiService) GetUserExecute(r ApiGetUserRequest) (*User, *http.Resp
 type ApiGetUsersRequest struct {
 	ctx           context.Context
 	ApiService    *UsersApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	username      *string
 	sortKey       *string
@@ -148,13 +148,13 @@ type ApiGetUsersRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetUsersRequest) Page(page int32) ApiGetUsersRequest {
+func (r ApiGetUsersRequest) Page(page int64) ApiGetUsersRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Users per page
-func (r ApiGetUsersRequest) NumberPerPage(numberPerPage int32) ApiGetUsersRequest {
+func (r ApiGetUsersRequest) NumberPerPage(numberPerPage int64) ApiGetUsersRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

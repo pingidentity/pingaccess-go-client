@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClassName** | **string** | (sortable) The identity mapping&#39;s class name. | 
-**Id** | Pointer to **int32** | When creating a new IdentityMapping, this is the ID for the IdentityMapping. If not specified, an ID will be automatically assigned. When updating an existing IdentityMapping, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new IdentityMapping, this is the ID for the IdentityMapping. If not specified, an ID will be automatically assigned. When updating an existing IdentityMapping, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the identity mapping. | 
 **Configuration** | Pointer to **map[string]interface{}** | The identity mapping&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
@@ -50,20 +50,20 @@ SetClassName sets ClassName field to given value.
 
 ### GetId
 
-`func (o *IdentityMapping) GetId() int32`
+`func (o *IdentityMapping) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *IdentityMapping) GetIdOk() (*int32, bool)`
+`func (o *IdentityMapping) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *IdentityMapping) SetId(v int32)`
+`func (o *IdentityMapping) SetId(v int64)`
 
 SetId sets Id field to given value.
 

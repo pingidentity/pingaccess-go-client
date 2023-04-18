@@ -22,7 +22,7 @@ type TargetHostPort struct {
 	// The hostname.
 	Host string `json:"host"`
 	// The port number.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// True if the target host expects HTTPS connections.
 	Secure bool `json:"secure"`
 }
@@ -31,7 +31,7 @@ type TargetHostPort struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTargetHostPort(host string, port int32, secure bool) *TargetHostPort {
+func NewTargetHostPort(host string, port int64, secure bool) *TargetHostPort {
 	this := TargetHostPort{}
 	this.Host = host
 	this.Port = port
@@ -72,9 +72,9 @@ func (o *TargetHostPort) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *TargetHostPort) GetPort() int32 {
+func (o *TargetHostPort) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *TargetHostPort) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *TargetHostPort) GetPortOk() (*int32, bool) {
+func (o *TargetHostPort) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *TargetHostPort) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *TargetHostPort) SetPort(v int32) {
+func (o *TargetHostPort) SetPort(v int64) {
 	o.Port = v
 }
 

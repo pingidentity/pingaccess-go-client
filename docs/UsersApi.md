@@ -102,8 +102,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Users per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Users per page (optional)
     filter := "filter_example" // string | Search for Users with username matching filter text (optional)
     username := "username_example" // string | Get Users by username (optional)
     sortKey := "sortKey_example" // string | A comma separated list of User attributes (keys) to be used to sort the results (optional)
@@ -132,8 +132,8 @@ Other parameters are passed through a pointer to a apiGetUsersRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Users per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Users per page | 
  **filter** | **string** | Search for Users with username matching filter text | 
  **username** | **string** | Get Users by username | 
  **sortKey** | **string** | A comma separated list of User attributes (keys) to be used to sort the results | 

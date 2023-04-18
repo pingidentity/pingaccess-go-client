@@ -20,20 +20,20 @@ var _ MappedNullable = &RuleSet{}
 // RuleSet A rule set.
 type RuleSet struct {
 	// When creating a new RuleSet, this is the ID for the RuleSet. If not specified, an ID will be automatically assigned. When updating an existing RuleSet, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The rule set's name.
 	Name            string              `json:"name"`
 	SuccessCriteria *SuccessCriteria    `json:"successCriteria,omitempty"`
 	ElementType     *RuleSetElementType `json:"elementType,omitempty"`
 	// The list of policy ids assigned to the rule set.
-	Policy []int32 `json:"policy"`
+	Policy []int64 `json:"policy"`
 }
 
 // NewRuleSet instantiates a new RuleSet object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRuleSet(name string, policy []int32) *RuleSet {
+func NewRuleSet(name string, policy []int64) *RuleSet {
 	this := RuleSet{}
 	this.Name = name
 	this.Policy = policy
@@ -49,9 +49,9 @@ func NewRuleSetWithDefaults() *RuleSet {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *RuleSet) GetId() int32 {
+func (o *RuleSet) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -59,7 +59,7 @@ func (o *RuleSet) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RuleSet) GetIdOk() (*int32, bool) {
+func (o *RuleSet) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -75,8 +75,8 @@ func (o *RuleSet) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *RuleSet) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *RuleSet) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -169,9 +169,9 @@ func (o *RuleSet) SetElementType(v RuleSetElementType) {
 }
 
 // GetPolicy returns the Policy field value
-func (o *RuleSet) GetPolicy() []int32 {
+func (o *RuleSet) GetPolicy() []int64 {
 	if o == nil {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 
@@ -180,7 +180,7 @@ func (o *RuleSet) GetPolicy() []int32 {
 
 // GetPolicyOk returns a tuple with the Policy field value
 // and a boolean to check if the value has been set.
-func (o *RuleSet) GetPolicyOk() ([]int32, bool) {
+func (o *RuleSet) GetPolicyOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -188,7 +188,7 @@ func (o *RuleSet) GetPolicyOk() ([]int32, bool) {
 }
 
 // SetPolicy sets field value
-func (o *RuleSet) SetPolicy(v []int32) {
+func (o *RuleSet) SetPolicy(v []int64) {
 	o.Policy = v
 }
 

@@ -237,8 +237,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Redirects per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Redirects per page (optional)
     filter := "filter_example" // string | Search for Redirects by source with host, port or both matching filter text (optional)
     source := "source_example" // string | Search for a Redirect by a source host, port or both (optional)
     target := "target_example" // string | Search for a Redirect by a target host, port or both (optional)
@@ -268,8 +268,8 @@ Other parameters are passed through a pointer to a apiGetRedirectsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Redirects per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Redirects per page | 
  **filter** | **string** | Search for Redirects by source with host, port or both matching filter text | 
  **source** | **string** | Search for a Redirect by a source host, port or both | 
  **target** | **string** | Search for a Redirect by a target host, port or both | 

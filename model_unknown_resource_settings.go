@@ -20,13 +20,13 @@ var _ MappedNullable = &UnknownResourceSettings{}
 // UnknownResourceSettings Global settings for unknown resources.
 type UnknownResourceSettings struct {
 	// The HTTP error response status code
-	ErrorStatusCode int32 `json:"errorStatusCode"`
+	ErrorStatusCode int64 `json:"errorStatusCode"`
 	// The name of the velocity template file to use for generating the error response body
 	ErrorTemplateFile string              `json:"errorTemplateFile"`
 	ErrorContentType  ContentType         `json:"errorContentType"`
 	AgentDefaultMode  UnknownResourceMode `json:"agentDefaultMode"`
 	// The default agent resource cache TTL (in seconds) to be used for unknown resources when a request cannot be mapped to a known virtual host.
-	AgentDefaultCacheTTL int32       `json:"agentDefaultCacheTTL"`
+	AgentDefaultCacheTTL int64       `json:"agentDefaultCacheTTL"`
 	AuditLevel           *AuditLevel `json:"auditLevel,omitempty"`
 }
 
@@ -34,7 +34,7 @@ type UnknownResourceSettings struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUnknownResourceSettings(errorStatusCode int32, errorTemplateFile string, errorContentType ContentType, agentDefaultMode UnknownResourceMode, agentDefaultCacheTTL int32) *UnknownResourceSettings {
+func NewUnknownResourceSettings(errorStatusCode int64, errorTemplateFile string, errorContentType ContentType, agentDefaultMode UnknownResourceMode, agentDefaultCacheTTL int64) *UnknownResourceSettings {
 	this := UnknownResourceSettings{}
 	this.ErrorStatusCode = errorStatusCode
 	this.ErrorTemplateFile = errorTemplateFile
@@ -53,9 +53,9 @@ func NewUnknownResourceSettingsWithDefaults() *UnknownResourceSettings {
 }
 
 // GetErrorStatusCode returns the ErrorStatusCode field value
-func (o *UnknownResourceSettings) GetErrorStatusCode() int32 {
+func (o *UnknownResourceSettings) GetErrorStatusCode() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *UnknownResourceSettings) GetErrorStatusCode() int32 {
 
 // GetErrorStatusCodeOk returns a tuple with the ErrorStatusCode field value
 // and a boolean to check if the value has been set.
-func (o *UnknownResourceSettings) GetErrorStatusCodeOk() (*int32, bool) {
+func (o *UnknownResourceSettings) GetErrorStatusCodeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *UnknownResourceSettings) GetErrorStatusCodeOk() (*int32, bool) {
 }
 
 // SetErrorStatusCode sets field value
-func (o *UnknownResourceSettings) SetErrorStatusCode(v int32) {
+func (o *UnknownResourceSettings) SetErrorStatusCode(v int64) {
 	o.ErrorStatusCode = v
 }
 
@@ -149,9 +149,9 @@ func (o *UnknownResourceSettings) SetAgentDefaultMode(v UnknownResourceMode) {
 }
 
 // GetAgentDefaultCacheTTL returns the AgentDefaultCacheTTL field value
-func (o *UnknownResourceSettings) GetAgentDefaultCacheTTL() int32 {
+func (o *UnknownResourceSettings) GetAgentDefaultCacheTTL() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -160,7 +160,7 @@ func (o *UnknownResourceSettings) GetAgentDefaultCacheTTL() int32 {
 
 // GetAgentDefaultCacheTTLOk returns a tuple with the AgentDefaultCacheTTL field value
 // and a boolean to check if the value has been set.
-func (o *UnknownResourceSettings) GetAgentDefaultCacheTTLOk() (*int32, bool) {
+func (o *UnknownResourceSettings) GetAgentDefaultCacheTTLOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +168,7 @@ func (o *UnknownResourceSettings) GetAgentDefaultCacheTTLOk() (*int32, bool) {
 }
 
 // SetAgentDefaultCacheTTL sets field value
-func (o *UnknownResourceSettings) SetAgentDefaultCacheTTL(v int32) {
+func (o *UnknownResourceSettings) SetAgentDefaultCacheTTL(v int64) {
 	o.AgentDefaultCacheTTL = v
 }
 

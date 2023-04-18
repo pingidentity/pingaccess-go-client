@@ -22,11 +22,10 @@ type AccessTokenValidator struct {
 	// (sortable) The access token validator's class name.
 	ClassName string `json:"className"`
 	// When creating a new AccessTokenValidator, this is the ID for the AccessTokenValidator. If not specified, an ID will be automatically assigned. When updating an existing AccessTokenValidator, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The access token validator's name.
-	Name string `json:"name"`
-	// The access token validator's configuration data. - This value is a PingAccess plugin configuration (JSON).
-	Configuration *map[string]interface{} `json:"configuration,omitempty"`
+	Name          string                             `json:"name"`
+	Configuration *AccessTokenValidatorConfiguration `json:"configuration,omitempty"`
 }
 
 // NewAccessTokenValidator instantiates a new AccessTokenValidator object
@@ -73,9 +72,9 @@ func (o *AccessTokenValidator) SetClassName(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AccessTokenValidator) GetId() int32 {
+func (o *AccessTokenValidator) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -83,7 +82,7 @@ func (o *AccessTokenValidator) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccessTokenValidator) GetIdOk() (*int32, bool) {
+func (o *AccessTokenValidator) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -99,8 +98,8 @@ func (o *AccessTokenValidator) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AccessTokenValidator) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AccessTokenValidator) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -129,9 +128,9 @@ func (o *AccessTokenValidator) SetName(v string) {
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
-func (o *AccessTokenValidator) GetConfiguration() map[string]interface{} {
+func (o *AccessTokenValidator) GetConfiguration() AccessTokenValidatorConfiguration {
 	if o == nil || IsNil(o.Configuration) {
-		var ret map[string]interface{}
+		var ret AccessTokenValidatorConfiguration
 		return ret
 	}
 	return *o.Configuration
@@ -139,7 +138,7 @@ func (o *AccessTokenValidator) GetConfiguration() map[string]interface{} {
 
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccessTokenValidator) GetConfigurationOk() (*map[string]interface{}, bool) {
+func (o *AccessTokenValidator) GetConfigurationOk() (*AccessTokenValidatorConfiguration, bool) {
 	if o == nil || IsNil(o.Configuration) {
 		return nil, false
 	}
@@ -155,8 +154,8 @@ func (o *AccessTokenValidator) HasConfiguration() bool {
 	return false
 }
 
-// SetConfiguration gets a reference to the given map[string]interface{} and assigns it to the Configuration field.
-func (o *AccessTokenValidator) SetConfiguration(v map[string]interface{}) {
+// SetConfiguration gets a reference to the given AccessTokenValidatorConfiguration and assigns it to the Configuration field.
+func (o *AccessTokenValidator) SetConfiguration(v AccessTokenValidatorConfiguration) {
 	o.Configuration = &v
 }
 

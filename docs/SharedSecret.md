@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new SharedSecret, this is the ID for the SharedSecret. If not specified, an ID will be automatically assigned. When updating an existing SharedSecret, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new SharedSecret, this is the ID for the SharedSecret. If not specified, an ID will be automatically assigned. When updating an existing SharedSecret, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Created** | Pointer to **time.Time** | (sortable) The created date of the secret as the number of milliseconds since January 1, 1970, 00:00:00 GMT. | [optional] 
 **Secret** | [**HiddenField**](HiddenField.md) |  | 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *SharedSecret) GetId() int32`
+`func (o *SharedSecret) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *SharedSecret) GetIdOk() (*int32, bool)`
+`func (o *SharedSecret) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *SharedSecret) SetId(v int32)`
+`func (o *SharedSecret) SetId(v int64)`
 
 SetId sets Id field to given value.
 

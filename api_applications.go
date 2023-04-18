@@ -1036,8 +1036,8 @@ type ApiGetApplicationResourcesRequest struct {
 	ctx           context.Context
 	ApiService    *ApplicationsApiService
 	id            string
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	name          *string
 	filter        *string
 	sortKey       *string
@@ -1045,13 +1045,13 @@ type ApiGetApplicationResourcesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetApplicationResourcesRequest) Page(page int32) ApiGetApplicationResourcesRequest {
+func (r ApiGetApplicationResourcesRequest) Page(page int64) ApiGetApplicationResourcesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Resources per page
-func (r ApiGetApplicationResourcesRequest) NumberPerPage(numberPerPage int32) ApiGetApplicationResourcesRequest {
+func (r ApiGetApplicationResourcesRequest) NumberPerPage(numberPerPage int64) ApiGetApplicationResourcesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -1209,15 +1209,15 @@ func (a *ApplicationsApiService) GetApplicationResourcesExecute(r ApiGetApplicat
 type ApiGetApplicationsRequest struct {
 	ctx              context.Context
 	ApiService       *ApplicationsApiService
-	page             *int32
-	siteId           *int32
-	numberPerPage    *int32
-	agentId          *int32
-	sidebandClientId *int32
-	virtualHostId    *int32
-	ruleId           *int32
-	rulesetId        *int32
-	riskPolicyId     *int32
+	page             *int64
+	siteId           *int64
+	numberPerPage    *int64
+	agentId          *int64
+	sidebandClientId *int64
+	virtualHostId    *int64
+	ruleId           *int64
+	rulesetId        *int64
+	riskPolicyId     *int64
 	filter           *string
 	name             *string
 	sortKey          *string
@@ -1225,55 +1225,55 @@ type ApiGetApplicationsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetApplicationsRequest) Page(page int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) Page(page int64) ApiGetApplicationsRequest {
 	r.page = &page
 	return r
 }
 
 // Search for Applications with Site
-func (r ApiGetApplicationsRequest) SiteId(siteId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) SiteId(siteId int64) ApiGetApplicationsRequest {
 	r.siteId = &siteId
 	return r
 }
 
 // Number of Applications per page
-func (r ApiGetApplicationsRequest) NumberPerPage(numberPerPage int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) NumberPerPage(numberPerPage int64) ApiGetApplicationsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
 
 // Search for Applications with Agent
-func (r ApiGetApplicationsRequest) AgentId(agentId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) AgentId(agentId int64) ApiGetApplicationsRequest {
 	r.agentId = &agentId
 	return r
 }
 
 // Search for Applications with Sideband Client
-func (r ApiGetApplicationsRequest) SidebandClientId(sidebandClientId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) SidebandClientId(sidebandClientId int64) ApiGetApplicationsRequest {
 	r.sidebandClientId = &sidebandClientId
 	return r
 }
 
 // Search for Applications with Virtual Host
-func (r ApiGetApplicationsRequest) VirtualHostId(virtualHostId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) VirtualHostId(virtualHostId int64) ApiGetApplicationsRequest {
 	r.virtualHostId = &virtualHostId
 	return r
 }
 
 // Search for Applications with Rule attached to an Application or one of its Resources
-func (r ApiGetApplicationsRequest) RuleId(ruleId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) RuleId(ruleId int64) ApiGetApplicationsRequest {
 	r.ruleId = &ruleId
 	return r
 }
 
 // Search for Applications with Rule Set attached to an Application or one of its Resources
-func (r ApiGetApplicationsRequest) RulesetId(rulesetId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) RulesetId(rulesetId int64) ApiGetApplicationsRequest {
 	r.rulesetId = &rulesetId
 	return r
 }
 
 // Search for Applications with Risk Policy attached to an Application or one of its Resources
-func (r ApiGetApplicationsRequest) RiskPolicyId(riskPolicyId int32) ApiGetApplicationsRequest {
+func (r ApiGetApplicationsRequest) RiskPolicyId(riskPolicyId int64) ApiGetApplicationsRequest {
 	r.riskPolicyId = &riskPolicyId
 	return r
 }
@@ -1897,11 +1897,11 @@ func (a *ApplicationsApiService) GetResourceMatchingEvaluationOrderExecute(r Api
 type ApiGetResourcesRequest struct {
 	ctx           context.Context
 	ApiService    *ApplicationsApiService
-	page          *int32
-	numberPerPage *int32
-	ruleId        *int32
-	rulesetId     *int32
-	riskPolicyId  *int32
+	page          *int64
+	numberPerPage *int64
+	ruleId        *int64
+	rulesetId     *int64
+	riskPolicyId  *int64
 	name          *string
 	filter        *string
 	sortKey       *string
@@ -1909,31 +1909,31 @@ type ApiGetResourcesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetResourcesRequest) Page(page int32) ApiGetResourcesRequest {
+func (r ApiGetResourcesRequest) Page(page int64) ApiGetResourcesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Resources per page
-func (r ApiGetResourcesRequest) NumberPerPage(numberPerPage int32) ApiGetResourcesRequest {
+func (r ApiGetResourcesRequest) NumberPerPage(numberPerPage int64) ApiGetResourcesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
 
 // Get Resources with Rule
-func (r ApiGetResourcesRequest) RuleId(ruleId int32) ApiGetResourcesRequest {
+func (r ApiGetResourcesRequest) RuleId(ruleId int64) ApiGetResourcesRequest {
 	r.ruleId = &ruleId
 	return r
 }
 
 // Get Resources with Rule Set
-func (r ApiGetResourcesRequest) RulesetId(rulesetId int32) ApiGetResourcesRequest {
+func (r ApiGetResourcesRequest) RulesetId(rulesetId int64) ApiGetResourcesRequest {
 	r.rulesetId = &rulesetId
 	return r
 }
 
 // Get Resources with Risk Policy
-func (r ApiGetResourcesRequest) RiskPolicyId(riskPolicyId int32) ApiGetResourcesRequest {
+func (r ApiGetResourcesRequest) RiskPolicyId(riskPolicyId int64) ApiGetResourcesRequest {
 	r.riskPolicyId = &riskPolicyId
 	return r
 }

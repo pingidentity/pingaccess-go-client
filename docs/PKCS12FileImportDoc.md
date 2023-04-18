@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Alias** | **string** | A unique alias name to identify the key pair. Special characters and spaces are allowed. | 
-**HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
+**HsmProviderId** | **int64** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
 **FileData** | **string** | Base-64 encoded PKCS12 or PEM file data. In BCFIPS mode, only PEM with PBES2 and AES or Triple DES encryption is accepted and 128-bit salt is required. | 
 **Password** | [**HiddenField**](HiddenField.md) |  | 
 **ChainCertificates** | **[]string** | An array of chain certificates. | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewPKCS12FileImportDoc
 
-`func NewPKCS12FileImportDoc(alias string, hsmProviderId int32, fileData string, password HiddenField, chainCertificates []string, ) *PKCS12FileImportDoc`
+`func NewPKCS12FileImportDoc(alias string, hsmProviderId int64, fileData string, password HiddenField, chainCertificates []string, ) *PKCS12FileImportDoc`
 
 NewPKCS12FileImportDoc instantiates a new PKCS12FileImportDoc object
 This constructor will assign default values to properties that have it defined,
@@ -51,20 +51,20 @@ SetAlias sets Alias field to given value.
 
 ### GetHsmProviderId
 
-`func (o *PKCS12FileImportDoc) GetHsmProviderId() int32`
+`func (o *PKCS12FileImportDoc) GetHsmProviderId() int64`
 
 GetHsmProviderId returns the HsmProviderId field if non-nil, zero value otherwise.
 
 ### GetHsmProviderIdOk
 
-`func (o *PKCS12FileImportDoc) GetHsmProviderIdOk() (*int32, bool)`
+`func (o *PKCS12FileImportDoc) GetHsmProviderIdOk() (*int64, bool)`
 
 GetHsmProviderIdOk returns a tuple with the HsmProviderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHsmProviderId
 
-`func (o *PKCS12FileImportDoc) SetHsmProviderId(v int32)`
+`func (o *PKCS12FileImportDoc) SetHsmProviderId(v int64)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
 

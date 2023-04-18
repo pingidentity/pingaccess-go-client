@@ -240,8 +240,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Trusted Certificates per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Trusted Certificates per page (optional)
     filter := "filter_example" // string | Search for Trusted Certificates with alias matching filter text (optional)
     alias := "alias_example" // string | Get a Trusted Certificate by alias (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Trusted Certificate attributes (keys) to be used to sort the results (optional)
@@ -270,8 +270,8 @@ Other parameters are passed through a pointer to a apiGetTrustedCertsRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Trusted Certificates per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Trusted Certificates per page | 
  **filter** | **string** | Search for Trusted Certificates with alias matching filter text | 
  **alias** | **string** | Get a Trusted Certificate by alias | 
  **sortKey** | **string** | A comma separated list of Trusted Certificate attributes (keys) to be used to sort the results | 

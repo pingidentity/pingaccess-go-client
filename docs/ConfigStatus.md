@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The id of the configuration workflow. | [optional] 
+**Id** | Pointer to **int64** | The id of the configuration workflow. | [optional] 
 **Status** | Pointer to **string** | The status of the configuration import or export. | [optional] 
 **CurrentEntity** | Pointer to **map[string]interface{}** | The current entity being imported or exported. | [optional] 
-**TotalEntities** | Pointer to **int32** | The total number of entities being imported or exported. | [optional] 
+**TotalEntities** | Pointer to **int64** | The total number of entities being imported or exported. | [optional] 
 **ApiErrorView** | Pointer to [**ApiError**](ApiError.md) |  | [optional] 
 **Warnings** | **[]string** | The API warnings for import or export, if there are any warnings. | 
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ConfigStatus) GetId() int32`
+`func (o *ConfigStatus) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ConfigStatus) GetIdOk() (*int32, bool)`
+`func (o *ConfigStatus) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ConfigStatus) SetId(v int32)`
+`func (o *ConfigStatus) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -107,20 +107,20 @@ HasCurrentEntity returns a boolean if a field has been set.
 
 ### GetTotalEntities
 
-`func (o *ConfigStatus) GetTotalEntities() int32`
+`func (o *ConfigStatus) GetTotalEntities() int64`
 
 GetTotalEntities returns the TotalEntities field if non-nil, zero value otherwise.
 
 ### GetTotalEntitiesOk
 
-`func (o *ConfigStatus) GetTotalEntitiesOk() (*int32, bool)`
+`func (o *ConfigStatus) GetTotalEntitiesOk() (*int64, bool)`
 
 GetTotalEntitiesOk returns a tuple with the TotalEntities field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotalEntities
 
-`func (o *ConfigStatus) SetTotalEntities(v int32)`
+`func (o *ConfigStatus) SetTotalEntities(v int64)`
 
 SetTotalEntities sets TotalEntities field to given value.
 

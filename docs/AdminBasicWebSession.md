@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SessionPollIntervalInSeconds** | **int32** | The interval between UI polling for session validity. | 
-**ExpirationWarningInMinutes** | **int32** | The time to have the UI display a warning before the session expires. | 
-**SessionTimeoutInMinutes** | **int32** | The length of time you want the PA Admin Token to remain active. Once the PA Admin Token expires, an authenticated user must re-authenticate. | 
-**IdleTimeoutInMinutes** | **int32** | The length of time you want the PingAccess Admin Token to remain active when no activity is detected. | 
+**SessionPollIntervalInSeconds** | **int64** | The interval between UI polling for session validity. | 
+**ExpirationWarningInMinutes** | **int64** | The time to have the UI display a warning before the session expires. | 
+**SessionTimeoutInMinutes** | **int64** | The length of time you want the PA Admin Token to remain active. Once the PA Admin Token expires, an authenticated user must re-authenticate. | 
+**IdleTimeoutInMinutes** | **int64** | The length of time you want the PingAccess Admin Token to remain active when no activity is detected. | 
 **Audience** | **string** | Enter a unique identifier between 1 and 32 characters that defines who the PA Admin Token is applicable to. | 
 **CookieType** | [**WebSessionCookieType**](WebSessionCookieType.md) |  | 
 **TimeoutGroovyScript** | **string** |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewAdminBasicWebSession
 
-`func NewAdminBasicWebSession(sessionPollIntervalInSeconds int32, expirationWarningInMinutes int32, sessionTimeoutInMinutes int32, idleTimeoutInMinutes int32, audience string, cookieType WebSessionCookieType, timeoutGroovyScript string, ) *AdminBasicWebSession`
+`func NewAdminBasicWebSession(sessionPollIntervalInSeconds int64, expirationWarningInMinutes int64, sessionTimeoutInMinutes int64, idleTimeoutInMinutes int64, audience string, cookieType WebSessionCookieType, timeoutGroovyScript string, ) *AdminBasicWebSession`
 
 NewAdminBasicWebSession instantiates a new AdminBasicWebSession object
 This constructor will assign default values to properties that have it defined,
@@ -34,80 +34,80 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSessionPollIntervalInSeconds
 
-`func (o *AdminBasicWebSession) GetSessionPollIntervalInSeconds() int32`
+`func (o *AdminBasicWebSession) GetSessionPollIntervalInSeconds() int64`
 
 GetSessionPollIntervalInSeconds returns the SessionPollIntervalInSeconds field if non-nil, zero value otherwise.
 
 ### GetSessionPollIntervalInSecondsOk
 
-`func (o *AdminBasicWebSession) GetSessionPollIntervalInSecondsOk() (*int32, bool)`
+`func (o *AdminBasicWebSession) GetSessionPollIntervalInSecondsOk() (*int64, bool)`
 
 GetSessionPollIntervalInSecondsOk returns a tuple with the SessionPollIntervalInSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSessionPollIntervalInSeconds
 
-`func (o *AdminBasicWebSession) SetSessionPollIntervalInSeconds(v int32)`
+`func (o *AdminBasicWebSession) SetSessionPollIntervalInSeconds(v int64)`
 
 SetSessionPollIntervalInSeconds sets SessionPollIntervalInSeconds field to given value.
 
 
 ### GetExpirationWarningInMinutes
 
-`func (o *AdminBasicWebSession) GetExpirationWarningInMinutes() int32`
+`func (o *AdminBasicWebSession) GetExpirationWarningInMinutes() int64`
 
 GetExpirationWarningInMinutes returns the ExpirationWarningInMinutes field if non-nil, zero value otherwise.
 
 ### GetExpirationWarningInMinutesOk
 
-`func (o *AdminBasicWebSession) GetExpirationWarningInMinutesOk() (*int32, bool)`
+`func (o *AdminBasicWebSession) GetExpirationWarningInMinutesOk() (*int64, bool)`
 
 GetExpirationWarningInMinutesOk returns a tuple with the ExpirationWarningInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExpirationWarningInMinutes
 
-`func (o *AdminBasicWebSession) SetExpirationWarningInMinutes(v int32)`
+`func (o *AdminBasicWebSession) SetExpirationWarningInMinutes(v int64)`
 
 SetExpirationWarningInMinutes sets ExpirationWarningInMinutes field to given value.
 
 
 ### GetSessionTimeoutInMinutes
 
-`func (o *AdminBasicWebSession) GetSessionTimeoutInMinutes() int32`
+`func (o *AdminBasicWebSession) GetSessionTimeoutInMinutes() int64`
 
 GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field if non-nil, zero value otherwise.
 
 ### GetSessionTimeoutInMinutesOk
 
-`func (o *AdminBasicWebSession) GetSessionTimeoutInMinutesOk() (*int32, bool)`
+`func (o *AdminBasicWebSession) GetSessionTimeoutInMinutesOk() (*int64, bool)`
 
 GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSessionTimeoutInMinutes
 
-`func (o *AdminBasicWebSession) SetSessionTimeoutInMinutes(v int32)`
+`func (o *AdminBasicWebSession) SetSessionTimeoutInMinutes(v int64)`
 
 SetSessionTimeoutInMinutes sets SessionTimeoutInMinutes field to given value.
 
 
 ### GetIdleTimeoutInMinutes
 
-`func (o *AdminBasicWebSession) GetIdleTimeoutInMinutes() int32`
+`func (o *AdminBasicWebSession) GetIdleTimeoutInMinutes() int64`
 
 GetIdleTimeoutInMinutes returns the IdleTimeoutInMinutes field if non-nil, zero value otherwise.
 
 ### GetIdleTimeoutInMinutesOk
 
-`func (o *AdminBasicWebSession) GetIdleTimeoutInMinutesOk() (*int32, bool)`
+`func (o *AdminBasicWebSession) GetIdleTimeoutInMinutesOk() (*int64, bool)`
 
 GetIdleTimeoutInMinutesOk returns a tuple with the IdleTimeoutInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdleTimeoutInMinutes
 
-`func (o *AdminBasicWebSession) SetIdleTimeoutInMinutes(v int32)`
+`func (o *AdminBasicWebSession) SetIdleTimeoutInMinutes(v int64)`
 
 SetIdleTimeoutInMinutes sets IdleTimeoutInMinutes field to given value.
 

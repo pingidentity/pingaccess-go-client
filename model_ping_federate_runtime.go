@@ -33,15 +33,15 @@ type PingFederateRuntime struct {
 	UseSlo      *bool                           `json:"useSlo,omitempty"`
 	Application *PingFederateRuntimeApplication `json:"application,omitempty"`
 	// The ID of the availability profile to use for the PingFederate runtime. When set to 0, an availability profile defined by the pa.default.availability.ondemand properties in run.properties will be used for back end communication to PingFederate.
-	AvailabilityProfileId *int32 `json:"availabilityProfileId,omitempty"`
+	AvailabilityProfileId *int64 `json:"availabilityProfileId,omitempty"`
 	// The ID of the load balancing strategy to use for requests to the PingFederate targets.
-	LoadBalancingStrategyId *int32 `json:"loadBalancingStrategyId,omitempty"`
+	LoadBalancingStrategyId *int64 `json:"loadBalancingStrategyId,omitempty"`
 	// The group of certificates to use when authenticating to PingFederate.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// The host name or IP address for PingFederate Runtime. This field is ignored and can be an empty string when the PingFederate application is configured.
 	Host string `json:"host"`
 	// The port number for PingFederate Runtime. This field is ignored when the PingFederate application is configured.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// Enable if PingFederate is expecting HTTPS connections. This field is ignored when the PingFederate application is configured. In this case, use backChannelSecure instead.
 	Secure *bool `json:"secure,omitempty"`
 	// The base path, if needed, for PingFederate Runtime. This field is ignored when the PingFederate application is configured.
@@ -56,7 +56,7 @@ type PingFederateRuntime struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPingFederateRuntime(host string, port int32) *PingFederateRuntime {
+func NewPingFederateRuntime(host string, port int64) *PingFederateRuntime {
 	this := PingFederateRuntime{}
 	this.Host = host
 	this.Port = port
@@ -296,9 +296,9 @@ func (o *PingFederateRuntime) SetApplication(v PingFederateRuntimeApplication) {
 }
 
 // GetAvailabilityProfileId returns the AvailabilityProfileId field value if set, zero value otherwise.
-func (o *PingFederateRuntime) GetAvailabilityProfileId() int32 {
+func (o *PingFederateRuntime) GetAvailabilityProfileId() int64 {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AvailabilityProfileId
@@ -306,7 +306,7 @@ func (o *PingFederateRuntime) GetAvailabilityProfileId() int32 {
 
 // GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntime) GetAvailabilityProfileIdOk() (*int32, bool) {
+func (o *PingFederateRuntime) GetAvailabilityProfileIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AvailabilityProfileId) {
 		return nil, false
 	}
@@ -322,15 +322,15 @@ func (o *PingFederateRuntime) HasAvailabilityProfileId() bool {
 	return false
 }
 
-// SetAvailabilityProfileId gets a reference to the given int32 and assigns it to the AvailabilityProfileId field.
-func (o *PingFederateRuntime) SetAvailabilityProfileId(v int32) {
+// SetAvailabilityProfileId gets a reference to the given int64 and assigns it to the AvailabilityProfileId field.
+func (o *PingFederateRuntime) SetAvailabilityProfileId(v int64) {
 	o.AvailabilityProfileId = &v
 }
 
 // GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field value if set, zero value otherwise.
-func (o *PingFederateRuntime) GetLoadBalancingStrategyId() int32 {
+func (o *PingFederateRuntime) GetLoadBalancingStrategyId() int64 {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LoadBalancingStrategyId
@@ -338,7 +338,7 @@ func (o *PingFederateRuntime) GetLoadBalancingStrategyId() int32 {
 
 // GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntime) GetLoadBalancingStrategyIdOk() (*int32, bool) {
+func (o *PingFederateRuntime) GetLoadBalancingStrategyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.LoadBalancingStrategyId) {
 		return nil, false
 	}
@@ -354,15 +354,15 @@ func (o *PingFederateRuntime) HasLoadBalancingStrategyId() bool {
 	return false
 }
 
-// SetLoadBalancingStrategyId gets a reference to the given int32 and assigns it to the LoadBalancingStrategyId field.
-func (o *PingFederateRuntime) SetLoadBalancingStrategyId(v int32) {
+// SetLoadBalancingStrategyId gets a reference to the given int64 and assigns it to the LoadBalancingStrategyId field.
+func (o *PingFederateRuntime) SetLoadBalancingStrategyId(v int64) {
 	o.LoadBalancingStrategyId = &v
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *PingFederateRuntime) GetTrustedCertificateGroupId() int32 {
+func (o *PingFederateRuntime) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -370,7 +370,7 @@ func (o *PingFederateRuntime) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntime) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *PingFederateRuntime) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -386,8 +386,8 @@ func (o *PingFederateRuntime) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *PingFederateRuntime) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *PingFederateRuntime) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 
@@ -416,9 +416,9 @@ func (o *PingFederateRuntime) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *PingFederateRuntime) GetPort() int32 {
+func (o *PingFederateRuntime) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -427,7 +427,7 @@ func (o *PingFederateRuntime) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *PingFederateRuntime) GetPortOk() (*int32, bool) {
+func (o *PingFederateRuntime) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -435,7 +435,7 @@ func (o *PingFederateRuntime) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *PingFederateRuntime) SetPort(v int32) {
+func (o *PingFederateRuntime) SetPort(v int64) {
 	o.Port = v
 }
 

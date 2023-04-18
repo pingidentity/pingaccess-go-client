@@ -20,13 +20,13 @@ var _ MappedNullable = &AdminBasicWebSession{}
 // AdminBasicWebSession An admin basic web session.
 type AdminBasicWebSession struct {
 	// The interval between UI polling for session validity.
-	SessionPollIntervalInSeconds int32 `json:"sessionPollIntervalInSeconds"`
+	SessionPollIntervalInSeconds int64 `json:"sessionPollIntervalInSeconds"`
 	// The time to have the UI display a warning before the session expires.
-	ExpirationWarningInMinutes int32 `json:"expirationWarningInMinutes"`
+	ExpirationWarningInMinutes int64 `json:"expirationWarningInMinutes"`
 	// The length of time you want the PA Admin Token to remain active. Once the PA Admin Token expires, an authenticated user must re-authenticate.
-	SessionTimeoutInMinutes int32 `json:"sessionTimeoutInMinutes"`
+	SessionTimeoutInMinutes int64 `json:"sessionTimeoutInMinutes"`
 	// The length of time you want the PingAccess Admin Token to remain active when no activity is detected.
-	IdleTimeoutInMinutes int32 `json:"idleTimeoutInMinutes"`
+	IdleTimeoutInMinutes int64 `json:"idleTimeoutInMinutes"`
 	// Enter a unique identifier between 1 and 32 characters that defines who the PA Admin Token is applicable to.
 	Audience            string               `json:"audience"`
 	CookieType          WebSessionCookieType `json:"cookieType"`
@@ -39,7 +39,7 @@ type AdminBasicWebSession struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdminBasicWebSession(sessionPollIntervalInSeconds int32, expirationWarningInMinutes int32, sessionTimeoutInMinutes int32, idleTimeoutInMinutes int32, audience string, cookieType WebSessionCookieType, timeoutGroovyScript string) *AdminBasicWebSession {
+func NewAdminBasicWebSession(sessionPollIntervalInSeconds int64, expirationWarningInMinutes int64, sessionTimeoutInMinutes int64, idleTimeoutInMinutes int64, audience string, cookieType WebSessionCookieType, timeoutGroovyScript string) *AdminBasicWebSession {
 	this := AdminBasicWebSession{}
 	this.SessionPollIntervalInSeconds = sessionPollIntervalInSeconds
 	this.ExpirationWarningInMinutes = expirationWarningInMinutes
@@ -60,9 +60,9 @@ func NewAdminBasicWebSessionWithDefaults() *AdminBasicWebSession {
 }
 
 // GetSessionPollIntervalInSeconds returns the SessionPollIntervalInSeconds field value
-func (o *AdminBasicWebSession) GetSessionPollIntervalInSeconds() int32 {
+func (o *AdminBasicWebSession) GetSessionPollIntervalInSeconds() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -71,7 +71,7 @@ func (o *AdminBasicWebSession) GetSessionPollIntervalInSeconds() int32 {
 
 // GetSessionPollIntervalInSecondsOk returns a tuple with the SessionPollIntervalInSeconds field value
 // and a boolean to check if the value has been set.
-func (o *AdminBasicWebSession) GetSessionPollIntervalInSecondsOk() (*int32, bool) {
+func (o *AdminBasicWebSession) GetSessionPollIntervalInSecondsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -79,14 +79,14 @@ func (o *AdminBasicWebSession) GetSessionPollIntervalInSecondsOk() (*int32, bool
 }
 
 // SetSessionPollIntervalInSeconds sets field value
-func (o *AdminBasicWebSession) SetSessionPollIntervalInSeconds(v int32) {
+func (o *AdminBasicWebSession) SetSessionPollIntervalInSeconds(v int64) {
 	o.SessionPollIntervalInSeconds = v
 }
 
 // GetExpirationWarningInMinutes returns the ExpirationWarningInMinutes field value
-func (o *AdminBasicWebSession) GetExpirationWarningInMinutes() int32 {
+func (o *AdminBasicWebSession) GetExpirationWarningInMinutes() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -95,7 +95,7 @@ func (o *AdminBasicWebSession) GetExpirationWarningInMinutes() int32 {
 
 // GetExpirationWarningInMinutesOk returns a tuple with the ExpirationWarningInMinutes field value
 // and a boolean to check if the value has been set.
-func (o *AdminBasicWebSession) GetExpirationWarningInMinutesOk() (*int32, bool) {
+func (o *AdminBasicWebSession) GetExpirationWarningInMinutesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -103,14 +103,14 @@ func (o *AdminBasicWebSession) GetExpirationWarningInMinutesOk() (*int32, bool) 
 }
 
 // SetExpirationWarningInMinutes sets field value
-func (o *AdminBasicWebSession) SetExpirationWarningInMinutes(v int32) {
+func (o *AdminBasicWebSession) SetExpirationWarningInMinutes(v int64) {
 	o.ExpirationWarningInMinutes = v
 }
 
 // GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field value
-func (o *AdminBasicWebSession) GetSessionTimeoutInMinutes() int32 {
+func (o *AdminBasicWebSession) GetSessionTimeoutInMinutes() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -119,7 +119,7 @@ func (o *AdminBasicWebSession) GetSessionTimeoutInMinutes() int32 {
 
 // GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field value
 // and a boolean to check if the value has been set.
-func (o *AdminBasicWebSession) GetSessionTimeoutInMinutesOk() (*int32, bool) {
+func (o *AdminBasicWebSession) GetSessionTimeoutInMinutesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -127,14 +127,14 @@ func (o *AdminBasicWebSession) GetSessionTimeoutInMinutesOk() (*int32, bool) {
 }
 
 // SetSessionTimeoutInMinutes sets field value
-func (o *AdminBasicWebSession) SetSessionTimeoutInMinutes(v int32) {
+func (o *AdminBasicWebSession) SetSessionTimeoutInMinutes(v int64) {
 	o.SessionTimeoutInMinutes = v
 }
 
 // GetIdleTimeoutInMinutes returns the IdleTimeoutInMinutes field value
-func (o *AdminBasicWebSession) GetIdleTimeoutInMinutes() int32 {
+func (o *AdminBasicWebSession) GetIdleTimeoutInMinutes() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -143,7 +143,7 @@ func (o *AdminBasicWebSession) GetIdleTimeoutInMinutes() int32 {
 
 // GetIdleTimeoutInMinutesOk returns a tuple with the IdleTimeoutInMinutes field value
 // and a boolean to check if the value has been set.
-func (o *AdminBasicWebSession) GetIdleTimeoutInMinutesOk() (*int32, bool) {
+func (o *AdminBasicWebSession) GetIdleTimeoutInMinutesOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -151,7 +151,7 @@ func (o *AdminBasicWebSession) GetIdleTimeoutInMinutesOk() (*int32, bool) {
 }
 
 // SetIdleTimeoutInMinutes sets field value
-func (o *AdminBasicWebSession) SetIdleTimeoutInMinutes(v int32) {
+func (o *AdminBasicWebSession) SetIdleTimeoutInMinutes(v int64) {
 	o.IdleTimeoutInMinutes = v
 }
 

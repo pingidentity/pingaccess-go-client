@@ -22,9 +22,9 @@ type KeyAlgorithm struct {
 	// The algorithm name.
 	Name string `json:"name"`
 	// The list of available key sizes.
-	KeySizes []int32 `json:"keySizes"`
+	KeySizes []int64 `json:"keySizes"`
 	// The default key size value to use.
-	DefaultKeySize int32 `json:"defaultKeySize"`
+	DefaultKeySize int64 `json:"defaultKeySize"`
 	// The default signature algorithm to use.
 	DefaultSignatureAlgorithm string `json:"defaultSignatureAlgorithm"`
 	// The list of available signature algorithms.
@@ -35,7 +35,7 @@ type KeyAlgorithm struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyAlgorithm(name string, keySizes []int32, defaultKeySize int32, defaultSignatureAlgorithm string, signatureAlgorithms []string) *KeyAlgorithm {
+func NewKeyAlgorithm(name string, keySizes []int64, defaultKeySize int64, defaultSignatureAlgorithm string, signatureAlgorithms []string) *KeyAlgorithm {
 	this := KeyAlgorithm{}
 	this.Name = name
 	this.KeySizes = keySizes
@@ -78,9 +78,9 @@ func (o *KeyAlgorithm) SetName(v string) {
 }
 
 // GetKeySizes returns the KeySizes field value
-func (o *KeyAlgorithm) GetKeySizes() []int32 {
+func (o *KeyAlgorithm) GetKeySizes() []int64 {
 	if o == nil {
-		var ret []int32
+		var ret []int64
 		return ret
 	}
 
@@ -89,7 +89,7 @@ func (o *KeyAlgorithm) GetKeySizes() []int32 {
 
 // GetKeySizesOk returns a tuple with the KeySizes field value
 // and a boolean to check if the value has been set.
-func (o *KeyAlgorithm) GetKeySizesOk() ([]int32, bool) {
+func (o *KeyAlgorithm) GetKeySizesOk() ([]int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,14 +97,14 @@ func (o *KeyAlgorithm) GetKeySizesOk() ([]int32, bool) {
 }
 
 // SetKeySizes sets field value
-func (o *KeyAlgorithm) SetKeySizes(v []int32) {
+func (o *KeyAlgorithm) SetKeySizes(v []int64) {
 	o.KeySizes = v
 }
 
 // GetDefaultKeySize returns the DefaultKeySize field value
-func (o *KeyAlgorithm) GetDefaultKeySize() int32 {
+func (o *KeyAlgorithm) GetDefaultKeySize() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -113,7 +113,7 @@ func (o *KeyAlgorithm) GetDefaultKeySize() int32 {
 
 // GetDefaultKeySizeOk returns a tuple with the DefaultKeySize field value
 // and a boolean to check if the value has been set.
-func (o *KeyAlgorithm) GetDefaultKeySizeOk() (*int32, bool) {
+func (o *KeyAlgorithm) GetDefaultKeySizeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -121,7 +121,7 @@ func (o *KeyAlgorithm) GetDefaultKeySizeOk() (*int32, bool) {
 }
 
 // SetDefaultKeySize sets field value
-func (o *KeyAlgorithm) SetDefaultKeySize(v int32) {
+func (o *KeyAlgorithm) SetDefaultKeySize(v int64) {
 	o.DefaultKeySize = v
 }
 

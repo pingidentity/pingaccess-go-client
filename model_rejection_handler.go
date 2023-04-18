@@ -22,7 +22,7 @@ type RejectionHandler struct {
 	// (sortable) The rejection handler's class name.
 	ClassName string `json:"className"`
 	// When creating a new RejectionHandler, this is the ID for the RejectionHandler. If not specified, an ID will be automatically assigned. When updating an existing RejectionHandler, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The rejection handler's name.
 	Name string `json:"name"`
 	// The rejection handler's configuration data. - This value is a PingAccess plugin configuration (JSON).
@@ -73,9 +73,9 @@ func (o *RejectionHandler) SetClassName(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *RejectionHandler) GetId() int32 {
+func (o *RejectionHandler) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -83,7 +83,7 @@ func (o *RejectionHandler) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RejectionHandler) GetIdOk() (*int32, bool) {
+func (o *RejectionHandler) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *RejectionHandler) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *RejectionHandler) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *RejectionHandler) SetId(v int64) {
 	o.Id = &v
 }
 

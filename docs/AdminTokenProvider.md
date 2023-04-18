@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the Admin Token Provider. | [optional] 
 **Issuer** | **string** | The issuer url of the Admin Token Provider. | 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to the Admin Token Provider. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to the Admin Token Provider. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTPS requests. | [optional] 
 **SslProtocols** | **[]string** | Array of SSL protocolsto use for HTTPS requests. Empty to use all available protocols. | 
 **SslCiphers** | **[]string** | Array of SSL ciphers to use for HTTPS requests. Empty to use all available ciphers. | 
@@ -77,20 +77,20 @@ SetIssuer sets Issuer field to given value.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *AdminTokenProvider) GetTrustedCertificateGroupId() int32`
+`func (o *AdminTokenProvider) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *AdminTokenProvider) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *AdminTokenProvider) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *AdminTokenProvider) SetTrustedCertificateGroupId(v int32)`
+`func (o *AdminTokenProvider) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

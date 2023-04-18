@@ -20,13 +20,13 @@ var _ MappedNullable = &ConfigStatus{}
 // ConfigStatus An import or export configuration.
 type ConfigStatus struct {
 	// The id of the configuration workflow.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// The status of the configuration import or export.
 	Status *string `json:"status,omitempty"`
 	// The current entity being imported or exported.
 	CurrentEntity map[string]interface{} `json:"currentEntity,omitempty"`
 	// The total number of entities being imported or exported.
-	TotalEntities *int32    `json:"totalEntities,omitempty"`
+	TotalEntities *int64    `json:"totalEntities,omitempty"`
 	ApiErrorView  *ApiError `json:"apiErrorView,omitempty"`
 	// The API warnings for import or export, if there are any warnings.
 	Warnings []string `json:"warnings"`
@@ -51,9 +51,9 @@ func NewConfigStatusWithDefaults() *ConfigStatus {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *ConfigStatus) GetId() int32 {
+func (o *ConfigStatus) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -61,7 +61,7 @@ func (o *ConfigStatus) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigStatus) GetIdOk() (*int32, bool) {
+func (o *ConfigStatus) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -77,8 +77,8 @@ func (o *ConfigStatus) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *ConfigStatus) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *ConfigStatus) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -147,9 +147,9 @@ func (o *ConfigStatus) SetCurrentEntity(v map[string]interface{}) {
 }
 
 // GetTotalEntities returns the TotalEntities field value if set, zero value otherwise.
-func (o *ConfigStatus) GetTotalEntities() int32 {
+func (o *ConfigStatus) GetTotalEntities() int64 {
 	if o == nil || IsNil(o.TotalEntities) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TotalEntities
@@ -157,7 +157,7 @@ func (o *ConfigStatus) GetTotalEntities() int32 {
 
 // GetTotalEntitiesOk returns a tuple with the TotalEntities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigStatus) GetTotalEntitiesOk() (*int32, bool) {
+func (o *ConfigStatus) GetTotalEntitiesOk() (*int64, bool) {
 	if o == nil || IsNil(o.TotalEntities) {
 		return nil, false
 	}
@@ -173,8 +173,8 @@ func (o *ConfigStatus) HasTotalEntities() bool {
 	return false
 }
 
-// SetTotalEntities gets a reference to the given int32 and assigns it to the TotalEntities field.
-func (o *ConfigStatus) SetTotalEntities(v int32) {
+// SetTotalEntities gets a reference to the given int64 and assigns it to the TotalEntities field.
+func (o *ConfigStatus) SetTotalEntities(v int64) {
 	o.TotalEntities = &v
 }
 

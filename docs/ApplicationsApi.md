@@ -47,7 +47,7 @@ import (
 )
 
 func main() {
-    application := *openapiclient.NewApplication("Name_example", openapiclient.DefaultAuthType("Web"), false, "ContextRoot_example", int32(123), int32(123), "SidebandClientId_example", []int32{int32(123)}, "AuthenticationChallengePolicyId_example") // Application | Application to add
+    application := *openapiclient.NewApplication("Name_example", openapiclient.DefaultAuthType("Web"), false, "ContextRoot_example", int64(123), int64(123), "SidebandClientId_example", []int64{int64(123)}, "AuthenticationChallengePolicyId_example") // Application | Application to add
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -658,8 +658,8 @@ import (
 
 func main() {
     id := "id_example" // string | ID of Application to get Resources for
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Resources per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Resources per page (optional)
     name := "name_example" // string | Get a Resource by name and application Id (optional)
     filter := "filter_example" // string | Search for Resources with name matching filter text (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Resource attributes (keys) to be used to sort the results (optional)
@@ -693,8 +693,8 @@ Other parameters are passed through a pointer to a apiGetApplicationResourcesReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Resources per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Resources per page | 
  **name** | **string** | Get a Resource by name and application Id | 
  **filter** | **string** | Search for Resources with name matching filter text | 
  **sortKey** | **string** | A comma separated list of Resource attributes (keys) to be used to sort the results | 
@@ -739,15 +739,15 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    siteId := int32(56) // int32 | Search for Applications with Site (optional)
-    numberPerPage := int32(56) // int32 | Number of Applications per page (optional)
-    agentId := int32(56) // int32 | Search for Applications with Agent (optional)
-    sidebandClientId := int32(56) // int32 | Search for Applications with Sideband Client (optional)
-    virtualHostId := int32(56) // int32 | Search for Applications with Virtual Host (optional)
-    ruleId := int32(56) // int32 | Search for Applications with Rule attached to an Application or one of its Resources (optional)
-    rulesetId := int32(56) // int32 | Search for Applications with Rule Set attached to an Application or one of its Resources (optional)
-    riskPolicyId := int32(56) // int32 | Search for Applications with Risk Policy attached to an Application or one of its Resources (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    siteId := int64(56) // int64 | Search for Applications with Site (optional)
+    numberPerPage := int64(56) // int64 | Number of Applications per page (optional)
+    agentId := int64(56) // int64 | Search for Applications with Agent (optional)
+    sidebandClientId := int64(56) // int64 | Search for Applications with Sideband Client (optional)
+    virtualHostId := int64(56) // int64 | Search for Applications with Virtual Host (optional)
+    ruleId := int64(56) // int64 | Search for Applications with Rule attached to an Application or one of its Resources (optional)
+    rulesetId := int64(56) // int64 | Search for Applications with Rule Set attached to an Application or one of its Resources (optional)
+    riskPolicyId := int64(56) // int64 | Search for Applications with Risk Policy attached to an Application or one of its Resources (optional)
     filter := "filter_example" // string | Search for Applications with name matching filter text (optional)
     name := "name_example" // string | Get an Application by name (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Application attributes (keys) to be used to sort the results (optional)
@@ -776,15 +776,15 @@ Other parameters are passed through a pointer to a apiGetApplicationsRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **siteId** | **int32** | Search for Applications with Site | 
- **numberPerPage** | **int32** | Number of Applications per page | 
- **agentId** | **int32** | Search for Applications with Agent | 
- **sidebandClientId** | **int32** | Search for Applications with Sideband Client | 
- **virtualHostId** | **int32** | Search for Applications with Virtual Host | 
- **ruleId** | **int32** | Search for Applications with Rule attached to an Application or one of its Resources | 
- **rulesetId** | **int32** | Search for Applications with Rule Set attached to an Application or one of its Resources | 
- **riskPolicyId** | **int32** | Search for Applications with Risk Policy attached to an Application or one of its Resources | 
+ **page** | **int64** | Page number to retrieve | 
+ **siteId** | **int64** | Search for Applications with Site | 
+ **numberPerPage** | **int64** | Number of Applications per page | 
+ **agentId** | **int64** | Search for Applications with Agent | 
+ **sidebandClientId** | **int64** | Search for Applications with Sideband Client | 
+ **virtualHostId** | **int64** | Search for Applications with Virtual Host | 
+ **ruleId** | **int64** | Search for Applications with Rule attached to an Application or one of its Resources | 
+ **rulesetId** | **int64** | Search for Applications with Rule Set attached to an Application or one of its Resources | 
+ **riskPolicyId** | **int64** | Search for Applications with Risk Policy attached to an Application or one of its Resources | 
  **filter** | **string** | Search for Applications with name matching filter text | 
  **name** | **string** | Get an Application by name | 
  **sortKey** | **string** | A comma separated list of Application attributes (keys) to be used to sort the results | 
@@ -1091,11 +1091,11 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Resources per page (optional)
-    ruleId := int32(56) // int32 | Get Resources with Rule (optional)
-    rulesetId := int32(56) // int32 | Get Resources with Rule Set (optional)
-    riskPolicyId := int32(56) // int32 | Get Resources with Risk Policy (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Resources per page (optional)
+    ruleId := int64(56) // int64 | Get Resources with Rule (optional)
+    rulesetId := int64(56) // int64 | Get Resources with Rule Set (optional)
+    riskPolicyId := int64(56) // int64 | Get Resources with Risk Policy (optional)
     name := "name_example" // string | Get Resources by name (optional)
     filter := "filter_example" // string | Search for Resources with name matching filter text (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Resource attributes (keys) to be used to sort the results (optional)
@@ -1124,11 +1124,11 @@ Other parameters are passed through a pointer to a apiGetResourcesRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Resources per page | 
- **ruleId** | **int32** | Get Resources with Rule | 
- **rulesetId** | **int32** | Get Resources with Rule Set | 
- **riskPolicyId** | **int32** | Get Resources with Risk Policy | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Resources per page | 
+ **ruleId** | **int64** | Get Resources with Rule | 
+ **rulesetId** | **int64** | Get Resources with Rule Set | 
+ **riskPolicyId** | **int64** | Get Resources with Risk Policy | 
  **name** | **string** | Get Resources by name | 
  **filter** | **string** | Search for Resources with name matching filter text | 
  **sortKey** | **string** | A comma separated list of Resource attributes (keys) to be used to sort the results | 
@@ -1174,7 +1174,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of Application to update
-    application := *openapiclient.NewApplication("Name_example", openapiclient.DefaultAuthType("Web"), false, "ContextRoot_example", int32(123), int32(123), "SidebandClientId_example", []int32{int32(123)}, "AuthenticationChallengePolicyId_example") // Application | Application to update
+    application := *openapiclient.NewApplication("Name_example", openapiclient.DefaultAuthType("Web"), false, "ContextRoot_example", int64(123), int64(123), "SidebandClientId_example", []int64{int64(123)}, "AuthenticationChallengePolicyId_example") // Application | Application to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

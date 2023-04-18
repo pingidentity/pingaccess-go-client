@@ -21,14 +21,14 @@ var _ MappedNullable = &PolicyItem{}
 type PolicyItem struct {
 	Type PolicyItemType `json:"type"`
 	// The ID of the rule or rule set.
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 }
 
 // NewPolicyItem instantiates a new PolicyItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPolicyItem(type_ PolicyItemType, id int32) *PolicyItem {
+func NewPolicyItem(type_ PolicyItemType, id int64) *PolicyItem {
 	this := PolicyItem{}
 	this.Type = type_
 	this.Id = id
@@ -68,9 +68,9 @@ func (o *PolicyItem) SetType(v PolicyItemType) {
 }
 
 // GetId returns the Id field value
-func (o *PolicyItem) GetId() int32 {
+func (o *PolicyItem) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -79,7 +79,7 @@ func (o *PolicyItem) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *PolicyItem) GetIdOk() (*int32, bool) {
+func (o *PolicyItem) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -87,7 +87,7 @@ func (o *PolicyItem) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *PolicyItem) SetId(v int32) {
+func (o *PolicyItem) SetId(v int64) {
 	o.Id = v
 }
 

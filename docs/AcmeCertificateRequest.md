@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | When creating a new AcmeCertificateRequest, this is the ID for the AcmeCertificateRequest. If not specified, an ID will be automatically assigned. When updating an existing AcmeCertificateRequest, this field is ignored and the ID is determined by the path parameter. | [optional] 
-**KeyPairId** | **int32** | The ID of the Key Pair for which a signed certificate will be requested. | 
+**KeyPairId** | **int64** | The ID of the Key Pair for which a signed certificate will be requested. | 
 **AcmeCertStatus** | Pointer to [**AcmeCertStatus**](AcmeCertStatus.md) |  | [optional] 
 **Url** | Pointer to **string** | The URL at the ACME server for the associated ACME order. | [optional] 
 **AcmeServerId** | Pointer to **string** | The ID of the ACME Server to be used for the ACME protocol. This is read-only. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAcmeCertificateRequest
 
-`func NewAcmeCertificateRequest(keyPairId int32, ) *AcmeCertificateRequest`
+`func NewAcmeCertificateRequest(keyPairId int64, ) *AcmeCertificateRequest`
 
 NewAcmeCertificateRequest instantiates a new AcmeCertificateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetKeyPairId
 
-`func (o *AcmeCertificateRequest) GetKeyPairId() int32`
+`func (o *AcmeCertificateRequest) GetKeyPairId() int64`
 
 GetKeyPairId returns the KeyPairId field if non-nil, zero value otherwise.
 
 ### GetKeyPairIdOk
 
-`func (o *AcmeCertificateRequest) GetKeyPairIdOk() (*int32, bool)`
+`func (o *AcmeCertificateRequest) GetKeyPairIdOk() (*int64, bool)`
 
 GetKeyPairIdOk returns a tuple with the KeyPairId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyPairId
 
-`func (o *AcmeCertificateRequest) SetKeyPairId(v int32)`
+`func (o *AcmeCertificateRequest) SetKeyPairId(v int64)`
 
 SetKeyPairId sets KeyPairId field to given value.
 

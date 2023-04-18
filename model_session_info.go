@@ -32,7 +32,7 @@ type SessionInfo struct {
 	// The Warning message.
 	Flash string `json:"flash"`
 	// Session poll interval configuration in seconds.
-	PollIntervalSeconds int32 `json:"pollIntervalSeconds"`
+	PollIntervalSeconds int64 `json:"pollIntervalSeconds"`
 	// The user's roles.
 	Roles []Role `json:"roles"`
 	// The set of access control directives.
@@ -47,7 +47,7 @@ type SessionInfo struct {
 	// Indicates that SNI is enabled or not.
 	SniEnabled bool `json:"sniEnabled"`
 	// The maximum file upload size in bytes.
-	MaxFileUploadSize int32 `json:"maxFileUploadSize"`
+	MaxFileUploadSize int64 `json:"maxFileUploadSize"`
 	// Indicates that a warning needs to be shown or not.
 	ShowWarning bool `json:"showWarning"`
 }
@@ -56,7 +56,7 @@ type SessionInfo struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int32, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, displayLogSettings bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int32, showWarning bool) *SessionInfo {
+func NewSessionInfo(exp int64, iat int64, expWarn int64, sesTimeout int64, sub string, flash string, pollIntervalSeconds int64, roles []Role, accessControlDirectives []AdminAccessControlDirective, useSlo bool, fipsMode bool, displayLogSettings bool, configurationExports ConfigStatuses, configurationImports ConfigStatuses, sniEnabled bool, maxFileUploadSize int64, showWarning bool) *SessionInfo {
 	this := SessionInfo{}
 	this.Exp = exp
 	this.Iat = iat
@@ -231,9 +231,9 @@ func (o *SessionInfo) SetFlash(v string) {
 }
 
 // GetPollIntervalSeconds returns the PollIntervalSeconds field value
-func (o *SessionInfo) GetPollIntervalSeconds() int32 {
+func (o *SessionInfo) GetPollIntervalSeconds() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -242,7 +242,7 @@ func (o *SessionInfo) GetPollIntervalSeconds() int32 {
 
 // GetPollIntervalSecondsOk returns a tuple with the PollIntervalSeconds field value
 // and a boolean to check if the value has been set.
-func (o *SessionInfo) GetPollIntervalSecondsOk() (*int32, bool) {
+func (o *SessionInfo) GetPollIntervalSecondsOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -250,7 +250,7 @@ func (o *SessionInfo) GetPollIntervalSecondsOk() (*int32, bool) {
 }
 
 // SetPollIntervalSeconds sets field value
-func (o *SessionInfo) SetPollIntervalSeconds(v int32) {
+func (o *SessionInfo) SetPollIntervalSeconds(v int64) {
 	o.PollIntervalSeconds = v
 }
 
@@ -447,9 +447,9 @@ func (o *SessionInfo) SetSniEnabled(v bool) {
 }
 
 // GetMaxFileUploadSize returns the MaxFileUploadSize field value
-func (o *SessionInfo) GetMaxFileUploadSize() int32 {
+func (o *SessionInfo) GetMaxFileUploadSize() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -458,7 +458,7 @@ func (o *SessionInfo) GetMaxFileUploadSize() int32 {
 
 // GetMaxFileUploadSizeOk returns a tuple with the MaxFileUploadSize field value
 // and a boolean to check if the value has been set.
-func (o *SessionInfo) GetMaxFileUploadSizeOk() (*int32, bool) {
+func (o *SessionInfo) GetMaxFileUploadSizeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -466,7 +466,7 @@ func (o *SessionInfo) GetMaxFileUploadSizeOk() (*int32, bool) {
 }
 
 // SetMaxFileUploadSize sets field value
-func (o *SessionInfo) SetMaxFileUploadSize(v int32) {
+func (o *SessionInfo) SetMaxFileUploadSize(v int64) {
 	o.MaxFileUploadSize = v
 }
 

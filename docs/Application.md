@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new Application, this is the ID for the Application. If not specified, an ID will be automatically assigned. When updating an existing Application, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new Application, this is the ID for the Application. If not specified, an ID will be automatically assigned. When updating an existing Application, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Enabled** | Pointer to **bool** | (sortable) True if the application is enabled. | [optional] 
-**AgentCacheInvalidatedResponseDuration** | Pointer to **int32** | (DEPRECATED - to be removed in a future release; this field is no longer used when processing requests for an application.) | [optional] 
+**AgentCacheInvalidatedResponseDuration** | Pointer to **int64** | (DEPRECATED - to be removed in a future release; this field is no longer used when processing requests for an application.) | [optional] 
 **AgentCacheInvalidatedExpiration** | Pointer to **int64** | (DEPRECATED - to be removed in a future release; this field is no longer used when processing requests for an application.) | [optional] 
 **LastModified** | Pointer to **int64** | The last modified time of the configuration for this application, its resources and associated policy, as the number of milliseconds since January 1, 1970, 00:00:00 GMT. This field is read-only. | [optional] 
 **RequireHTTPS** | Pointer to **bool** | (sortable) True if the application requires HTTPS connections. | [optional] 
 **Name** | **string** | (sortable) The application name. | 
 **Description** | Pointer to **string** | (sortable) A description of the application. | [optional] 
 **ManualOrderingEnabled** | Pointer to **bool** | Enable explicit, manual ordering of application resources and permit regex path patterns. | [optional] 
-**ResourceOrder** | Pointer to **[]int32** | The explicit resource order defined when manual ordering is enabled. Each existing resource ID must be represented. (Required when &#39;manualOrderingEnabled&#39; is true.) | [optional] 
+**ResourceOrder** | Pointer to **[]int64** | The explicit resource order defined when manual ordering is enabled. Each existing resource ID must be represented. (Required when &#39;manualOrderingEnabled&#39; is true.) | [optional] 
 **ApplicationType** | Pointer to [**ApplicationType**](ApplicationType.md) |  | [optional] 
 **DefaultAuthType** | [**DefaultAuthType**](DefaultAuthType.md) |  | 
 **SpaSupportEnabled** | **bool** | Enable SPA support. | 
@@ -23,24 +23,24 @@ Name | Type | Description | Notes
 **Realm** | Pointer to **string** | (sortable) The OAuth realm associated with the application. | [optional] 
 **CaseSensitivePath** | Pointer to **bool** | (sortable) True if the path is case sensitive. | [optional] 
 **AllowEmptyPathSegments** | Pointer to **bool** | When true, PingAccess will not remove empty path segments from the request URL before matching a request against the resources in this application. Defaults to false. | [optional] 
-**WebSessionId** | Pointer to **int32** | The ID of the web session associated with the application or zero if none. | [optional] 
+**WebSessionId** | Pointer to **int64** | The ID of the web session associated with the application or zero if none. | [optional] 
 **Issuer** | Pointer to **string** | Branded URL at the OpenID Connect provider to redirect unauthenticated requests to. When specified, this overrides the global token provider&#39;s issuer field. | [optional] 
-**SiteId** | **int32** | The ID of the site associated with the application or zero if none. | 
-**AgentId** | **int32** | The ID of the agent associated with the application or zero if none. | 
+**SiteId** | **int64** | The ID of the site associated with the application or zero if none. | 
+**AgentId** | **int64** | The ID of the agent associated with the application or zero if none. | 
 **SidebandClientId** | **string** | The ID of the sideband client associated with the application or null if none. | 
-**VirtualHostIds** | **[]int32** | An array of virtual host IDs associated with the application. | 
-**IdentityMappingIds** | Pointer to **map[string]int32** | A map of Identity Mappings associated with the application. The key is &#39;Web&#39; or &#39;API&#39; and the value is an Identity Mapping ID.  Key type: String Value type: Integer | [optional] 
-**AccessValidatorId** | Pointer to **int32** | The ID of the access token validator for local token validation, 1 if the application is protected remotely by an Authorization Server, or zero if unprotected. Only applies to applications of type API. | [optional] 
+**VirtualHostIds** | **[]int64** | An array of virtual host IDs associated with the application. | 
+**IdentityMappingIds** | Pointer to **map[string]int64** | A map of Identity Mappings associated with the application. The key is &#39;Web&#39; or &#39;API&#39; and the value is an Identity Mapping ID.  Key type: String Value type: Integer | [optional] 
+**AccessValidatorId** | Pointer to **int64** | The ID of the access token validator for local token validation, 1 if the application is protected remotely by an Authorization Server, or zero if unprotected. Only applies to applications of type API. | [optional] 
 **Policy** | Pointer to [**map[string][]PolicyItem**](array.md) | A map of policy items associated with the application.  The key is &#39;Web&#39; or &#39;API&#39; and the value is a list of PolicyItems.  Key type: String Value type: PolicyItem[] | [optional] 
 **AuthenticationChallengePolicyId** | **string** | The UUID of the authentication challenge policy associated with the application. | 
-**RiskPolicyId** | Pointer to **int32** | The ID of the risk policy to use by default for this application. | [optional] 
+**RiskPolicyId** | Pointer to **int64** | The ID of the risk policy to use by default for this application. | [optional] 
 **DeployReservedResources** | Pointer to **bool** | When true, PingAccess will deploy an  instance of the reserved PA resources and runtime API endpoints using this application context root plus the  reserved application context root as the base path. Default value: false. | [optional] 
 
 ## Methods
 
 ### NewApplication
 
-`func NewApplication(name string, defaultAuthType DefaultAuthType, spaSupportEnabled bool, contextRoot string, siteId int32, agentId int32, sidebandClientId string, virtualHostIds []int32, authenticationChallengePolicyId string, ) *Application`
+`func NewApplication(name string, defaultAuthType DefaultAuthType, spaSupportEnabled bool, contextRoot string, siteId int64, agentId int64, sidebandClientId string, virtualHostIds []int64, authenticationChallengePolicyId string, ) *Application`
 
 NewApplication instantiates a new Application object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *Application) GetId() int32`
+`func (o *Application) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Application) GetIdOk() (*int32, bool)`
+`func (o *Application) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Application) SetId(v int32)`
+`func (o *Application) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -107,20 +107,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetAgentCacheInvalidatedResponseDuration
 
-`func (o *Application) GetAgentCacheInvalidatedResponseDuration() int32`
+`func (o *Application) GetAgentCacheInvalidatedResponseDuration() int64`
 
 GetAgentCacheInvalidatedResponseDuration returns the AgentCacheInvalidatedResponseDuration field if non-nil, zero value otherwise.
 
 ### GetAgentCacheInvalidatedResponseDurationOk
 
-`func (o *Application) GetAgentCacheInvalidatedResponseDurationOk() (*int32, bool)`
+`func (o *Application) GetAgentCacheInvalidatedResponseDurationOk() (*int64, bool)`
 
 GetAgentCacheInvalidatedResponseDurationOk returns a tuple with the AgentCacheInvalidatedResponseDuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentCacheInvalidatedResponseDuration
 
-`func (o *Application) SetAgentCacheInvalidatedResponseDuration(v int32)`
+`func (o *Application) SetAgentCacheInvalidatedResponseDuration(v int64)`
 
 SetAgentCacheInvalidatedResponseDuration sets AgentCacheInvalidatedResponseDuration field to given value.
 
@@ -277,20 +277,20 @@ HasManualOrderingEnabled returns a boolean if a field has been set.
 
 ### GetResourceOrder
 
-`func (o *Application) GetResourceOrder() []int32`
+`func (o *Application) GetResourceOrder() []int64`
 
 GetResourceOrder returns the ResourceOrder field if non-nil, zero value otherwise.
 
 ### GetResourceOrderOk
 
-`func (o *Application) GetResourceOrderOk() (*[]int32, bool)`
+`func (o *Application) GetResourceOrderOk() (*[]int64, bool)`
 
 GetResourceOrderOk returns a tuple with the ResourceOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceOrder
 
-`func (o *Application) SetResourceOrder(v []int32)`
+`func (o *Application) SetResourceOrder(v []int64)`
 
 SetResourceOrder sets ResourceOrder field to given value.
 
@@ -512,20 +512,20 @@ HasAllowEmptyPathSegments returns a boolean if a field has been set.
 
 ### GetWebSessionId
 
-`func (o *Application) GetWebSessionId() int32`
+`func (o *Application) GetWebSessionId() int64`
 
 GetWebSessionId returns the WebSessionId field if non-nil, zero value otherwise.
 
 ### GetWebSessionIdOk
 
-`func (o *Application) GetWebSessionIdOk() (*int32, bool)`
+`func (o *Application) GetWebSessionIdOk() (*int64, bool)`
 
 GetWebSessionIdOk returns a tuple with the WebSessionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWebSessionId
 
-`func (o *Application) SetWebSessionId(v int32)`
+`func (o *Application) SetWebSessionId(v int64)`
 
 SetWebSessionId sets WebSessionId field to given value.
 
@@ -562,40 +562,40 @@ HasIssuer returns a boolean if a field has been set.
 
 ### GetSiteId
 
-`func (o *Application) GetSiteId() int32`
+`func (o *Application) GetSiteId() int64`
 
 GetSiteId returns the SiteId field if non-nil, zero value otherwise.
 
 ### GetSiteIdOk
 
-`func (o *Application) GetSiteIdOk() (*int32, bool)`
+`func (o *Application) GetSiteIdOk() (*int64, bool)`
 
 GetSiteIdOk returns a tuple with the SiteId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSiteId
 
-`func (o *Application) SetSiteId(v int32)`
+`func (o *Application) SetSiteId(v int64)`
 
 SetSiteId sets SiteId field to given value.
 
 
 ### GetAgentId
 
-`func (o *Application) GetAgentId() int32`
+`func (o *Application) GetAgentId() int64`
 
 GetAgentId returns the AgentId field if non-nil, zero value otherwise.
 
 ### GetAgentIdOk
 
-`func (o *Application) GetAgentIdOk() (*int32, bool)`
+`func (o *Application) GetAgentIdOk() (*int64, bool)`
 
 GetAgentIdOk returns a tuple with the AgentId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAgentId
 
-`func (o *Application) SetAgentId(v int32)`
+`func (o *Application) SetAgentId(v int64)`
 
 SetAgentId sets AgentId field to given value.
 
@@ -622,40 +622,40 @@ SetSidebandClientId sets SidebandClientId field to given value.
 
 ### GetVirtualHostIds
 
-`func (o *Application) GetVirtualHostIds() []int32`
+`func (o *Application) GetVirtualHostIds() []int64`
 
 GetVirtualHostIds returns the VirtualHostIds field if non-nil, zero value otherwise.
 
 ### GetVirtualHostIdsOk
 
-`func (o *Application) GetVirtualHostIdsOk() (*[]int32, bool)`
+`func (o *Application) GetVirtualHostIdsOk() (*[]int64, bool)`
 
 GetVirtualHostIdsOk returns a tuple with the VirtualHostIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualHostIds
 
-`func (o *Application) SetVirtualHostIds(v []int32)`
+`func (o *Application) SetVirtualHostIds(v []int64)`
 
 SetVirtualHostIds sets VirtualHostIds field to given value.
 
 
 ### GetIdentityMappingIds
 
-`func (o *Application) GetIdentityMappingIds() map[string]int32`
+`func (o *Application) GetIdentityMappingIds() map[string]int64`
 
 GetIdentityMappingIds returns the IdentityMappingIds field if non-nil, zero value otherwise.
 
 ### GetIdentityMappingIdsOk
 
-`func (o *Application) GetIdentityMappingIdsOk() (*map[string]int32, bool)`
+`func (o *Application) GetIdentityMappingIdsOk() (*map[string]int64, bool)`
 
 GetIdentityMappingIdsOk returns a tuple with the IdentityMappingIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdentityMappingIds
 
-`func (o *Application) SetIdentityMappingIds(v map[string]int32)`
+`func (o *Application) SetIdentityMappingIds(v map[string]int64)`
 
 SetIdentityMappingIds sets IdentityMappingIds field to given value.
 
@@ -667,20 +667,20 @@ HasIdentityMappingIds returns a boolean if a field has been set.
 
 ### GetAccessValidatorId
 
-`func (o *Application) GetAccessValidatorId() int32`
+`func (o *Application) GetAccessValidatorId() int64`
 
 GetAccessValidatorId returns the AccessValidatorId field if non-nil, zero value otherwise.
 
 ### GetAccessValidatorIdOk
 
-`func (o *Application) GetAccessValidatorIdOk() (*int32, bool)`
+`func (o *Application) GetAccessValidatorIdOk() (*int64, bool)`
 
 GetAccessValidatorIdOk returns a tuple with the AccessValidatorId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAccessValidatorId
 
-`func (o *Application) SetAccessValidatorId(v int32)`
+`func (o *Application) SetAccessValidatorId(v int64)`
 
 SetAccessValidatorId sets AccessValidatorId field to given value.
 
@@ -737,20 +737,20 @@ SetAuthenticationChallengePolicyId sets AuthenticationChallengePolicyId field to
 
 ### GetRiskPolicyId
 
-`func (o *Application) GetRiskPolicyId() int32`
+`func (o *Application) GetRiskPolicyId() int64`
 
 GetRiskPolicyId returns the RiskPolicyId field if non-nil, zero value otherwise.
 
 ### GetRiskPolicyIdOk
 
-`func (o *Application) GetRiskPolicyIdOk() (*int32, bool)`
+`func (o *Application) GetRiskPolicyIdOk() (*int64, bool)`
 
 GetRiskPolicyIdOk returns a tuple with the RiskPolicyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskPolicyId
 
-`func (o *Application) SetRiskPolicyId(v int32)`
+`func (o *Application) SetRiskPolicyId(v int64)`
 
 SetRiskPolicyId sets RiskPolicyId field to given value.
 

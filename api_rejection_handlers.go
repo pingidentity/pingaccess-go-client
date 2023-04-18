@@ -587,8 +587,8 @@ func (a *RejectionHandlersApiService) GetRejectionHandlerDescriptorsExecute(r Ap
 type ApiGetRejectionHandlersRequest struct {
 	ctx           context.Context
 	ApiService    *RejectionHandlersApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -596,13 +596,13 @@ type ApiGetRejectionHandlersRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetRejectionHandlersRequest) Page(page int32) ApiGetRejectionHandlersRequest {
+func (r ApiGetRejectionHandlersRequest) Page(page int64) ApiGetRejectionHandlersRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Rejection Handlers per page
-func (r ApiGetRejectionHandlersRequest) NumberPerPage(numberPerPage int32) ApiGetRejectionHandlersRequest {
+func (r ApiGetRejectionHandlersRequest) NumberPerPage(numberPerPage int64) ApiGetRejectionHandlersRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

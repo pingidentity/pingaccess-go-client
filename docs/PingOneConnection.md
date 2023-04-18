@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | (sortable) The description of the PingOne Connection. | [optional] 
 **Credential** | Pointer to [**HiddenField**](HiddenField.md) |  | [optional] 
 **UseProxy** | Pointer to **bool** | (sortable) True if a proxy should be used for HTTPS requests to PingOne. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when communicating to PingOne through this connection. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when communicating to PingOne through this connection. | [optional] 
 **SslProtocols** | **[]string** | Array of SSL protocols to use for HTTPS requests. Empty to use all available protocols. | 
 **SslCiphers** | **[]string** | Array of SSL ciphers to use for HTTPS requests. Empty to use all available ciphers. | 
 
@@ -154,20 +154,20 @@ HasUseProxy returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *PingOneConnection) GetTrustedCertificateGroupId() int32`
+`func (o *PingOneConnection) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *PingOneConnection) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *PingOneConnection) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *PingOneConnection) SetTrustedCertificateGroupId(v int32)`
+`func (o *PingOneConnection) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

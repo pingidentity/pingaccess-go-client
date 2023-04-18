@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new RuleSet, this is the ID for the RuleSet. If not specified, an ID will be automatically assigned. When updating an existing RuleSet, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new RuleSet, this is the ID for the RuleSet. If not specified, an ID will be automatically assigned. When updating an existing RuleSet, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The rule set&#39;s name. | 
 **SuccessCriteria** | Pointer to [**SuccessCriteria**](SuccessCriteria.md) |  | [optional] 
 **ElementType** | Pointer to [**RuleSetElementType**](RuleSetElementType.md) |  | [optional] 
-**Policy** | **[]int32** | The list of policy ids assigned to the rule set. | 
+**Policy** | **[]int64** | The list of policy ids assigned to the rule set. | 
 
 ## Methods
 
 ### NewRuleSet
 
-`func NewRuleSet(name string, policy []int32, ) *RuleSet`
+`func NewRuleSet(name string, policy []int64, ) *RuleSet`
 
 NewRuleSet instantiates a new RuleSet object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *RuleSet) GetId() int32`
+`func (o *RuleSet) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *RuleSet) GetIdOk() (*int32, bool)`
+`func (o *RuleSet) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *RuleSet) SetId(v int32)`
+`func (o *RuleSet) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -126,20 +126,20 @@ HasElementType returns a boolean if a field has been set.
 
 ### GetPolicy
 
-`func (o *RuleSet) GetPolicy() []int32`
+`func (o *RuleSet) GetPolicy() []int64`
 
 GetPolicy returns the Policy field if non-nil, zero value otherwise.
 
 ### GetPolicyOk
 
-`func (o *RuleSet) GetPolicyOk() (*[]int32, bool)`
+`func (o *RuleSet) GetPolicyOk() (*[]int64, bool)`
 
 GetPolicyOk returns a tuple with the Policy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPolicy
 
-`func (o *RuleSet) SetPolicy(v []int32)`
+`func (o *RuleSet) SetPolicy(v []int64)`
 
 SetPolicy sets Policy field to given value.
 

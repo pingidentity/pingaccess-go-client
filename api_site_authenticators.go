@@ -587,8 +587,8 @@ func (a *SiteAuthenticatorsApiService) GetSiteAuthenticatorDescriptorsExecute(r 
 type ApiGetSiteAuthenticatorsRequest struct {
 	ctx           context.Context
 	ApiService    *SiteAuthenticatorsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -596,13 +596,13 @@ type ApiGetSiteAuthenticatorsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetSiteAuthenticatorsRequest) Page(page int32) ApiGetSiteAuthenticatorsRequest {
+func (r ApiGetSiteAuthenticatorsRequest) Page(page int64) ApiGetSiteAuthenticatorsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Site Authenticators per page
-func (r ApiGetSiteAuthenticatorsRequest) NumberPerPage(numberPerPage int32) ApiGetSiteAuthenticatorsRequest {
+func (r ApiGetSiteAuthenticatorsRequest) NumberPerPage(numberPerPage int64) ApiGetSiteAuthenticatorsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

@@ -20,7 +20,7 @@ var _ MappedNullable = &AuthnReqList{}
 // AuthnReqList An authentication requirements list.
 type AuthnReqList struct {
 	// When creating a new AuthnReqList, this is the ID for the AuthnReqList. If not specified, an ID will be automatically assigned. When updating an existing AuthnReqList, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the authentication requirements list.
 	Name string `json:"name"`
 	// The ordered list of authentication requirements, or identifiers, which define how PingFederate will authenticate a user during the OIDC login flow.
@@ -47,9 +47,9 @@ func NewAuthnReqListWithDefaults() *AuthnReqList {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AuthnReqList) GetId() int32 {
+func (o *AuthnReqList) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -57,7 +57,7 @@ func (o *AuthnReqList) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthnReqList) GetIdOk() (*int32, bool) {
+func (o *AuthnReqList) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *AuthnReqList) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AuthnReqList) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AuthnReqList) SetId(v int64) {
 	o.Id = &v
 }
 

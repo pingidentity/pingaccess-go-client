@@ -807,8 +807,8 @@ func (a *PingoneApiService) GetPingOneConnectionMetadataExecute(r ApiGetPingOneC
 type ApiGetPingOneConnectionsRequest struct {
 	ctx           context.Context
 	ApiService    *PingoneApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -816,13 +816,13 @@ type ApiGetPingOneConnectionsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetPingOneConnectionsRequest) Page(page int32) ApiGetPingOneConnectionsRequest {
+func (r ApiGetPingOneConnectionsRequest) Page(page int64) ApiGetPingOneConnectionsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of PingOne Connections per page
-func (r ApiGetPingOneConnectionsRequest) NumberPerPage(numberPerPage int32) ApiGetPingOneConnectionsRequest {
+func (r ApiGetPingOneConnectionsRequest) NumberPerPage(numberPerPage int64) ApiGetPingOneConnectionsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

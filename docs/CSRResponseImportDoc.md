@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
+**HsmProviderId** | **int64** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
 **FileData** | **string** | The CSR response data. | 
 **ChainCertificates** | **[]string** | A list of base64-encoded certificates to add to the key pair certificate chain. | 
-**TrustedCertGroupId** | **int32** | The ID of the trusted certificate group associated with the CSR response. | 
+**TrustedCertGroupId** | **int64** | The ID of the trusted certificate group associated with the CSR response. | 
 
 ## Methods
 
 ### NewCSRResponseImportDoc
 
-`func NewCSRResponseImportDoc(hsmProviderId int32, fileData string, chainCertificates []string, trustedCertGroupId int32, ) *CSRResponseImportDoc`
+`func NewCSRResponseImportDoc(hsmProviderId int64, fileData string, chainCertificates []string, trustedCertGroupId int64, ) *CSRResponseImportDoc`
 
 NewCSRResponseImportDoc instantiates a new CSRResponseImportDoc object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetHsmProviderId
 
-`func (o *CSRResponseImportDoc) GetHsmProviderId() int32`
+`func (o *CSRResponseImportDoc) GetHsmProviderId() int64`
 
 GetHsmProviderId returns the HsmProviderId field if non-nil, zero value otherwise.
 
 ### GetHsmProviderIdOk
 
-`func (o *CSRResponseImportDoc) GetHsmProviderIdOk() (*int32, bool)`
+`func (o *CSRResponseImportDoc) GetHsmProviderIdOk() (*int64, bool)`
 
 GetHsmProviderIdOk returns a tuple with the HsmProviderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHsmProviderId
 
-`func (o *CSRResponseImportDoc) SetHsmProviderId(v int32)`
+`func (o *CSRResponseImportDoc) SetHsmProviderId(v int64)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
 
@@ -90,20 +90,20 @@ SetChainCertificates sets ChainCertificates field to given value.
 
 ### GetTrustedCertGroupId
 
-`func (o *CSRResponseImportDoc) GetTrustedCertGroupId() int32`
+`func (o *CSRResponseImportDoc) GetTrustedCertGroupId() int64`
 
 GetTrustedCertGroupId returns the TrustedCertGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertGroupIdOk
 
-`func (o *CSRResponseImportDoc) GetTrustedCertGroupIdOk() (*int32, bool)`
+`func (o *CSRResponseImportDoc) GetTrustedCertGroupIdOk() (*int64, bool)`
 
 GetTrustedCertGroupIdOk returns a tuple with the TrustedCertGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertGroupId
 
-`func (o *CSRResponseImportDoc) SetTrustedCertGroupId(v int32)`
+`func (o *CSRResponseImportDoc) SetTrustedCertGroupId(v int64)`
 
 SetTrustedCertGroupId sets TrustedCertGroupId field to given value.
 

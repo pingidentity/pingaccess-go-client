@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | [**PolicyItemType**](PolicyItemType.md) |  | 
-**Id** | **int32** | The ID of the rule or rule set. | 
+**Id** | **int64** | The ID of the rule or rule set. | 
 
 ## Methods
 
 ### NewPolicyItem
 
-`func NewPolicyItem(type_ PolicyItemType, id int32, ) *PolicyItem`
+`func NewPolicyItem(type_ PolicyItemType, id int64, ) *PolicyItem`
 
 NewPolicyItem instantiates a new PolicyItem object
 This constructor will assign default values to properties that have it defined,
@@ -48,20 +48,20 @@ SetType sets Type field to given value.
 
 ### GetId
 
-`func (o *PolicyItem) GetId() int32`
+`func (o *PolicyItem) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PolicyItem) GetIdOk() (*int32, bool)`
+`func (o *PolicyItem) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PolicyItem) SetId(v int32)`
+`func (o *PolicyItem) SetId(v int64)`
 
 SetId sets Id field to given value.
 

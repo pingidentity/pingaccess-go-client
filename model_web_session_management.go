@@ -36,7 +36,7 @@ type WebSessionManagement struct {
 	// The encryption algorithm used when creating encrypted PA tokens and when verifying them from a user's browser.
 	EncryptionAlgorithm *string `json:"encryptionAlgorithm,omitempty"`
 	// The number of minutes that the nonce cookie is valid when multiple concurrent authentication requests are made. 0 indicates that the system default value should be used.
-	NonceCookieTimeToLiveInMinutes *int32 `json:"nonceCookieTimeToLiveInMinutes,omitempty"`
+	NonceCookieTimeToLiveInMinutes *int64 `json:"nonceCookieTimeToLiveInMinutes,omitempty"`
 }
 
 // NewWebSessionManagement instantiates a new WebSessionManagement object
@@ -313,9 +313,9 @@ func (o *WebSessionManagement) SetEncryptionAlgorithm(v string) {
 }
 
 // GetNonceCookieTimeToLiveInMinutes returns the NonceCookieTimeToLiveInMinutes field value if set, zero value otherwise.
-func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutes() int32 {
+func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutes() int64 {
 	if o == nil || IsNil(o.NonceCookieTimeToLiveInMinutes) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.NonceCookieTimeToLiveInMinutes
@@ -323,7 +323,7 @@ func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutes() int32 {
 
 // GetNonceCookieTimeToLiveInMinutesOk returns a tuple with the NonceCookieTimeToLiveInMinutes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutesOk() (*int32, bool) {
+func (o *WebSessionManagement) GetNonceCookieTimeToLiveInMinutesOk() (*int64, bool) {
 	if o == nil || IsNil(o.NonceCookieTimeToLiveInMinutes) {
 		return nil, false
 	}
@@ -339,8 +339,8 @@ func (o *WebSessionManagement) HasNonceCookieTimeToLiveInMinutes() bool {
 	return false
 }
 
-// SetNonceCookieTimeToLiveInMinutes gets a reference to the given int32 and assigns it to the NonceCookieTimeToLiveInMinutes field.
-func (o *WebSessionManagement) SetNonceCookieTimeToLiveInMinutes(v int32) {
+// SetNonceCookieTimeToLiveInMinutes gets a reference to the given int64 and assigns it to the NonceCookieTimeToLiveInMinutes field.
+func (o *WebSessionManagement) SetNonceCookieTimeToLiveInMinutes(v int64) {
 	o.NonceCookieTimeToLiveInMinutes = &v
 }
 

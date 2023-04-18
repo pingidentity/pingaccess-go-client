@@ -24,7 +24,7 @@ type PingOne4C struct {
 	// The issuer url of the PingOne for Customers OIDC provider.
 	Issuer string `json:"issuer"`
 	// The group of certificates to use when authenticating to PingOne for Customers OIDC provider.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// True if a proxy should be used for HTTPS requests.
 	UseProxy *bool `json:"useProxy,omitempty"`
 }
@@ -104,9 +104,9 @@ func (o *PingOne4C) SetIssuer(v string) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *PingOne4C) GetTrustedCertificateGroupId() int32 {
+func (o *PingOne4C) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -114,7 +114,7 @@ func (o *PingOne4C) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingOne4C) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *PingOne4C) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *PingOne4C) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *PingOne4C) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *PingOne4C) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

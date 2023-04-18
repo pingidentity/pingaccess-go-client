@@ -249,7 +249,7 @@ func (a *WebSessionsApiService) DeleteWebSessionExecute(r ApiDeleteWebSessionReq
 type ApiGetWebSessionRequest struct {
 	ctx        context.Context
 	ApiService *WebSessionsApiService
-	id         int32
+	id         int64
 }
 
 func (r ApiGetWebSessionRequest) Execute() (*WebSession, *http.Response, error) {
@@ -265,7 +265,7 @@ Get a WebSession
 	@param id ID of WebSession to get
 	@return ApiGetWebSessionRequest
 */
-func (a *WebSessionsApiService) GetWebSession(ctx context.Context, id int32) ApiGetWebSessionRequest {
+func (a *WebSessionsApiService) GetWebSession(ctx context.Context, id int64) ApiGetWebSessionRequest {
 	return ApiGetWebSessionRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -363,8 +363,8 @@ func (a *WebSessionsApiService) GetWebSessionExecute(r ApiGetWebSessionRequest) 
 type ApiGetWebSessionsRequest struct {
 	ctx           context.Context
 	ApiService    *WebSessionsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetWebSessionsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetWebSessionsRequest) Page(page int32) ApiGetWebSessionsRequest {
+func (r ApiGetWebSessionsRequest) Page(page int64) ApiGetWebSessionsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Web Sessions per page
-func (r ApiGetWebSessionsRequest) NumberPerPage(numberPerPage int32) ApiGetWebSessionsRequest {
+func (r ApiGetWebSessionsRequest) NumberPerPage(numberPerPage int64) ApiGetWebSessionsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

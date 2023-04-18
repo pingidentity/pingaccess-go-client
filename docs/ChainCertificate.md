@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The Id for the chain certificate. | [optional] 
+**Id** | Pointer to **int64** | The Id for the chain certificate. | [optional] 
 **SerialNumber** | **string** | (sortable) The Serial Number for the chain certificate. | 
 **Alias** | **string** | (sortable) The Alias for the chain certificate. | 
 **SubjectDn** | **string** | (sortable) The Subject DN for the chain certificate. | 
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ChainCertificate) GetId() int32`
+`func (o *ChainCertificate) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ChainCertificate) GetIdOk() (*int32, bool)`
+`func (o *ChainCertificate) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ChainCertificate) SetId(v int32)`
+`func (o *ChainCertificate) SetId(v int64)`
 
 SetId sets Id field to given value.
 

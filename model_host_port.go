@@ -22,14 +22,14 @@ type HostPort struct {
 	// The hostname.
 	Host string `json:"host"`
 	// The port number.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 }
 
 // NewHostPort instantiates a new HostPort object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHostPort(host string, port int32) *HostPort {
+func NewHostPort(host string, port int64) *HostPort {
 	this := HostPort{}
 	this.Host = host
 	this.Port = port
@@ -69,9 +69,9 @@ func (o *HostPort) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *HostPort) GetPort() int32 {
+func (o *HostPort) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *HostPort) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *HostPort) GetPortOk() (*int32, bool) {
+func (o *HostPort) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *HostPort) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *HostPort) SetPort(v int32) {
+func (o *HostPort) SetPort(v int64) {
 	o.Port = v
 }
 

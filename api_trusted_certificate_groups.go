@@ -363,8 +363,8 @@ func (a *TrustedCertificateGroupsApiService) GetTrustedCertificateGroupExecute(r
 type ApiGetTrustedCertificateGroupsRequest struct {
 	ctx           context.Context
 	ApiService    *TrustedCertificateGroupsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetTrustedCertificateGroupsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetTrustedCertificateGroupsRequest) Page(page int32) ApiGetTrustedCertificateGroupsRequest {
+func (r ApiGetTrustedCertificateGroupsRequest) Page(page int64) ApiGetTrustedCertificateGroupsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Trusted Certificate Groups per page
-func (r ApiGetTrustedCertificateGroupsRequest) NumberPerPage(numberPerPage int32) ApiGetTrustedCertificateGroupsRequest {
+func (r ApiGetTrustedCertificateGroupsRequest) NumberPerPage(numberPerPage int64) ApiGetTrustedCertificateGroupsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

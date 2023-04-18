@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The Id for the key pair. | [optional] 
+**Id** | Pointer to **int64** | The Id for the key pair. | [optional] 
 **SerialNumber** | **string** | (sortable) The Serial Number for the key pair. | 
 **Alias** | **string** | (sortable) The Alias for the key pair. | 
 **SubjectDn** | **string** | (sortable) The Subject DN for the key pair. | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Sha256sum** | **string** | The SHA256 checksum of the key pair. | 
 **SubjectAlternativeNames** | Pointer to [**[]GeneralName**](GeneralName.md) | A collection of subject alternative names for the certificate. | [optional] 
 **CsrPending** | **bool** | (sortable) True if a CSR is generated for this key pair. | 
-**HsmProviderId** | Pointer to **int32** | The HSM Provider ID.  The default value is 0 indicating an HSM is not used for this KeyPair. | [optional] 
+**HsmProviderId** | Pointer to **int64** | The HSM Provider ID.  The default value is 0 indicating an HSM is not used for this KeyPair. | [optional] 
 **ChainCertificates** | Pointer to [**[]ChainCertificate**](ChainCertificate.md) | The complete list of certificates in the key pair certificate chain. | [optional] 
 
 ## Methods
@@ -43,20 +43,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *KeyPair) GetId() int32`
+`func (o *KeyPair) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KeyPair) GetIdOk() (*int32, bool)`
+`func (o *KeyPair) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KeyPair) SetId(v int32)`
+`func (o *KeyPair) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -368,20 +368,20 @@ SetCsrPending sets CsrPending field to given value.
 
 ### GetHsmProviderId
 
-`func (o *KeyPair) GetHsmProviderId() int32`
+`func (o *KeyPair) GetHsmProviderId() int64`
 
 GetHsmProviderId returns the HsmProviderId field if non-nil, zero value otherwise.
 
 ### GetHsmProviderIdOk
 
-`func (o *KeyPair) GetHsmProviderIdOk() (*int32, bool)`
+`func (o *KeyPair) GetHsmProviderIdOk() (*int64, bool)`
 
 GetHsmProviderIdOk returns a tuple with the HsmProviderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHsmProviderId
 
-`func (o *KeyPair) SetHsmProviderId(v int32)`
+`func (o *KeyPair) SetHsmProviderId(v int64)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
 

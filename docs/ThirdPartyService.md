@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Targets** | **[]string** | The {hostname}:{port} pairs for the hosts that make up the third-party service. | 
 **Name** | **string** | (sortable) The name of the third-party service. | 
 **Secure** | Pointer to **bool** | (sortable) This field is true if the third-party service expects HTTPS connections. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | The ID of the trusted certificate group associated with the third-party service. | [optional] 
-**MaxConnections** | Pointer to **int32** | (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the third-party service. -1 indicates unlimited connections. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The ID of the trusted certificate group associated with the third-party service. | [optional] 
+**MaxConnections** | Pointer to **int64** | (sortable) The maximum number of HTTP persistent connections you want PingAccess to have open and maintain for the third-party service. -1 indicates unlimited connections. | [optional] 
 **SkipHostnameVerification** | Pointer to **bool** | (sortable) This field is true if the hostname verification of the third-party service&#39;s certificate should be skipped. | [optional] 
 **ExpectedHostname** | Pointer to **string** | (sortable) The name of the host expected in the third-party service&#39;s certificate. | [optional] 
-**AvailabilityProfileId** | Pointer to **int32** | The ID of the availability profile associated with the third-party service. | [optional] 
-**LoadBalancingStrategyId** | Pointer to **int32** | The ID of the load balancing strategy associated with the third-party service. | [optional] 
+**AvailabilityProfileId** | Pointer to **int64** | The ID of the availability profile associated with the third-party service. | [optional] 
+**LoadBalancingStrategyId** | Pointer to **int64** | The ID of the load balancing strategy associated with the third-party service. | [optional] 
 **UseProxy** | Pointer to **bool** | (sortable) True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
 **HostValue** | Pointer to **string** | (sortable) The Host header field value in the requests sent to a Third-Party Services. When set, PingAccess will use the hostValue as the Host header field value. Otherwise, the target value will be used. | [optional] 
 
@@ -128,20 +128,20 @@ HasSecure returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *ThirdPartyService) GetTrustedCertificateGroupId() int32`
+`func (o *ThirdPartyService) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *ThirdPartyService) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *ThirdPartyService) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *ThirdPartyService) SetTrustedCertificateGroupId(v int32)`
+`func (o *ThirdPartyService) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 
@@ -153,20 +153,20 @@ HasTrustedCertificateGroupId returns a boolean if a field has been set.
 
 ### GetMaxConnections
 
-`func (o *ThirdPartyService) GetMaxConnections() int32`
+`func (o *ThirdPartyService) GetMaxConnections() int64`
 
 GetMaxConnections returns the MaxConnections field if non-nil, zero value otherwise.
 
 ### GetMaxConnectionsOk
 
-`func (o *ThirdPartyService) GetMaxConnectionsOk() (*int32, bool)`
+`func (o *ThirdPartyService) GetMaxConnectionsOk() (*int64, bool)`
 
 GetMaxConnectionsOk returns a tuple with the MaxConnections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaxConnections
 
-`func (o *ThirdPartyService) SetMaxConnections(v int32)`
+`func (o *ThirdPartyService) SetMaxConnections(v int64)`
 
 SetMaxConnections sets MaxConnections field to given value.
 
@@ -228,20 +228,20 @@ HasExpectedHostname returns a boolean if a field has been set.
 
 ### GetAvailabilityProfileId
 
-`func (o *ThirdPartyService) GetAvailabilityProfileId() int32`
+`func (o *ThirdPartyService) GetAvailabilityProfileId() int64`
 
 GetAvailabilityProfileId returns the AvailabilityProfileId field if non-nil, zero value otherwise.
 
 ### GetAvailabilityProfileIdOk
 
-`func (o *ThirdPartyService) GetAvailabilityProfileIdOk() (*int32, bool)`
+`func (o *ThirdPartyService) GetAvailabilityProfileIdOk() (*int64, bool)`
 
 GetAvailabilityProfileIdOk returns a tuple with the AvailabilityProfileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAvailabilityProfileId
 
-`func (o *ThirdPartyService) SetAvailabilityProfileId(v int32)`
+`func (o *ThirdPartyService) SetAvailabilityProfileId(v int64)`
 
 SetAvailabilityProfileId sets AvailabilityProfileId field to given value.
 
@@ -253,20 +253,20 @@ HasAvailabilityProfileId returns a boolean if a field has been set.
 
 ### GetLoadBalancingStrategyId
 
-`func (o *ThirdPartyService) GetLoadBalancingStrategyId() int32`
+`func (o *ThirdPartyService) GetLoadBalancingStrategyId() int64`
 
 GetLoadBalancingStrategyId returns the LoadBalancingStrategyId field if non-nil, zero value otherwise.
 
 ### GetLoadBalancingStrategyIdOk
 
-`func (o *ThirdPartyService) GetLoadBalancingStrategyIdOk() (*int32, bool)`
+`func (o *ThirdPartyService) GetLoadBalancingStrategyIdOk() (*int64, bool)`
 
 GetLoadBalancingStrategyIdOk returns a tuple with the LoadBalancingStrategyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLoadBalancingStrategyId
 
-`func (o *ThirdPartyService) SetLoadBalancingStrategyId(v int32)`
+`func (o *ThirdPartyService) SetLoadBalancingStrategyId(v int64)`
 
 SetLoadBalancingStrategyId sets LoadBalancingStrategyId field to given value.
 

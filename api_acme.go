@@ -873,20 +873,20 @@ type ApiGetAcmeAccountsRequest struct {
 	ctx           context.Context
 	ApiService    *AcmeApiService
 	acmeServerId  string
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	sortKey       *string
 	order         *string
 }
 
 // Page number to retrieve
-func (r ApiGetAcmeAccountsRequest) Page(page int32) ApiGetAcmeAccountsRequest {
+func (r ApiGetAcmeAccountsRequest) Page(page int64) ApiGetAcmeAccountsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of ACME Accounts per page
-func (r ApiGetAcmeAccountsRequest) NumberPerPage(numberPerPage int32) ApiGetAcmeAccountsRequest {
+func (r ApiGetAcmeAccountsRequest) NumberPerPage(numberPerPage int64) ApiGetAcmeAccountsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -1151,8 +1151,8 @@ type ApiGetAcmeCertificateRequestsRequest struct {
 	acmeServerId  string
 	acmeAccountId string
 	keyPairId     *string
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	sortKey       *string
 	order         *string
 }
@@ -1164,13 +1164,13 @@ func (r ApiGetAcmeCertificateRequestsRequest) KeyPairId(keyPairId string) ApiGet
 }
 
 // Page number to retrieve
-func (r ApiGetAcmeCertificateRequestsRequest) Page(page int32) ApiGetAcmeCertificateRequestsRequest {
+func (r ApiGetAcmeCertificateRequestsRequest) Page(page int64) ApiGetAcmeCertificateRequestsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of ACME Certificate Requests per page
-func (r ApiGetAcmeCertificateRequestsRequest) NumberPerPage(numberPerPage int32) ApiGetAcmeCertificateRequestsRequest {
+func (r ApiGetAcmeCertificateRequestsRequest) NumberPerPage(numberPerPage int64) ApiGetAcmeCertificateRequestsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }
@@ -1430,8 +1430,8 @@ func (a *AcmeApiService) GetAcmeServerExecute(r ApiGetAcmeServerRequest) (*AcmeS
 type ApiGetAcmeServersRequest struct {
 	ctx           context.Context
 	ApiService    *AcmeApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -1439,13 +1439,13 @@ type ApiGetAcmeServersRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetAcmeServersRequest) Page(page int32) ApiGetAcmeServersRequest {
+func (r ApiGetAcmeServersRequest) Page(page int64) ApiGetAcmeServersRequest {
 	r.page = &page
 	return r
 }
 
 // Number of ACME Servers per page
-func (r ApiGetAcmeServersRequest) NumberPerPage(numberPerPage int32) ApiGetAcmeServersRequest {
+func (r ApiGetAcmeServersRequest) NumberPerPage(numberPerPage int64) ApiGetAcmeServersRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

@@ -151,7 +151,7 @@ import (
 )
 
 func main() {
-    settings := *openapiclient.NewUnknownResourceSettings(int32(123), "ErrorTemplateFile_example", openapiclient.ContentType("JSON"), openapiclient.UnknownResourceMode("DENY"), int32(123)) // UnknownResourceSettings | The new settings
+    settings := *openapiclient.NewUnknownResourceSettings(int64(123), "ErrorTemplateFile_example", openapiclient.ContentType("JSON"), openapiclient.UnknownResourceMode("DENY"), int64(123)) // UnknownResourceSettings | The new settings
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

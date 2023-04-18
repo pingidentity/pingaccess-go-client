@@ -22,7 +22,7 @@ type Rule struct {
 	// (sortable) The rule's class name.
 	ClassName string `json:"className"`
 	// When creating a new Rule, this is the ID for the Rule. If not specified, an ID will be automatically assigned. When updating an existing Rule, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The rule's name.
 	Name string `json:"name"`
 	// The supported destinations for this rule. This field is read-only and meant to provide contextual metadata on where the rule can be applied.
@@ -75,9 +75,9 @@ func (o *Rule) SetClassName(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Rule) GetId() int32 {
+func (o *Rule) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -85,7 +85,7 @@ func (o *Rule) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Rule) GetIdOk() (*int32, bool) {
+func (o *Rule) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *Rule) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Rule) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Rule) SetId(v int64) {
 	o.Id = &v
 }
 

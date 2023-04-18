@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **AdminPassword** | [**HiddenField**](HiddenField.md) |  | 
 **SkipHostnameVerification** | Pointer to **bool** | Set to true if HTTP communications to PingFederate should not perform hostname verification of the certificate. | [optional] 
 **ExpectedHostname** | Pointer to **string** | The name of the host expected in the certificate used by PingFederate. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to PingFederate Administrative API. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to PingFederate Administrative API. | [optional] 
 **Host** | **string** | The host name or IP address for PingFederate Administration API. | 
-**Port** | **int32** | The port number for PingFederate Administration API. | 
+**Port** | **int64** | The port number for PingFederate Administration API. | 
 **Secure** | Pointer to **bool** | Enable if PingFederate is expecting HTTPS connections. | [optional] 
 **BasePath** | Pointer to **string** | The base path, if needed, for Administration API. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewPingFederateAdmin
 
-`func NewPingFederateAdmin(adminPassword HiddenField, host string, port int32, ) *PingFederateAdmin`
+`func NewPingFederateAdmin(adminPassword HiddenField, host string, port int64, ) *PingFederateAdmin`
 
 NewPingFederateAdmin instantiates a new PingFederateAdmin object
 This constructor will assign default values to properties that have it defined,
@@ -159,20 +159,20 @@ HasExpectedHostname returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *PingFederateAdmin) GetTrustedCertificateGroupId() int32`
+`func (o *PingFederateAdmin) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *PingFederateAdmin) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *PingFederateAdmin) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *PingFederateAdmin) SetTrustedCertificateGroupId(v int32)`
+`func (o *PingFederateAdmin) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 
@@ -204,20 +204,20 @@ SetHost sets Host field to given value.
 
 ### GetPort
 
-`func (o *PingFederateAdmin) GetPort() int32`
+`func (o *PingFederateAdmin) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *PingFederateAdmin) GetPortOk() (*int32, bool)`
+`func (o *PingFederateAdmin) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *PingFederateAdmin) SetPort(v int32)`
+`func (o *PingFederateAdmin) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

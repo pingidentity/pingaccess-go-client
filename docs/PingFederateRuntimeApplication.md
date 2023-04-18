@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContextRoot** | Pointer to **string** | The base path of the PingFederate runtime application. Default value is &#39;/&#39;. | [optional] 
-**PrimaryVirtualHostId** | **int32** | The ID of the primary virtual host to use for front channel requests to the PA proxied PingFederate runtime application. This virtual host will be used for the default OpenID Connect Issuer when an application specific issuer is not configured. | 
-**AdditionalVirtualHostIds** | Pointer to **[]int32** | Additional virtual host IDs that can be used to proxy the PingFederate runtime application. | [optional] 
+**PrimaryVirtualHostId** | **int64** | The ID of the primary virtual host to use for front channel requests to the PA proxied PingFederate runtime application. This virtual host will be used for the default OpenID Connect Issuer when an application specific issuer is not configured. | 
+**AdditionalVirtualHostIds** | Pointer to **[]int64** | Additional virtual host IDs that can be used to proxy the PingFederate runtime application. | [optional] 
 **Policy** | Pointer to [**[]PolicyItem**](PolicyItem.md) | A List of PolicyItems associated with the PingFederate runtime application. | [optional] 
 **ClientCertHeaderNames** | Pointer to **[]string** | The header names to contain PEM-encoded client certificates. The list position correlates to the index in the client certificate chain. For example, the first element always maps to the leaf certificate. | [optional] 
 **CaseSensitive** | Pointer to **bool** | True if the context root is case sensitive. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewPingFederateRuntimeApplication
 
-`func NewPingFederateRuntimeApplication(primaryVirtualHostId int32, ) *PingFederateRuntimeApplication`
+`func NewPingFederateRuntimeApplication(primaryVirtualHostId int64, ) *PingFederateRuntimeApplication`
 
 NewPingFederateRuntimeApplication instantiates a new PingFederateRuntimeApplication object
 This constructor will assign default values to properties that have it defined,
@@ -57,40 +57,40 @@ HasContextRoot returns a boolean if a field has been set.
 
 ### GetPrimaryVirtualHostId
 
-`func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostId() int32`
+`func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostId() int64`
 
 GetPrimaryVirtualHostId returns the PrimaryVirtualHostId field if non-nil, zero value otherwise.
 
 ### GetPrimaryVirtualHostIdOk
 
-`func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostIdOk() (*int32, bool)`
+`func (o *PingFederateRuntimeApplication) GetPrimaryVirtualHostIdOk() (*int64, bool)`
 
 GetPrimaryVirtualHostIdOk returns a tuple with the PrimaryVirtualHostId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryVirtualHostId
 
-`func (o *PingFederateRuntimeApplication) SetPrimaryVirtualHostId(v int32)`
+`func (o *PingFederateRuntimeApplication) SetPrimaryVirtualHostId(v int64)`
 
 SetPrimaryVirtualHostId sets PrimaryVirtualHostId field to given value.
 
 
 ### GetAdditionalVirtualHostIds
 
-`func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIds() []int32`
+`func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIds() []int64`
 
 GetAdditionalVirtualHostIds returns the AdditionalVirtualHostIds field if non-nil, zero value otherwise.
 
 ### GetAdditionalVirtualHostIdsOk
 
-`func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIdsOk() (*[]int32, bool)`
+`func (o *PingFederateRuntimeApplication) GetAdditionalVirtualHostIdsOk() (*[]int64, bool)`
 
 GetAdditionalVirtualHostIdsOk returns a tuple with the AdditionalVirtualHostIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdditionalVirtualHostIds
 
-`func (o *PingFederateRuntimeApplication) SetAdditionalVirtualHostIds(v []int32)`
+`func (o *PingFederateRuntimeApplication) SetAdditionalVirtualHostIds(v []int64)`
 
 SetAdditionalVirtualHostIds sets AdditionalVirtualHostIds field to given value.
 

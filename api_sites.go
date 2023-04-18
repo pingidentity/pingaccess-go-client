@@ -363,8 +363,8 @@ func (a *SitesApiService) GetSiteExecute(r ApiGetSiteRequest) (*Site, *http.Resp
 type ApiGetSitesRequest struct {
 	ctx           context.Context
 	ApiService    *SitesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetSitesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetSitesRequest) Page(page int32) ApiGetSitesRequest {
+func (r ApiGetSitesRequest) Page(page int64) ApiGetSitesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Sites per page
-func (r ApiGetSitesRequest) NumberPerPage(numberPerPage int32) ApiGetSitesRequest {
+func (r ApiGetSitesRequest) NumberPerPage(numberPerPage int64) ApiGetSitesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

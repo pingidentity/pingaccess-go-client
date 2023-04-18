@@ -511,8 +511,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Availability Profiles per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Availability Profiles per page (optional)
     filter := "filter_example" // string | Search for Availability Profile with name matching filter text (optional)
     name := "name_example" // string | Get a specific Availability Profile by name (case-sensitive) (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Availability Profile attributes (keys) to be used to sort the results (optional)
@@ -541,8 +541,8 @@ Other parameters are passed through a pointer to a apiGetAvailabilityProfilesReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Availability Profiles per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Availability Profiles per page | 
  **filter** | **string** | Search for Availability Profile with name matching filter text | 
  **name** | **string** | Get a specific Availability Profile by name (case-sensitive) | 
  **sortKey** | **string** | A comma separated list of Availability Profile attributes (keys) to be used to sort the results | 
@@ -587,8 +587,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Load Balancing Strategies per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Load Balancing Strategies per page (optional)
     filter := "filter_example" // string | Search for Load Balancing Strategies with name matching filter text (optional)
     name := "name_example" // string | Get a specific Load Balancing Strategy by name (case-sensitive) (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Load Balancing Strategy attributes (keys) to be used to sort the results (optional)
@@ -617,8 +617,8 @@ Other parameters are passed through a pointer to a apiGetLoadBalancingStrategies
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Load Balancing Strategies per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Load Balancing Strategies per page | 
  **filter** | **string** | Search for Load Balancing Strategies with name matching filter text | 
  **name** | **string** | Get a specific Load Balancing Strategy by name (case-sensitive) | 
  **sortKey** | **string** | A comma separated list of Load Balancing Strategy attributes (keys) to be used to sort the results | 

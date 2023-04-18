@@ -459,7 +459,7 @@ import (
 )
 
 func main() {
-    newKeyPairConfigView := *openapiclient.NewNewKeyPairConfig("Alias_example", "CommonName_example", "Organization_example", "OrganizationUnit_example", "City_example", "State_example", "Country_example", int32(123), "KeyAlgorithm_example", int32(123), int32(123)) // NewKeyPairConfig | Configuration for the new Key Pair
+    newKeyPairConfigView := *openapiclient.NewNewKeyPairConfig("Alias_example", "CommonName_example", "Organization_example", "OrganizationUnit_example", "City_example", "State_example", "Country_example", int64(123), "KeyAlgorithm_example", int64(123), int64(123)) // NewKeyPairConfig | Configuration for the new Key Pair
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -595,8 +595,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Key Pairs per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Key Pairs per page (optional)
     filter := "filter_example" // string | Search for Key Pairs with alias matching filter text (optional)
     alias := "alias_example" // string | Get a Key Pair by alias (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Key Pair attributes (keys) to be used to sort the results (optional)
@@ -625,8 +625,8 @@ Other parameters are passed through a pointer to a apiGetKeyPairsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Key Pairs per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Key Pairs per page | 
  **filter** | **string** | Search for Key Pairs with alias matching filter text | 
  **alias** | **string** | Get a Key Pair by alias | 
  **sortKey** | **string** | A comma separated list of Key Pair attributes (keys) to be used to sort the results | 
@@ -732,7 +732,7 @@ import (
 )
 
 func main() {
-    keyPairFile := *openapiclient.NewPKCS12FileImportDoc("Alias_example", int32(123), "FileData_example", *openapiclient.NewHiddenField(), []string{"ChainCertificates_example"}) // PKCS12FileImportDoc | Key Pair to import
+    keyPairFile := *openapiclient.NewPKCS12FileImportDoc("Alias_example", int64(123), "FileData_example", *openapiclient.NewHiddenField(), []string{"ChainCertificates_example"}) // PKCS12FileImportDoc | Key Pair to import
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -932,7 +932,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the Key Pair to update
-    cSRResponse := *openapiclient.NewCSRResponseImportDoc(int32(123), "FileData_example", []string{"ChainCertificates_example"}, int32(123)) // CSRResponseImportDoc | The Certificate Signing Request (CSR) response
+    cSRResponse := *openapiclient.NewCSRResponseImportDoc(int64(123), "FileData_example", []string{"ChainCertificates_example"}, int64(123)) // CSRResponseImportDoc | The Certificate Signing Request (CSR) response
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1004,7 +1004,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of the Key Pair to update
-    cSRResponse := *openapiclient.NewCSRResponseImportDoc(int32(123), "FileData_example", []string{"ChainCertificates_example"}, int32(123)) // CSRResponseImportDoc | The Certificate Signing Request (CSR) response
+    cSRResponse := *openapiclient.NewCSRResponseImportDoc(int64(123), "FileData_example", []string{"ChainCertificates_example"}, int64(123)) // CSRResponseImportDoc | The Certificate Signing Request (CSR) response
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1076,7 +1076,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of Key Pair to update
-    pKCS12File := *openapiclient.NewPKCS12FileImportDoc("Alias_example", int32(123), "FileData_example", *openapiclient.NewHiddenField(), []string{"ChainCertificates_example"}) // PKCS12FileImportDoc | PKCS12 file containing the Key Pair
+    pKCS12File := *openapiclient.NewPKCS12FileImportDoc("Alias_example", int64(123), "FileData_example", *openapiclient.NewHiddenField(), []string{"ChainCertificates_example"}) // PKCS12FileImportDoc | PKCS12 file containing the Key Pair
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

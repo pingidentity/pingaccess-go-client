@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new EngineListener, this is the ID for the EngineListener. If not specified, an ID will be automatically assigned. When updating an existing EngineListener, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new EngineListener, this is the ID for the EngineListener. If not specified, an ID will be automatically assigned. When updating an existing EngineListener, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the engine listener. | 
-**Port** | **int32** | (sortable) The port the engine listener listens on. | 
+**Port** | **int64** | (sortable) The port the engine listener listens on. | 
 **Secure** | Pointer to **bool** | (sortable) Indicator if the engine listener should listen to HTTPS connections. | [optional] 
-**TrustedCertificateGroupId** | Pointer to **int32** | Trusted Certificate Group assigned to engine listener for client certificate authentication. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | Trusted Certificate Group assigned to engine listener for client certificate authentication. | [optional] 
 
 ## Methods
 
 ### NewEngineListener
 
-`func NewEngineListener(name string, port int32, ) *EngineListener`
+`func NewEngineListener(name string, port int64, ) *EngineListener`
 
 NewEngineListener instantiates a new EngineListener object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *EngineListener) GetId() int32`
+`func (o *EngineListener) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *EngineListener) GetIdOk() (*int32, bool)`
+`func (o *EngineListener) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *EngineListener) SetId(v int32)`
+`func (o *EngineListener) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -76,20 +76,20 @@ SetName sets Name field to given value.
 
 ### GetPort
 
-`func (o *EngineListener) GetPort() int32`
+`func (o *EngineListener) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *EngineListener) GetPortOk() (*int32, bool)`
+`func (o *EngineListener) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *EngineListener) SetPort(v int32)`
+`func (o *EngineListener) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 
@@ -121,20 +121,20 @@ HasSecure returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *EngineListener) GetTrustedCertificateGroupId() int32`
+`func (o *EngineListener) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *EngineListener) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *EngineListener) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *EngineListener) SetTrustedCertificateGroupId(v int32)`
+`func (o *EngineListener) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

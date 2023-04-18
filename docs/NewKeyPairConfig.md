@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The ID for the key pair. If not specified, an ID will be automatically assigned. | [optional] 
+**Id** | Pointer to **int64** | The ID for the key pair. If not specified, an ID will be automatically assigned. | [optional] 
 **Alias** | **string** | A unique alias name to identify the key pair. Special characters and spaces are allowed. | 
 **CommonName** | **string** | The common name (CN) identifying the certificate. | 
 **Organization** | **string** | The organization (O) or company name creating the certificate. | 
@@ -12,18 +12,18 @@ Name | Type | Description | Notes
 **City** | **string** | The city or other primary location (L) where the company operates. | 
 **State** | **string** | The state (ST) or other political unit encompassing the location. | 
 **Country** | **string** | The country (C) where the company is based, using two capital letters. | 
-**ValidDays** | **int32** | The number of days the certificate is valid. | 
+**ValidDays** | **int64** | The number of days the certificate is valid. | 
 **KeyAlgorithm** | **string** | The key algorithm to use to generate a key. | 
 **SignatureAlgorithm** | Pointer to **string** | The Signature Algorithm to use for the key. | [optional] 
 **SubjectAlternativeNames** | Pointer to [**[]GeneralName**](GeneralName.md) | Any additional DNS names or IP addresses that are valid for this certificate. | [optional] 
-**KeySize** | **int32** | The number of bits used in the key.  Choices depend on selected key algorithm. | 
-**HsmProviderId** | **int32** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
+**KeySize** | **int64** | The number of bits used in the key.  Choices depend on selected key algorithm. | 
+**HsmProviderId** | **int64** | The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair. | 
 
 ## Methods
 
 ### NewNewKeyPairConfig
 
-`func NewNewKeyPairConfig(alias string, commonName string, organization string, organizationUnit string, city string, state string, country string, validDays int32, keyAlgorithm string, keySize int32, hsmProviderId int32, ) *NewKeyPairConfig`
+`func NewNewKeyPairConfig(alias string, commonName string, organization string, organizationUnit string, city string, state string, country string, validDays int64, keyAlgorithm string, keySize int64, hsmProviderId int64, ) *NewKeyPairConfig`
 
 NewNewKeyPairConfig instantiates a new NewKeyPairConfig object
 This constructor will assign default values to properties that have it defined,
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *NewKeyPairConfig) GetId() int32`
+`func (o *NewKeyPairConfig) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *NewKeyPairConfig) GetIdOk() (*int32, bool)`
+`func (o *NewKeyPairConfig) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *NewKeyPairConfig) SetId(v int32)`
+`func (o *NewKeyPairConfig) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -205,20 +205,20 @@ SetCountry sets Country field to given value.
 
 ### GetValidDays
 
-`func (o *NewKeyPairConfig) GetValidDays() int32`
+`func (o *NewKeyPairConfig) GetValidDays() int64`
 
 GetValidDays returns the ValidDays field if non-nil, zero value otherwise.
 
 ### GetValidDaysOk
 
-`func (o *NewKeyPairConfig) GetValidDaysOk() (*int32, bool)`
+`func (o *NewKeyPairConfig) GetValidDaysOk() (*int64, bool)`
 
 GetValidDaysOk returns a tuple with the ValidDays field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValidDays
 
-`func (o *NewKeyPairConfig) SetValidDays(v int32)`
+`func (o *NewKeyPairConfig) SetValidDays(v int64)`
 
 SetValidDays sets ValidDays field to given value.
 
@@ -295,40 +295,40 @@ HasSubjectAlternativeNames returns a boolean if a field has been set.
 
 ### GetKeySize
 
-`func (o *NewKeyPairConfig) GetKeySize() int32`
+`func (o *NewKeyPairConfig) GetKeySize() int64`
 
 GetKeySize returns the KeySize field if non-nil, zero value otherwise.
 
 ### GetKeySizeOk
 
-`func (o *NewKeyPairConfig) GetKeySizeOk() (*int32, bool)`
+`func (o *NewKeyPairConfig) GetKeySizeOk() (*int64, bool)`
 
 GetKeySizeOk returns a tuple with the KeySize field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeySize
 
-`func (o *NewKeyPairConfig) SetKeySize(v int32)`
+`func (o *NewKeyPairConfig) SetKeySize(v int64)`
 
 SetKeySize sets KeySize field to given value.
 
 
 ### GetHsmProviderId
 
-`func (o *NewKeyPairConfig) GetHsmProviderId() int32`
+`func (o *NewKeyPairConfig) GetHsmProviderId() int64`
 
 GetHsmProviderId returns the HsmProviderId field if non-nil, zero value otherwise.
 
 ### GetHsmProviderIdOk
 
-`func (o *NewKeyPairConfig) GetHsmProviderIdOk() (*int32, bool)`
+`func (o *NewKeyPairConfig) GetHsmProviderIdOk() (*int64, bool)`
 
 GetHsmProviderIdOk returns a tuple with the HsmProviderId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHsmProviderId
 
-`func (o *NewKeyPairConfig) SetHsmProviderId(v int32)`
+`func (o *NewKeyPairConfig) SetHsmProviderId(v int64)`
 
 SetHsmProviderId sets HsmProviderId field to given value.
 

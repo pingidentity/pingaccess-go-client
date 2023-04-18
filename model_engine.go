@@ -20,7 +20,7 @@ var _ MappedNullable = &Engine{}
 // Engine An engine.
 type Engine struct {
 	// When creating a new Engine, this is the ID for the Engine. If not specified, an ID will be automatically assigned. When updating an existing Engine, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the engine.
 	Name string `json:"name"`
 	// (sortable) The description of the engine.
@@ -30,11 +30,11 @@ type Engine struct {
 	// An array of public keys associated with the engine.
 	Keys []PublicKey `json:"keys,omitempty"`
 	// The ID of the proxy to use for HTTP requests or zero if none.
-	HttpProxyId *int32 `json:"httpProxyId,omitempty"`
+	HttpProxyId *int64 `json:"httpProxyId,omitempty"`
 	// The ID of the proxy to use for HTTPS requests or zero if none.
-	HttpsProxyId *int32 `json:"httpsProxyId,omitempty"`
+	HttpsProxyId *int64 `json:"httpsProxyId,omitempty"`
 	// The ID of the certificate the engine will use to contact PingAccess via SSL/TLS.
-	SelectedCertificateId *int32 `json:"selectedCertificateId,omitempty"`
+	SelectedCertificateId *int64 `json:"selectedCertificateId,omitempty"`
 	CertificateHash       *Hash  `json:"certificateHash,omitempty"`
 }
 
@@ -57,9 +57,9 @@ func NewEngineWithDefaults() *Engine {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Engine) GetId() int32 {
+func (o *Engine) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *Engine) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Engine) GetIdOk() (*int32, bool) {
+func (o *Engine) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *Engine) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *Engine) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *Engine) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -209,9 +209,9 @@ func (o *Engine) SetKeys(v []PublicKey) {
 }
 
 // GetHttpProxyId returns the HttpProxyId field value if set, zero value otherwise.
-func (o *Engine) GetHttpProxyId() int32 {
+func (o *Engine) GetHttpProxyId() int64 {
 	if o == nil || IsNil(o.HttpProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpProxyId
@@ -219,7 +219,7 @@ func (o *Engine) GetHttpProxyId() int32 {
 
 // GetHttpProxyIdOk returns a tuple with the HttpProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Engine) GetHttpProxyIdOk() (*int32, bool) {
+func (o *Engine) GetHttpProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpProxyId) {
 		return nil, false
 	}
@@ -235,15 +235,15 @@ func (o *Engine) HasHttpProxyId() bool {
 	return false
 }
 
-// SetHttpProxyId gets a reference to the given int32 and assigns it to the HttpProxyId field.
-func (o *Engine) SetHttpProxyId(v int32) {
+// SetHttpProxyId gets a reference to the given int64 and assigns it to the HttpProxyId field.
+func (o *Engine) SetHttpProxyId(v int64) {
 	o.HttpProxyId = &v
 }
 
 // GetHttpsProxyId returns the HttpsProxyId field value if set, zero value otherwise.
-func (o *Engine) GetHttpsProxyId() int32 {
+func (o *Engine) GetHttpsProxyId() int64 {
 	if o == nil || IsNil(o.HttpsProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpsProxyId
@@ -251,7 +251,7 @@ func (o *Engine) GetHttpsProxyId() int32 {
 
 // GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Engine) GetHttpsProxyIdOk() (*int32, bool) {
+func (o *Engine) GetHttpsProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpsProxyId) {
 		return nil, false
 	}
@@ -267,15 +267,15 @@ func (o *Engine) HasHttpsProxyId() bool {
 	return false
 }
 
-// SetHttpsProxyId gets a reference to the given int32 and assigns it to the HttpsProxyId field.
-func (o *Engine) SetHttpsProxyId(v int32) {
+// SetHttpsProxyId gets a reference to the given int64 and assigns it to the HttpsProxyId field.
+func (o *Engine) SetHttpsProxyId(v int64) {
 	o.HttpsProxyId = &v
 }
 
 // GetSelectedCertificateId returns the SelectedCertificateId field value if set, zero value otherwise.
-func (o *Engine) GetSelectedCertificateId() int32 {
+func (o *Engine) GetSelectedCertificateId() int64 {
 	if o == nil || IsNil(o.SelectedCertificateId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SelectedCertificateId
@@ -283,7 +283,7 @@ func (o *Engine) GetSelectedCertificateId() int32 {
 
 // GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Engine) GetSelectedCertificateIdOk() (*int32, bool) {
+func (o *Engine) GetSelectedCertificateIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.SelectedCertificateId) {
 		return nil, false
 	}
@@ -299,8 +299,8 @@ func (o *Engine) HasSelectedCertificateId() bool {
 	return false
 }
 
-// SetSelectedCertificateId gets a reference to the given int32 and assigns it to the SelectedCertificateId field.
-func (o *Engine) SetSelectedCertificateId(v int32) {
+// SetSelectedCertificateId gets a reference to the given int64 and assigns it to the SelectedCertificateId field.
+func (o *Engine) SetSelectedCertificateId(v int64) {
 	o.SelectedCertificateId = &v
 }
 

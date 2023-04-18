@@ -21,7 +21,7 @@ var _ MappedNullable = &AgentCertificate{}
 // AgentCertificate An agent certificate.
 type AgentCertificate struct {
 	// The id for the agent certificate.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The Serial Number for the agent certificate.
 	SerialNumber string `json:"serialNumber"`
 	// (sortable) The alias for the agent certificate.
@@ -85,9 +85,9 @@ func NewAgentCertificateWithDefaults() *AgentCertificate {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *AgentCertificate) GetId() int32 {
+func (o *AgentCertificate) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -95,7 +95,7 @@ func (o *AgentCertificate) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AgentCertificate) GetIdOk() (*int32, bool) {
+func (o *AgentCertificate) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -111,8 +111,8 @@ func (o *AgentCertificate) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *AgentCertificate) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *AgentCertificate) SetId(v int64) {
 	o.Id = &v
 }
 

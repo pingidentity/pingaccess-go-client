@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    proxy := *openapiclient.NewHttpClientProxy("Name_example", "Host_example", int32(123)) // HttpClientProxy | Proxy to add
+    proxy := *openapiclient.NewHttpClientProxy("Name_example", "Host_example", int64(123)) // HttpClientProxy | Proxy to add
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -167,8 +167,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Proxies per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Proxies per page (optional)
     filter := "filter_example" // string | Search for Proxies with name matching filter text (optional)
     name := "name_example" // string | Get a Proxy by name (case-sensitive) (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Proxy attributes (keys) to be used to sort the results (optional)
@@ -197,8 +197,8 @@ Other parameters are passed through a pointer to a apiGetProxiesRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Proxies per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Proxies per page | 
  **filter** | **string** | Search for Proxies with name matching filter text | 
  **name** | **string** | Get a Proxy by name (case-sensitive) | 
  **sortKey** | **string** | A comma separated list of Proxy attributes (keys) to be used to sort the results | 
@@ -314,7 +314,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of Proxy to update
-    proxy := *openapiclient.NewHttpClientProxy("Name_example", "Host_example", int32(123)) // HttpClientProxy | Proxy to update
+    proxy := *openapiclient.NewHttpClientProxy("Name_example", "Host_example", int64(123)) // HttpClientProxy | Proxy to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

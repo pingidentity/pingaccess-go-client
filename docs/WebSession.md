@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new WebSession, this is the ID for the WebSession. If not specified, an ID will be automatically assigned. When updating an existing WebSession, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new WebSession, this is the ID for the WebSession. If not specified, an ID will be automatically assigned. When updating an existing WebSession, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the web session. | 
 **RequestPreservationType** | Pointer to [**RequestPreservationType**](RequestPreservationType.md) |  | [optional] 
 **EnablePushAuthorization** | Pointer to **bool** | Enabling will allow PA to push the payload of an OAuth 2.0 authorization request to the authorization server via a direct request and provide it with a request URI that is used as reference to the data in a subsequent call to the authorization endpoint. | [optional] 
-**SessionTimeoutInMinutes** | Pointer to **int32** | (sortable) The length of time you want the PA Token to remain active. Once the PA Token expires, an authenticated user must re-authenticate. | [optional] 
+**SessionTimeoutInMinutes** | Pointer to **int64** | (sortable) The length of time you want the PA Token to remain active. Once the PA Token expires, an authenticated user must re-authenticate. | [optional] 
 **ValidateSessionIsAlive** | Pointer to **bool** | (sortable) Specify if PingAccess should validate sessions with the configured PingFederate instance during request processing. | [optional] 
 **SendRequestedUrlToProvider** | Pointer to **bool** | (sortable) Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
-**RefreshUserInfoClaimsInterval** | Pointer to **int32** | (sortable) Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
+**RefreshUserInfoClaimsInterval** | Pointer to **int64** | (sortable) Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
 **ProvideAuthenticationFeedback** | Pointer to **bool** | (sortable) Specify if PingAccess should provide feedback to the authentication authority. For example, tell the authority that the user is being redirected because their session expired. | [optional] 
 **CacheUserAttributes** | Pointer to **bool** | (sortable) Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie. | [optional] 
 **EnableRefreshUser** | Pointer to **bool** | (sortable) Specify if you want to have PingAccess periodically refresh user data from PingFederate for use in policy decisions. | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **PromptParameter** | Pointer to **[]string** | Enter zero or more case sensitive string values. The values can be used by the Client to make sure that the End-User is still present for the current session or to bring attention to the request. | [optional] 
 **SecureCookie** | Pointer to **bool** | (sortable) Specify whether the PingAccess Cookie must be sent using only HTTPS connections. | [optional] 
 **HttpOnlyCookie** | Pointer to **bool** | (sortable) Enable the HttpOnly flag on cookies that contain the PA Token. | [optional] 
-**IdleTimeoutInMinutes** | Pointer to **int32** | (sortable) The length of time you want the PingAccess Token to remain active when no activity is detected. | [optional] 
+**IdleTimeoutInMinutes** | Pointer to **int64** | (sortable) The length of time you want the PingAccess Token to remain active when no activity is detected. | [optional] 
 **Audience** | **string** | (sortable) Enter a unique identifier between 1 and 32 characters that defines who the PA Token is applicable to. | 
 **CookieType** | Pointer to [**WebSessionCookieType**](WebSessionCookieType.md) |  | [optional] 
 **SameSite** | Pointer to [**SameSiteType**](SameSiteType.md) |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
 **CookieDomain** | Pointer to **string** | (sortable) The domain where the cookie is stored--for example, corp.yourcompany.com. | [optional] 
 **FailOnUnsupportedPreservationContentType** | **bool** | (sortable) Specify if PingAccess should produce a 415 HTTP response when it receives an unauthenticated POST request with a content type unsupported by request preservation. The only content type supported by request preservation is application/x-www-form-urlencoded. When disabled, PingAccess will challenge an unauthenticated POST request using an unsupported content type with the same challenge response sent to an unauthenticated GET request. The default is false. | 
-**PfsessionStateCacheInSeconds** | Pointer to **int32** | (sortable) Specify the number of seconds to cache PingFederate Session State information. | [optional] 
+**PfsessionStateCacheInSeconds** | Pointer to **int64** | (sortable) Specify the number of seconds to cache PingFederate Session State information. | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *WebSession) GetId() int32`
+`func (o *WebSession) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *WebSession) GetIdOk() (*int32, bool)`
+`func (o *WebSession) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *WebSession) SetId(v int32)`
+`func (o *WebSession) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -149,20 +149,20 @@ HasEnablePushAuthorization returns a boolean if a field has been set.
 
 ### GetSessionTimeoutInMinutes
 
-`func (o *WebSession) GetSessionTimeoutInMinutes() int32`
+`func (o *WebSession) GetSessionTimeoutInMinutes() int64`
 
 GetSessionTimeoutInMinutes returns the SessionTimeoutInMinutes field if non-nil, zero value otherwise.
 
 ### GetSessionTimeoutInMinutesOk
 
-`func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int32, bool)`
+`func (o *WebSession) GetSessionTimeoutInMinutesOk() (*int64, bool)`
 
 GetSessionTimeoutInMinutesOk returns a tuple with the SessionTimeoutInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSessionTimeoutInMinutes
 
-`func (o *WebSession) SetSessionTimeoutInMinutes(v int32)`
+`func (o *WebSession) SetSessionTimeoutInMinutes(v int64)`
 
 SetSessionTimeoutInMinutes sets SessionTimeoutInMinutes field to given value.
 
@@ -224,20 +224,20 @@ HasSendRequestedUrlToProvider returns a boolean if a field has been set.
 
 ### GetRefreshUserInfoClaimsInterval
 
-`func (o *WebSession) GetRefreshUserInfoClaimsInterval() int32`
+`func (o *WebSession) GetRefreshUserInfoClaimsInterval() int64`
 
 GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
 
 ### GetRefreshUserInfoClaimsIntervalOk
 
-`func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
+`func (o *WebSession) GetRefreshUserInfoClaimsIntervalOk() (*int64, bool)`
 
 GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefreshUserInfoClaimsInterval
 
-`func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int32)`
+`func (o *WebSession) SetRefreshUserInfoClaimsInterval(v int64)`
 
 SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
 
@@ -424,20 +424,20 @@ HasHttpOnlyCookie returns a boolean if a field has been set.
 
 ### GetIdleTimeoutInMinutes
 
-`func (o *WebSession) GetIdleTimeoutInMinutes() int32`
+`func (o *WebSession) GetIdleTimeoutInMinutes() int64`
 
 GetIdleTimeoutInMinutes returns the IdleTimeoutInMinutes field if non-nil, zero value otherwise.
 
 ### GetIdleTimeoutInMinutesOk
 
-`func (o *WebSession) GetIdleTimeoutInMinutesOk() (*int32, bool)`
+`func (o *WebSession) GetIdleTimeoutInMinutesOk() (*int64, bool)`
 
 GetIdleTimeoutInMinutesOk returns a tuple with the IdleTimeoutInMinutes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIdleTimeoutInMinutes
 
-`func (o *WebSession) SetIdleTimeoutInMinutes(v int32)`
+`func (o *WebSession) SetIdleTimeoutInMinutes(v int64)`
 
 SetIdleTimeoutInMinutes sets IdleTimeoutInMinutes field to given value.
 
@@ -709,20 +709,20 @@ SetFailOnUnsupportedPreservationContentType sets FailOnUnsupportedPreservationCo
 
 ### GetPfsessionStateCacheInSeconds
 
-`func (o *WebSession) GetPfsessionStateCacheInSeconds() int32`
+`func (o *WebSession) GetPfsessionStateCacheInSeconds() int64`
 
 GetPfsessionStateCacheInSeconds returns the PfsessionStateCacheInSeconds field if non-nil, zero value otherwise.
 
 ### GetPfsessionStateCacheInSecondsOk
 
-`func (o *WebSession) GetPfsessionStateCacheInSecondsOk() (*int32, bool)`
+`func (o *WebSession) GetPfsessionStateCacheInSecondsOk() (*int64, bool)`
 
 GetPfsessionStateCacheInSecondsOk returns a tuple with the PfsessionStateCacheInSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPfsessionStateCacheInSeconds
 
-`func (o *WebSession) SetPfsessionStateCacheInSeconds(v int32)`
+`func (o *WebSession) SetPfsessionStateCacheInSeconds(v int64)`
 
 SetPfsessionStateCacheInSeconds sets PfsessionStateCacheInSeconds field to given value.
 

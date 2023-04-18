@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceIds** | Pointer to **[]int32** | An ordered list of Resource IDs (integers). | [optional] 
+**ResourceIds** | Pointer to **[]int64** | An ordered list of Resource IDs (integers). | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetResourceIds
 
-`func (o *ResourceOrder) GetResourceIds() []int32`
+`func (o *ResourceOrder) GetResourceIds() []int64`
 
 GetResourceIds returns the ResourceIds field if non-nil, zero value otherwise.
 
 ### GetResourceIdsOk
 
-`func (o *ResourceOrder) GetResourceIdsOk() (*[]int32, bool)`
+`func (o *ResourceOrder) GetResourceIdsOk() (*[]int64, bool)`
 
 GetResourceIdsOk returns a tuple with the ResourceIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResourceIds
 
-`func (o *ResourceOrder) SetResourceIds(v []int32)`
+`func (o *ResourceOrder) SetResourceIds(v []int64)`
 
 SetResourceIds sets ResourceIds field to given value.
 

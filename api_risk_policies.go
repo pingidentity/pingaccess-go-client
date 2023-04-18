@@ -249,8 +249,8 @@ func (a *RiskPoliciesApiService) DeleteRiskPolicyExecute(r ApiDeleteRiskPolicyRe
 type ApiGetRiskPoliciesRequest struct {
 	ctx           context.Context
 	ApiService    *RiskPoliciesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -258,13 +258,13 @@ type ApiGetRiskPoliciesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetRiskPoliciesRequest) Page(page int32) ApiGetRiskPoliciesRequest {
+func (r ApiGetRiskPoliciesRequest) Page(page int64) ApiGetRiskPoliciesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Risk Policies per page
-func (r ApiGetRiskPoliciesRequest) NumberPerPage(numberPerPage int32) ApiGetRiskPoliciesRequest {
+func (r ApiGetRiskPoliciesRequest) NumberPerPage(numberPerPage int64) ApiGetRiskPoliciesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | When creating a new Redirect, this is the ID for the Redirect. If not specified, an ID will be automatically assigned. When updating an existing Redirect, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Source** | Pointer to [**HostPort**](HostPort.md) |  | [optional] 
 **Target** | Pointer to [**TargetHostPort**](TargetHostPort.md) |  | [optional] 
-**ResponseCode** | Pointer to **int32** | (sortable) The Redirect HTTP status code used by the response. | [optional] 
+**ResponseCode** | Pointer to **int64** | (sortable) The Redirect HTTP status code used by the response. | [optional] 
 **AuditLevel** | Pointer to [**AuditLevel**](AuditLevel.md) |  | [optional] 
 
 ## Methods
@@ -106,20 +106,20 @@ HasTarget returns a boolean if a field has been set.
 
 ### GetResponseCode
 
-`func (o *Redirect) GetResponseCode() int32`
+`func (o *Redirect) GetResponseCode() int64`
 
 GetResponseCode returns the ResponseCode field if non-nil, zero value otherwise.
 
 ### GetResponseCodeOk
 
-`func (o *Redirect) GetResponseCodeOk() (*int32, bool)`
+`func (o *Redirect) GetResponseCodeOk() (*int64, bool)`
 
 GetResponseCodeOk returns a tuple with the ResponseCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponseCode
 
-`func (o *Redirect) SetResponseCode(v int32)`
+`func (o *Redirect) SetResponseCode(v int64)`
 
 SetResponseCode sets ResponseCode field to given value.
 

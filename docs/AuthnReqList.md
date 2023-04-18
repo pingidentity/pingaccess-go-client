@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | When creating a new AuthnReqList, this is the ID for the AuthnReqList. If not specified, an ID will be automatically assigned. When updating an existing AuthnReqList, this field is ignored and the ID is determined by the path parameter. | [optional] 
+**Id** | Pointer to **int64** | When creating a new AuthnReqList, this is the ID for the AuthnReqList. If not specified, an ID will be automatically assigned. When updating an existing AuthnReqList, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The name of the authentication requirements list. | 
 **AuthnReqs** | **[]string** | The ordered list of authentication requirements, or identifiers, which define how PingFederate will authenticate a user during the OIDC login flow. | 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *AuthnReqList) GetId() int32`
+`func (o *AuthnReqList) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AuthnReqList) GetIdOk() (*int32, bool)`
+`func (o *AuthnReqList) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AuthnReqList) SetId(v int32)`
+`func (o *AuthnReqList) SetId(v int64)`
 
 SetId sets Id field to given value.
 

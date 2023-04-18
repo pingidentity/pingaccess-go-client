@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **EnablePushAuthorization** | Pointer to **bool** |  | [optional] 
 **ValidateSessionIsAlive** | Pointer to **bool** | Specify if PingAccess should validate sessions with the configured PingFederate instance during request processing. | [optional] 
 **SendRequestedUrlToProvider** | Pointer to **bool** | Specify if you want to send the requested URL as part of the authentication request to the OpenID Connect Provider. | [optional] 
-**RefreshUserInfoClaimsInterval** | Pointer to **int32** | Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
+**RefreshUserInfoClaimsInterval** | Pointer to **int64** | Specify the maximum number of seconds to cache user attribute information when the Refresh User is enabled. | [optional] 
 **ProvideAuthenticationFeedback** | Pointer to **bool** |  | [optional] 
 **CacheUserAttributes** | Pointer to **bool** | Specify if PingAccess should cache user attribute information for use in policy decisions. When disabled, this data is encoded and stored in the session cookie. | [optional] 
 **EnableRefreshUser** | Pointer to **bool** | Specify if you want to have PingAccess periodically refresh user data from PingFederate for use in policy decisions. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **OidcLoginType** | Pointer to [**OidcLoginType**](OidcLoginType.md) |  | [optional] 
 **PkceChallengeType** | Pointer to [**PkceChallengeType**](PkceChallengeType.md) |  | [optional] 
 **ClientCredentials** | [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | 
-**PfsessionStateCacheInSeconds** | Pointer to **int32** | Specify the number of seconds to cache PingFederate Session State information. | [optional] 
+**PfsessionStateCacheInSeconds** | Pointer to **int64** | Specify the number of seconds to cache PingFederate Session State information. | [optional] 
 
 ## Methods
 
@@ -114,20 +114,20 @@ HasSendRequestedUrlToProvider returns a boolean if a field has been set.
 
 ### GetRefreshUserInfoClaimsInterval
 
-`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int32`
+`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsInterval() int64`
 
 GetRefreshUserInfoClaimsInterval returns the RefreshUserInfoClaimsInterval field if non-nil, zero value otherwise.
 
 ### GetRefreshUserInfoClaimsIntervalOk
 
-`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int32, bool)`
+`func (o *AdminWebSessionOidcConfiguration) GetRefreshUserInfoClaimsIntervalOk() (*int64, bool)`
 
 GetRefreshUserInfoClaimsIntervalOk returns a tuple with the RefreshUserInfoClaimsInterval field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRefreshUserInfoClaimsInterval
 
-`func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int32)`
+`func (o *AdminWebSessionOidcConfiguration) SetRefreshUserInfoClaimsInterval(v int64)`
 
 SetRefreshUserInfoClaimsInterval sets RefreshUserInfoClaimsInterval field to given value.
 
@@ -334,20 +334,20 @@ SetClientCredentials sets ClientCredentials field to given value.
 
 ### GetPfsessionStateCacheInSeconds
 
-`func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSeconds() int32`
+`func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSeconds() int64`
 
 GetPfsessionStateCacheInSeconds returns the PfsessionStateCacheInSeconds field if non-nil, zero value otherwise.
 
 ### GetPfsessionStateCacheInSecondsOk
 
-`func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSecondsOk() (*int32, bool)`
+`func (o *AdminWebSessionOidcConfiguration) GetPfsessionStateCacheInSecondsOk() (*int64, bool)`
 
 GetPfsessionStateCacheInSecondsOk returns a tuple with the PfsessionStateCacheInSeconds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPfsessionStateCacheInSeconds
 
-`func (o *AdminWebSessionOidcConfiguration) SetPfsessionStateCacheInSeconds(v int32)`
+`func (o *AdminWebSessionOidcConfiguration) SetPfsessionStateCacheInSeconds(v int64)`
 
 SetPfsessionStateCacheInSeconds sets PfsessionStateCacheInSeconds field to given value.
 

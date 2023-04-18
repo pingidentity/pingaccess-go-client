@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ClientId** | **string** | Specify the client ID. | 
 **ClientSecret** | Pointer to [**HiddenField**](HiddenField.md) |  | [optional] 
-**KeyPairId** | Pointer to **int32** | Specify the ID of a key pair to use for mutual TLS. | [optional] 
+**KeyPairId** | Pointer to **int64** | Specify the ID of a key pair to use for mutual TLS. | [optional] 
 **CredentialsType** | Pointer to [**CredentialsType**](CredentialsType.md) |  | [optional] 
 
 ## Methods
@@ -75,20 +75,20 @@ HasClientSecret returns a boolean if a field has been set.
 
 ### GetKeyPairId
 
-`func (o *OAuthClientCredentials) GetKeyPairId() int32`
+`func (o *OAuthClientCredentials) GetKeyPairId() int64`
 
 GetKeyPairId returns the KeyPairId field if non-nil, zero value otherwise.
 
 ### GetKeyPairIdOk
 
-`func (o *OAuthClientCredentials) GetKeyPairIdOk() (*int32, bool)`
+`func (o *OAuthClientCredentials) GetKeyPairIdOk() (*int64, bool)`
 
 GetKeyPairIdOk returns a tuple with the KeyPairId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyPairId
 
-`func (o *OAuthClientCredentials) SetKeyPairId(v int32)`
+`func (o *OAuthClientCredentials) SetKeyPairId(v int64)`
 
 SetKeyPairId sets KeyPairId field to given value.
 

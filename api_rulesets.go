@@ -583,8 +583,8 @@ func (a *RulesetsApiService) GetRuleSetSuccessCriteriaExecute(r ApiGetRuleSetSuc
 type ApiGetRuleSetsRequest struct {
 	ctx           context.Context
 	ApiService    *RulesetsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -592,13 +592,13 @@ type ApiGetRuleSetsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetRuleSetsRequest) Page(page int32) ApiGetRuleSetsRequest {
+func (r ApiGetRuleSetsRequest) Page(page int64) ApiGetRuleSetsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Rule Sets per page
-func (r ApiGetRuleSetsRequest) NumberPerPage(numberPerPage int32) ApiGetRuleSetsRequest {
+func (r ApiGetRuleSetsRequest) NumberPerPage(numberPerPage int64) ApiGetRuleSetsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

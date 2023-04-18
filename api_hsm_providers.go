@@ -473,8 +473,8 @@ func (a *HsmProvidersApiService) GetHsmProviderDescriptorsExecute(r ApiGetHsmPro
 type ApiGetHsmProvidersRequest struct {
 	ctx           context.Context
 	ApiService    *HsmProvidersApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -482,13 +482,13 @@ type ApiGetHsmProvidersRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetHsmProvidersRequest) Page(page int32) ApiGetHsmProvidersRequest {
+func (r ApiGetHsmProvidersRequest) Page(page int64) ApiGetHsmProvidersRequest {
 	r.page = &page
 	return r
 }
 
 // Number of HSM Providers per page
-func (r ApiGetHsmProvidersRequest) NumberPerPage(numberPerPage int32) ApiGetHsmProvidersRequest {
+func (r ApiGetHsmProvidersRequest) NumberPerPage(numberPerPage int64) ApiGetHsmProvidersRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

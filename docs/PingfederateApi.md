@@ -644,7 +644,7 @@ import (
 )
 
 func main() {
-    pingFederate := *openapiclient.NewPingFederateRuntime("Host_example", int32(123)) // PingFederateRuntime | PingFederate configuration
+    pingFederate := *openapiclient.NewPingFederateRuntime("Host_example", int64(123)) // PingFederateRuntime | PingFederate configuration
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -710,7 +710,7 @@ import (
 )
 
 func main() {
-    pingFederateAccessToken := *openapiclient.NewPingFederateAccessToken("SubjectAttributeName_example", int32(123)) // PingFederateAccessToken | PingFederate OAuth Client configuration
+    pingFederateAccessToken := *openapiclient.NewPingFederateAccessToken("SubjectAttributeName_example", int64(123)) // PingFederateAccessToken | PingFederate OAuth Client configuration
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -776,7 +776,7 @@ import (
 )
 
 func main() {
-    pingFederate := *openapiclient.NewPingFederateAdmin(*openapiclient.NewHiddenField(), "Host_example", int32(123)) // PingFederateAdmin | PingFederate Admin configuration
+    pingFederate := *openapiclient.NewPingFederateAdmin(*openapiclient.NewHiddenField(), "Host_example", int64(123)) // PingFederateAdmin | PingFederate Admin configuration
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

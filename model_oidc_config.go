@@ -20,7 +20,7 @@ var _ MappedNullable = &OidcConfig{}
 // OidcConfig An OIDC authentication configuration.
 type OidcConfig struct {
 	// The ID of the authentication requirement list for Administrative SSO login to PingAccess.
-	AuthnReqListId *int32 `json:"authnReqListId,omitempty"`
+	AuthnReqListId *int64 `json:"authnReqListId,omitempty"`
 	// This field is true to enable Administrator SSO Authentication.
 	Enabled *bool `json:"enabled,omitempty"`
 	// Enable if OIDC single log out should be used on the /pa/oidc/logout for admin console.
@@ -50,9 +50,9 @@ func NewOidcConfigWithDefaults() *OidcConfig {
 }
 
 // GetAuthnReqListId returns the AuthnReqListId field value if set, zero value otherwise.
-func (o *OidcConfig) GetAuthnReqListId() int32 {
+func (o *OidcConfig) GetAuthnReqListId() int64 {
 	if o == nil || IsNil(o.AuthnReqListId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AuthnReqListId
@@ -60,7 +60,7 @@ func (o *OidcConfig) GetAuthnReqListId() int32 {
 
 // GetAuthnReqListIdOk returns a tuple with the AuthnReqListId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OidcConfig) GetAuthnReqListIdOk() (*int32, bool) {
+func (o *OidcConfig) GetAuthnReqListIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.AuthnReqListId) {
 		return nil, false
 	}
@@ -76,8 +76,8 @@ func (o *OidcConfig) HasAuthnReqListId() bool {
 	return false
 }
 
-// SetAuthnReqListId gets a reference to the given int32 and assigns it to the AuthnReqListId field.
-func (o *OidcConfig) SetAuthnReqListId(v int32) {
+// SetAuthnReqListId gets a reference to the given int64 and assigns it to the AuthnReqListId field.
+func (o *OidcConfig) SetAuthnReqListId(v int64) {
 	o.AuthnReqListId = &v
 }
 

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **int32** | The ID of the replica admin. This field is read-only. | [optional] 
+**Id** | Pointer to **int64** | The ID of the replica admin. This field is read-only. | [optional] 
 **Name** | **string** | The name of the replica admin. | 
 **Description** | Pointer to **string** | The description of the replica admin. | [optional] 
 **ConfigReplicationEnabled** | Pointer to **bool** | Set to true when configuration replication for the replica admin is enabled. False when configuration replication is suspended. | [optional] 
 **Keys** | Pointer to [**[]PublicKey**](PublicKey.md) | An array of public keys associated with the replica admin. | [optional] 
-**HttpProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
-**HttpsProxyId** | Pointer to **int32** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
+**HttpProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTP requests or zero if none. | [optional] 
+**HttpsProxyId** | Pointer to **int64** | The ID of the proxy to use for HTTPS requests or zero if none. | [optional] 
 **HostPort** | **string** | The host and port of the replica admin. | 
-**SelectedCertificateId** | Pointer to **int32** | The ID of the certificate the replica admin will use to contact PingAccess via SSL/TLS. | [optional] 
+**SelectedCertificateId** | Pointer to **int64** | The ID of the certificate the replica admin will use to contact PingAccess via SSL/TLS. | [optional] 
 **CertificateHash** | Pointer to [**Hash**](Hash.md) |  | [optional] 
 
 ## Methods
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *ReplicaAdmin) GetId() int32`
+`func (o *ReplicaAdmin) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ReplicaAdmin) GetIdOk() (*int32, bool)`
+`func (o *ReplicaAdmin) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ReplicaAdmin) SetId(v int32)`
+`func (o *ReplicaAdmin) SetId(v int64)`
 
 SetId sets Id field to given value.
 
@@ -156,20 +156,20 @@ HasKeys returns a boolean if a field has been set.
 
 ### GetHttpProxyId
 
-`func (o *ReplicaAdmin) GetHttpProxyId() int32`
+`func (o *ReplicaAdmin) GetHttpProxyId() int64`
 
 GetHttpProxyId returns the HttpProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpProxyIdOk
 
-`func (o *ReplicaAdmin) GetHttpProxyIdOk() (*int32, bool)`
+`func (o *ReplicaAdmin) GetHttpProxyIdOk() (*int64, bool)`
 
 GetHttpProxyIdOk returns a tuple with the HttpProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpProxyId
 
-`func (o *ReplicaAdmin) SetHttpProxyId(v int32)`
+`func (o *ReplicaAdmin) SetHttpProxyId(v int64)`
 
 SetHttpProxyId sets HttpProxyId field to given value.
 
@@ -181,20 +181,20 @@ HasHttpProxyId returns a boolean if a field has been set.
 
 ### GetHttpsProxyId
 
-`func (o *ReplicaAdmin) GetHttpsProxyId() int32`
+`func (o *ReplicaAdmin) GetHttpsProxyId() int64`
 
 GetHttpsProxyId returns the HttpsProxyId field if non-nil, zero value otherwise.
 
 ### GetHttpsProxyIdOk
 
-`func (o *ReplicaAdmin) GetHttpsProxyIdOk() (*int32, bool)`
+`func (o *ReplicaAdmin) GetHttpsProxyIdOk() (*int64, bool)`
 
 GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpsProxyId
 
-`func (o *ReplicaAdmin) SetHttpsProxyId(v int32)`
+`func (o *ReplicaAdmin) SetHttpsProxyId(v int64)`
 
 SetHttpsProxyId sets HttpsProxyId field to given value.
 
@@ -226,20 +226,20 @@ SetHostPort sets HostPort field to given value.
 
 ### GetSelectedCertificateId
 
-`func (o *ReplicaAdmin) GetSelectedCertificateId() int32`
+`func (o *ReplicaAdmin) GetSelectedCertificateId() int64`
 
 GetSelectedCertificateId returns the SelectedCertificateId field if non-nil, zero value otherwise.
 
 ### GetSelectedCertificateIdOk
 
-`func (o *ReplicaAdmin) GetSelectedCertificateIdOk() (*int32, bool)`
+`func (o *ReplicaAdmin) GetSelectedCertificateIdOk() (*int64, bool)`
 
 GetSelectedCertificateIdOk returns a tuple with the SelectedCertificateId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelectedCertificateId
 
-`func (o *ReplicaAdmin) SetSelectedCertificateId(v int32)`
+`func (o *ReplicaAdmin) SetSelectedCertificateId(v int64)`
 
 SetSelectedCertificateId sets SelectedCertificateId field to given value.
 

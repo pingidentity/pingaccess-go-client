@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of the third-party OpenID Connect provider. | [optional] 
 **Issuer** | **string** | The issuer of the third-party OpenID Connect provider. | 
-**TrustedCertificateGroupId** | Pointer to **int32** | The group of certificates to use when authenticating to third-party OpenID Connect provider. | [optional] 
+**TrustedCertificateGroupId** | Pointer to **int64** | The group of certificates to use when authenticating to third-party OpenID Connect provider. | [optional] 
 **UseProxy** | Pointer to **bool** | True if a proxy should be used for HTTP or HTTPS requests. | [optional] 
 **AuditLevel** | Pointer to [**AuditLevel**](AuditLevel.md) |  | [optional] 
 **QueryParameters** | Pointer to [**[]QueryParameter**](QueryParameter.md) | The query parameters used by the authentication request to third-party OpenID Connect provider. | [optional] 
@@ -80,20 +80,20 @@ SetIssuer sets Issuer field to given value.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *OIDCProvider) GetTrustedCertificateGroupId() int32`
+`func (o *OIDCProvider) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *OIDCProvider) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *OIDCProvider) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *OIDCProvider) SetTrustedCertificateGroupId(v int32)`
+`func (o *OIDCProvider) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

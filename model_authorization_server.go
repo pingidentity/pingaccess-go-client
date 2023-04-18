@@ -27,7 +27,7 @@ type AuthorizationServer struct {
 	// Enable if third-party OAuth 2.0 Authorization Server is expecting HTTPS connections.
 	Secure *bool `json:"secure,omitempty"`
 	// The group of certificates to use when authenticating to third-party OAuth 2.0 Authorization Server.
-	TrustedCertificateGroupId int32                   `json:"trustedCertificateGroupId"`
+	TrustedCertificateGroupId int64                   `json:"trustedCertificateGroupId"`
 	ClientCredentials         *OAuthClientCredentials `json:"clientCredentials,omitempty"`
 	// Enable to retain token details for subsequent requests.
 	CacheTokens *bool `json:"cacheTokens,omitempty"`
@@ -49,7 +49,7 @@ type AuthorizationServer struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationServer(targets []string, trustedCertificateGroupId int32, subjectAttributeName string, introspectionEndpoint string) *AuthorizationServer {
+func NewAuthorizationServer(targets []string, trustedCertificateGroupId int64, subjectAttributeName string, introspectionEndpoint string) *AuthorizationServer {
 	this := AuthorizationServer{}
 	this.Targets = targets
 	this.TrustedCertificateGroupId = trustedCertificateGroupId
@@ -187,9 +187,9 @@ func (o *AuthorizationServer) SetSecure(v bool) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value
-func (o *AuthorizationServer) GetTrustedCertificateGroupId() int32 {
+func (o *AuthorizationServer) GetTrustedCertificateGroupId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -198,7 +198,7 @@ func (o *AuthorizationServer) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationServer) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *AuthorizationServer) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -206,7 +206,7 @@ func (o *AuthorizationServer) GetTrustedCertificateGroupIdOk() (*int32, bool) {
 }
 
 // SetTrustedCertificateGroupId sets field value
-func (o *AuthorizationServer) SetTrustedCertificateGroupId(v int32) {
+func (o *AuthorizationServer) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = v
 }
 

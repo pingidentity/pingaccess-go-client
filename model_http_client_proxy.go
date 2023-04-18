@@ -20,13 +20,13 @@ var _ MappedNullable = &HttpClientProxy{}
 // HttpClientProxy A proxy.
 type HttpClientProxy struct {
 	// When creating a new HttpClientProxy, this is the ID for the HttpClientProxy. If not specified, an ID will be automatically assigned. When updating an existing HttpClientProxy, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The name of the proxy.
 	Name string `json:"name"`
 	// (sortable) The proxy host.
 	Host string `json:"host"`
 	// (sortable) The proxy port.
-	Port int32 `json:"port"`
+	Port int64 `json:"port"`
 	// (sortable) A description of the proxy.
 	Description *string `json:"description,omitempty"`
 	// (sortable) True if the proxy requires authentication.
@@ -40,7 +40,7 @@ type HttpClientProxy struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpClientProxy(name string, host string, port int32) *HttpClientProxy {
+func NewHttpClientProxy(name string, host string, port int64) *HttpClientProxy {
 	this := HttpClientProxy{}
 	this.Name = name
 	this.Host = host
@@ -57,9 +57,9 @@ func NewHttpClientProxyWithDefaults() *HttpClientProxy {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *HttpClientProxy) GetId() int32 {
+func (o *HttpClientProxy) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -67,7 +67,7 @@ func (o *HttpClientProxy) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HttpClientProxy) GetIdOk() (*int32, bool) {
+func (o *HttpClientProxy) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -83,8 +83,8 @@ func (o *HttpClientProxy) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *HttpClientProxy) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *HttpClientProxy) SetId(v int64) {
 	o.Id = &v
 }
 
@@ -137,9 +137,9 @@ func (o *HttpClientProxy) SetHost(v string) {
 }
 
 // GetPort returns the Port field value
-func (o *HttpClientProxy) GetPort() int32 {
+func (o *HttpClientProxy) GetPort() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -148,7 +148,7 @@ func (o *HttpClientProxy) GetPort() int32 {
 
 // GetPortOk returns a tuple with the Port field value
 // and a boolean to check if the value has been set.
-func (o *HttpClientProxy) GetPortOk() (*int32, bool) {
+func (o *HttpClientProxy) GetPortOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -156,7 +156,7 @@ func (o *HttpClientProxy) GetPortOk() (*int32, bool) {
 }
 
 // SetPort sets field value
-func (o *HttpClientProxy) SetPort(v int32) {
+func (o *HttpClientProxy) SetPort(v int64) {
 	o.Port = v
 }
 

@@ -169,8 +169,8 @@ import (
 )
 
 func main() {
-    page := int32(56) // int32 | Page number to retrieve (optional)
-    numberPerPage := int32(56) // int32 | Number of Risk Policies per page (optional)
+    page := int64(56) // int64 | Page number to retrieve (optional)
+    numberPerPage := int64(56) // int64 | Number of Risk Policies per page (optional)
     filter := "filter_example" // string | Search for Risk Policy with name matching filter text (optional)
     name := "name_example" // string | Get a specific Risk Policy by name (case-sensitive) (optional)
     sortKey := "sortKey_example" // string | A comma separated list of Risk Policy attributes (keys) to be used to sort the results (optional)
@@ -199,8 +199,8 @@ Other parameters are passed through a pointer to a apiGetRiskPoliciesRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Page number to retrieve | 
- **numberPerPage** | **int32** | Number of Risk Policies per page | 
+ **page** | **int64** | Page number to retrieve | 
+ **numberPerPage** | **int64** | Number of Risk Policies per page | 
  **filter** | **string** | Search for Risk Policy with name matching filter text | 
  **name** | **string** | Get a specific Risk Policy by name (case-sensitive) | 
  **sortKey** | **string** | A comma separated list of Risk Policy attributes (keys) to be used to sort the results | 

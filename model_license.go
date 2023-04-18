@@ -30,7 +30,7 @@ type License struct {
 	// The organization value from the license file.
 	Organization string `json:"organization"`
 	// The enforcement type value from the license file.
-	EnforcementType int32 `json:"enforcementType"`
+	EnforcementType int64 `json:"enforcementType"`
 	// The expiration date value from the license file.
 	ExpirationDate string `json:"expirationDate"`
 	// The issue date value from the license file.
@@ -38,14 +38,14 @@ type License struct {
 	// The name value from the license file.  Name is required if the organization value is not set.
 	Name string `json:"name"`
 	// The ID value from the license file.
-	Id int32 `json:"id"`
+	Id int64 `json:"id"`
 }
 
 // NewLicense instantiates a new License object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLicense(tier string, maxApplications int64, product string, version string, organization string, enforcementType int32, expirationDate string, issueDate string, name string, id int32) *License {
+func NewLicense(tier string, maxApplications int64, product string, version string, organization string, enforcementType int64, expirationDate string, issueDate string, name string, id int64) *License {
 	this := License{}
 	this.Tier = tier
 	this.MaxApplications = maxApplications
@@ -189,9 +189,9 @@ func (o *License) SetOrganization(v string) {
 }
 
 // GetEnforcementType returns the EnforcementType field value
-func (o *License) GetEnforcementType() int32 {
+func (o *License) GetEnforcementType() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -200,7 +200,7 @@ func (o *License) GetEnforcementType() int32 {
 
 // GetEnforcementTypeOk returns a tuple with the EnforcementType field value
 // and a boolean to check if the value has been set.
-func (o *License) GetEnforcementTypeOk() (*int32, bool) {
+func (o *License) GetEnforcementTypeOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -208,7 +208,7 @@ func (o *License) GetEnforcementTypeOk() (*int32, bool) {
 }
 
 // SetEnforcementType sets field value
-func (o *License) SetEnforcementType(v int32) {
+func (o *License) SetEnforcementType(v int64) {
 	o.EnforcementType = v
 }
 
@@ -285,9 +285,9 @@ func (o *License) SetName(v string) {
 }
 
 // GetId returns the Id field value
-func (o *License) GetId() int32 {
+func (o *License) GetId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -296,7 +296,7 @@ func (o *License) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *License) GetIdOk() (*int32, bool) {
+func (o *License) GetIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -304,7 +304,7 @@ func (o *License) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *License) SetId(v int32) {
+func (o *License) SetId(v int64) {
 	o.Id = v
 }
 

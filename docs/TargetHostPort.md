@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Host** | **string** | The hostname. | 
-**Port** | **int32** | The port number. | 
+**Port** | **int64** | The port number. | 
 **Secure** | **bool** | True if the target host expects HTTPS connections. | 
 
 ## Methods
 
 ### NewTargetHostPort
 
-`func NewTargetHostPort(host string, port int32, secure bool, ) *TargetHostPort`
+`func NewTargetHostPort(host string, port int64, secure bool, ) *TargetHostPort`
 
 NewTargetHostPort instantiates a new TargetHostPort object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetHost sets Host field to given value.
 
 ### GetPort
 
-`func (o *TargetHostPort) GetPort() int32`
+`func (o *TargetHostPort) GetPort() int64`
 
 GetPort returns the Port field if non-nil, zero value otherwise.
 
 ### GetPortOk
 
-`func (o *TargetHostPort) GetPortOk() (*int32, bool)`
+`func (o *TargetHostPort) GetPortOk() (*int64, bool)`
 
 GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPort
 
-`func (o *TargetHostPort) SetPort(v int32)`
+`func (o *TargetHostPort) SetPort(v int64)`
 
 SetPort sets Port field to given value.
 

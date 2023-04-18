@@ -363,8 +363,8 @@ func (a *VirtualhostsApiService) GetVirtualHostExecute(r ApiGetVirtualHostReques
 type ApiGetVirtualHostsRequest struct {
 	ctx           context.Context
 	ApiService    *VirtualhostsApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	virtualHost   *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetVirtualHostsRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetVirtualHostsRequest) Page(page int32) ApiGetVirtualHostsRequest {
+func (r ApiGetVirtualHostsRequest) Page(page int64) ApiGetVirtualHostsRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Virtual Hosts per page
-func (r ApiGetVirtualHostsRequest) NumberPerPage(numberPerPage int32) ApiGetVirtualHostsRequest {
+func (r ApiGetVirtualHostsRequest) NumberPerPage(numberPerPage int64) ApiGetVirtualHostsRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

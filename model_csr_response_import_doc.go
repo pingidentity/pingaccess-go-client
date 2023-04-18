@@ -20,20 +20,20 @@ var _ MappedNullable = &CSRResponseImportDoc{}
 // CSRResponseImportDoc A CSR response.
 type CSRResponseImportDoc struct {
 	// The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair.
-	HsmProviderId int32 `json:"hsmProviderId"`
+	HsmProviderId int64 `json:"hsmProviderId"`
 	// The CSR response data.
 	FileData string `json:"fileData"`
 	// A list of base64-encoded certificates to add to the key pair certificate chain.
 	ChainCertificates []string `json:"chainCertificates"`
 	// The ID of the trusted certificate group associated with the CSR response.
-	TrustedCertGroupId int32 `json:"trustedCertGroupId"`
+	TrustedCertGroupId int64 `json:"trustedCertGroupId"`
 }
 
 // NewCSRResponseImportDoc instantiates a new CSRResponseImportDoc object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCSRResponseImportDoc(hsmProviderId int32, fileData string, chainCertificates []string, trustedCertGroupId int32) *CSRResponseImportDoc {
+func NewCSRResponseImportDoc(hsmProviderId int64, fileData string, chainCertificates []string, trustedCertGroupId int64) *CSRResponseImportDoc {
 	this := CSRResponseImportDoc{}
 	this.HsmProviderId = hsmProviderId
 	this.FileData = fileData
@@ -51,9 +51,9 @@ func NewCSRResponseImportDocWithDefaults() *CSRResponseImportDoc {
 }
 
 // GetHsmProviderId returns the HsmProviderId field value
-func (o *CSRResponseImportDoc) GetHsmProviderId() int32 {
+func (o *CSRResponseImportDoc) GetHsmProviderId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -62,7 +62,7 @@ func (o *CSRResponseImportDoc) GetHsmProviderId() int32 {
 
 // GetHsmProviderIdOk returns a tuple with the HsmProviderId field value
 // and a boolean to check if the value has been set.
-func (o *CSRResponseImportDoc) GetHsmProviderIdOk() (*int32, bool) {
+func (o *CSRResponseImportDoc) GetHsmProviderIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -70,7 +70,7 @@ func (o *CSRResponseImportDoc) GetHsmProviderIdOk() (*int32, bool) {
 }
 
 // SetHsmProviderId sets field value
-func (o *CSRResponseImportDoc) SetHsmProviderId(v int32) {
+func (o *CSRResponseImportDoc) SetHsmProviderId(v int64) {
 	o.HsmProviderId = v
 }
 
@@ -123,9 +123,9 @@ func (o *CSRResponseImportDoc) SetChainCertificates(v []string) {
 }
 
 // GetTrustedCertGroupId returns the TrustedCertGroupId field value
-func (o *CSRResponseImportDoc) GetTrustedCertGroupId() int32 {
+func (o *CSRResponseImportDoc) GetTrustedCertGroupId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -134,7 +134,7 @@ func (o *CSRResponseImportDoc) GetTrustedCertGroupId() int32 {
 
 // GetTrustedCertGroupIdOk returns a tuple with the TrustedCertGroupId field value
 // and a boolean to check if the value has been set.
-func (o *CSRResponseImportDoc) GetTrustedCertGroupIdOk() (*int32, bool) {
+func (o *CSRResponseImportDoc) GetTrustedCertGroupIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -142,7 +142,7 @@ func (o *CSRResponseImportDoc) GetTrustedCertGroupIdOk() (*int32, bool) {
 }
 
 // SetTrustedCertGroupId sets field value
-func (o *CSRResponseImportDoc) SetTrustedCertGroupId(v int32) {
+func (o *CSRResponseImportDoc) SetTrustedCertGroupId(v int64) {
 	o.TrustedCertGroupId = v
 }
 

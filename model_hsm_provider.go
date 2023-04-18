@@ -22,7 +22,7 @@ type HsmProvider struct {
 	// (sortable) The HSM provider's class name.
 	ClassName string `json:"className"`
 	// When creating a new HsmProvider, this is the ID for the HsmProvider. If not specified, an ID will be automatically assigned. When updating an existing HsmProvider, this field is ignored and the ID is determined by the path parameter.
-	Id *int32 `json:"id,omitempty"`
+	Id *int64 `json:"id,omitempty"`
 	// (sortable) The HSM provider's name.
 	Name string `json:"name"`
 	// The HSM provider's configuration data. - This value is a PingAccess plugin configuration (JSON).
@@ -73,9 +73,9 @@ func (o *HsmProvider) SetClassName(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *HsmProvider) GetId() int32 {
+func (o *HsmProvider) GetId() int64 {
 	if o == nil || IsNil(o.Id) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Id
@@ -83,7 +83,7 @@ func (o *HsmProvider) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HsmProvider) GetIdOk() (*int32, bool) {
+func (o *HsmProvider) GetIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *HsmProvider) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int32 and assigns it to the Id field.
-func (o *HsmProvider) SetId(v int32) {
+// SetId gets a reference to the given int64 and assigns it to the Id field.
+func (o *HsmProvider) SetId(v int64) {
 	o.Id = &v
 }
 

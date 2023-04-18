@@ -29,7 +29,7 @@ type PingOneConnection struct {
 	// (sortable) True if a proxy should be used for HTTPS requests to PingOne.
 	UseProxy *bool `json:"useProxy,omitempty"`
 	// The group of certificates to use when communicating to PingOne through this connection.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// Array of SSL protocols to use for HTTPS requests. Empty to use all available protocols.
 	SslProtocols []string `json:"sslProtocols"`
 	// Array of SSL ciphers to use for HTTPS requests. Empty to use all available ciphers.
@@ -209,9 +209,9 @@ func (o *PingOneConnection) SetUseProxy(v bool) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *PingOneConnection) GetTrustedCertificateGroupId() int32 {
+func (o *PingOneConnection) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -219,7 +219,7 @@ func (o *PingOneConnection) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PingOneConnection) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *PingOneConnection) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -235,8 +235,8 @@ func (o *PingOneConnection) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *PingOneConnection) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *PingOneConnection) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

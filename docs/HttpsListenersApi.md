@@ -170,7 +170,7 @@ import (
 
 func main() {
     id := "id_example" // string | ID of HttpsListener to update
-    httpsListeners := *openapiclient.NewHttpsListener("Name_example", int32(123), false, false) // HttpsListener | HttpsListener to update
+    httpsListeners := *openapiclient.NewHttpsListener("Name_example", int64(123), false, false) // HttpsListener | HttpsListener to update
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

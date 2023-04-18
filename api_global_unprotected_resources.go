@@ -363,8 +363,8 @@ func (a *GlobalUnprotectedResourcesApiService) GetGlobalUnprotectedResourceExecu
 type ApiGetGlobalUnprotectedResourcesRequest struct {
 	ctx           context.Context
 	ApiService    *GlobalUnprotectedResourcesApiService
-	page          *int32
-	numberPerPage *int32
+	page          *int64
+	numberPerPage *int64
 	filter        *string
 	name          *string
 	sortKey       *string
@@ -372,13 +372,13 @@ type ApiGetGlobalUnprotectedResourcesRequest struct {
 }
 
 // Page number to retrieve
-func (r ApiGetGlobalUnprotectedResourcesRequest) Page(page int32) ApiGetGlobalUnprotectedResourcesRequest {
+func (r ApiGetGlobalUnprotectedResourcesRequest) Page(page int64) ApiGetGlobalUnprotectedResourcesRequest {
 	r.page = &page
 	return r
 }
 
 // Number of Global Unprotected Resources per page
-func (r ApiGetGlobalUnprotectedResourcesRequest) NumberPerPage(numberPerPage int32) ApiGetGlobalUnprotectedResourcesRequest {
+func (r ApiGetGlobalUnprotectedResourcesRequest) NumberPerPage(numberPerPage int64) ApiGetGlobalUnprotectedResourcesRequest {
 	r.numberPerPage = &numberPerPage
 	return r
 }

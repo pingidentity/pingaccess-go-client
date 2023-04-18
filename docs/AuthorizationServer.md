@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Targets** | **[]string** | One or more server hostname:port pairs used to access third-party OAuth 2.0 Authorization Server. | 
 **AuditLevel** | Pointer to [**AuditLevel**](AuditLevel.md) |  | [optional] 
 **Secure** | Pointer to **bool** | Enable if third-party OAuth 2.0 Authorization Server is expecting HTTPS connections. | [optional] 
-**TrustedCertificateGroupId** | **int32** | The group of certificates to use when authenticating to third-party OAuth 2.0 Authorization Server. | 
+**TrustedCertificateGroupId** | **int64** | The group of certificates to use when authenticating to third-party OAuth 2.0 Authorization Server. | 
 **ClientCredentials** | Pointer to [**OAuthClientCredentials**](OAuthClientCredentials.md) |  | [optional] 
 **CacheTokens** | Pointer to **bool** | Enable to retain token details for subsequent requests. | [optional] 
 **TokenTimeToLiveSeconds** | Pointer to **int64** | Defines the number of seconds to cache the access token. -1 means no limit. This value should be less than the PingFederate Token Lifetime. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewAuthorizationServer
 
-`func NewAuthorizationServer(targets []string, trustedCertificateGroupId int32, subjectAttributeName string, introspectionEndpoint string, ) *AuthorizationServer`
+`func NewAuthorizationServer(targets []string, trustedCertificateGroupId int64, subjectAttributeName string, introspectionEndpoint string, ) *AuthorizationServer`
 
 NewAuthorizationServer instantiates a new AuthorizationServer object
 This constructor will assign default values to properties that have it defined,
@@ -134,20 +134,20 @@ HasSecure returns a boolean if a field has been set.
 
 ### GetTrustedCertificateGroupId
 
-`func (o *AuthorizationServer) GetTrustedCertificateGroupId() int32`
+`func (o *AuthorizationServer) GetTrustedCertificateGroupId() int64`
 
 GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field if non-nil, zero value otherwise.
 
 ### GetTrustedCertificateGroupIdOk
 
-`func (o *AuthorizationServer) GetTrustedCertificateGroupIdOk() (*int32, bool)`
+`func (o *AuthorizationServer) GetTrustedCertificateGroupIdOk() (*int64, bool)`
 
 GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTrustedCertificateGroupId
 
-`func (o *AuthorizationServer) SetTrustedCertificateGroupId(v int32)`
+`func (o *AuthorizationServer) SetTrustedCertificateGroupId(v int64)`
 
 SetTrustedCertificateGroupId sets TrustedCertificateGroupId field to given value.
 

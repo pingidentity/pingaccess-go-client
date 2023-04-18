@@ -24,7 +24,7 @@ type AdminTokenProvider struct {
 	// The issuer url of the Admin Token Provider.
 	Issuer string `json:"issuer"`
 	// The group of certificates to use when authenticating to the Admin Token Provider.
-	TrustedCertificateGroupId *int32 `json:"trustedCertificateGroupId,omitempty"`
+	TrustedCertificateGroupId *int64 `json:"trustedCertificateGroupId,omitempty"`
 	// True if a proxy should be used for HTTPS requests.
 	UseProxy *bool `json:"useProxy,omitempty"`
 	// Array of SSL protocolsto use for HTTPS requests. Empty to use all available protocols.
@@ -110,9 +110,9 @@ func (o *AdminTokenProvider) SetIssuer(v string) {
 }
 
 // GetTrustedCertificateGroupId returns the TrustedCertificateGroupId field value if set, zero value otherwise.
-func (o *AdminTokenProvider) GetTrustedCertificateGroupId() int32 {
+func (o *AdminTokenProvider) GetTrustedCertificateGroupId() int64 {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TrustedCertificateGroupId
@@ -120,7 +120,7 @@ func (o *AdminTokenProvider) GetTrustedCertificateGroupId() int32 {
 
 // GetTrustedCertificateGroupIdOk returns a tuple with the TrustedCertificateGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminTokenProvider) GetTrustedCertificateGroupIdOk() (*int32, bool) {
+func (o *AdminTokenProvider) GetTrustedCertificateGroupIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.TrustedCertificateGroupId) {
 		return nil, false
 	}
@@ -136,8 +136,8 @@ func (o *AdminTokenProvider) HasTrustedCertificateGroupId() bool {
 	return false
 }
 
-// SetTrustedCertificateGroupId gets a reference to the given int32 and assigns it to the TrustedCertificateGroupId field.
-func (o *AdminTokenProvider) SetTrustedCertificateGroupId(v int32) {
+// SetTrustedCertificateGroupId gets a reference to the given int64 and assigns it to the TrustedCertificateGroupId field.
+func (o *AdminTokenProvider) SetTrustedCertificateGroupId(v int64) {
 	o.TrustedCertificateGroupId = &v
 }
 

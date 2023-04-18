@@ -22,11 +22,11 @@ type AdminConfiguration struct {
 	// The primary host and port of the administrative console.
 	HostPort string `json:"hostPort"`
 	// The ID of the proxy to use for HTTP requests or zero if none.
-	HttpProxyId *int32 `json:"httpProxyId,omitempty"`
+	HttpProxyId *int64 `json:"httpProxyId,omitempty"`
 	// The ID of the proxy to use for HTTPS requests or zero if none.
-	HttpsProxyId *int32 `json:"httpsProxyId,omitempty"`
+	HttpsProxyId *int64 `json:"httpsProxyId,omitempty"`
 	// The number of minutes since the last communication from an engine after which the engine will be deleted. Misconfiguration of this value when set less than Engine Polling Delay or a loss of connection in the admin node may result in errant engine deletions.
-	StaleEngineTimeout *int32 `json:"staleEngineTimeout,omitempty"`
+	StaleEngineTimeout *int64 `json:"staleEngineTimeout,omitempty"`
 	// Indicates whether the Stale Engine Timeout is enabled and automatic engine pruning will occur.
 	StaleEngineTimeoutEnabled *bool `json:"staleEngineTimeoutEnabled,omitempty"`
 }
@@ -74,9 +74,9 @@ func (o *AdminConfiguration) SetHostPort(v string) {
 }
 
 // GetHttpProxyId returns the HttpProxyId field value if set, zero value otherwise.
-func (o *AdminConfiguration) GetHttpProxyId() int32 {
+func (o *AdminConfiguration) GetHttpProxyId() int64 {
 	if o == nil || IsNil(o.HttpProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpProxyId
@@ -84,7 +84,7 @@ func (o *AdminConfiguration) GetHttpProxyId() int32 {
 
 // GetHttpProxyIdOk returns a tuple with the HttpProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminConfiguration) GetHttpProxyIdOk() (*int32, bool) {
+func (o *AdminConfiguration) GetHttpProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpProxyId) {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *AdminConfiguration) HasHttpProxyId() bool {
 	return false
 }
 
-// SetHttpProxyId gets a reference to the given int32 and assigns it to the HttpProxyId field.
-func (o *AdminConfiguration) SetHttpProxyId(v int32) {
+// SetHttpProxyId gets a reference to the given int64 and assigns it to the HttpProxyId field.
+func (o *AdminConfiguration) SetHttpProxyId(v int64) {
 	o.HttpProxyId = &v
 }
 
 // GetHttpsProxyId returns the HttpsProxyId field value if set, zero value otherwise.
-func (o *AdminConfiguration) GetHttpsProxyId() int32 {
+func (o *AdminConfiguration) GetHttpsProxyId() int64 {
 	if o == nil || IsNil(o.HttpsProxyId) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HttpsProxyId
@@ -116,7 +116,7 @@ func (o *AdminConfiguration) GetHttpsProxyId() int32 {
 
 // GetHttpsProxyIdOk returns a tuple with the HttpsProxyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminConfiguration) GetHttpsProxyIdOk() (*int32, bool) {
+func (o *AdminConfiguration) GetHttpsProxyIdOk() (*int64, bool) {
 	if o == nil || IsNil(o.HttpsProxyId) {
 		return nil, false
 	}
@@ -132,15 +132,15 @@ func (o *AdminConfiguration) HasHttpsProxyId() bool {
 	return false
 }
 
-// SetHttpsProxyId gets a reference to the given int32 and assigns it to the HttpsProxyId field.
-func (o *AdminConfiguration) SetHttpsProxyId(v int32) {
+// SetHttpsProxyId gets a reference to the given int64 and assigns it to the HttpsProxyId field.
+func (o *AdminConfiguration) SetHttpsProxyId(v int64) {
 	o.HttpsProxyId = &v
 }
 
 // GetStaleEngineTimeout returns the StaleEngineTimeout field value if set, zero value otherwise.
-func (o *AdminConfiguration) GetStaleEngineTimeout() int32 {
+func (o *AdminConfiguration) GetStaleEngineTimeout() int64 {
 	if o == nil || IsNil(o.StaleEngineTimeout) {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.StaleEngineTimeout
@@ -148,7 +148,7 @@ func (o *AdminConfiguration) GetStaleEngineTimeout() int32 {
 
 // GetStaleEngineTimeoutOk returns a tuple with the StaleEngineTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdminConfiguration) GetStaleEngineTimeoutOk() (*int32, bool) {
+func (o *AdminConfiguration) GetStaleEngineTimeoutOk() (*int64, bool) {
 	if o == nil || IsNil(o.StaleEngineTimeout) {
 		return nil, false
 	}
@@ -164,8 +164,8 @@ func (o *AdminConfiguration) HasStaleEngineTimeout() bool {
 	return false
 }
 
-// SetStaleEngineTimeout gets a reference to the given int32 and assigns it to the StaleEngineTimeout field.
-func (o *AdminConfiguration) SetStaleEngineTimeout(v int32) {
+// SetStaleEngineTimeout gets a reference to the given int64 and assigns it to the StaleEngineTimeout field.
+func (o *AdminConfiguration) SetStaleEngineTimeout(v int64) {
 	o.StaleEngineTimeout = &v
 }
 

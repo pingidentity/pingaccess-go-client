@@ -22,7 +22,7 @@ type PKCS12FileImportDoc struct {
 	// A unique alias name to identify the key pair. Special characters and spaces are allowed.
 	Alias string `json:"alias"`
 	// The HSM Provider ID. The default value is 0 indicating an HSM is not used for this key pair.
-	HsmProviderId int32 `json:"hsmProviderId"`
+	HsmProviderId int64 `json:"hsmProviderId"`
 	// Base-64 encoded PKCS12 or PEM file data. In BCFIPS mode, only PEM with PBES2 and AES or Triple DES encryption is accepted and 128-bit salt is required.
 	FileData string      `json:"fileData"`
 	Password HiddenField `json:"password"`
@@ -34,7 +34,7 @@ type PKCS12FileImportDoc struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPKCS12FileImportDoc(alias string, hsmProviderId int32, fileData string, password HiddenField, chainCertificates []string) *PKCS12FileImportDoc {
+func NewPKCS12FileImportDoc(alias string, hsmProviderId int64, fileData string, password HiddenField, chainCertificates []string) *PKCS12FileImportDoc {
 	this := PKCS12FileImportDoc{}
 	this.Alias = alias
 	this.HsmProviderId = hsmProviderId
@@ -77,9 +77,9 @@ func (o *PKCS12FileImportDoc) SetAlias(v string) {
 }
 
 // GetHsmProviderId returns the HsmProviderId field value
-func (o *PKCS12FileImportDoc) GetHsmProviderId() int32 {
+func (o *PKCS12FileImportDoc) GetHsmProviderId() int64 {
 	if o == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 
@@ -88,7 +88,7 @@ func (o *PKCS12FileImportDoc) GetHsmProviderId() int32 {
 
 // GetHsmProviderIdOk returns a tuple with the HsmProviderId field value
 // and a boolean to check if the value has been set.
-func (o *PKCS12FileImportDoc) GetHsmProviderIdOk() (*int32, bool) {
+func (o *PKCS12FileImportDoc) GetHsmProviderIdOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *PKCS12FileImportDoc) GetHsmProviderIdOk() (*int32, bool) {
 }
 
 // SetHsmProviderId sets field value
-func (o *PKCS12FileImportDoc) SetHsmProviderId(v int32) {
+func (o *PKCS12FileImportDoc) SetHsmProviderId(v int64) {
 	o.HsmProviderId = v
 }
 

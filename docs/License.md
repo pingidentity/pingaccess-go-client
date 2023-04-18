@@ -9,17 +9,17 @@ Name | Type | Description | Notes
 **Product** | **string** | The Ping Identity product value from the license file. | 
 **Version** | **string** | The Ping Identity product version from the license file. | 
 **Organization** | **string** | The organization value from the license file. | 
-**EnforcementType** | **int32** | The enforcement type value from the license file. | 
+**EnforcementType** | **int64** | The enforcement type value from the license file. | 
 **ExpirationDate** | **string** | The expiration date value from the license file. | 
 **IssueDate** | **string** | The issue date value from the license file. | 
 **Name** | **string** | The name value from the license file.  Name is required if the organization value is not set. | 
-**Id** | **int32** | The ID value from the license file. | 
+**Id** | **int64** | The ID value from the license file. | 
 
 ## Methods
 
 ### NewLicense
 
-`func NewLicense(tier string, maxApplications int64, product string, version string, organization string, enforcementType int32, expirationDate string, issueDate string, name string, id int32, ) *License`
+`func NewLicense(tier string, maxApplications int64, product string, version string, organization string, enforcementType int64, expirationDate string, issueDate string, name string, id int64, ) *License`
 
 NewLicense instantiates a new License object
 This constructor will assign default values to properties that have it defined,
@@ -136,20 +136,20 @@ SetOrganization sets Organization field to given value.
 
 ### GetEnforcementType
 
-`func (o *License) GetEnforcementType() int32`
+`func (o *License) GetEnforcementType() int64`
 
 GetEnforcementType returns the EnforcementType field if non-nil, zero value otherwise.
 
 ### GetEnforcementTypeOk
 
-`func (o *License) GetEnforcementTypeOk() (*int32, bool)`
+`func (o *License) GetEnforcementTypeOk() (*int64, bool)`
 
 GetEnforcementTypeOk returns a tuple with the EnforcementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEnforcementType
 
-`func (o *License) SetEnforcementType(v int32)`
+`func (o *License) SetEnforcementType(v int64)`
 
 SetEnforcementType sets EnforcementType field to given value.
 
@@ -216,20 +216,20 @@ SetName sets Name field to given value.
 
 ### GetId
 
-`func (o *License) GetId() int32`
+`func (o *License) GetId() int64`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *License) GetIdOk() (*int32, bool)`
+`func (o *License) GetIdOk() (*int64, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *License) SetId(v int32)`
+`func (o *License) SetId(v int64)`
 
 SetId sets Id field to given value.
 
