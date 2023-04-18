@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClassName** | **string** | (sortable) The access token validator&#39;s class name. | 
 **Id** | Pointer to **int64** | When creating a new AccessTokenValidator, this is the ID for the AccessTokenValidator. If not specified, an ID will be automatically assigned. When updating an existing AccessTokenValidator, this field is ignored and the ID is determined by the path parameter. | [optional] 
 **Name** | **string** | (sortable) The access token validator&#39;s name. | 
-**Configuration** | Pointer to [**AccessTokenValidatorConfiguration**](AccessTokenValidatorConfiguration.md) |  | [optional] 
+**Configuration** | Pointer to **map[string]interface{}** | The access token validator&#39;s configuration data. - This value is a PingAccess plugin configuration (JSON). | [optional] 
 
 ## Methods
 
@@ -95,20 +95,20 @@ SetName sets Name field to given value.
 
 ### GetConfiguration
 
-`func (o *AccessTokenValidator) GetConfiguration() AccessTokenValidatorConfiguration`
+`func (o *AccessTokenValidator) GetConfiguration() map[string]interface{}`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *AccessTokenValidator) GetConfigurationOk() (*AccessTokenValidatorConfiguration, bool)`
+`func (o *AccessTokenValidator) GetConfigurationOk() (*map[string]interface{}, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *AccessTokenValidator) SetConfiguration(v AccessTokenValidatorConfiguration)`
+`func (o *AccessTokenValidator) SetConfiguration(v map[string]interface{})`
 
 SetConfiguration sets Configuration field to given value.
 

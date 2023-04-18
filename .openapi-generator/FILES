@@ -55,7 +55,6 @@ api_web_sessions.go
 client.go
 configuration.go
 docs/AccessTokenValidator.md
-docs/AccessTokenValidatorConfiguration.md
 docs/AccessTokenValidators.md
 docs/AccessTokenValidatorsApi.md
 docs/AcmeAccount.md
@@ -333,7 +332,6 @@ git_push.sh
 go.mod
 go.sum
 model_access_token_validator.go
-model_access_token_validator_configuration.go
 model_access_token_validators.go
 model_acme_account.go
 model_acme_cert_state.go

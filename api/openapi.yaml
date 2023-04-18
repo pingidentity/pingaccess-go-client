@@ -10448,7 +10448,22 @@ components:
           description: (sortable) The access token validator's name.
           type: string
         configuration:
-          $ref: '#/components/schemas/AccessTokenValidator_configuration'
+          description: The access token validator's configuration data. - This value
+            is a PingAccess plugin configuration (JSON).
+          properties:
+            description:
+              type: string
+            path:
+              type: string
+            subjectAttributeName:
+              type: string
+            issuer:
+              type: string
+            audience:
+              type: string
+          required:
+          - path
+          type: map
       required:
       - className
       - name
@@ -18321,21 +18336,4 @@ components:
       required:
       - alias
       - fileData
-      type: object
-    AccessTokenValidator_configuration:
-      description: The access token validator's configuration data. - This value is
-        a PingAccess plugin configuration (JSON).
-      properties:
-        description:
-          type: string
-        path:
-          type: string
-        subjectAttributeName:
-          type: string
-        issuer:
-          type: string
-        audience:
-          type: string
-      required:
-      - path
       type: object

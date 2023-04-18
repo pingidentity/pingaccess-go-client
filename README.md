@@ -426,7 +426,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessTokenValidator](docs/AccessTokenValidator.md)
- - [AccessTokenValidatorConfiguration](docs/AccessTokenValidatorConfiguration.md)
  - [AccessTokenValidators](docs/AccessTokenValidators.md)
  - [AcmeAccount](docs/AcmeAccount.md)
  - [AcmeCertState](docs/AcmeCertState.md)
