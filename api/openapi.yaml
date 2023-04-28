@@ -13447,8 +13447,18 @@ components:
         configuration:
           description: The HSM provider's configuration data. - This value is a PingAccess
             plugin configuration (JSON).
-          properties: {}
-          type: object
+          properties:
+            user:
+              type: string
+            partition:
+              type: string
+            password:
+              $ref: '#/components/schemas/HiddenField'
+            slotId:
+              type: string
+            library:
+              type: string
+          type: map
       required:
       - className
       - name

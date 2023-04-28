@@ -26,7 +26,7 @@ type HsmProvider struct {
 	// (sortable) The HSM provider's name.
 	Name string `json:"name"`
 	// The HSM provider's configuration data. - This value is a PingAccess plugin configuration (JSON).
-	Configuration map[string]interface{} `json:"configuration,omitempty"`
+	Configuration *map[string]interface{} `json:"configuration,omitempty"`
 }
 
 // NewHsmProvider instantiates a new HsmProvider object
@@ -134,14 +134,14 @@ func (o *HsmProvider) GetConfiguration() map[string]interface{} {
 		var ret map[string]interface{}
 		return ret
 	}
-	return o.Configuration
+	return *o.Configuration
 }
 
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HsmProvider) GetConfigurationOk() (map[string]interface{}, bool) {
+func (o *HsmProvider) GetConfigurationOk() (*map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Configuration) {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
 	return o.Configuration, true
 }
@@ -157,7 +157,7 @@ func (o *HsmProvider) HasConfiguration() bool {
 
 // SetConfiguration gets a reference to the given map[string]interface{} and assigns it to the Configuration field.
 func (o *HsmProvider) SetConfiguration(v map[string]interface{}) {
-	o.Configuration = v
+	o.Configuration = &v
 }
 
 func (o HsmProvider) MarshalJSON() ([]byte, error) {
